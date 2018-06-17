@@ -10,20 +10,27 @@ a
 
 ul
   list-style: none
-  li
-    display: inline-block
+  padding: 0
+  margin: 0
+
+p, h1, h2, h3, h4, h5, h6
+  margin: 0
+  padding: 0
 
 body, html
   background: white
   color: $fontColor
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
-  font-size: 16px
+  font-family: 'Montserrat', sans-serif
+  font-size: 14px
   min-width: 320px
   max-width: 100%
   margin: 0
   overflow-x: hidden
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
+
+  &.is-hideScroll
+    overflow: hidden
 
 .page
   display: flex
@@ -35,29 +42,17 @@ body, html
     display: flex
     flex-direction: column
     // header offset ex
-    padding-top: 100px
+    //padding-top: 100px
 
 .container
   max-width: 1200px
   width: 100%
   margin-left: auto
   margin-right: auto
-  padding-left: 40px
-  padding-right: 40px
+  padding-left: 30px
+  padding-right: 30px
 
 +r($mobile)
   .container
     padding-left: 20px
     padding-right: 20px
-
-// REMOVE FOR PRODUCTION !
-.dev-bp-debug
-  background: black
-  position: fixed
-  top: 0
-  right: 0
-  z-index: 9999
-  color: white
-  padding: 5px
-  font-size: 12px
-  border-bottom-left-radius: 5px
