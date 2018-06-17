@@ -1,7 +1,23 @@
-ProjectTitle: Project-name
+ProjectTitle: Winance
 
 PageList:
 - file: homepage.html
-  ready: 100
-- file: page.html
-  ready: 0
+  ready: 1
+- file: about.html
+  ready: 1
+- file: investors.html
+  ready: 1
+- file: howWeEarn.html
+  ready: 1
+- file: reviews.html
+  ready: 1
+- file: press.html
+  ready: 1
+- file: blog.html
+  ready: 1
+- file: faq.html
+  ready: 1
+- file: contacts.html
+  ready: 1
+- file: cabinet.html
+  ready: 1
