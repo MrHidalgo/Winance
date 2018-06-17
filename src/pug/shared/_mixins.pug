@@ -1,4 +1,5 @@
-- var svgSprite = 'img/sprite.svg'
+-
+  var svgSprite = 'img/sprite.svg'
 
 mixin icon(name, modClass)
   if modClass == undefined
@@ -7,3 +8,34 @@ mixin icon(name, modClass)
     - var modClass = ' ' + modClass
   svg(class="ico " + name + modClass)
     use(xlink:href= svgSprite + '#' + name)
+
+
+//- FOOTER MENU
+mixin footerNav(arr)
+  .menu
+    ul.menu__list
+      each val, idx in arr
+        li.menu__item
+         a.menu__link(href!= arr[idx].href title="")!= arr[idx].name
+
+
+//- PHONE
+mixin phoneNum(num)
+  .phone
+    a(
+      href!= "tel:num"
+      class!= "phone__link"
+      title!= ""
+    )!= num
+
+
+//- SOCIAL
+mixin social(title, arr)
+  .social
+    p.social__title!= title
+    ul.social__list
+      each val, idx in arr
+        li.social__item
+          a.social__link(href!= arr[idx].href title!= "" class!= "social__link--" + arr[idx].class)
+            i(class!="icon-social--" + arr[idx].class)
+

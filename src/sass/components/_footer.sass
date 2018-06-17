@@ -1,5 +1,28 @@
 // FOOTER
 
 .footer
+  padding-top: 43px
+  padding-bottom: 73px
+  background-color: $c-whiteSmoke
+  +r(767)
+    padding-top: 32px
+    padding-bottom: 40px
+
+
+  &__row
+    display: flex
+    +r(767)
+      flex-direction: column
+
+
+  &__col
+    width: calc(100% / 3)
+    +r(767)
+      width: 100%
+
+    &-0,
+    &-1
+      +r(767)
+        padding-bottom: 55px
 
 // \ FOOTER

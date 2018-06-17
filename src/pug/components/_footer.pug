@@ -1,9 +1,91 @@
 // FOOTER :: START
 
 
+-
+  var menuArr0 = [
+    {
+      name: "О фонде",
+      href: "about.html"
+    },
+    {
+      name: "Как мы зарабатываем",
+      href: "howWeEarn.html"
+    },
+    {
+      name: "Гарантии",
+      href: "#"
+    },
+    {
+      name: "Инвесторам",
+      href: "investors.html"
+    },
+    {
+      name: "Отзывы",
+      href: "reviews.html"
+    },
+    {
+      name: "FAQ",
+      href: "faq.html"
+    }
+  ];
+  var menuArr1 = [
+    {
+      name: "Блог",
+      href: "blog.html"
+    },
+    {
+      name: "Пресса о нас",
+      href: "press.html"
+    },
+    {
+      name: "Контакты",
+      href: "contacts.html"
+    },
+    {
+      name: "Юридическая информация",
+      href: "#"
+    }
+  ];
+  var socialItem = [
+    {
+      href: "#",
+      class: "fb"
+    },
+    {
+      href: "#",
+      class: "tw"
+    },
+    {
+      href: "#",
+      class: "vk"
+    },
+    {
+      href: "#",
+      class: "in"
+    },
+    {
+      href: "#",
+      class: "yb"
+    }
+  ];
+
+
 footer.footer
   .container
-    .footer__wrapper
-      
-      
+    .footer__row
+      .footer__col.footer__col-0
+        +footerNav(menuArr0)
+
+      .footer__col.footer__col-1
+        +footerNav(menuArr1)
+
+      .footer__col.footer__col-2
+        +phoneNum("+7 495 777 40 05")
+
+        +social("Присоединяйтесь", socialItem)
+
+        .designBy
+          p.designBy__text!= "Дизайн сайта – <a href='#'>Headspace</a>"
+
+
 // FOOTER :: END
