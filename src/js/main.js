@@ -115,9 +115,9 @@ $(document).ready(function(){
 
 
   // HAMBURGER TOGGLER
-  _document.on('click', '[js-hamburger]', function(){
-    $(this).toggleClass('is-active');
-    $('.mobile-navi').toggleClass('is-active');
+  _document.on('click', '[hamburger-js]', function(e){
+    $(e.currentTarget).toggleClass('is-active');
+    // $('.mobile-navi').toggleClass('is-active');
   });
 
   function closeMobileMenu(){

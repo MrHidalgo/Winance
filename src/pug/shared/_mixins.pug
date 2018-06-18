@@ -10,6 +10,13 @@ mixin icon(name, modClass)
     use(xlink:href= svgSprite + '#' + name)
 
 
+//- HAMBURGER
+mixin hamburger()
+  .hamburger(hamburger-js)
+    .hamburger__box
+      .hamburger__box-line
+
+
 //- LOGO
 mixin logotype()
   .logo

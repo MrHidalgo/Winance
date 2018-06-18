@@ -10,7 +10,12 @@
   &--wrapper
     .nav__link
       color: $c-royalBlue
-      font-size: 18px
+      +rmin(768)
+        font-size: 14px
+      +rmin(992)
+        font-size: 16px
+      +rmin(1200)
+        font-size: 18px
 
 
   &__list
@@ -20,6 +25,7 @@
 
 
   &__link
+    white-space: nowrap
     height: 100%
     padding-left: 15px
     padding-right: 15px

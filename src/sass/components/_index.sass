@@ -30,6 +30,9 @@
   border-radius: 25px
   border: 2px solid rgba($c-royalBlue, 0.5)
   +transition(border-color)
+  +r(767)
+    font-size: 16px
+
 
   &:hover
     border-color: $c-royalBlue
@@ -40,13 +43,93 @@
 // \ BTN
 
 
+//- HAMBURGER
+.hamburger
+  cursor: pointer
+
+  &__box
+    position: relative
+    width: 37px
+    height: 23px
+
+    &:before,
+    &:after
+      content: ''
+      position: absolute
+      left: 0
+      height: 5px
+      background-color: $c-royalBlue
+      +transition(background-color)
+      transition-duration: 0.25s
+
+      .is-active &
+        background-color: $c-LightSeaGreen
+        +transition(width, background-color)
+        transition-duration: 0.25s
+
+    &:before
+      top: 0
+      width: 100%
+
+    &:after
+      bottom: 0
+      width: 35px
+      +transition(width, background-color)
+      transition-duration: 0.25s
+
+      .is-active &
+        width: 100%
+        +transition(width, background-color)
+        transition-duration: 0.25s
+
+    &-line
+      position: absolute
+      width: 31px
+      height: 5px
+      left: 0
+      top: 50%
+      transform: translateY(-50%)
+      background-color: $c-royalBlue
+      +transition(width, background-color)
+      transition-duration: 0.25s
+
+      .is-active &
+        width: 100%
+        background-color: $c-LightSeaGreen
+        +transition(width, background-color)
+        transition-duration: 0.25s
+
+//- \ HAMBURGER
+
+
+// LOGO
+.logo
+  &__link
+    img
+      +rmin(320)
+        height: 15px
+      +rmin(576)
+        height: auto
+      +rmin(768)
+        height: 15px
+      +rmin(992)
+        height: auto
+// \ LOGO
+
+
 // PARLOR
 .parlor
+  white-space: nowrap
   display: flex
   align-items: center
   justify-content: center
   color: $c-royalBlue
-  font-size: 18px
+  +rmin(768)
+    font-size: 14px
+  +rmin(992)
+    font-size: 16px
+  +rmin(1200)
+    font-size: 18px
 
   &__icon
     margin-right: 5px

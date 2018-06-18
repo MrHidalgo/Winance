@@ -17,24 +17,26 @@
 
     &-left
       display: flex
-      width: 25%
+      width: 130px
 
 
     &-middle
       display: flex
       justify-content: center
-      width: 50%
+      width: calc(100% - (130px + 130px))
 
 
     &-right
       display: flex
       justify-content: flex-end
-      width: 25%
+      width: 130px
 
 
   &__wrapper
     min-height: 107px
     background-color: $c-whiteSmoke
+    +r(767)
+      min-height: 90px
 
 
     &-row
@@ -42,21 +44,33 @@
       align-items: center
       justify-content: space-between
       min-height: 107px
+      +r(767)
+        min-height: 90px
 
 
     &-left
-      width: 25%
+      width: 200px
 
 
     &-middle
       display: flex
       justify-content: center
-      width: 50%
+      width: calc(100% - (200px * 2))
+      +r(767)
+        display: none
 
 
     &-right
       display: flex
       justify-content: flex-end
-      width: 25%
+      width: 200px
+      +r(767)
+        display: none
+
+    &-mobile
+      display: none
+      +r(767)
+        display: flex
+        justify-content: flex-end
 
 // \ HEADER
