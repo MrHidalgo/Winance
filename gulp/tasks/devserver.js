@@ -19,7 +19,8 @@ gulp.task('server', function() {
       config.dest.html + '/*.html',
       config.dest.css + '/*.css',
       config.dest.js + '/*.js',
-      config.dest.img + '/**/*'
+      config.dest.img + '/**/*',
+      config.dest.fonts + '/**'
     ],
     port: util.env.port || 3000,
     logLevel: 'info', // 'debug', 'info', 'silent', 'warn'

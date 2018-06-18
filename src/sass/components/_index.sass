@@ -1,5 +1,37 @@
 // INDEX
 
+// MAIN TITLE
+.title
+  font-size: 45px
+// \ MAIN TITLE
+
+
+// BTN
+.btn
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 100%
+  min-width: 200px
+  height: 50px
+  margin-left: auto
+  margin-right: auto
+  text-align: center
+  color: $c-royalBlue
+  font-size: 18px
+  border-radius: 25px
+  border: 2px solid rgba($c-royalBlue, 0.5)
+  +transition(border-color)
+
+  &:hover
+    border-color: $c-royalBlue
+    +transition(border-color)
+
+  &--big
+    max-width: 385px
+// \ BTN
+
+
 // PHONE
 .phone
   padding-bottom: 36px

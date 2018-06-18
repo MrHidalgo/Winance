@@ -2,6 +2,7 @@
 @import utilities/mixins
 
 @import vendor/normalize
+@import vendor/_fontawesome-all
 //@import vendor/slick
 //@import bower_components/magnific-popup/dist/magnific-popup
 //@import vendor/hamburgers
@@ -18,12 +19,21 @@
 //@import elements/modal
 //@import elements/wow
 
+// MACROS
+// ===============
+@import macros/menu
+@import macros/social
+
+// COMPONENTS
+// ===============
 @import components/header
 @import components/footer
 @import components/index
 
-@import macros/menu
-@import macros/social
+// HOMEPAGE
+// ===============
+@import "components/homepage/print"
+@import "components/homepage/testimonials"
+@import "components/homepage/advice"
+@import "components/homepage/blogs"
 
-// test file
-//@import components/test

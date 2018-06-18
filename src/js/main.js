@@ -33,6 +33,8 @@ $(document).ready(function(){
     initMasks();
     initLazyLoad();
 
+    initMasonryBlogs();
+
     // development helper
     _window.on('resize', debounce(setBreakpoint, 200))
 
@@ -132,6 +134,18 @@ $(document).ready(function(){
       } else {
         $(val).removeClass('is-active')
       }
+    });
+  }
+
+
+  //////////
+  // MASONRY
+  //////////
+  function initMasonryBlogs() {
+    $('[masonry-blog-js]').masonry({
+      itemSelector: '.blogs__block',
+      gutter: 18,
+      horizontalOrder: true
     });
   }
 
