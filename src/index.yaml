@@ -2,22 +2,22 @@ ProjectTitle: Winance
 
 PageList:
 - file: homepage.html
-  ready: 1
+  ready: 5
 - file: about.html
-  ready: 1
+  ready: 5
 - file: investors.html
-  ready: 1
+  ready: 5
 - file: howWeEarn.html
-  ready: 1
+  ready: 5
 - file: reviews.html
-  ready: 1
+  ready: 5
 - file: press.html
-  ready: 1
+  ready: 5
 - file: blog.html
-  ready: 1
+  ready: 5
 - file: faq.html
-  ready: 1
+  ready: 5
 - file: contacts.html
-  ready: 1
+  ready: 5
 - file: cabinet.html
-  ready: 1
+  ready: 5

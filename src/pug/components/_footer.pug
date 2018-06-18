@@ -49,23 +49,28 @@
   var socialItem = [
     {
       href: "#",
-      class: "fb"
+      class: "fb",
+      icon: "fab fa-facebook-f"
     },
     {
       href: "#",
-      class: "tw"
+      class: "tw",
+      icon: "fab fa-twitter"
     },
     {
       href: "#",
-      class: "vk"
+      class: "vk",
+      icon: "fab fa-vk"
     },
     {
       href: "#",
-      class: "in"
+      class: "in",
+      icon: "fab fa-instagram"
     },
     {
       href: "#",
-      class: "yb"
+      class: "yb",
+      icon: "fab fa-youtube"
     }
   ];
 
@@ -80,7 +85,7 @@ footer.footer
         +footerNav(menuArr1)
 
       .footer__col.footer__col-2
-        +phoneNum("+7 495 777 40 05")
+        +phoneNum("footer", "+7 495 777 40 05")
 
         +social("Присоединяйтесь", socialItem)
 

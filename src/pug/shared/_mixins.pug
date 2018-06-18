@@ -20,8 +20,8 @@ mixin footerNav(arr)
 
 
 //- PHONE
-mixin phoneNum(num)
-  .phone
+mixin phoneNum(classMod, num)
+  .phone(class!= "phone--" + classMod)
     a(
       href!= "tel:num"
       class!= "phone__link"
@@ -37,5 +37,5 @@ mixin social(title, arr)
       each val, idx in arr
         li.social__item
           a.social__link(href!= arr[idx].href title!= "" class!= "social__link--" + arr[idx].class)
-            i(class!="icon-social--" + arr[idx].class)
+            i.social__icon(class!= arr[idx].icon)
 
