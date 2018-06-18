@@ -10,6 +10,29 @@ mixin icon(name, modClass)
     use(xlink:href= svgSprite + '#' + name)
 
 
+//- LOGO
+mixin logotype()
+  .logo
+    a.logo__link(href="homepage.html" title!=)
+      img(src="./img/img-logo.png" srcset!="./img/img-logo@2x.png 2x" title!="" alt!="")
+
+
+//- LANG
+mixin lang(arr)
+  .lang
+    each val, idx in arr
+      a(href!= arr[idx].href title!="" class="lang__link")!= arr[idx].name
+
+
+//- HEADER NAV
+mixin headerNav(arr)
+  .nav
+    ul.nav__list
+      each val, idx in arr
+        li.nav__item
+          a.nav__link(href!= arr[idx].href title)!= arr[idx].name
+
+
 //- FOOTER MENU
 mixin footerNav(arr)
   .menu

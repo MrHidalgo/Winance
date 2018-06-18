@@ -1,9 +1,54 @@
 // HEADER :: START
 
 
+-
+  var headerNav = [
+    {
+      href: 'blog.html',
+      name: 'Блог'
+    },
+    {
+      href: 'press.html',
+      name: 'Пресса о нас'
+    },
+    {
+      href: 'contacts.html',
+      name: 'Контакты'
+    },
+    {
+      href: 'reviews.html',
+      name: 'Отзывы'
+    }
+  ];
+  var headerLang = [
+    {
+      href: '#',
+      name: 'EN'
+    }
+  ];
+
+
 header.header
-  .container
-    .header__wrapper
+  .header__bar
+    .container
+      .header__bar-row
+        .header__bar-left
+          +lang(headerLang)
+
+        .header__bar-middle
+          +headerNav(headerNav)
+
+        .header__bar-right
+          +phoneNum("header", "+7 495 777 40 05")
+
+  .header__wrapper
+    .container
+      .header__wrapper-row
+        .header__wrapper-left
+          +logotype()
+
+        .header__wrapper-middle
+        .header__wrapper-right
 
         
 // HEADER :: END

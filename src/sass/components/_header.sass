@@ -1,5 +1,58 @@
 // HEADER
 
 .header
+  &__bar
+    min-height: 40px
+    background-color: $c-blueZodiac
+    +r(767)
+      display: none
+
+
+    &-row
+      display: flex
+      align-items: center
+      justify-content: space-between
+      min-height: 40px
+
+
+    &-left
+      display: flex
+      width: 25%
+
+
+    &-middle
+      display: flex
+      justify-content: center
+      width: 50%
+
+
+    &-right
+      display: flex
+      justify-content: flex-end
+      width: 25%
+
+
+  &__wrapper
+    min-height: 107px
+    background-color: $c-whiteSmoke
+
+
+    &-row
+      display: flex
+      align-items: center
+      justify-content: space-between
+      min-height: 107px
+
+
+    &-left
+      width: 25%
+
+
+    &-middle
+      width: 50%
+
+
+    &-right
+      width: 25%
 
 // \ HEADER

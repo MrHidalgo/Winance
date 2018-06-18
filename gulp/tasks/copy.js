@@ -4,8 +4,8 @@ var config = require('../config');
 gulp.task('copy:fonts', function() {
   return gulp
     .src([
-      config.src.fonts + '/*.{ttf,eot,woff,woff2}',
-      config.src.fonts + '/**/*.{ttf,eot,woff,woff2}'
+      config.src.fonts + '/*.{ttf,eot,woff,woff2,svg}',
+      config.src.fonts + '/**/*.{ttf,eot,woff,woff2,svg}'
     ])
     .pipe(gulp.dest(config.dest.fonts));
 });

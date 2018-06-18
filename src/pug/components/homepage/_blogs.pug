@@ -71,7 +71,7 @@
 
 
 mixin blogsBlock(classMod, count, imgName, title, text, badgeArr, date)
-  .blogs__block(class!= (classMod !== "") ? "blogs__block-" + count + " blogs__block--" + classMod: "blogs__block-" + count)
+  a.blogs__block(href="#" class!= (classMod !== "") ? "blogs__block-" + count + " blogs__block--" + classMod: "blogs__block-" + count)
     .blogs__block-header
       if(classMod === "image")
         //p!= imgName
@@ -112,7 +112,7 @@ section.blogs
         )
 
   .container
-    a.blogs__btn.btn.btn--big(href="#" title!="" class!= "")!= "Все статьи"
+    a.blogs__btn.btn.btn--big(href="blog.html" title!="" class!= "")!= "Все статьи"
 
         
 // BLOGS :: END
