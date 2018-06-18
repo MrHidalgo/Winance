@@ -1,47 +1,11 @@
 $sprite: (
-	social--fb: (
+	parlor: (
 		offset-x: 0px,
 		offset-y: 0px,
-		width: 50px,
-		height: 50px,
-		total-width: 170px,
-		total-height: 110px,
-		image: '../img/sprite.png'
-	),
-	social--in: (
-		offset-x: -60px,
-		offset-y: 0px,
-		width: 50px,
-		height: 50px,
-		total-width: 170px,
-		total-height: 110px,
-		image: '../img/sprite.png'
-	),
-	social--tw: (
-		offset-x: 0px,
-		offset-y: -60px,
-		width: 50px,
-		height: 50px,
-		total-width: 170px,
-		total-height: 110px,
-		image: '../img/sprite.png'
-	),
-	social--vk: (
-		offset-x: -60px,
-		offset-y: -60px,
-		width: 50px,
-		height: 50px,
-		total-width: 170px,
-		total-height: 110px,
-		image: '../img/sprite.png'
-	),
-	social--yb: (
-		offset-x: -120px,
-		offset-y: 0px,
-		width: 50px,
-		height: 50px,
-		total-width: 170px,
-		total-height: 110px,
+		width: 17px,
+		height: 16px,
+		total-width: 17px,
+		total-height: 16px,
 		image: '../img/sprite.png'
 	),
 );
@@ -100,18 +64,6 @@ $sprite: (
 
 
 
-	.icon-social--fb {
-		@include sprite(social--fb)
-	}
-	.icon-social--in {
-		@include sprite(social--in)
-	}
-	.icon-social--tw {
-		@include sprite(social--tw)
-	}
-	.icon-social--vk {
-		@include sprite(social--vk)
-	}
-	.icon-social--yb {
-		@include sprite(social--yb)
+	.icon-parlor {
+		@include sprite(parlor)
 	}

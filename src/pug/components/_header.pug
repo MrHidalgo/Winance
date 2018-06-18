@@ -2,7 +2,7 @@
 
 
 -
-  var headerNav = [
+  var headerBarNav = [
     {
       href: 'blog.html',
       name: 'Блог'
@@ -20,12 +20,31 @@
       name: 'Отзывы'
     }
   ];
+  var headerWrapperNav = [
+    {
+      href: 'about.html',
+      name: 'О фонде'
+    },
+    {
+      href: 'howWeEarn.html',
+      name: 'Как мы зарабатываем'
+    },
+    {
+      href: 'investors.html',
+      name: 'Инвесторам'
+    },
+    {
+      href: 'faq.html',
+      name: 'FAQ'
+    }
+  ];
   var headerLang = [
     {
       href: '#',
       name: 'EN'
     }
   ];
+
 
 
 header.header
@@ -36,7 +55,7 @@ header.header
           +lang(headerLang)
 
         .header__bar-middle
-          +headerNav(headerNav)
+          +headerNav("bar", headerBarNav)
 
         .header__bar-right
           +phoneNum("header", "+7 495 777 40 05")
@@ -48,7 +67,12 @@ header.header
           +logotype()
 
         .header__wrapper-middle
+          +headerNav("wrapper", headerWrapperNav)
+
         .header__wrapper-right
+          a.parlor(href="#" title!="" class!="")
+            i.parlor__icon.icon-parlor
+            != "Кабинет"
 
         
 // HEADER :: END

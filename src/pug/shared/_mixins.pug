@@ -25,8 +25,8 @@ mixin lang(arr)
 
 
 //- HEADER NAV
-mixin headerNav(arr)
-  .nav
+mixin headerNav(classMod, arr)
+  .nav(class!="nav--" + classMod)
     ul.nav__list
       each val, idx in arr
         li.nav__item
