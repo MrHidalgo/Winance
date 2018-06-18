@@ -3,16 +3,49 @@
 .blogs
   padding-top: 90px
   padding-bottom: 143px
+  +r(767)
+    padding-top: 45px
+    padding-bottom: 70px
+
+
+  .container
+    +r(767)
+      &:first-child
+        padding-right: 0
 
 
   &__title
     padding-bottom: 58px
+    +r(767)
+      padding-bottom: 29px
+
+
+  &__row
+    +r(767)
+      white-space: nowrap
+      overflow-x: auto
+      height: auto !important
+
 
   &__block
+    white-space: normal
     width: 388px
     margin-bottom: 20px
     border-radius: 3px
     border: 1px solid $c-whisper
+    +rmin(320)
+      display: inline-block
+      vertical-align: top
+      position: static !important
+      margin-right: 18px
+      width: 300px
+    +rmin(768)
+      display: block
+      position: absolute !important
+      margin-right: 0
+      width: calc((100% - 18px) / 2)
+    +rmin(992)
+      width: calc((100% - 36px) / 3)
 
     &--image
       .blogs__block-header
@@ -39,12 +72,26 @@
       display: flex
       align-items: center
       padding: 0 25px 20px
+      +rmin(320)
+        align-items: flex-start
+        flex-direction: column
+      +rmin(1200)
+        align-items: center
+        flex-direction: row
 
       &--left
         width: 75%
+        +rmin(320)
+          width: 100%
+        +rmin(1200)
+          width: 75%
 
       &--right
         width: calc(100% - 75%)
+        +rmin(320)
+          width: 100%
+        +rmin(1200)
+          width: calc(100% - 75%)
 
     &-wrap
       position: relative
@@ -98,8 +145,14 @@
       white-space: nowrap
       color: $c-nobel
       font-size: 12px
+      +rmin(320)
+        margin-top: 9px
+      +rmin(1200)
+        margin-top: 0
 
 
   &__btn
     margin-top: 62px
+    +r(767)
+      margin-top: 31px
 // \ BLOGS
