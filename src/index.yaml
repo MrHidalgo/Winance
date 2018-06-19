@@ -20,6 +20,6 @@ PageList:
 - file: faq.html
   ready: 75
 - file: contacts.html
-  ready: 5
+  ready: 75
 - file: cabinet.html
   ready: 5

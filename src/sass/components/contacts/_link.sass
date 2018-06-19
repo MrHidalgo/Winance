@@ -15,10 +15,17 @@
     &__row
       display: flex
       align-items: flex-end
+      +r(767)
+        flex-wrap: wrap
 
 
     &__block
       width: calc(100% / 4)
+      +r(767)
+        width: 50%
+        margin-bottom: 27px
+      +r(575)
+        width: 100%
 
       &-0
         .link__block-box
@@ -42,23 +49,43 @@
 
       &-info
         padding-bottom: 9px
-        font-size: 18px
+        +r(767)
+          font-size: 16px
+        +r(575)
+          font-size: 14px
+        +rmin(768)
+          font-size: 16px
+        +rmin(992)
+          font-size: 18px
 
       &-title
+        white-space: nowrap
         display: block
         color: $c-royalBlue
         font-size: 24px
         font-weight: 600
+        +r(767)
+          font-size: 20px
+        +r(575)
+          font-size: 16px
+        +rmin(768)
+          font-size: 18px
+        +rmin(992)
+          font-size: 22px
+        +rmin(1200)
+          font-size: 24px
 
       &-additional
+        white-space: nowrap
         font-style: italic
 
       &-box
         display: flex
         padding: 30px
         margin-top: 34px
-
-      &-icon
-
+        +r(767)
+          height: 114px !important
+        +r(575)
+          margin-top: 17px
 
 // \ LINK
