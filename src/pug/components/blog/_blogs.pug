@@ -1,0 +1,186 @@
+// BLOGS :: START
+
+
+-
+  var blockData = [
+    {
+      attr: "business",
+      classMod: '',
+      imgName: '',
+      title: 'Бизнес-планы – готовые <br>примеры вашего предприятия <br>с расчетами',
+      text: 'От эффективности вашего поведения на рынке зависит ваш заработок. Поэтому придерживаться правильной политики при трейдинге – значит обеспечить себе доход. Выбрать ее достаточно сложно, так как экономика никогда не стоит на месте, все постоянно меняется.',
+      badgeArr: [
+        '<span>#</span> Бизнес'
+      ],
+      date: '12 августа 2018'
+    },
+    {
+      attr: "business & news",
+      classMod: 'image',
+      imgName: './img/img-block__blogs.jpeg',
+      title: 'Самые лучшие <br>и прибыльные стратегии <br>бинарных опционов',
+      text: 'Содержание Долгосрочный план действий. Краткосрочная политика. Практика. Альтернативный способ вложений. Долгосрочный план действий Мы начнем с самых надежных.',
+      badgeArr: [
+      '<span>#</span> Бизнес',
+      '<span>#</span> Новости'
+      ],
+      date: '12 августа 2018'
+    },
+    {
+      attr: "business & news",
+      classMod: '',
+      imgName: '',
+      title: 'Бизнес-планы – готовые <br>примеры вашего предприятия <br>с расчетами',
+      text: 'Отметим, что все приведенные цифры приблизительны и могут отличаться в зависимости от региона. Итак, обратимся к первичной информации: Первоначальные вложения составят около 2 миллионов. Окупаемость – порядка двух лет. Необходимая площадь...',
+      badgeArr: [
+      '<span>#</span> Бизнес',
+      '<span>#</span> Новости'
+      ],
+      date: '12 августа 2018'
+    },
+    {
+      attr: "news",
+      classMod: 'image',
+      imgName: './img/img-block__blogs.jpeg',
+      title: 'В этой статье мы разберем <br>ряд бесплатных стратегий',
+      text: 'Для торговли бинарными опционами (binary options): узнаем самые лучшие и прибыльные.',
+      badgeArr: [
+      '<span>#</span> Новости'
+      ],
+      date: '12 августа 2018'
+    },
+    {
+      attr: "business",
+      classMod: '',
+      imgName: '',
+      title: 'Бизнес-планы – готовые <br>примеры вашего предприятия <br>с расчетами',
+      text: 'В этой статье мы разберем ряд бесплатных стратегий.',
+      badgeArr: [
+      '<span>#</span> Бизнес'
+      ],
+      date: '12 августа 2018'
+    },
+    {
+      attr: "business & news",
+      classMod: '',
+      imgName: '',
+      title: 'Бизнес-планы – готовые <br>примеры вашего предприятия <br>с расчетами',
+      text: 'В этой статье мы разберем ряд бесплатных стратегий для торговли бинарными опционами (binary options): узнаем самые лучшие и прибыльные.',
+      badgeArr: [
+      '<span>#</span> Бизнес',
+      '<span>#</span> Новости'
+      ],
+      date: '12 августа 2018'
+    },
+    {
+      attr: "news",
+      classMod: '',
+      imgName: '',
+      title: 'Бизнес-планы – готовые <br>примеры вашего предприятия <br>с расчетами',
+      text: 'В этой статье мы разберем ряд бесплатных стратегий для торговли бинарными опционами (binary options): узнаем самые лучшие и прибыльные.',
+      badgeArr: [
+      '<span>#</span> Новости'
+      ],
+      date: '12 августа 2018'
+    },
+    {
+      attr: "business",
+      classMod: '',
+      imgName: '',
+      title: 'Бизнес-планы – готовые <br>примеры вашего предприятия <br>с расчетами',
+      text: 'Отметим, что все приведенные цифры приблизительны и могут отличаться в зависимости от региона. Итак, обратимся к первичной информации: Первоначальные вложения составят около 2 миллионов. Окупаемость – порядка двух лет. Необходимая площадь...',
+      badgeArr: [
+      '<span>#</span> Бизнес'
+      ],
+      date: '12 августа 2018'
+    },
+    {
+      attr: "news",
+      classMod: '',
+      imgName: '',
+      title: 'Бизнес-планы – готовые <br>примеры вашего предприятия <br>с расчетами',
+      text: 'От эффективности вашего поведения на рынке зависит ваш заработок. Поэтому придерживаться правильной политики при трейдинге – значит обеспечить себе доход. Выбрать ее достаточно сложно, так как экономика никогда не стоит на месте, все постоянно меняется.',
+      badgeArr: [
+      '<span>#</span> Новости'
+      ],
+      date: '12 августа 2018'
+    }
+  ];
+
+  var blogsPagination = [
+    {
+      name: 'Все',
+      attr: 'all'
+    },
+    {
+      name: 'Бизнес',
+      attr: 'business'
+    },
+    {
+      name: 'Новости',
+      attr: 'news'
+    }
+  ];
+
+
+mixin blogsBlock(attr, classMod, count, imgName, title, text, badgeArr, date)
+  a.blogs__block.is-show(
+    href="#"
+    class!= (classMod !== "") ? "blogs__block-" + count + " blogs__block--" + classMod: "blogs__block-" + count
+    data-filter= attr
+  )
+    .blogs__block-header
+      if(classMod === "image")
+        //p!= imgName
+        .blogs__block-wrap(style!="background-image: url('" + imgName + "')")
+          p!= title
+      else
+        p!= title
+
+    .blogs__block-body
+      p!= text
+
+    .blogs__block-footer
+      .blogs__block-footer--left
+        .blogs__block-badge
+          each badge in badgeArr
+            p!= badge
+
+      .blogs__block-footer--right
+        .blogs__block-date
+          p!= date
+
+
+section.blogs
+  .container
+
+    .blogs__pagination
+      ul.blogs__pagination-list
+        each val, idx in blogsPagination
+          li.blogs__pagination-item
+            a.blogs__pagination-link(
+              href="#"
+              title!=""
+              class!=(idx === 0) ? "is-active": ""
+              blogs-pagination-js
+              data-pagination= blogsPagination[idx].attr
+            )!= blogsPagination[idx].name
+
+    .blogs__row(masonry-blog-js)
+      each val, idx in blockData
+        +blogsBlock(
+          blockData[idx].attr,
+          blockData[idx].classMod,
+          idx,
+          blockData[idx].imgName,
+          blockData[idx].title,
+          blockData[idx].text,
+          blockData[idx].badgeArr,
+          blockData[idx].date
+        )
+
+  .container
+    a.blogs__btn.btn.btn--big(href="#" title!="" class!= "" blogs-more-js)!= "Показать еще"
+
+        
+// BLOGS :: END

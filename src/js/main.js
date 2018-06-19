@@ -149,10 +149,60 @@ $(document).ready(function(){
     });
   }
 
+
+  //////////
+  // BLOGS PAGINATION
+  //////////
+  _document.on("click", "[blogs-pagination-js]", function(e) {
+    var elem = $(e.currentTarget);
+
+    $("[blogs-pagination-js]").removeClass("is-active");
+    elem.addClass("is-active");
+
+    // ADD LOGIC FOR FILTER BLOCK
+    var attrElem = elem.attr("data-pagination"),
+      blogBlock = $(".blogs__block");
+
+    if($(_window).width() > 767) {
+      var masonryGridOption = {
+        itemSelector: '.blogs__block.is-show',
+        gutter: 18,
+        horizontalOrder: true
+      };
+      var masonryGrid = $('[masonry-blog-js]').masonry(masonryGridOption);
+    }
+
+    if(attrElem === "all") {
+
+      blogBlock.removeClass("is-hide");
+      blogBlock.addClass("is-show");
+
+    } else {
+
+      blogBlock.removeClass("is-hide");
+      blogBlock.addClass("is-show");
+
+      blogBlock.each(function(idx, val) {
+        var elemAttr = $(val).attr("data-filter");
+
+        if(elemAttr.indexOf(attrElem) === -1) {
+          $(val).addClass("is-hide");
+          $(val).removeClass("is-show");
+        }
+      });
+
+    }
+
+    if($(_window).width() > 767) {
+      masonryGrid.masonry('reloadItems');
+      masonryGrid.masonry('layout');
+    }
+  });
+
+
   //////////
   // SLIDERS
   //////////
-
   function initSliders(){
     var slickNextArrow = '<div class="slick-prev"><svg class="ico ico-back-arrow"><use xlink:href="img/sprite.svg#ico-back-arrow"></use></svg></div>';
     var slickPrevArrow = '<div class="slick-next"><svg class="ico ico-next-arrow"><use xlink:href="img/sprite.svg#ico-next-arrow"></use></svg></div>'

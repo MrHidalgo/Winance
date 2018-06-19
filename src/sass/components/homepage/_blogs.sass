@@ -26,6 +26,44 @@
       height: auto !important
 
 
+  &__pagination
+    padding-bottom: 12px
+
+    &-list
+      display: flex
+      flex-wrap: wrap
+
+    &-item
+      display: flex
+      padding-bottom: 10px
+
+    &-link
+      display: flex
+      align-items: center
+      justify-content: center
+      height: 32px
+      border-radius: 3px
+      border: 1px solid rgba($c-royalBlue, 0.2)
+      margin-right: 10px
+      padding-left: 10px
+      padding-right: 10px
+      color: $c-royalBlue
+      text-align: center
+      font-size: 18px
+      +transition(border-color, background-color, color)
+      +r(767)
+        font-size: 16px
+
+      &:hover
+        border-color: $c-royalBlue
+        +transition(border-color)
+      &.is-active
+        border-color: transparent
+        background-color: rgba($c-blueZodiac, 0.24)
+        color: $c-blueZodiac
+        +transition(border-color, background-color, color)
+
+
   &__block
     white-space: normal
     width: 388px
@@ -45,6 +83,9 @@
       width: calc((100% - 18px) / 2)
     +rmin(992)
       width: calc((100% - 36px) / 3)
+
+    &.is-hide
+      display: none
 
     &--image
       .blogs__block-header
