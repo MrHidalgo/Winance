@@ -1,0 +1,103 @@
+// QUESANS
+
+.quesAns
+  padding-top: 90px
+  padding-bottom: 143px
+  +r(767)
+    padding-top: 45px
+    padding-bottom: 70px
+
+
+  .container
+    +r(767)
+      &:first-child
+        padding-right: 0
+
+
+  &__row
+    +r(767)
+      white-space: nowrap
+      overflow-x: auto
+      height: auto !important
+
+
+  &__pagination
+    padding-bottom: 12px
+
+    &-list
+      display: flex
+      flex-wrap: wrap
+
+    &-item
+      display: flex
+      padding-bottom: 10px
+
+    &-link
+      display: flex
+      align-items: center
+      justify-content: center
+      height: 32px
+      border-radius: 3px
+      border: 1px solid rgba($c-royalBlue, 0.2)
+      margin-right: 10px
+      padding-left: 10px
+      padding-right: 10px
+      color: $c-royalBlue
+      text-align: center
+      font-size: 18px
+      +transition(border-color, background-color, color)
+      +r(767)
+        font-size: 16px
+
+      &:hover
+        border-color: $c-royalBlue
+        +transition(border-color)
+      &.is-active
+        border-color: transparent
+        background-color: rgba($c-blueZodiac, 0.24)
+        color: $c-blueZodiac
+        +transition(border-color, background-color, color)
+
+
+  &__block
+    white-space: normal
+    width: 388px
+    margin-bottom: 20px
+    padding: 30px 25px 35px
+    border-radius: 3px
+    border: 1px solid $c-whisper
+    background-color: $c-white
+    +rmin(320)
+      display: inline-block
+      vertical-align: top
+      position: static !important
+      margin-right: 18px
+      width: 300px
+    +rmin(768)
+      display: block
+      position: absolute !important
+      margin-right: 0
+      width: calc((100% - 18px) / 2)
+    +rmin(992)
+      width: calc((100% - 36px) / 3)
+
+    &.is-hide
+      display: none
+
+    &-header
+      p
+        font-size: 20px
+        font-weight: 600
+
+    &-body
+      p
+        font-size: 16px
+
+
+  &__btn
+    margin-top: 62px
+    +r(767)
+      margin-top: 31px
+
+
+// \ QUESANS

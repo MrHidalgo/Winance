@@ -36,6 +36,7 @@ $(document).ready(function(){
     initMasonryBlogs();
     initMasonryReviews();
     initMasonryPress();
+    initMasonryFaq();
 
     // development helper
     _window.on('resize', debounce(setBreakpoint, 200))
@@ -164,11 +165,18 @@ $(document).ready(function(){
       horizontalOrder: true
     });
   }
+  function initMasonryFaq() {
+    $('[masonry-faq-js]').masonry({
+      itemSelector: '.quesAns__block',
+      gutter: 18,
+      horizontalOrder: true
+    });
+  }
 
 
 
   //////////
-  // BLOGS PAGINATION
+  // BLOGS/FAQ PAGINATION
   //////////
   _document.on("click", "[blogs-pagination-js]", function(e) {
     var elem = $(e.currentTarget);
@@ -187,6 +195,51 @@ $(document).ready(function(){
         horizontalOrder: true
       };
       var masonryGrid = $('[masonry-blog-js]').masonry(masonryGridOption);
+    }
+
+    if(attrElem === "all") {
+
+      blogBlock.removeClass("is-hide");
+      blogBlock.addClass("is-show");
+
+    } else {
+
+      blogBlock.removeClass("is-hide");
+      blogBlock.addClass("is-show");
+
+      blogBlock.each(function(idx, val) {
+        var elemAttr = $(val).attr("data-filter");
+
+        if(elemAttr.indexOf(attrElem) === -1) {
+          $(val).addClass("is-hide");
+          $(val).removeClass("is-show");
+        }
+      });
+
+    }
+
+    if($(_window).width() > 767) {
+      masonryGrid.masonry('reloadItems');
+      masonryGrid.masonry('layout');
+    }
+  });
+  _document.on("click", "[quesAns-pagination-js]", function(e) {
+    var elem = $(e.currentTarget);
+
+    $("[quesAns-pagination-js]").removeClass("is-active");
+    elem.addClass("is-active");
+
+    // ADD LOGIC FOR FILTER BLOCK
+    var attrElem = elem.attr("data-pagination"),
+      blogBlock = $(".quesAns__block");
+
+    if($(_window).width() > 767) {
+      var masonryGridOption = {
+        itemSelector: '.quesAns__block.is-show',
+        gutter: 18,
+        horizontalOrder: true
+      };
+      var masonryGrid = $('[masonry-faq-js]').masonry(masonryGridOption);
     }
 
     if(attrElem === "all") {

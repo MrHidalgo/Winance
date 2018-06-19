@@ -1,0 +1,127 @@
+// BLOGS :: START
+
+
+-
+  var quesAnsData = [
+    {
+      attr: "investors",
+      href: "#",
+      classMod: "",
+      title: "Бизнес-планы – готовые <br>примеры вашего предприятия с расчетами",
+      text: "Отметим, что все приведенные цифры приблизительны и могут отличаться в зависимости от региона. Итак, обратимся к первичной информации: Первоначальные вложения составят около 2 миллионов. Окупаемость – порядка двух лет. Необходимая площадь..."
+    },
+    {
+      attr: "affiliate",
+      href: "#",
+      classMod: "",
+      title: "Бизнес-планы – готовые <br>примеры вашего предприятия с расчетами",
+      text: "Отметим, что все приведенные цифры приблизительны и могут отличаться в зависимости от региона..."
+    },
+    {
+      attr: "investors",
+      href: "#",
+      classMod: "",
+      title: "Бизнес-планы – готовые <br>примеры вашего предприятия с расчетами",
+      text: "Отметим, что все приведенные цифры приблизительны и могут отличаться в зависимости от региона. Итак, обратимся к первичной информации: Первоначальные вложения составят около 2 миллионов."
+    },
+    {
+      attr: "affiliate & terms",
+      href: "#",
+      classMod: "",
+      title: "Бизнес-планы – готовые <br>примеры вашего предприятия с расчетами",
+      text: "Отметим, что все приведенные цифры приблизительны и могут отличаться в зависимости от региона. Итак, обратимся к первичной информации..."
+    },
+    {
+      attr: "investors & affiliate",
+      href: "#",
+      classMod: "",
+      title: "Бизнес-планы – готовые <br>примеры вашего предприятия с расчетами",
+      text: "Отметим, что все приведенные цифры приблизительны и могут отличаться в зависимости от региона..."
+    },
+    {
+      attr: "terms & investors",
+      href: "#",
+      classMod: "",
+      title: "Бизнес-планы – готовые <br>примеры вашего предприятия с расчетами",
+      text: "Отметим, что все приведенные цифры приблизительны и могут отличаться в зависимости от региона. Итак, обратимся к первичной информации..."
+    },
+    {
+      attr: "affiliate & terms & investors",
+      href: "#",
+      classMod: "",
+      title: "Бизнес-планы – готовые <br>примеры вашего предприятия с расчетами",
+      text: "Отметим, что все приведенные цифры приблизительны и могут..."
+    },
+    {
+      attr: "terms",
+      href: "#",
+      classMod: "",
+      title: "Бизнес-планы – готовые <br>примеры вашего предприятия с расчетами",
+      text: "Отметим, что все приведенные цифры приблизительны и могут отличаться в зависимости от региона. Итак, обратимся к первичной информации: Первоначальные вложения составят около 2 миллионов. Окупаемость – порядка двух лет..."
+    }
+  ];
+
+  var quesAnsPagination = [
+    {
+      name: 'Все',
+      attr: 'all'
+    },
+    {
+      name: 'Инвестиции',
+      attr: 'investors'
+    },
+    {
+      name: 'Партнёрская программ',
+      attr: 'affiliate'
+    },
+    {
+      name: 'Термины',
+      attr: 'terms'
+    }
+  ];
+
+
+mixin quesAnsBlock(attr, href, classMod, idx, title, text)
+  a.quesAns__block.is-show(
+    href!= href
+    class!= (classMod !== "") ? "quesAns__block-" + idx + " quesAns__block--" + classMod: "quesAns__block-" + idx
+    data-filter= attr
+  )
+    .quesAns__block-header
+        p!= title
+
+    .quesAns__block-body
+      p!= text
+
+
+section.quesAns
+  .container
+
+    .quesAns__pagination
+      ul.quesAns__pagination-list
+        each val, idx in quesAnsPagination
+          li.quesAns__pagination-item
+            a.quesAns__pagination-link(
+              href="#"
+              title!=""
+              class!=(idx === 0) ? "is-active": ""
+              quesAns-pagination-js
+              data-pagination= quesAnsPagination[idx].attr
+            )!= quesAnsPagination[idx].name
+
+    .quesAns__row(masonry-faq-js)
+      each val, idx in quesAnsData
+        +quesAnsBlock(
+          quesAnsData[idx].attr,
+          quesAnsData[idx].href,
+          quesAnsData[idx].classMod,
+          idx,
+          quesAnsData[idx].title,
+          quesAnsData[idx].text
+        )
+
+  .container
+    a.quesAns__btn.quesAns__btn--blog.btn.btn--big(href="#" title!="" class!= "")!= "Показать все"
+
+        
+// BLOGS :: END
