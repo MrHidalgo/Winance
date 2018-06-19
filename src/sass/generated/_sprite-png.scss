@@ -1,11 +1,20 @@
 $sprite: (
 	parlor: (
-		offset-x: 0px,
+		offset-x: -38px,
 		offset-y: 0px,
 		width: 17px,
 		height: 16px,
-		total-width: 17px,
-		total-height: 16px,
+		total-width: 55px,
+		total-height: 30px,
+		image: '../img/sprite.png'
+	),
+	user: (
+		offset-x: 0px,
+		offset-y: 0px,
+		width: 28px,
+		height: 30px,
+		total-width: 55px,
+		total-height: 30px,
 		image: '../img/sprite.png'
 	),
 );
@@ -66,4 +75,7 @@ $sprite: (
 
 	.icon-parlor {
 		@include sprite(parlor)
+	}
+	.icon-user {
+		@include sprite(user)
 	}

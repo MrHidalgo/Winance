@@ -1,5 +1,78 @@
 // TESTIMONIALS
 
 .testimonials
+  padding-top: 90px
+  padding-bottom: 143px
+  +r(991)
+    padding-bottom: 90px
+  +r(767)
+    padding-top: 45px
+    padding-bottom: 45px
+
+  &__title
+    padding-bottom: 58px
+
+
+  &__row
+    +r(767)
+      white-space: nowrap
+      overflow-x: auto
+      height: auto !important
+
+  &__btn
+    margin-top: 86px
+    +r(767)
+      margin-top: 43px
+
+  &__block
+    white-space: normal
+    width: 388px
+    margin-bottom: 20px
+    padding: 35px 30px
+    border-radius: 3px
+    border: 1px solid $c-whisper
+    +rmin(320)
+      display: inline-block
+      vertical-align: top
+      position: static !important
+      margin-right: 18px
+      width: 300px
+    +rmin(768)
+      display: block
+      position: absolute !important
+      margin-right: 0
+      width: calc((100% - 18px) / 2)
+    +rmin(992)
+      width: calc((100% - 36px) / 3)
+
+    &-header
+      display: flex
+
+
+    &-body
+      padding-top: 25px
+
+    &-left
+      width: 59px
+
+    &-right
+      width: calc(100% - 59px)
+
+      p
+        &:nth-child(1)
+          font-size: 20px
+          font-weight: 600
+        &:nth-child(2)
+          font-style: italic
+
+    &-icon
+      display: flex
+      align-items: flex-end
+      justify-content: center
+      width: 40px
+      height: 40px
+      text-align: center
+      border-radius: 100%
+      background-color: $c-royalBlue
 
 // \ TESTIMONIALS
