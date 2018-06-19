@@ -18,7 +18,7 @@ PageList:
 - file: blogDetails.html
   ready: 75
 - file: faq.html
-  ready: 5
+  ready: 75
 - file: contacts.html
   ready: 5
 - file: cabinet.html
