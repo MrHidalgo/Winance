@@ -5,6 +5,7 @@
   var blockData = [
     {
       attr: "business",
+      href: "blogDetails.html",
       classMod: '',
       imgName: '',
       title: 'Бизнес-планы – готовые <br>примеры вашего предприятия <br>с расчетами',
@@ -16,6 +17,7 @@
     },
     {
       attr: "business & news",
+      href: "blogDetails.html",
       classMod: 'image',
       imgName: './img/img-block__blogs.jpeg',
       title: 'Самые лучшие <br>и прибыльные стратегии <br>бинарных опционов',
@@ -28,6 +30,7 @@
     },
     {
       attr: "business & news",
+      href: "blogDetails.html",
       classMod: '',
       imgName: '',
       title: 'Бизнес-планы – готовые <br>примеры вашего предприятия <br>с расчетами',
@@ -40,6 +43,7 @@
     },
     {
       attr: "news",
+      href: "blogDetails.html",
       classMod: 'image',
       imgName: './img/img-block__blogs.jpeg',
       title: 'В этой статье мы разберем <br>ряд бесплатных стратегий',
@@ -51,6 +55,7 @@
     },
     {
       attr: "business",
+      href: "blogDetails.html",
       classMod: '',
       imgName: '',
       title: 'Бизнес-планы – готовые <br>примеры вашего предприятия <br>с расчетами',
@@ -62,6 +67,7 @@
     },
     {
       attr: "business & news",
+      href: "blogDetails.html",
       classMod: '',
       imgName: '',
       title: 'Бизнес-планы – готовые <br>примеры вашего предприятия <br>с расчетами',
@@ -74,6 +80,7 @@
     },
     {
       attr: "news",
+      href: "blogDetails.html",
       classMod: '',
       imgName: '',
       title: 'Бизнес-планы – готовые <br>примеры вашего предприятия <br>с расчетами',
@@ -85,6 +92,7 @@
     },
     {
       attr: "business",
+      href: "blogDetails.html",
       classMod: '',
       imgName: '',
       title: 'Бизнес-планы – готовые <br>примеры вашего предприятия <br>с расчетами',
@@ -96,6 +104,7 @@
     },
     {
       attr: "news",
+      href: "blogDetails.html",
       classMod: '',
       imgName: '',
       title: 'Бизнес-планы – готовые <br>примеры вашего предприятия <br>с расчетами',
@@ -123,9 +132,9 @@
   ];
 
 
-mixin blogsBlock(attr, classMod, count, imgName, title, text, badgeArr, date)
+mixin blogsBlock(attr, href, classMod, count, imgName, title, text, badgeArr, date)
   a.blogs__block.is-show(
-    href="#"
+    href!= href
     class!= (classMod !== "") ? "blogs__block-" + count + " blogs__block--" + classMod: "blogs__block-" + count
     data-filter= attr
   )
@@ -170,6 +179,7 @@ section.blogs
       each val, idx in blockData
         +blogsBlock(
           blockData[idx].attr,
+          blockData[idx].href,
           blockData[idx].classMod,
           idx,
           blockData[idx].imgName,
@@ -180,7 +190,7 @@ section.blogs
         )
 
   .container
-    a.blogs__btn.btn.btn--big(href="#" title!="" class!= "" blogs-more-js)!= "Показать еще"
+    a.blogs__btn.btn.btn--big(href="#" title!="" class!= "")!= "Показать еще"
 
         
 // BLOGS :: END
