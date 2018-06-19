@@ -35,6 +35,7 @@ $(document).ready(function(){
 
     initMasonryBlogs();
     initMasonryReviews();
+    initMasonryPress();
 
     // development helper
     _window.on('resize', debounce(setBreakpoint, 200))
@@ -149,10 +150,16 @@ $(document).ready(function(){
       horizontalOrder: true
     });
   }
-
   function initMasonryReviews() {
     $('[masonry-testimonials-js]').masonry({
       itemSelector: '.testimonials__block',
+      gutter: 18,
+      horizontalOrder: true
+    });
+  }
+  function initMasonryPress() {
+    $('[masonry-print-js]').masonry({
+      itemSelector: '.print__block',
       gutter: 18,
       horizontalOrder: true
     });

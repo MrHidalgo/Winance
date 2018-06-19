@@ -1,8 +1,83 @@
 // PRINT :: START
 
+-
+  var printBlockData = [
+    {
+      href: "press.html",
+      classMod: "",
+      imageName: "img-logo__press.png",
+      imageNameRetina: "img-logo__press@2x.png",
+      description: "За 2,5 года площадка StartTrack привлекла в 39 компаний более 940 млн рублей. Площадка является посредником, предоставляет сервис и инфраструктуру, а договорные отношения между инвесторами и компаниями-заемщиками регулируются ГК РФ."
+    },
+    {
+      href: "press.html",
+      classMod: "",
+      imageName: "img-logo__press.png",
+      imageNameRetina: "img-logo__press@2x.png",
+      description: "«ВЭБ Инновации» проинвестирует в StartTrack 200 млн рублей. Сегодня через площадку StartTrack проходит 60% коллективных инвестиций в РФ в малый и средний бизнес. Инвестиционный потенциал площадки и 2000 аккредитованных инвесторов превышает 7 миллиардов рублей."
+    },
+    {
+      href: "press.html",
+      classMod: "",
+      imageName: "img-logo__press.png",
+      imageNameRetina: "img-logo__press@2x.png",
+      description: "Инвестируя по договору займа, инвестор получает 20–30% годовых. Приобретая долю или акции компании, он может заработать и 50–100% за год. За три года инвесторы StartTrack вложили в 55 компаний уже 1,5 млрд руб."
+    },
+    {
+      href: "press.html",
+      classMod: "",
+      imageName: "img-logo__press.png",
+      imageNameRetina: "img-logo__press@2x.png",
+      description: "Инвестируя по договору займа, инвестор получает 20–30% годовых. Приобретая долю или акции компании, он может заработать и 50–100% за год. За три года инвесторы StartTrack вложили в 55 компаний уже 1,5 млрд руб."
+    },
+    {
+      href: "press.html",
+      classMod: "",
+      imageName: "img-logo__press.png",
+      imageNameRetina: "img-logo__press@2x.png",
+      description: "За 2,5 года площадка StartTrack привлекла в 39 компаний более 940 млн рублей. Площадка является посредником, предоставляет сервис и инфраструктуру, а договорные отношения между инвесторами и компаниями-заемщиками регулируются ГК РФ."
+    },
+    {
+      href: "press.html",
+      classMod: "",
+      imageName: "img-logo__press.png",
+      imageNameRetina: "img-logo__press@2x.png",
+      description: "«ВЭБ Инновации» проинвестирует в StartTrack 200 млн рублей. Сегодня через площадку StartTrack проходит 60% коллективных инвестиций в РФ в малый и средний бизнес. Инвестиционный потенциал площадки и 2000 аккредитованных инвесторов превышает 7 миллиардов рублей."
+    }
+  ];
+
+mixin printBlock(href, classMod, idx, imageName, imageNameRetina, description)
+  a.print__block(title!='' href!= href class!= 'print__block-' + idx + ' ' + classMod)
+    .print__block-header
+      img.print__block-image(
+        src!="./img/" + imageName
+        srcset!= "./img/" + imageNameRetina + " 2x"
+        class!= ""
+        title!= ""
+        alt!= ""
+      )
+
+    .print__block-body
+      p!= description
 
 section.print
   .container
+
+    h1.print__title.title!= "Пресса о нас"
+
+    .print__row(masonry-print-js)
+      each val, idx in printBlockData
+        +printBlock(
+          printBlockData[idx].href,
+          printBlockData[idx].classMod,
+          idx,
+          printBlockData[idx].imageName,
+          printBlockData[idx].imageNameRetina,
+          printBlockData[idx].description
+        )
+
+    .container
+      a.print__btn.btn.btn--big(href="press.html" title!="" class!= "")!= "Все статьи"
 
         
 // PRINT :: END

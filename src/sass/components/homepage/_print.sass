@@ -1,5 +1,58 @@
 // PRINT
 
 .print
+  padding-bottom: 90px
+  +r(767)
+    padding-bottom: 45px
+
+
+  //.reviews &
+  //  padding-top: 48px
+  //  padding-bottom: 175px
+  //  +r(767)
+  //    padding-top: 30px
+  //    padding-bottom: 80px
+
+
+  &__title
+    padding-bottom: 50px
+
+
+  &__row
+    +r(767)
+      white-space: nowrap
+      overflow-x: auto
+      height: auto !important
+
+
+  &__btn
+    margin-top: 97px
+    +r(767)
+      margin-top: 43px
+
+
+  &__block
+    white-space: normal
+    width: 388px
+    margin-bottom: 20px
+    padding: 35px 30px
+    border-radius: 3px
+    border: 1px solid $c-whisper
+    +rmin(320)
+      display: inline-block
+      vertical-align: top
+      position: static !important
+      margin-right: 18px
+      width: 300px
+    +rmin(768)
+      display: block
+      position: absolute !important
+      margin-right: 0
+      width: calc((100% - 18px) / 2)
+    +rmin(992)
+      width: calc((100% - 36px) / 3)
+
+    &-header
+      padding-bottom: 32px
 
 // \ PRINT
