@@ -29,10 +29,10 @@ gulp.task('pug:changed', function() {
 gulp.task('pug:watch', function() {
   gulp.watch([
     config.src.templates + '/**/_*.pug',
-    config.src.templates + '/**/**/_*.pug'
+    config.src.templates + '/**'
   ], ['pug']);
   gulp.watch([
     config.src.templates + '/**/[^_]*.pug',
-    config.src.templates + '/**/**/[^_]*.pug'
+    config.src.templates + '/**'
   ], ['pug:changed']);
 });
