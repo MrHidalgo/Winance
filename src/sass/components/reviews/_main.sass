@@ -1,0 +1,50 @@
+// MAIN
+
+.reviews
+  .main
+    padding-top: 93px
+    padding-bottom: 78px
+    background-color: $c-whiteSmoke
+    +r(767)
+      padding-top: 49px
+      padding-bottom: 39px
+
+
+    &__row
+      display: flex
+      align-items: center
+      +r(767)
+        flex-direction: column
+
+      &-left
+        width: 100%
+        +r(767)
+          max-width: 100%
+        +rmin(768)
+          max-width: 430px
+        +rmin(992)
+          max-width: 691px
+
+      &-right
+        display: flex
+        justify-content: center
+        +r(767)
+          width: 100%
+          margin-top: 30px
+        +rmin(768)
+          width: calc(100% - 430px)
+        +rmin(992)
+          width: calc(100% - 691px)
+
+
+    &__title
+      padding-bottom: 38px
+      +r(767)
+        padding-bottom: 20px
+
+
+    &__subtitle
+      width: 100%
+      max-width: 958px
+
+// \ MAIN

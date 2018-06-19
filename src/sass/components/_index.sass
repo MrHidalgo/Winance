@@ -38,7 +38,7 @@
   align-items: center
   justify-content: center
   width: 100%
-  min-width: 200px
+  max-width: 251px
   height: 50px
   margin-left: auto
   margin-right: auto
@@ -47,7 +47,7 @@
   font-size: 18px
   border-radius: 25px
   border: 2px solid rgba($c-royalBlue, 0.5)
-  +transition(border-color)
+  +transition(border-color, background-color)
   +r(767)
     font-size: 16px
 
@@ -58,6 +58,16 @@
 
   &--big
     max-width: 385px
+
+  &--color
+    border-color: $c-royalBlue
+    background-color: $c-royalBlue
+    color: $c-white
+
+    &:hover
+      border-color: $c-ceruleanBlue
+      background-color: $c-ceruleanBlue
+      +transition(border-color, background-color)
 // \ BTN
 
 

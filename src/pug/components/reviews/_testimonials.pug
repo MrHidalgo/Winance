@@ -1,0 +1,106 @@
+// TESTIMONIALS :: START
+
+
+-
+  var testimonialsBlockData = [
+    {
+      href: "reviews.html",
+      classMod: "",
+      title: "Артем Коновалов",
+      pos: "Начинающий инвестор",
+      description: "За 2,5 года площадка StartTrack привлекла в 39 компаний более 940 млн рублей. Площадка является посредником, предоставляет сервис и инфраструктуру, а договорные отношения между инвесторами и компаниями-заемщиками регулируются ГК РФ."
+    },
+    {
+      href: "reviews.html",
+      classMod: "",
+      title: "Артем Коновалов",
+      pos: "Начинающий инвестор",
+      description: "«ВЭБ Инновации» проинвестирует в StartTrack 200 млн рублей. Сегодня через площадку StartTrack проходит 60% коллективных инвестиций в РФ в малый и средний бизнес. Инвестиционный потенциал площадки и 2000 аккредитованных инвесторов превышает 7 миллиардов рублей."
+    },
+    {
+      href: "reviews.html",
+      classMod: "",
+      title: "Артем Коновалов",
+      pos: "Начинающий инвестор",
+      description: "«ВЭБ Инновации» проинвестирует в StartTrack 200 млн рублей."
+    },
+    {
+      href: "reviews.html",
+      classMod: "",
+      title: "Артем Коновалов",
+      pos: "Начинающий инвестор",
+      description: "За 2,5 года площадка StartTrack привлекла в 39 компаний более 940 млн рублей. Площадка является посредником, предоставляет сервис и инфраструктуру, а договорные отношения между инвесторами и компаниями-заемщиками регулируются ГК РФ."
+    },
+    {
+      href: "reviews.html",
+      classMod: "",
+      title: "Артем Коновалов",
+      pos: "Начинающий инвестор",
+      description: "«ВЭБ Инновации» проинвестирует в StartTrack 200 млн рублей."
+    },
+    {
+      href: "reviews.html",
+      classMod: "",
+      title: "Артем Коновалов",
+      pos: "Начинающий инвестор",
+      description: "«ВЭБ Инновации» проинвестирует в StartTrack 200 млн рублей. Сегодня через площадку StartTrack проходит 60% коллективных инвестиций в РФ в малый и средний бизнес. Инвестиционный потенциал площадки и 2000 аккредитованных инвесторов превышает 7 миллиардов рублей."
+    },
+    {
+      href: "reviews.html",
+      classMod: "",
+      title: "Артем Коновалов",
+      pos: "Начинающий инвестор",
+      description: "«ВЭБ Инновации» проинвестирует в StartTrack 200 млн рублей."
+    },
+    {
+      href: "reviews.html",
+      classMod: "",
+      title: "Артем Коновалов",
+      pos: "Начинающий инвестор",
+      description: "За 2,5 года площадка StartTrack привлекла в 39 компаний более 940 млн рублей. Площадка является посредником, предоставляет сервис и инфраструктуру, а договорные отношения между инвесторами и компаниями-заемщиками регулируются ГК РФ."
+    },
+    {
+      href: "reviews.html",
+      classMod: "",
+      title: "Артем Коновалов",
+      pos: "Начинающий инвестор",
+      description: "«ВЭБ Инновации» проинвестирует в StartTrack 200 млн рублей. Сегодня через площадку StartTrack проходит 60% коллективных инвестиций в РФ в малый и средний бизнес. Инвестиционный потенциал площадки и 2000 аккредитованных инвесторов превышает 7 миллиардов рублей."
+    }
+  ];
+
+
+mixin testimonialsBlock(href, classMod, idx, title, pos, description)
+  a.testimonials__block(title!='' href!= href class!= 'testimonials__block-' + idx + ' ' + classMod)
+    .testimonials__block-header
+      .testimonials__block-left
+        .testimonials__block-icon
+          i.icon-user
+
+      .testimonials__block-right
+        p!= title
+        p!= pos
+
+    .testimonials__block-body
+      p!= description
+
+
+section.testimonials
+
+  .container
+
+    .testimonials__row(masonry-testimonials-js)
+      each val, idx in testimonialsBlockData
+        +testimonialsBlock(
+          testimonialsBlockData[idx].href,
+          testimonialsBlockData[idx].classMod,
+          idx,
+          testimonialsBlockData[idx].title,
+          testimonialsBlockData[idx].pos,
+          testimonialsBlockData[idx].description
+        )
+
+  .container
+    a.testimonials__btn.btn.btn--big(href="reviews.html" title!="" class!= "")!= "Показать еще"
+
+
+// TESTIMONIALS :: END

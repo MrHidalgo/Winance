@@ -77,6 +77,7 @@ gulp.task('sass', function() {
 
 gulp.task('sass:watch', function() {
   gulp.watch([
+    config.src.sass + '/**',
     config.src.sass + '/**/*.{sass,scss}',
     config.src.sass + '/**/**/*.{sass,scss}'
   ], ['sass']);
