@@ -159,38 +159,38 @@ mixin blogsBlock(attr, href, classMod, count, imgName, title, text, badgeArr, da
         .blogs__block-date
           p!= date
 
+.blog
+  section.blogs
+    .container
 
-section.blogs
-  .container
+      .blogs__pagination
+        ul.blogs__pagination-list
+          each val, idx in blogsPagination
+            li.blogs__pagination-item
+              a.blogs__pagination-link(
+                href="#"
+                title!=""
+                class!=(idx === 0) ? "is-active": ""
+                blogs-pagination-js
+                data-pagination= blogsPagination[idx].attr
+              )!= blogsPagination[idx].name
 
-    .blogs__pagination
-      ul.blogs__pagination-list
-        each val, idx in blogsPagination
-          li.blogs__pagination-item
-            a.blogs__pagination-link(
-              href="#"
-              title!=""
-              class!=(idx === 0) ? "is-active": ""
-              blogs-pagination-js
-              data-pagination= blogsPagination[idx].attr
-            )!= blogsPagination[idx].name
+      .blogs__row(masonry-blog-js)
+        each val, idx in blockData
+          +blogsBlock(
+            blockData[idx].attr,
+            blockData[idx].href,
+            blockData[idx].classMod,
+            idx,
+            blockData[idx].imgName,
+            blockData[idx].title,
+            blockData[idx].text,
+            blockData[idx].badgeArr,
+            blockData[idx].date
+          )
 
-    .blogs__row(masonry-blog-js)
-      each val, idx in blockData
-        +blogsBlock(
-          blockData[idx].attr,
-          blockData[idx].href,
-          blockData[idx].classMod,
-          idx,
-          blockData[idx].imgName,
-          blockData[idx].title,
-          blockData[idx].text,
-          blockData[idx].badgeArr,
-          blockData[idx].date
-        )
-
-  .container
-    a.blogs__btn.btn.btn--big(href="#" title!="" class!= "")!= "Показать еще"
+    .container
+      a.blogs__btn.btn.btn--big(href="#" title!="" class!= "")!= "Показать еще"
 
         
 // BLOGS :: END
