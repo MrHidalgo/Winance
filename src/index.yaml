@@ -8,7 +8,7 @@ PageList:
 - file: investors.html
   ready: 50
 - file: howWeEarn.html
-  ready: 10
+  ready: 35
 - file: reviews.html
   ready: 75
 - file: press.html
