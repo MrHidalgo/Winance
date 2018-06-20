@@ -211,6 +211,23 @@ $(document).ready(function(){
   //////////
   // SLIDERS
   //////////
+  _document.on("click", "[about-btn-js]", function(e) {
+    var elem = $(e.currentTarget),
+      elemAttr = elem.attr("data-pagin");
+
+    $("[about-btn-js]").removeClass("is-active");
+    elem.addClass("is-active");
+
+    var boxContainer = $("[about-box-js]");
+
+    boxContainer.removeClass("is-active");
+    $(".main__row-box[data-main='" + elemAttr + "']").addClass("is-active");
+  });
+
+
+  //////////
+  // SLIDERS
+  //////////
   function initSliders(){
     var slickNextArrow = '<div class="slick-prev"><svg class="ico ico-back-arrow"><use xlink:href="img/sprite.svg#ico-back-arrow"></use></svg></div>';
     var slickPrevArrow = '<div class="slick-next"><svg class="ico ico-next-arrow"><use xlink:href="img/sprite.svg#ico-next-arrow"></use></svg></div>'
