@@ -1,0 +1,80 @@
+// GUARANTEES
+
+.guarantees
+  padding-top: 68px
+  padding-bottom: 78px
+  +r(767)
+    padding-top: 34px
+    padding-bottom: 39px
+
+
+  &__title
+    padding-bottom: 61px
+    +r(767)
+      padding-bottom: 30px
+
+
+  &__row
+    display: flex
+    +r(575)
+      flex-direction: column
+
+
+  &__box
+    width: 50%
+    padding: 34px 30px
+    background-color: $c-whiteSmoke
+    +r(575)
+      width: 100%
+
+    &:nth-child(1)
+      margin-right: 10px
+      +r(575)
+        margin: 0
+        margin-bottom: 20px
+
+    &:nth-child(2)
+      margin-left: 10px
+      +r(575)
+        margin: 0
+
+
+    &-wrap
+      height: 156px
+      margin-bottom: 15px
+
+      .ico-img-box-0__guarantees
+        width: 129px
+        height: 156px
+
+      .ico-img-box-1__guarantees
+        width: 282px
+        height: 128px
+
+
+    &-img
+      display: block
+      max-width: 100%
+
+
+    &-title
+      padding-bottom: 17px
+      font-weight: 600
+      +rmin(320)
+        font-size: 22px
+      +rmin(768)
+        font-size: 25px
+      +rmin(992)
+        font-size: 28px
+
+
+    &-text
+      +rmin(320)
+        font-size: 14px
+      +rmin(768)
+        font-size: 16px
+      +rmin(992)
+        font-size: 18px
+
+
+// \ GUARANTEES
