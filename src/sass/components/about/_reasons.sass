@@ -41,16 +41,48 @@
         +r(768)
           border: none
           border-bottom: 1px solid $c-white
+      img
+        width: 100%
+        max-width: 100%
+        height: 100%
+        max-height: 100%
+        object-fit: contain
+        object-position: bottom
+
     &-1
       border-bottom: 1px solid $c-white
       +r(991)
         border-right: 1px solid $c-white
+      img
+        width: 100%
+        max-width: 110px
+        height: 100%
+        max-height: 119px
+
     &-2
       +r(991)
         border-bottom: 1px solid $c-white
+      img
+        width: 100%
+        max-width: 117px
+        height: 100%
+        max-height: 156px
+
     &-3
       border-left: 1px solid $c-white
       border-right: 1px solid $c-white
+      img
+        width: 100%
+        max-width: 242px
+        height: 100%
+        max-height: 128px
+
+    &-4
+      img
+        width: 100%
+        max-width: 168px
+        height: 100%
+        max-height: 134px
 
     &--big
       display: flex
@@ -78,34 +110,7 @@
     &-right
       display: flex
       +r(767)
-        height: 300px
-
-      .reasons__box-col
-        display: flex
-        flex-direction: column
-        justify-content: flex-end
-        width: 50%
-        height: 100%
-
-        .reasons__box-wrap
-          height: auto
-          margin-bottom: 26px
-          +r(767)
-            padding-right: 30px
-
-        &:nth-child(1)
-          .reasons__box-block
-            width: 100%
-            height: 117px
-            background-color: $c-curiousBlue
-
-        &:nth-child(2)
-          padding-top: 34px
-
-          .reasons__box-block
-            width: 100%
-            height: 201px
-            background-color: $c-royalBlue
+        padding-top: 34px
 
     &-wrap
       height: 160px
