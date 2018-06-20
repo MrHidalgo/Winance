@@ -4,7 +4,7 @@ PageList:
 - file: homepage.html
   ready: 25
 - file: about.html
-  ready: 5
+  ready: 75
 - file: investors.html
   ready: 5
 - file: howWeEarn.html
