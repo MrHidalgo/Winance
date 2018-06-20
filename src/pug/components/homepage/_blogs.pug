@@ -107,28 +107,28 @@ mixin blogsBlock(attr, href, classMod, count, imgName, title, text, badgeArr, da
         .blogs__block-date
           p!= date
 
-.blog
-  section.blogs
-    .container
 
-      h1.blogs__title.title!= "Читайте в блоге"
+section.blogs
+  .container
 
-      .blogs__row(masonry-blog-js)
-        each val, idx in blockData
-          +blogsBlock(
-            blockData[idx].attr,
-            blockData[idx].href,
-            blockData[idx].classMod,
-            idx,
-            blockData[idx].imgName,
-            blockData[idx].title,
-            blockData[idx].text,
-            blockData[idx].badgeArr,
-            blockData[idx].date
-          )
+    h1.blogs__title.title!= "Читайте в блоге"
 
-    .container
-      a.blogs__btn.btn.btn--big(href="blog.html" title!="" class!= "")!= "Все статьи"
+    .blogs__row(masonry-blog-js)
+      each val, idx in blockData
+        +blogsBlock(
+          blockData[idx].attr,
+          blockData[idx].href,
+          blockData[idx].classMod,
+          idx,
+          blockData[idx].imgName,
+          blockData[idx].title,
+          blockData[idx].text,
+          blockData[idx].badgeArr,
+          blockData[idx].date
+        )
+
+  .container
+    a.blogs__btn.btn.btn--big(href="blog.html" title!="" class!= "")!= "Все статьи"
 
 
 // BLOGS :: END

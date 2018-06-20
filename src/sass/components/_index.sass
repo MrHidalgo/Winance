@@ -4,8 +4,6 @@
 .title
   font-weight: 500
   +rmin(320)
-    font-size: 28px
-  +rmin(992)
     font-size: 30px
   +rmin(1200)
     font-size: 35px
@@ -35,6 +33,7 @@
 
 // BTN
 .btn
+  cursor: pointer
   display: flex
   align-items: center
   justify-content: center
@@ -46,12 +45,12 @@
   text-align: center
   color: $c-royalBlue
   font-size: 18px
+  font-family: 'Montserrat', sans-serif
   border-radius: 25px
   border: 2px solid rgba($c-royalBlue, 0.5)
   +transition(border-color, background-color)
-  +r(767)
+  +r(991)
     font-size: 16px
-
 
   &:hover
     border-color: $c-royalBlue
@@ -59,6 +58,9 @@
 
   &--big
     max-width: 385px
+
+  &--medium
+    max-width: 308px
 
   &--color
     border-color: $c-royalBlue
@@ -129,6 +131,103 @@
         transition-duration: 0.25s
 
 //- \ HAMBURGER
+
+
+// FORM
+.form
+  &__field
+    position: relative
+    width: 100%
+    max-width: 346px
+    height: 52px
+    +r(767)
+      margin-left: auto
+      margin-right: auto
+
+    &--p
+      margin-bottom: 46px
+      +r(767)
+        margin-bottom: 23px
+
+
+  &__input
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    padding-left: 5px
+    padding-right: 115px
+    border: none
+    border-bottom: 2px solid rgba($c-royalBlue, 0.5)
+    background-color: transparent
+    font-size: 18px
+    font-family: 'Montserrat', sans-serif
+    +transition(border-color)
+    +r(991)
+      font-size: 16px
+
+    &:hover,
+    &:focus
+      border-color: $c-royalBlue
+      +transition(border-color)
+
+    &::-webkit-input-placeholder
+      color: rgba($c-blueZodiac, 0.5)
+      font-size: 18px
+      +r(991)
+        font-size: 16px
+    &::-moz-placeholder
+      color: rgba($c-blueZodiac, 0.5)
+      font-size: 18px
+      +r(991)
+        font-size: 16px
+    &:-ms-input-placeholder
+      color: rgba($c-blueZodiac, 0.5)
+      font-size: 18px
+      +r(991)
+        font-size: 16px
+    &:-moz-placeholder
+      color: rgba($c-blueZodiac, 0.5)
+      font-size: 18px
+      +r(991)
+        font-size: 16px
+
+
+  &__label
+    cursor: pointer
+    position: absolute
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    top: 0
+    right: 0
+    height: 100%
+    width: 115px
+    padding-right: 10px
+    font-size: 12px
+    font-weight: 400
+
+
+  &__btn
+    +r(767)
+      margin-left: auto
+      margin-right: auto
+
+
+  &__info
+    font-size: 18px
+    +r(991)
+      font-size: 16px
+    +r(767)
+      display: none
+
+      br
+        display: none
+
+    &--i
+      font-size: 14px
+      font-style: italic
 
 
 // LOGO

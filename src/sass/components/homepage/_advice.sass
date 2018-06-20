@@ -1,8 +1,49 @@
 // ADVICE
 
 .advice
-  padding-bottom: 90px
+  padding-top: 69px
+  padding-bottom: 82px
+  background-color: $c-whiteSmoke
   +r(767)
-    padding-bottom: 45px
+    padding-top: 34px
+    padding-bottom: 41px
+
+
+  &__title
+    padding-bottom: 63px
+    +r(767)
+      padding-bottom: 31px
+
+
+  &__row
+    display: flex
+    flex-wrap: wrap
+
+
+  &__col
+    width: calc(100% / 3)
+    +r(767)
+      width: 100%
+    +rmin(768)
+      &:nth-child(1),
+      &:nth-child(4)
+        padding-right: 10px
+
+      &:nth-child(2),
+      &:nth-child(5)
+        padding-left: 10px
+        padding-right: 10px
+
+      &:nth-child(3),
+      &:nth-child(6)
+        padding-left: 10px
+
+    +rmin(1200)
+
+
+  &__btn
+    margin-left: 0
+    +r(767)
+      margin-left: auto
 
 // \ ADVICE
