@@ -21,30 +21,49 @@
     padding: 17px 20px
     margin-bottom: 20px
     background-color: $c-whiteSmoke
+    +r(767)
+      flex-direction: column
 
     &:last-child
       margin-bottom: 0
 
     &-left
-      width: 408px
+      +rmin(320)
+        width: 100%
+      +rmin(768)
+        width: 308px
+      +rmin(992)
+        width: 408px
 
       p
         font-size: 18px
+        +r(767)
+          padding-bottom: 20px
+          font-size: 16px
 
     &-right
       width: calc(100% - 408px)
-      padding-right: 105px
+      +rmin(320)
+        width: 100%
+      +rmin(768)
+        width: calc(100% - 308px)
+      +rmin(992)
+        width: calc(100% - 408px)
+      +rmin(1200)
+        padding-right: 105px
 
       p
         font-size: 18px
         font-weight: 700
+        +r(767)
+          font-size: 16px
 
       ul
         padding-top: 20px
-        padding-left: 30px
 
         li
           padding-bottom: 10px
-          font-size: 16px
+          +rmin(768)
+            font-size: 16px
 
 // \ RISKS
