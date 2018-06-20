@@ -52,11 +52,12 @@
   font-family: 'Montserrat', sans-serif
   border-radius: 25px
   border: 2px solid rgba($c-royalBlue, 0.5)
-  +transition(border-color, background-color)
+  +transition(border-color, background-color, color)
   +r(991)
     font-size: 16px
 
-  &:hover
+  &:hover,
+  &:focus
     border-color: $c-royalBlue
     +transition(border-color)
 
@@ -74,10 +75,23 @@
     background-color: $c-royalBlue
     color: $c-white
 
-    &:hover
+    &:hover,
+    &:focus
       border-color: $c-ceruleanBlue
       background-color: $c-ceruleanBlue
       +transition(border-color, background-color)
+
+  &--colorW
+    border-color: $c-white
+    background-color: $c-white
+    color: $c-royalBlue
+
+    &:hover,
+    &:focus
+      border: $c-white
+      background-color: $c-white
+      color: $c-blueZodiac
+      +transition(color)
 // \ BTN
 
 

@@ -6,9 +6,9 @@ PageList:
 - file: about.html
   ready: 75
 - file: investors.html
-  ready: 5
+  ready: 50
 - file: howWeEarn.html
-  ready: 5
+  ready: 10
 - file: reviews.html
   ready: 75
 - file: press.html

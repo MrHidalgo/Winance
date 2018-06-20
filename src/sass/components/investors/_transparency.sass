@@ -1,0 +1,71 @@
+// TRANSPARENCY
+
+.transparency
+  padding-top: 76px
+  padding-bottom: 103px
+  +r(767)
+    padding-top: 38px
+    padding-bottom: 51px
+
+  &__title
+    padding-bottom: 41px
+    +r(767)
+      padding-bottom: 20px
+
+
+  &__row
+    position: relative
+    width: 100%
+    padding: 201px 0 42px 41px
+
+
+  &__text
+    z-index: 1
+    position: relative
+    width: 100%
+    max-width: 731px
+    padding-bottom: 54px
+    color: $c-white
+    +r(767)
+      padding-bottom: 27px
+
+
+  &__btn
+    z-index: 1
+    position: relative
+    margin-left: 0
+
+
+  &__line
+    z-index: 0
+    position: absolute
+    bottom: 0
+    width: calc(100% / 5)
+
+    &-0
+      left: 0
+      height: 69%
+      background-color: rgba($c-royalBlue, 0.84)
+
+    &-1
+      left: calc(100% / 5)
+      height: 76%
+      background-color: rgba($c-royalBlue, 0.9)
+
+    &-2
+      left: calc((100% / 5) * 2)
+      height: 85%
+      background-color: rgba($c-royalBlue, 0.95)
+
+    &-3
+      right: calc(100% / 5)
+      height: 100%
+      background-color: $c-LightSeaGreen
+
+    &-4
+      right: 0
+      height: 89%
+      background-color: rgba($c-royalBlue, 0.96)
+
+
+// \ TRANSPARENCY
