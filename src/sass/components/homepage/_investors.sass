@@ -29,6 +29,10 @@
 
   &__title
     padding-bottom: 66px
+    +rmin(768)
+      padding-bottom: 46px
+    +rmin(992)
+      padding-bottom: 66px
 
 
   &__row
@@ -39,22 +43,37 @@
       width: 50%
 
     &-left
-      padding-top: 179px
       padding-bottom: 103px
+      +rmin(768)
+        padding-top: 112px
+      +rmin(1200)
+        padding-top: 179px
 
     &-right
-      display: flex
-      justify-content: center
+      +rmin(768)
+        padding-left: 30px
+        padding-right: 30px
+      +rmin(992)
+        padding-left: 50px
+        padding-right: 50px
 
 
   &__col
     display: flex
-    padding-bottom: 56px
+    +rmin(768)
+      flex-direction: column
+      padding-bottom: 46px
+    +rmin(992)
+      flex-direction: row
+      padding-bottom: 56px
 
     &-left,
     &-right
       width: 268px
-      margin-right: 36px
+      +rmin(768)
+        padding-bottom: 30px
+      +rmin(992)
+        margin-right: 36px
 
       p
         font-size: 18px
@@ -65,9 +84,11 @@
 
 
   &__img
-    display: flex
+    display: block
     max-width: 100%
     height: auto
+    margin-left: auto
+    margin-right: auto
 
 
 // \ INVESTORS
