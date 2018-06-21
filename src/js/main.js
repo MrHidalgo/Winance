@@ -15,7 +15,7 @@ $(document).ready(function(){
     desktop: 992,
     wide: 1336,
     hd: 1680
-  }
+  };
 
   var easingSwing = [.02, .01, .47, 1]; // default jQuery easing for anime.js
 
@@ -60,7 +60,7 @@ $(document).ready(function(){
   // some plugins work best with onload triggers
   _window.on('load', function(){
     // your functions
-  })
+  });
 
 
   //////////
@@ -144,9 +144,14 @@ $(document).ready(function(){
   }
 
 
-  //////////
+  //
   // MASONRY
-  //////////
+  // ====================
+  /**
+   *
+   * @param gridName - {String}
+   * @param blockName - {String}
+   */
   function initMasonry(gridName, blockName) {
     $(gridName).masonry({
       itemSelector: blockName,
@@ -154,21 +159,26 @@ $(document).ready(function(){
       horizontalOrder: true
     });
   }
+  // ====================
 
 
-  //////////
+  //
   // BLOGS/FAQ PAGINATION
-  //////////
+  // ====================
+  /**
+   *
+   * @param bntName - {String}
+   * @param masonryName - {String}
+   * @param blockName - {String}
+   */
   function filterMasonry(bntName, masonryName, blockName) {
     _document.on("click", bntName, function(e) {
-      var elem = $(e.currentTarget);
+      var elem = $(e.currentTarget),
+        attrElem = elem.attr("data-pagination"),
+        blogBlock = $(blockName);
 
       $(bntName).removeClass("is-active");
       elem.addClass("is-active");
-
-      // ADD LOGIC FOR FILTER BLOCK
-      var attrElem = elem.attr("data-pagination"),
-        blogBlock = $(blockName);
 
       if($(_window).width() > 767) {
         var masonryGridOption = {
@@ -181,48 +191,50 @@ $(document).ready(function(){
 
       if(attrElem === "all") {
 
-        blogBlock.removeClass("is-hide");
-        blogBlock.addClass("is-show");
+        blogBlock
+          .removeClass("is-hide")
+          .addClass("is-show");
 
       } else {
 
-        blogBlock.removeClass("is-hide");
-        blogBlock.addClass("is-show");
+        blogBlock
+          .removeClass("is-hide")
+          .addClass("is-show")
+          .each(function(idx, val) {
+            var elemAttr = $(val).attr("data-filter");
 
-        blogBlock.each(function(idx, val) {
-          var elemAttr = $(val).attr("data-filter");
-
-          if(elemAttr.indexOf(attrElem) === -1) {
-            $(val).addClass("is-hide");
-            $(val).removeClass("is-show");
+            if(elemAttr.indexOf(attrElem) === -1) {
+              $(val).addClass("is-hide");
+              $(val).removeClass("is-show");
           }
         });
-
       }
 
       if($(_window).width() > 767) {
-        masonryGrid.masonry('reloadItems');
-        masonryGrid.masonry('layout');
+        masonryGrid
+          .masonry('reloadItems')
+          .masonry('layout');
       }
     });
   }
+  // ====================
 
 
-  //////////
+  //
   // SLIDERS
-  //////////
+  // ====================
   _document.on("click", "[about-btn-js]", function(e) {
     var elem = $(e.currentTarget),
-      elemAttr = elem.attr("data-pagin");
+      elemAttr = elem.attr("data-pagin"),
+      boxContainer = $("[about-box-js]");
 
     $("[about-btn-js]").removeClass("is-active");
     elem.addClass("is-active");
 
-    var boxContainer = $("[about-box-js]");
-
     boxContainer.removeClass("is-active");
     $(".main__row-box[data-main='" + elemAttr + "']").addClass("is-active");
   });
+  // ====================
 
 
   //////////
