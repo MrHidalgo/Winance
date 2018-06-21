@@ -239,6 +239,18 @@ $(document).ready(function(){
   // ====================
 
 
+  // CALC TABS
+  // ====================
+  _document.on("click", "[tabs-btn-js]", function(e) {
+    var elem = $(e.currentTarget),
+      elemAttr = elem.attr("data-tabs-btn");
+
+    $("[tabs-btn-js]").removeClass("is-active");
+    elem.addClass("is-active");
+  });
+  // ====================
+
+
   //
   // ====================
   function funcName() {}
