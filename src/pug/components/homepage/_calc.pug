@@ -12,9 +12,9 @@
 
         form(action="" method="")
           .calc__tabs-header
-            a.calc__tabs-btn.is-active(href="#" title="" data-tabs-btn="0" tabs-btn-js)!= "Российский рубль <sup>RUB<sup>"
-            a.calc__tabs-btn(href="#" title="" data-tabs-btn="1" tabs-btn-js)!= "Доллар США <sup>USD<sup>"
-            a.calc__tabs-btn(href="#" title="" data-tabs-btn="2" tabs-btn-js)!= "Евро <sup>EUR<sup>"
+            a.calc__tabs-btn.is-active(href="#" title="" data-tabs-btn="0" tabs-btn-js)!= "<span>Российский рубль</span> <sup>RUB<sup>"
+            a.calc__tabs-btn(href="#" title="" data-tabs-btn="1" tabs-btn-js)!= "<span>Доллар США</span> <sup>USD<sup>"
+            a.calc__tabs-btn(href="#" title="" data-tabs-btn="2" tabs-btn-js)!= "<span>Евро</span> <sup>EUR<sup>"
 
           .calc__tabs-body.calc__tabs-body-0(data-tabs-body="")
             .calc__tabs-col.calc__tabs-col-0
@@ -23,16 +23,6 @@
 
               .calc__tabs-range
                 input(type="range")
-
-              p!="Выплаты"
-
-              .calc__tabs-checkbox
-                input(type="checkbox" id="check-0")
-                label(for!="check-0")!="Оставлять на счете"
-
-              .calc__tabs-checkbox
-                input(type="checkbox" id="check-1" checked)
-                label(for!="check-1")!="Еженедельная выплата"
 
             .calc__tabs-col.calc__tabs-col-1
               p!="Срок инвестирования"
@@ -49,9 +39,20 @@
 
 
             .calc__tabs-col.calc__tabs-col-3
-              p!= "* Сумма инвестиций возвращается в конце срока инвестирования"
+              p!="Выплаты"
+
+              .calc__tabs-checkbox
+                input(type="checkbox" id="check-0")
+                label(for!="check-0")!="Оставлять на счете"
+
+              .calc__tabs-checkbox
+                input(type="checkbox" id="check-1" checked)
+                label(for!="check-1")!="Еженедельная выплата"
 
             .calc__tabs-col.calc__tabs-col-4
+              p!= "* Сумма инвестиций возвращается в конце срока инвестирования"
+
+            .calc__tabs-col.calc__tabs-col-5
               div
                 p!="Сумма выплат <br>за 1 месяц"
                 span!= "2 250.00"

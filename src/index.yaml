@@ -2,11 +2,11 @@ ProjectTitle: Winance
 
 PageList:
 - file: homepage.html
-  ready: 30
+  ready: 35
 - file: about.html
   ready: 75
 - file: investors.html
-  ready: 50
+  ready: 75
 - file: howWeEarn.html
   ready: 35
 - file: reviews.html

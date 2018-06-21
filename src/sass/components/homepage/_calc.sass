@@ -41,6 +41,8 @@
       font-size: 24px
       font-weight: 600
       +transition(background-color, color)
+      +r(767)
+        height: 60px
       +rmin(768)
         font-size: 16px
       +rmin(992)
@@ -48,10 +50,21 @@
       +rmin(1200)
         font-size: 24px
 
+      span
+        +r(767)
+          display: none
+
       sup
         padding-left: 5px
         font-size: 14px
         font-style: italic
+        +r(767)
+          position: static
+          padding-left: 0
+          font-size: 24px
+          font-style: normal
+        +r(575)
+          font-size: 20px
         +rmin(768)
           font-size: 10px
         +rmin(992)
@@ -81,12 +94,31 @@
 
     &-col
       width: calc(100% / 3)
+      +r(767)
+        width: 100%
+
+        &-0
+          order: 0
+        &-1
+          order: 1
+        &-2
+          order: 3
+        &-3
+          order: 2
+        &-4
+          order: 4
+        &-5
+          order: 5
 
       &-0,
       &-1
         padding-top: 35px
         padding-left: 30px
         padding-right: 30px
+        +r(767)
+          padding-top: 25px
+          padding-left: 15px
+          padding-right: 15px
         +rmin(768)
           padding-top: 25px
           padding-left: 15px
@@ -113,26 +145,33 @@
       &-2
         padding-top: 35px
         padding-right: 30px
+        +r(767)
+          padding-top: 25px
+          padding-left: 15px
+          padding-right: 15px
 
-      &-3,
-      &-4
+      &-4,
+      &-5
         padding-bottom: 40px
+        +r(767)
+          padding-bottom: 35px
 
       &-0
         .calc__tabs-range
-          width: 265px
-          margin-bottom: 60px
-          +rmin(768)
+          +r(767)
             width: 100%
+          +rmin(768)
+            width: 265px
 
           &+p
             padding-bottom: 18px
 
       &-1
         .calc__tabs-range
-          width: 191px
-          +rmin(768)
+          +r(767)
             width: 100%
+          +rmin(768)
+            width: 191px
 
       &-2
         p
@@ -151,14 +190,33 @@
             padding-bottom: 29px
 
       &-3
-        display: flex
-        align-items: flex-end
-        width: calc((100% / 3) * 2)
-        padding-left: 46px
+        width: 100%
+        padding-left: 30px
+        +r(767)
+          padding-top: 25px
+          padding-left: 15px
+
+        p
+          padding-bottom: 18px
+          color: #rgba($c-blueZodiac, 0.5)
+          font-style: italic
 
       &-4
         display: flex
         align-items: flex-end
+        width: calc((100% / 3) * 2)
+        padding-left: 46px
+        +r(767)
+          width: 100%
+          padding-top: 25px
+          padding-left: 15px
+          padding-right: 15px
+
+      &-5
+        display: flex
+        align-items: flex-end
+        +r(767)
+          display: none
 
         div
           width: 50%
