@@ -189,7 +189,7 @@ $(document).ready(function(){
         };
         masonryGrid.masonry(masonryGridOption);
       }
-      
+
       if(attrElem === "all") {
 
         blogBlock
@@ -236,6 +236,13 @@ $(document).ready(function(){
     boxContainer.removeClass("is-active");
     $(".main__row-box[data-main='" + elemAttr + "']").addClass("is-active");
   });
+  // ====================
+
+
+  //
+  // ====================
+  function funcName() {}
+  _document.on("click", "", function(e) {});
   // ====================
 
 
