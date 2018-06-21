@@ -175,7 +175,8 @@ $(document).ready(function(){
     _document.on("click", bntName, function(e) {
       var elem = $(e.currentTarget),
         attrElem = elem.attr("data-pagination"),
-        blogBlock = $(blockName);
+        blogBlock = $(blockName),
+        masonryGrid = $(masonryName);
 
       $(bntName).removeClass("is-active");
       elem.addClass("is-active");
@@ -186,9 +187,9 @@ $(document).ready(function(){
           gutter: 18,
           horizontalOrder: true
         };
-        var masonryGrid = $(masonryName).masonry(masonryGridOption);
+        masonryGrid.masonry(masonryGridOption);
       }
-
+      
       if(attrElem === "all") {
 
         blogBlock
@@ -204,8 +205,9 @@ $(document).ready(function(){
             var elemAttr = $(val).attr("data-filter");
 
             if(elemAttr.indexOf(attrElem) === -1) {
-              $(val).addClass("is-hide");
-              $(val).removeClass("is-show");
+              $(val)
+                .addClass("is-hide")
+                .removeClass("is-show");
           }
         });
       }
