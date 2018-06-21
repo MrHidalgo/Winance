@@ -2,9 +2,15 @@
 
 .investors
   position: relative
+  +r(767)
+    padding-top: 30px
+    background-color: $c-whiteSmoke
 
 
   &__bg
+    +r(767)
+      display: none
+
     &-top,
     &-bottom
       z-index: 0
@@ -22,9 +28,13 @@
       height: 20%
 
 
+
   .container
     z-index: 1
     position: relative
+    +r(575)
+      padding-left: 0
+      padding-right: 0
 
 
   &__title
@@ -37,13 +47,22 @@
 
   &__row
     display: flex
+    +rmin(320)
+      flex-direction: column-reverse
+    +rmin(788)
+      flex-direction: row
 
     &-left,
     &-right
       width: 50%
+      +r(767)
+        width: 100%
 
     &-left
       padding-bottom: 103px
+      +r(575)
+        padding-left: 30px
+        padding-right: 30px
       +rmin(768)
         padding-top: 112px
       +rmin(1200)
@@ -60,8 +79,10 @@
 
   &__col
     display: flex
-    +rmin(768)
+    +rmin(320)
       flex-direction: column
+      padding-bottom: 30px
+    +rmin(768)
       padding-bottom: 46px
     +rmin(992)
       flex-direction: row
@@ -70,7 +91,9 @@
     &-left,
     &-right
       width: 268px
-      +rmin(768)
+      +r(767)
+        width: 100%
+      +rmin(320)
         padding-bottom: 30px
       +rmin(992)
         margin-right: 36px
@@ -89,6 +112,20 @@
     height: auto
     margin-left: auto
     margin-right: auto
+    +r(767)
+      max-width: 70%
+    +r(575)
+      max-width: 100%
+
+
+    &--des
+      display: none
+      +rmin(576)
+        display: block
+    &--mob
+      display: none
+      +r(575)
+        display: block
 
 
 // \ INVESTORS
