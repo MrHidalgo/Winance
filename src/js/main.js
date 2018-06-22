@@ -253,6 +253,74 @@ $(document).ready(function(){
 
   //
   // ====================
+  var objOptionBLock = [
+    {
+      color : 'rgba(58, 103, 217, 0.65)',
+      left : '0',
+      height : '131px'
+    },
+    {
+      color : 'rgba(58, 103, 217, 0.84)',
+      left : '240px',
+      height : '171px'
+    },
+    {
+      color : 'rgba(16, 173, 180, 1)',
+      left : '480px',
+      height : '229px'
+    },
+    {
+      color : 'rgba(58, 103, 217, 0.65)',
+      left : '720px',
+      height : '329px'
+    },
+    {
+      color : 'rgba(58, 103, 217, 0.91)',
+      left : '960px',
+      height : '208px'
+    },
+  ];
+  function lineBlockTmpl(idx, width, left, right) {
+    return `
+      <div
+        style="
+          left: ${left || objOptionBLock[idx].left};
+          right: ${right || 'auto'};
+          width: ${width || '240px'};
+          height: ${objOptionBLock[idx].height};
+          background-color: ${objOptionBLock[idx].color};
+        "
+        class="main__line main__line-${idx}"
+      ></div>
+    `
+  }
+  function createMainBlock() {
+    var defaultSizeBlock = 1200,
+      _winWidth = _window.width(),
+      mainBlockContainer = $("[main-line-js]"),
+      defaultBlockContainer = mainBlockContainer.find(".main__line-box");
+
+    var diffSize = (_winWidth - defaultSizeBlock) / 2,
+      need = diffSize / 240;
+
+    for(var i = 0, len = objOptionBLock.length; i < len; i++) {
+      defaultBlockContainer.append(lineBlockTmpl(i, "", "", ""));
+    }
+
+
+    console.log(diffSize);
+    console.log(need);
+
+    for(var j = 0; j < need; j++) {
+      console.log(j);
+    }
+  }
+  createMainBlock();
+  // ====================
+
+
+  //
+  // ====================
   function funcName() {}
   _document.on("click", "", function(e) {});
   // ====================

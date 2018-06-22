@@ -1,56 +1,65 @@
 $sprite: (
 	email: (
-		offset-x: 0px,
-		offset-y: -44px,
+		offset-x: -44px,
+		offset-y: -110px,
 		width: 32px,
 		height: 22px,
-		total-width: 111px,
-		total-height: 109px,
+		total-width: 169px,
+		total-height: 138px,
 		image: '../img/sprite.png'
 	),
 	parlor: (
-		offset-x: -42px,
-		offset-y: -44px,
+		offset-x: -149px,
+		offset-y: -43px,
 		width: 17px,
 		height: 16px,
-		total-width: 111px,
-		total-height: 109px,
+		total-width: 169px,
+		total-height: 138px,
 		image: '../img/sprite.png'
 	),
 	phone: (
-		offset-x: 0px,
-		offset-y: -76px,
+		offset-x: -149px,
+		offset-y: 0px,
 		width: 20px,
 		height: 33px,
-		total-width: 111px,
-		total-height: 109px,
+		total-width: 169px,
+		total-height: 138px,
+		image: '../img/sprite.png'
+	),
+	play: (
+		offset-x: 0px,
+		offset-y: 0px,
+		width: 100px,
+		height: 100px,
+		total-width: 169px,
+		total-height: 138px,
 		image: '../img/sprite.png'
 	),
 	skype: (
-		offset-x: 0px,
+		offset-x: -110px,
 		offset-y: 0px,
 		width: 29px,
 		height: 34px,
-		total-width: 111px,
-		total-height: 109px,
+		total-width: 169px,
+		total-height: 138px,
 		image: '../img/sprite.png'
 	),
 	telegram: (
-		offset-x: -39px,
-		offset-y: 0px,
+		offset-x: 0px,
+		offset-y: -110px,
 		width: 34px,
 		height: 28px,
-		total-width: 111px,
-		total-height: 109px,
+		total-width: 169px,
+		total-height: 138px,
 		image: '../img/sprite.png'
 	),
 	user: (
-		offset-x: -83px,
-		offset-y: 0px,
+		offset-x: -110px,
+		offset-y: -44px,
 		width: 28px,
 		height: 30px,
-		total-width: 111px,
-		total-height: 109px,
+		total-width: 169px,
+		total-height: 138px,
 		image: '../img/sprite.png'
 	),
 );
@@ -117,6 +126,9 @@ $sprite: (
 	}
 	.icon-phone {
 		@include sprite(phone)
+	}
+	.icon-play {
+		@include sprite(play)
 	}
 	.icon-skype {
 		@include sprite(skype)
