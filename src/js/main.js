@@ -367,8 +367,10 @@ $(document).ready(function(){
     $("[main-line-js] .main__line").remove();
   }
   $(_window).on("load resize", function() {
-    clearMainBLock();
-    createMainBlock();
+    if($(_window).width() >= 768) {
+      clearMainBLock();
+      createMainBlock();
+    }
   });
   // ====================
 
