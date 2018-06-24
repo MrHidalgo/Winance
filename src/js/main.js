@@ -267,12 +267,12 @@ $(document).ready(function(){
       height : '171px'
     },
     {
-      color : 'rgba(16, 173, 180, 1)',
+      color : 'rgba(58, 103, 217, 1)',
       left : '480px',
       height : '229px'
     },
     {
-      color : 'rgba(58, 103, 217, 0.65)',
+      color : 'rgba(16, 173, 180, 1)',
       left : '720px',
       height : '329px'
     },
@@ -303,21 +303,73 @@ $(document).ready(function(){
       defaultBlockContainer = mainBlockContainer.find(".main__line-box");
 
     var diffSize = (_winWidth - defaultSizeBlock) / 2,
-      need = diffSize / 240;
+      need = diffSize / 240,
+      arrNum = [];
 
+    // DEFAULT BLOCK - center...
     for(var i = 0, len = objOptionBLock.length; i < len; i++) {
-      defaultBlockContainer.append(lineBlockTmpl(i, "", "", ""));
+      defaultBlockContainer.append(lineBlockTmpl(
+        i,
+        "",
+        "",
+        ""
+      ));
     }
 
-
-    console.log(diffSize);
-    console.log(need);
-
+    // CALC NEED BLOCK LEFT AND RIGHT...
     for(var j = 0; j < need; j++) {
-      console.log(j);
+      var tmpNum = need;
+
+      tmpNum - j;
+
+      if((tmpNum - j) > 1) {
+        arrNum.push(240);
+      } else {
+        arrNum.push(parseInt((need - j) * 240));
+      }
+    }
+
+    // POSITION RIGHT BLOCK...
+    for(
+      var k = 0, len = arrNum.length, countStart = arrNum.length, sum = 0;
+      k < len;
+      k++, countStart--
+    ) {
+
+      sum += arrNum[countStart - 1];
+
+      mainBlockContainer.append(lineBlockTmpl(
+        k,
+        arrNum[k] + "px",
+        "auto",
+        (arrNum[k] === 240) ? (sum) + "px" : 0 + "px"
+      ));
+    }
+
+    // POSITION LEFT BLOCK...
+    for(
+      var l = 0, len = arrNum.length, countStart = arrNum.length, countEnd = objOptionBLock.length - 1, sum = 0;
+      l < len;
+      l++, countStart--, countEnd--
+    ) {
+
+      sum += arrNum[countStart - 1];
+
+      mainBlockContainer.prepend(lineBlockTmpl(
+        countEnd,
+        arrNum[l] + "px",
+        (arrNum[l] === 240) ? (sum) + "px" : 0 + "px",
+        "auto"
+      ));
     }
   }
-  createMainBlock();
+  function clearMainBLock() {
+    $("[main-line-js] .main__line").remove();
+  }
+  $(_window).on("load resize", function() {
+    clearMainBLock();
+    createMainBlock();
+  });
   // ====================
 
 
