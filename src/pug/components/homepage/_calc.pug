@@ -22,14 +22,14 @@
               p!="<span>30 000</span> <span>₽</span>"
 
               .calc__tabs-range
-                input(type="range")
+                input(type="range" min="0" max="100" value="20")
 
             .calc__tabs-col.calc__tabs-col-1
               p!="Срок инвестирования"
               p!="<span>3</span> <span>мес.</span>"
 
               .calc__tabs-range
-                input(type="range")
+                input(type="range" min="0" max="100" value="30")
 
             .calc__tabs-col.calc__tabs-col-2
               p!="Итоговая сумма"
@@ -41,11 +41,11 @@
             .calc__tabs-col.calc__tabs-col-3
               p!="Выплаты"
 
-              .calc__tabs-checkbox
+              .calc__tabs-checkbox.ui-checkbox
                 input(type="checkbox" id="check-0")
                 label(for!="check-0")!="Оставлять на счете"
 
-              .calc__tabs-checkbox
+              .calc__tabs-checkbox.ui-checkbox
                 input(type="checkbox" id="check-1" checked)
                 label(for!="check-1")!="Еженедельная выплата"
 
