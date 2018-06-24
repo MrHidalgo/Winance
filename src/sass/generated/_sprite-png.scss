@@ -1,19 +1,55 @@
 $sprite: (
+	arrows: (
+		offset-x: -179px,
+		offset-y: 0px,
+		width: 27px,
+		height: 24px,
+		total-width: 206px,
+		total-height: 138px,
+		image: '../img/sprite.png'
+	),
 	email: (
 		offset-x: -44px,
 		offset-y: -110px,
 		width: 32px,
 		height: 22px,
-		total-width: 169px,
+		total-width: 206px,
+		total-height: 138px,
+		image: '../img/sprite.png'
+	),
+	flag: (
+		offset-x: -179px,
+		offset-y: -66px,
+		width: 15px,
+		height: 21px,
+		total-width: 206px,
+		total-height: 138px,
+		image: '../img/sprite.png'
+	),
+	fr: (
+		offset-x: -149px,
+		offset-y: -43px,
+		width: 18px,
+		height: 10px,
+		total-width: 206px,
+		total-height: 138px,
+		image: '../img/sprite.png'
+	),
+	gr: (
+		offset-x: -179px,
+		offset-y: -123px,
+		width: 18px,
+		height: 10px,
+		total-width: 206px,
 		total-height: 138px,
 		image: '../img/sprite.png'
 	),
 	parlor: (
-		offset-x: -149px,
-		offset-y: -43px,
+		offset-x: -179px,
+		offset-y: -97px,
 		width: 17px,
 		height: 16px,
-		total-width: 169px,
+		total-width: 206px,
 		total-height: 138px,
 		image: '../img/sprite.png'
 	),
@@ -22,7 +58,7 @@ $sprite: (
 		offset-y: 0px,
 		width: 20px,
 		height: 33px,
-		total-width: 169px,
+		total-width: 206px,
 		total-height: 138px,
 		image: '../img/sprite.png'
 	),
@@ -31,7 +67,16 @@ $sprite: (
 		offset-y: 0px,
 		width: 100px,
 		height: 100px,
-		total-width: 169px,
+		total-width: 206px,
+		total-height: 138px,
+		image: '../img/sprite.png'
+	),
+	racket: (
+		offset-x: -179px,
+		offset-y: -34px,
+		width: 22px,
+		height: 22px,
+		total-width: 206px,
 		total-height: 138px,
 		image: '../img/sprite.png'
 	),
@@ -40,7 +85,7 @@ $sprite: (
 		offset-y: 0px,
 		width: 29px,
 		height: 34px,
-		total-width: 169px,
+		total-width: 206px,
 		total-height: 138px,
 		image: '../img/sprite.png'
 	),
@@ -49,7 +94,7 @@ $sprite: (
 		offset-y: -110px,
 		width: 34px,
 		height: 28px,
-		total-width: 169px,
+		total-width: 206px,
 		total-height: 138px,
 		image: '../img/sprite.png'
 	),
@@ -58,7 +103,7 @@ $sprite: (
 		offset-y: -44px,
 		width: 28px,
 		height: 30px,
-		total-width: 169px,
+		total-width: 206px,
 		total-height: 138px,
 		image: '../img/sprite.png'
 	),
@@ -118,8 +163,20 @@ $sprite: (
 
 
 
+	.icon-arrows {
+		@include sprite(arrows)
+	}
 	.icon-email {
 		@include sprite(email)
+	}
+	.icon-flag {
+		@include sprite(flag)
+	}
+	.icon-fr {
+		@include sprite(fr)
+	}
+	.icon-gr {
+		@include sprite(gr)
 	}
 	.icon-parlor {
 		@include sprite(parlor)
@@ -129,6 +186,9 @@ $sprite: (
 	}
 	.icon-play {
 		@include sprite(play)
+	}
+	.icon-racket {
+		@include sprite(racket)
 	}
 	.icon-skype {
 		@include sprite(skype)

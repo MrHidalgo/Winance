@@ -44,7 +44,61 @@
 
 
   &__row
+    width: 100%
+    max-width: 999px
     padding-bottom: 26px
+
+    &-date
+      &:nth-child(2)
+        padding-right: 38px
+
+      div
+        display: flex
+        justify-content: space-between
+
+      p
+        font-size: 36px
+
+    &-line
+      display: flex
+
+      span
+        cursor: pointer
+        width: 6px
+        height: 1px
+        margin-left: 2px
+        margin-right: 2px
+        background-color: $c-nobel
+
+    &-icon
+      display: flex
+      padding-right: 30px
+
+    &-wrap
+      display: flex
+
+      &--0
+        align-items: center
+        justify-content: space-between
+        padding-bottom: 23px
+
+      &--1
+        justify-content: space-between
+
+        p
+          width: calc(100% / 5)
+          font-size: 18px
+          font-weight: 700
+          color: rgba($c-blueZodiac, 0.5)
+
+          &:nth-child(3),
+          &:nth-child(4),
+          &:nth-child(5)
+            display: flex
+            justify-content: flex-end
+
+          &:nth-child(3)
+            color: $c-blueZodiac
 
 
   &__col
@@ -76,6 +130,7 @@
       p
         width: 100%
         color: rgba($c-blueZodiac, 0.4)
+        font-size: 16px
 
     &-left
       width: 40%
