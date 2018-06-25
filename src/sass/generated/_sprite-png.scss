@@ -8,6 +8,15 @@ $sprite: (
 		total-height: 138px,
 		image: '../img/sprite.png'
 	),
+	down: (
+		offset-x: -149px,
+		offset-y: -63px,
+		width: 9px,
+		height: 11px,
+		total-width: 206px,
+		total-height: 138px,
+		image: '../img/sprite.png'
+	),
 	email: (
 		offset-x: -44px,
 		offset-y: -110px,
@@ -98,6 +107,15 @@ $sprite: (
 		total-height: 138px,
 		image: '../img/sprite.png'
 	),
+	up: (
+		offset-x: -149px,
+		offset-y: -84px,
+		width: 9px,
+		height: 11px,
+		total-width: 206px,
+		total-height: 138px,
+		image: '../img/sprite.png'
+	),
 	user: (
 		offset-x: -110px,
 		offset-y: -44px,
@@ -166,6 +184,9 @@ $sprite: (
 	.icon-arrows {
 		@include sprite(arrows)
 	}
+	.icon-down {
+		@include sprite(down)
+	}
 	.icon-email {
 		@include sprite(email)
 	}
@@ -195,6 +216,9 @@ $sprite: (
 	}
 	.icon-telegram {
 		@include sprite(telegram)
+	}
+	.icon-up {
+		@include sprite(up)
 	}
 	.icon-user {
 		@include sprite(user)

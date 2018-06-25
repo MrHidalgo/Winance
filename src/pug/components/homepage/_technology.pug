@@ -1,6 +1,23 @@
 // TECHNOLOGY :: START
 
 
+mixin techBlock(classMod, title, icon, topText, bottomText)
+  .technology__block(class!= classMod)
+    if(icon)
+      p
+        i(class!= "icon-" + icon)
+        != title
+    else if (title)
+      p!= title
+
+
+    .technology__block-top
+      if(topText)
+        p!= topText
+    .technology__block-bottom
+      p!= bottomText
+
+
 .technology
   .technology__wrapper.technology__wrapper--0
     .container
@@ -12,11 +29,41 @@
       p.technology__subtitle!= "На примере <strong>10-ти секунд</strong> теннисного матча"
 
       p.technology__text!= "Кортсайдинг (от англ. сourtsiding) — <br><br>это передача информации о ходе спотивного матча <br>непосредственно с места событий, что позволяет делать <br>ставки в режиме реального времени."
+      p.technology__text.technology__text--mobile!= "На основе полученных данных наши специалисты успевают сделать ставки до того, как букмекеры отреагируют на изменения хода матча и скорректируют свою линию."
 
 
-      .technology__box
+    .technology__box
+
+      .technology__box-left
+        +techBlock("technology__block--half technology__block--40", "", "", "", "59:54")
+        +techBlock("technology__block--light technology__block--50", "", "", "", "59:55")
+        +techBlock("technology__block--60", "", "", "", "59:56")
+        +techBlock("technology__block--light technology__block--70", "", "", "", "59:57")
+        +techBlock("technology__block--80", "", "", "", "59:58")
+        +techBlock("technology__block--light technology__block--90", "", "", "", "59:59")
+
+      .container
+        +techBlock("", "Фонд средств", "", "2 000 €", "00:00")
+        +techBlock("technology__block--light", "", "", "", "00:01")
+        +techBlock("", "", "", "", "00:02")
+        +techBlock("technology__block--light", "", "", "", "00:03")
+        +techBlock("", "", "", "", "00:04")
+        +techBlock("technology__block--light", "", "", "", "00:05")
+        +techBlock("technology__block--small", "1 000", "down", "1 000 €", "00:06")
+        +techBlock("technology__block--light technology__block--big", "1 650€", "up", "2 650 €", "00:07")
+        +techBlock("technology__block--big", "", "", "", "00:08")
+        +techBlock("technology__block--light technology__block--big", "", "", "", "00:09")
+
+      .technology__box-right
+        +techBlock("technology__block--big", "", "", "", "00:10")
+        +techBlock("technology__block--light technology__block--big", "", "", "", "00:11")
+        +techBlock("technology__block--big", "", "", "", "00:12")
+        +techBlock("technology__block--light technology__block--big", "", "", "", "00:13")
+        +techBlock("technology__block--big", "", "", "", "00:14")
+        +techBlock("technology__block--light technology__block--big technology__block--half", "", "", "", "00:15")
 
 
+    .container
       .technology__row
         .technology__row-wrap.technology__row-wrap--0
           .technology__row-date

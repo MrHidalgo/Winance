@@ -27,7 +27,7 @@
     padding-bottom: 33px
     font-size: 18px
     +r(767)
-      padding-bottom: 20px
+      display: none
 
     strong
       font-weight: 700
@@ -38,15 +38,171 @@
     +r(767)
       padding-bottom: 20px
 
+    &--mobile
+      display: none
+      padding-bottom: 0
+      +r(767)
+        display: block
+
 
   &__box
-    padding-bottom: 52px
+    overflow: hidden
+    position: relative
+    display: flex
+    align-items: flex-end
+    min-height: 243px
+    left: 50%
+    transform: translateX(-50%)
+    margin-left: auto
+    margin-right: auto
+    margin-bottom: 52px
+    +r(767)
+      display: none
+    +rmin(768)
+      width: 100%
+    +rmin(1200)
+      width: 2560px
+
+
+    &-right
+      display: flex
+      align-items: flex-end
+      position: absolute
+      right: 0
+      +r(1199)
+        display: none
+
+    &-left
+      display: flex
+      align-items: flex-end
+      position: absolute
+      left: 0
+      +r(1199)
+        display: none
+
+    .container
+      display: flex
+      align-items: flex-end
+      position: absolute
+      left: 0
+      right: 0
+      margin-left: auto
+      margin-right: auto
+      max-width: 100%
+      padding-left: 0
+      padding-right: 0
+      +rmin(768)
+        width: 100%
+      +rmin(1200)
+        width: 1200px
+
+  &__block
+    cursor: pointer
+    width: 120px
+
+    &--40
+      .technology__block-top
+        height: 32px !important
+        background-color: rgba($c-royalBlue, 0.40) !important
+      .technology__block-bottom
+        background-color: $c-LightSeaGreen !important
+    &--50
+      .technology__block-top
+        height: 42px
+        background-color: rgba($c-royalBlue, 0.50) !important
+    &--60
+      .technology__block-top
+        height: 52px
+        background-color: rgba($c-royalBlue, 0.60) !important
+    &--70
+      .technology__block-top
+        height: 62px
+        background-color: rgba($c-royalBlue, 0.70) !important
+    &--80
+      .technology__block-top
+        height: 72px
+        background-color: rgba($c-royalBlue, 0.80) !important
+    &--90
+      .technology__block-top
+        height: 82px
+        background-color: rgba($c-royalBlue, 0.90) !important
+    &--light
+      .technology__block-top
+        background-color: rgba($c-royalBlue, 0.94)
+      .technology__block-bottom
+        background-color: rgba($c-LightSeaGreen, 0.88)
+    &--half
+      width: 80px
+      .technology__block-top
+        height: 162px
+        background-color: rgba($c-royalBlue, 0.94)
+      .technology__block-bottom
+        background-color: rgba($c-LightSeaGreen, 0.88)
+    &--half.technology__block--light
+      width: 80px
+      .technology__block-top
+        height: 162px
+        background-color: rgba($c-royalBlue, 0.94)
+      .technology__block-bottom
+        background-color: rgba($c-LightSeaGreen, 0.88)
+    &--big.technology__block--light
+      .technology__block-top
+        height: 162px
+        background-color: rgba($c-royalBlue, 0.94)
+      .technology__block-bottom
+        background-color: rgba($c-LightSeaGreen, 0.88)
+    &--big
+      .technology__block-top
+        height: 162px
+        background-color: $c-royalBlue
+      .technology__block-bottom
+        background-color: $c-LightSeaGreen
+    &--small
+      .technology__block-top
+        height: 45px
+        background-color: rgba($c-royalBlue, 0.66)
+      .technology__block-bottom
+        background-color: $c-LightSeaGreen
+
+    &-top,
+    &-bottom
+      > p
+        padding-top: 11px
+        padding-left: 10px
+        color: $c-white
+        +r(991)
+          font-size: 12px
+
+    &-top
+      height: 92px
+      background-color: $c-royalBlue
+
+    &-bottom
+      height: 44px
+      background-color: $c-LightSeaGreen
+
+    > p
+      display: flex
+      align-items: center
+      padding-bottom: 15px
+      font-size: 16px
+      font-weight: 700
+      +r(991)
+        font-size: 14px
+      +rmin(1200)
+        white-space: nowrap
+
+      i
+        margin-left: 10px
+        margin-right: 5px
 
 
   &__row
     width: 100%
     max-width: 999px
     padding-bottom: 26px
+    +r(991)
+      display: none
 
     &-date
       &:nth-child(2)
@@ -103,6 +259,8 @@
 
   &__col
     display: flex
+    +r(767)
+      display: none
 
     &-0
       padding-bottom: 50px
