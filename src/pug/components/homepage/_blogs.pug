@@ -82,7 +82,8 @@
 
 
 mixin blogsBlock(attr, href, classMod, count, imgName, title, text, badgeArr, date)
-  a.blogs__block.is-show(
+  a.blogs__block.is-show.wow.wowFadeUp(
+    data-animation-delay!= (0.4 + parseFloat(0.1 * count)).toFixed(2) + "s"
     href!= href
     class!= (classMod !== "") ? "blogs__block-" + count + " blogs__block--" + classMod: "blogs__block-" + count
     data-filter= attr
@@ -111,7 +112,7 @@ mixin blogsBlock(attr, href, classMod, count, imgName, title, text, badgeArr, da
 section.blogs
   .container
 
-    h1.blogs__title.title!= "Читайте в блоге"
+    h1.blogs__title.title.wow.wowFadeUp(data-animation-delay="0.3s")!= "Читайте в блоге"
 
     .blogs__row(masonry-blog-js)
       each val, idx in blockData
@@ -128,7 +129,7 @@ section.blogs
         )
 
   .container
-    a.blogs__btn.btn.btn--big(href="blog.html" title!="" class!= "")!= "Все статьи"
+    a.blogs__btn.btn.btn--big.wow.wowFadeUp(data-animation-delay="0.55s" href="blog.html" title!="" class!= "")!= "Все статьи"
 
 
 // BLOGS :: END
