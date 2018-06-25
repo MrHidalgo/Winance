@@ -45,13 +45,13 @@ mixin footerNav(arr)
   .menu
     ul.menu__list
       each val, idx in arr
-        li.menu__item
+        li.menu__item.wow.wowFadeUp(data-animation-delay!= (0.3 + parseFloat(0.1 * idx)).toFixed(2) + "s")
          a.menu__link(href!= arr[idx].href title="")!= arr[idx].name
 
 
 //- PHONE
 mixin phoneNum(classMod, num)
-  .phone(class!= "phone--" + classMod)
+  .phone.wow.wowFadeUp(data-animation-delay="0.3s" class!= "phone--" + classMod)
     a(
       href!= "tel:num"
       class!= "phone__link"
@@ -62,10 +62,10 @@ mixin phoneNum(classMod, num)
 //- SOCIAL
 mixin social(title, arr)
   .social
-    p.social__title!= title
+    p.social__title.wow.wowFadeUp(data-animation-delay="0.35s")!= title
     ul.social__list
       each val, idx in arr
-        li.social__item
+        li.social__item.wow.wowFadeUp(data-animation-delay!= (0.35 + parseFloat(0.1 * idx)).toFixed(2) + "s")
           a.social__link(href!= arr[idx].href title!= "" class!= "social__link--" + arr[idx].class)
             i.social__icon(class!= arr[idx].icon)
 
