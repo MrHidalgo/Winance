@@ -63,21 +63,24 @@ mixin printBlock(href, classMod, idx, imageName, imageNameRetina, description)
 section.print
   .container
 
-    h1.print__title.title!= "Пресса о нас"
+    h1.print__title.title.wow.wowFadeUp(data-animation-delay="0.3s")!= "Пресса о нас"
 
-    .print__row(masonry-print-js)
-      each val, idx in printBlockData
-        +printBlock(
-          printBlockData[idx].href,
-          printBlockData[idx].classMod,
-          idx,
-          printBlockData[idx].imageName,
-          printBlockData[idx].imageNameRetina,
-          printBlockData[idx].description
-        )
+    .print__row.wow.wowFadeUp(data-animation-delay="0.4s")
+      .swiper-container.swiper-print-js
+        .swiper-wrapper(masonry-print-js)
+          each val, idx in printBlockData
+            +printBlock(
+              printBlockData[idx].href,
+              printBlockData[idx].classMod,
+              idx,
+              printBlockData[idx].imageName,
+              printBlockData[idx].imageNameRetina,
+              printBlockData[idx].description
+            )
+        .swiper-pagination
 
     .container
-      a.print__btn.btn.btn--big(href="press.html" title!="" class!= "")!= "Все статьи"
+      a.print__btn.btn.btn--big.wow.wowFadeUp(data-animation-delay="0.5s" href="press.html" title!="" class!= "")!= "Все статьи"
 
         
 // PRINT :: END

@@ -19,13 +19,6 @@
     padding-bottom: 50px
 
 
-  &__row
-    +r(767)
-      white-space: nowrap
-      overflow-x: auto
-      height: auto !important
-
-
   &__btn
     margin-top: 97px
     +r(767)
@@ -45,12 +38,10 @@
     border-radius: 3px
     border: 1px solid $c-whisper
     background-color: $c-white
-    +rmin(320)
-      display: inline-block
-      vertical-align: top
-      position: static !important
-      margin-right: 18px
-      width: 300px
+    +r(767)
+      flex: 0 0 300px
+      max-width: 300px
+      margin-bottom: 50px
     +rmin(768)
       display: block
       position: absolute !important

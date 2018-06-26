@@ -394,7 +394,8 @@ $(document).ready(function(){
   //
   // ====================
   let swiperBlog = 0,
-    swiperTestimonials = 0;
+    swiperTestimonials = 0,
+    swiperPrint = 0;
 
   function initSwiperBlog() {
     swiperBlog = new Swiper('.swiper-blog-js', {
@@ -434,34 +435,58 @@ $(document).ready(function(){
       },
     })
   }
+  function initSwiperPrint() {
+    swiperPrint = new Swiper('.swiper-print-js', {
+      wrapperClass: "swiper-wrapper",
+      slideClass: "print__block",
+      direction: 'horizontal',
+      loop: false,
+      watchOverflow: true,
+      setWrapperSize: false,
+      spaceBetween: 18,
+      slidesPerView: 'auto',
+      normalizeSlideIndex: true,
+      grabCursor: true,
+      freeMode: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+    })
+  }
 
   $(_window).on("load resize", function() {
     let msnrGridBlog = $("[masonry-blog-js]"),
-      msnrGridTestimonials = $("[masonry-testimonials-js]");
+      msnrGridTestimonials = $("[masonry-testimonials-js]"),
+      msnrGridPrint = $("[masonry-print-js]");
 
     if($(_window).width() < 768) {
 
       initSwiperBlog();
       initSwiperTestimonials();
+      initSwiperPrint();
 
       msnrGridBlog.masonry('destroy');
       msnrGridTestimonials.masonry('destroy');
+      msnrGridPrint.masonry('destroy');
 
     } else {
       if(swiperBlog !== 0) {
         swiperBlog.destroy();
-        initMasonry('[masonry-blog-js]', '.blogs__block');
       }
 
       if(swiperTestimonials !== 0) {
         swiperTestimonials.destroy();
-        initMasonry('[masonry-testimonials-js]', '.testimonials__block');
       }
 
-      // initMasonry('[masonry-blog-js]', '.blogs__block');
-      // initMasonry('[masonry-testimonials-js]', '.testimonials__block');
-      // initMasonry('[masonry-print-js]', '.print__block');
-      // initMasonry('[masonry-faq-js]', '.quesAns__block');
+      if(swiperPrint !== 0) {
+        swiperPrint.destroy();
+      }
+
+      initMasonry('[masonry-blog-js]', '.blogs__block');
+      initMasonry('[masonry-testimonials-js]', '.testimonials__block');
+      initMasonry('[masonry-print-js]', '.print__block');
+      initMasonry('[masonry-faq-js]', '.quesAns__block');
     }
   });
   // ====================
