@@ -10,6 +10,10 @@
   &--wrapper
     .nav__link
       color: $c-royalBlue
+      +transition(color)
+      &:hover
+        color: $c-curiousBlue
+        +transition(color)
       +rmin(768)
         font-size: 14px
       +rmin(992)

@@ -276,12 +276,17 @@
   align-items: center
   justify-content: center
   color: $c-royalBlue
+  +transition(color)
   +rmin(768)
     font-size: 14px
   +rmin(992)
     font-size: 16px
   +rmin(1200)
     font-size: 18px
+
+  &:hover
+    color: $c-curiousBlue
+    +transition(color)
 
   &__icon
     margin-right: 5px
