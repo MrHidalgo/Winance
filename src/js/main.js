@@ -365,9 +365,22 @@ $(document).ready(function(){
         "auto"
       ));
     }
+
+    stickyMainText(".main__line-1", ".main__line-col--0");
+    stickyMainText(".main__line-2", ".main__line-col--1");
+    stickyMainText(".main__line-3", ".main__line-col--2");
   }
   function clearMainBLock() {
     $("[main-line-js] .main__line").remove();
+  }
+  function stickyMainText(blockClassName, textClassName) {
+    let leftWrapOffset = $(".main__line-box").offset().left,
+      leftOffsetElem = $(".main__line-box " + blockClassName).offset().left,
+      textBlock = $(textClassName);
+
+    textBlock.css({
+      "left" : leftOffsetElem - leftWrapOffset
+    });
   }
   $(_window).on("load resize", function() {
     if($(_window).width() >= 768) {
