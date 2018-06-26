@@ -36,7 +36,7 @@ mixin headerNav(classMod, arr)
   .nav(class!="nav--" + classMod)
     ul.nav__list
       each val, idx in arr
-        li.nav__item
+        li.nav__item.wow.wowFadeUp(data-animation-delay!= (0.35 + parseFloat(0.1 * idx)).toFixed(2) + "s")
           a.nav__link(href!= arr[idx].href title!="")!= arr[idx].name
 
 

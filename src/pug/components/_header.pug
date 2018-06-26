@@ -51,30 +51,30 @@ header.header
   .header__bar
     .container
       .header__bar-row
-        .header__bar-left
+        .header__bar-left.wow.wowFadeUp(data-animation-delay="0.3s")
           +lang(headerLang)
 
         .header__bar-middle
           +headerNav("bar", headerBarNav)
 
-        .header__bar-right
+        .header__bar-right.wow.wowFadeUp(data-animation-delay="0.7s")
           +phoneNum("header", "+7 495 777 40 05")
 
   .header__wrapper
     .container
       .header__wrapper-row
-        .header__wrapper-left
+        .header__wrapper-left.wow.wowFadeUp(data-animation-delay="0.3s")
           +logotype()
 
         .header__wrapper-middle
           +headerNav("wrapper", headerWrapperNav)
 
-        .header__wrapper-right
+        .header__wrapper-right.wow.wowFadeUp(data-animation-delay="0.7s")
           a.parlor(href="cabinet.html" title!="" class!="")
             i.parlor__icon.icon-parlor
             != "Кабинет"
 
-        .header__wrapper-mobile
+        .header__wrapper-mobile.wow.wowFadeUp(data-animation-delay="0.35s")
           +hamburger()
 
         
