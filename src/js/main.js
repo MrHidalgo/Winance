@@ -393,9 +393,10 @@ $(document).ready(function(){
 
   //
   // ====================
-  let swiperBlog = 0;
+  let swiperBlog = 0,
+    swiperTestimonials = 0;
 
-  function initSwiper() {
+  function initSwiperBlog() {
     swiperBlog = new Swiper('.swiper-blog-js', {
       wrapperClass: "swiper-wrapper",
       slideClass: "blogs__block",
@@ -414,20 +415,53 @@ $(document).ready(function(){
       },
     })
   }
+  function initSwiperTestimonials() {
+    swiperTestimonials = new Swiper('.swiper-testimonials-js', {
+      wrapperClass: "swiper-wrapper",
+      slideClass: "testimonials__block",
+      direction: 'horizontal',
+      loop: false,
+      watchOverflow: true,
+      setWrapperSize: false,
+      spaceBetween: 18,
+      slidesPerView: 'auto',
+      normalizeSlideIndex: true,
+      grabCursor: true,
+      freeMode: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+    })
+  }
+
   $(_window).on("load resize", function() {
-    let msnrGrid = $("[masonry-blog-js]");
+    let msnrGridBlog = $("[masonry-blog-js]"),
+      msnrGridTestimonials = $("[masonry-testimonials-js]");
 
     if($(_window).width() < 768) {
 
-      initSwiper();
-      msnrGrid.masonry('destroy');
+      initSwiperBlog();
+      initSwiperTestimonials();
+
+      msnrGridBlog.masonry('destroy');
+      msnrGridTestimonials.masonry('destroy');
 
     } else {
       if(swiperBlog !== 0) {
         swiperBlog.destroy();
+        initMasonry('[masonry-blog-js]', '.blogs__block');
       }
 
-      initMasonry('[masonry-blog-js]', '.blogs__block');
+      if(swiperTestimonials !== 0) {
+        swiperTestimonials.destroy();
+        initMasonry('[masonry-testimonials-js]', '.testimonials__block');
+      }
+
+      // initMasonry('[masonry-blog-js]', '.blogs__block');
+      // initMasonry('[masonry-testimonials-js]', '.testimonials__block');
+      // initMasonry('[masonry-print-js]', '.print__block');
+      // initMasonry('[masonry-faq-js]', '.quesAns__block');
     }
   });
   // ====================

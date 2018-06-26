@@ -66,21 +66,24 @@ mixin testimonialsBlock(href, classMod, idx, title, pos, description)
 section.testimonials
 
   .container
-    h1.testimonials__title.title!= "Отзывы"
+    h1.testimonials__title.title.wow.wowFadeUp(data-animation-delay="0.3s")!= "Отзывы"
 
-    .testimonials__row(masonry-testimonials-js)
-      each val, idx in testimonialsBlockData
-        +testimonialsBlock(
-          testimonialsBlockData[idx].href,
-          testimonialsBlockData[idx].classMod,
-          idx,
-          testimonialsBlockData[idx].title,
-          testimonialsBlockData[idx].pos,
-          testimonialsBlockData[idx].description
-        )
+    .testimonials__row.wow.wowFadeUp(data-animation-delay="0.4s")
+      .swiper-container.swiper-testimonials-js
+        .swiper-wrapper(masonry-testimonials-js)
+          each val, idx in testimonialsBlockData
+            +testimonialsBlock(
+              testimonialsBlockData[idx].href,
+              testimonialsBlockData[idx].classMod,
+              idx,
+              testimonialsBlockData[idx].title,
+              testimonialsBlockData[idx].pos,
+              testimonialsBlockData[idx].description
+            )
+        .swiper-pagination
 
   .container
-    a.testimonials__btn.btn.btn--big(href="reviews.html" title!="" class!= "")!= "Все отзывы"
+    a.testimonials__btn.btn.btn--big.wow.wowFadeUp(data-animation-delay="0.5s" href="reviews.html" title!="" class!= "")!= "Все отзывы"
 
 
 // TESTIMONIALS :: END
