@@ -27,14 +27,19 @@
 
 
   &__row
-    display: flex
-    flex-wrap: wrap
+    .swiper-wrapper
+      +rmin(768)
+        display: flex
+        flex-wrap: wrap
 
 
   &__box
     padding: 34px 30px
     background-color: $c-whiteSmoke
     +r(767)
+      flex: 0 0 300px
+      max-width: 300px
+      margin-bottom: 50px
       border: none !important
       border-bottom: 1px solid $c-white !important
     +rmin(320)
@@ -44,9 +49,18 @@
     +rmin(992)
       width: calc(100% / 3)
 
+    &-n
+      display: none
+      +r(767)
+        display: block
+      .reasons__box-img
+        max-height: 100%
+
     &-0
       border-right: 1px solid $c-white
       border-bottom: 1px solid $c-white
+      +r(767)
+        display: none !important
       .reasons__box-left
         +r(991)
           border-right: 1px solid $c-white

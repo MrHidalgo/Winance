@@ -395,7 +395,8 @@ $(document).ready(function(){
   // ====================
   let swiperBlog = 0,
     swiperTestimonials = 0,
-    swiperPrint = 0;
+    swiperPrint = 0,
+    swiperReasons = 0;
 
   function initSwiperBlog() {
     swiperBlog = new Swiper('.swiper-blog-js', {
@@ -454,6 +455,25 @@ $(document).ready(function(){
       },
     })
   }
+  function initSwiperReasons() {
+    swiperReasons = new Swiper('.swiper-reasons-js', {
+      wrapperClass: "swiper-wrapper",
+      slideClass: "reasons__box",
+      direction: 'horizontal',
+      loop: false,
+      watchOverflow: true,
+      setWrapperSize: false,
+      spaceBetween: 18,
+      slidesPerView: 'auto',
+      normalizeSlideIndex: true,
+      grabCursor: true,
+      freeMode: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+    })
+  }
 
   $(_window).on("load resize", function() {
     let msnrGridBlog = $("[masonry-blog-js]"),
@@ -465,6 +485,7 @@ $(document).ready(function(){
       initSwiperBlog();
       initSwiperTestimonials();
       initSwiperPrint();
+      initSwiperReasons();
 
       msnrGridBlog.masonry('destroy');
       msnrGridTestimonials.masonry('destroy');
@@ -481,6 +502,11 @@ $(document).ready(function(){
 
       if(swiperPrint !== 0) {
         swiperPrint.destroy();
+      }
+
+
+      if(swiperReasons !== 0) {
+        swiperReasons.destroy();
       }
 
       initMasonry('[masonry-blog-js]', '.blogs__block');
