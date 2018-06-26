@@ -11,17 +11,17 @@
 
     .investors__row
       .investors__row-left
-        h1.investors__title.title!= "Ваши инвестиции <br>в ваших руках"
+        h1.investors__title.title.wow.wowFadeUp(data-animation-delay="0.3s")!= "Ваши инвестиции <br>в ваших руках"
 
         .investors__col
-          .investors__col-left
+          .investors__col-left.wow.wowFadeUp(data-animation-delay="0.4s")
             p!= "Быстрый доступ в личный кабинет с любого устройства."
-          .investors__col-right
+          .investors__col-right.wow.wowFadeUp(data-animation-delay="0.5s")
             p!= "Следите за постоянным приростом ваших доходов."
 
-        a.investors__btn.btn.btn--color(href="#")!= "Попробовать"
+        a.investors__btn.btn.btn--color.wow.wowFadeUp(data-animation-delay="0.6s" href="#")!= "Попробовать"
 
-      .investors__row-right
+      .investors__row-right.wow.wowFadeUp(data-animation-delay="0.45s")
         img.investors__img.investors__img--des(src="./img/img-bg-investors__homepage.png" srcset="./img/img-bg-investors__homepage@2x.png 2x" title="" class="")
         img.investors__img.investors__img--mob(src="./img/img-bg-investors__homepage-mob.png" srcset="./img/img-bg-investors__homepage-mob@2x.png 2x" title="" class="")
 
