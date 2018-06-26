@@ -573,44 +573,26 @@ $(document).ready(function(){
   //////////
 
   function initPopups(){
-    // Magnific Popup
     var startWindowScroll = 0;
-    $('[js-popup]').magnificPopup({
-      type: 'inline',
+
+    $('[playVideo-js]').magnificPopup({
+      type: 'iframe',
       fixedContentPos: true,
       fixedBgPos: true,
       overflowY: 'auto',
-      closeBtnInside: true,
+      closeBtnInside: false,
       preloader: false,
       midClick: true,
       removalDelay: 300,
       mainClass: 'popup-buble',
-      callbacks: {
-        beforeOpen: function() {
-          startWindowScroll = _window.scrollTop();
-          // $('html').addClass('mfp-helper');
-        },
-        close: function() {
-          // $('html').removeClass('mfp-helper');
-          _window.scrollTop(startWindowScroll);
+      patterns: {
+        youtube: {
+          index: 'youtube.com/',
+          id: 'v=', // String that splits URL in a two parts, second part should be %id%
+          src: '//www.youtube.com/embed/%id%?autoplay=1&controls=0&showinfo=0' // URL that will be set as a source for iframe.
         }
       }
     });
-
-    $('[js-popup-gallery]').magnificPopup({
-  		delegate: 'a',
-  		type: 'image',
-  		tLoading: 'Загрузка #%curr%...',
-  		mainClass: 'popup-buble',
-  		gallery: {
-  			enabled: true,
-  			navigateByImgClick: true,
-  			preload: [0,1]
-  		},
-  		image: {
-  			tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
-  		}
-  	});
   }
 
   function closeMfp(){

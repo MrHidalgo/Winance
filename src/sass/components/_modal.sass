@@ -1,0 +1,59 @@
+// MODAL
+
+.modal
+  position: relative
+  width: 100%
+  max-width: 790px
+  min-height: 445px
+  margin: 40px auto
+  background-color: $c-white
+  //box-shadow: 0 15px 35px 0 rgba(0, 0, 0, 0.15)
+
+  &--video
+    border-top-right-radius: 3px
+    border-top-left-radius: 3px
+    .modal__header
+      height: 60px
+      border-top-right-radius: 3px
+      border-top-left-radius: 3px
+      background-color: $c-whiteSmoke
+    .modal__body
+      position: relative
+
+
+.mfp-bg
+  opacity: 0.95
+  background-color: $c-blueZodiac
+
+.show.mfp-bg
+  background-color: rgba($c-black, 0.5)
+  animation-duration: 0.35s
+  animation-fill-mode: both
+  animation-name: fadeIn
+
+
+.mfp-zoom-in
+  .mfp-with-anim
+    opacity: 0
+    transition: all 0.3s ease-in-out
+    transform: scale(0.8)
+
+  &.mfp-bg
+    opacity: 0
+    transition: all 0.3s ease-out
+
+  &.mfp-ready
+    .mfp-with-anim
+      opacity: 1
+      transform: scale(1)
+    &.mfp-bg
+      opacity: 0.8
+
+  &.mfp-removing
+    .mfp-with-anim
+      transform: scale(0.8)
+      opacity: 0
+    &.mfp-bg
+      opacity: 0
+
+// \ MODAL
