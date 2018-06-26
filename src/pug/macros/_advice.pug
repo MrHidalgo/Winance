@@ -4,36 +4,36 @@
 section.advice
   .container
 
-    h1.advice__title.title!= "Нужна консультация?"
+    h1.advice__title.title.wow.wowFadeUp(data-animation-delay="0.3s")!= "Нужна консультация?"
 
-    form(action="" method="" class="form" autocomplete="off")
+    form(action="" method="" class="form advice-form-js" autocomplete="off")
       .advice__row
-        .advice__col
+        .advice__col.wow.wowFadeUp(data-animation-delay="0.35s")
           .form__field.form__field--p
             input.form__input(type="text" name="name" class="" id="advice_name" placeholder="Имя")
             label.form__label(for="advice_name")!= "Как вас зовут"
 
-        .advice__col
+        .advice__col.wow.wowFadeUp(data-animation-delay="0.4s")
           .form__field.form__field--p
-            input.form__input(type="text" name="phone" class="" id="advice_phone" placeholder="+7 000 000-00-00")
+            input.form__input(type="tel" name="phone" class="" id="advice_phone" placeholder="+7 000 000-00-00")
             label.form__label(for="advice_phone")!= "Телефон"
 
-        .advice__col
+        .advice__col.wow.wowFadeUp(data-animation-delay="0.45s")
           .form__field.form__field--p
             input.form__input(type="text" name="email" class="" id="advice_email" placeholder="Адрес почты")
             label.form__label(for="advice_email")!= "Ваша почта"
 
 
-        .advice__col
+        .advice__col.wow.wowFadeUp(data-animation-delay="0.55s")
           button.advice__btn.form__btn.btn.btn--color.btn--medium(type="submit")!= "Получить консультацию"
 
-        .advice__col
+        .advice__col.wow.wowFadeUp(data-animation-delay="0.6s")
           p.form__info!= "Мы свяжемся с вами и <br>ответим на любые <br>вопросы."
 
-        .advice__col
+        .advice__col.wow.wowFadeUp(data-animation-delay="0.65s")
           p.form__info!= "Никакого спама и <br>попадания в базы!"
 
-        .advice__col
+        .advice__col.wow.wowFadeUp(data-animation-delay="0.7s")
           p.form__info.form__info--i!= "Нажимая на кнопку «Отправить <br>сообщение», я даю согласие на <br>обработку персональных данных."
 
 
