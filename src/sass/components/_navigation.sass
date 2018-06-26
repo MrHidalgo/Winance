@@ -1,0 +1,89 @@
+// NAVIGATION
+
+.navigation
+  display: none
+  +r(767)
+    overflow-y: auto
+    z-index: 100
+    position: fixed
+    top: 90px
+    left: 0
+    width: 100%
+    height: calc(100% - 90px)
+    background-color: $c-whiteSmoke
+
+  &.is-show
+    display: block
+    animation-name: fadeIn
+    animation-duration: 0.5s
+
+
+  &__row
+    display: flex
+    flex-direction: column
+    min-height: 60px
+    border-bottom: 1px solid $c-white
+
+    &:last-child
+      border-bottom: none
+
+    &-0
+      padding-top: 20px
+      padding-bottom: 40px
+
+    &-1
+      display: flex
+      flex-direction: row
+      align-items: center
+      justify-content: space-between
+      padding-left: 20px
+      padding-right: 20px
+      animation-name: wowFade
+      visibility: visible
+
+      a
+        display: flex
+        align-items: center
+        width: 50%
+        min-height: 60px
+        &:nth-child(1)
+          justify-content: flex-start
+        &:nth-child(2)
+          justify-content: flex-end
+
+      .parlor
+        font-size: 18px
+        font-weight: 600
+      .logout
+        color: red
+        font-size: 18px
+        font-weight: 600
+
+    &-2
+      animation-name: wowFade
+      visibility: visible
+
+      .lang
+        padding-left: 20px
+        padding-right: 20px
+        a
+          display: flex
+          align-items: center
+          width: 100%
+          min-height: 60px
+          text-transform: none
+          color: $c-royalBlue
+          font-size: 20px
+
+    &-3
+      padding-top: 36px
+      padding-left: 20px
+      padding-right: 20px
+
+      .social__title,
+      .social__item
+        animation-name: wowFade
+        visibility: visible
+
+
+// \ NAVIGATION

@@ -42,6 +42,7 @@ $(document).ready(function(){
     filterMasonry("[quesAns-pagination-js]", "[masonry-faq-js]", ".quesAns__block");
 
     inputRangeInit();
+    closeMobileMenu();
 
     // development helper
     _window.on('resize', debounce(setBreakpoint, 200))
@@ -125,12 +126,14 @@ $(document).ready(function(){
   // HAMBURGER TOGGLER
   _document.on('click', '[hamburger-js]', function(e){
     $(e.currentTarget).toggleClass('is-active');
-    // $('.mobile-navi').toggleClass('is-active');
+    $("[nav-mobile-js]").toggleClass("is-show");
+    $("body, html").toggleClass("is-hideScroll");
   });
 
   function closeMobileMenu(){
-    $('[js-hamburger]').removeClass('is-active');
-    $('.mobile-navi').removeClass('is-active');
+    $("[hamburger-js]").removeClass('is-active');
+    $("[nav-mobile-js]").removeClass("is-show");
+    $("body, html").removeClass("is-hideScroll");
   }
 
   // SET ACTIVE CLASS IN HEADER

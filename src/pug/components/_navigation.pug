@@ -1,0 +1,95 @@
+// NAVIGATION :: START
+
+-
+  var mobileNav = [
+    {
+    href: 'about.html',
+    name: 'О фонде'
+    },
+    {
+    href: 'howWeEarn.html',
+    name: 'Как мы зарабатываем'
+    },
+    {
+    href: '#',
+    name: 'Гарантии'
+    },
+    {
+    href: 'investors.html',
+    name: 'Инвесторам'
+    },
+    {
+    href: 'reviews.html',
+    name: 'Отзывы'
+    },
+    {
+    href: 'faq.html',
+    name: 'FAQ'
+    },
+    {
+    href: 'blog.html',
+    name: 'Блог'
+    },
+    {
+    href: 'press.html',
+    name: 'Пресса о нас'
+    },
+    {
+    href: 'contacts.html',
+    name: 'Контакты'
+    }
+  ];
+  var mobileLang = [
+    {
+    href: '#',
+    name: 'Eng'
+    }
+  ];
+  var socialItem = [
+    {
+    href: "#",
+    class: "fb",
+    icon: "fab fa-facebook-f"
+    },
+    {
+    href: "#",
+    class: "tw",
+    icon: "fab fa-twitter"
+    },
+    {
+    href: "#",
+    class: "vk",
+    icon: "fab fa-vk"
+    },
+    {
+    href: "#",
+    class: "in",
+    icon: "fab fa-instagram"
+    },
+    {
+    href: "#",
+    class: "yb",
+    icon: "fab fa-youtube"
+    }
+  ];
+
+
+#navigation.navigation.animated(nav-mobile-js)
+  .navigation__row.navigation__row-0
+    +headerNav("mobile", mobileNav)
+
+  .navigation__row.navigation__row-1.wow.wowFadeUp(data-animation-delay="0.3s")
+    a.parlor(href="cabinet.html" title!="" class!="")
+      i.parlor__icon.icon-parlor
+      != "Шусман"
+
+    a.logout(href="cabinet.html" title!="" class!="")!= "Выйти"
+
+  .navigation__row.navigation__row-2.wow.wowFadeUp(data-animation-delay="0.3s")
+    +lang(mobileLang)
+
+  .navigation__row.navigation__row-3
+    +social("Присоединяйтесь", socialItem)
+
+
+// NAVIGATION :: END
