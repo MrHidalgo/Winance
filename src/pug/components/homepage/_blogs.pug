@@ -82,15 +82,15 @@
 
 
 mixin blogsBlock(attr, href, classMod, count, imgName, title, text, badgeArr, date)
-  a.blogs__block.is-show.wow.wowFadeUp(
-    data-animation-delay!= (0.4 + parseFloat(0.1 * count)).toFixed(2) + "s"
+  a.blogs__block.is-show(
     href!= href
     class!= (classMod !== "") ? "blogs__block-" + count + " blogs__block--" + classMod: "blogs__block-" + count
     data-filter= attr
   )
     .blogs__block-header
       if(classMod === "image")
-        .blogs__block-wrap(style!="background-image: url('" + imgName + "')")
+        .blogs__block-wrap
+          img.blogs__block-img(src= imgName alt!= "" title!= "")
           p!= title
       else
         p!= title
@@ -114,22 +114,25 @@ section.blogs
 
     h1.blogs__title.title.wow.wowFadeUp(data-animation-delay="0.3s")!= "Читайте в блоге"
 
-    .blogs__row(masonry-blog-js)
-      each val, idx in blockData
-        +blogsBlock(
-          blockData[idx].attr,
-          blockData[idx].href,
-          blockData[idx].classMod,
-          idx,
-          blockData[idx].imgName,
-          blockData[idx].title,
-          blockData[idx].text,
-          blockData[idx].badgeArr,
-          blockData[idx].date
-        )
+    .blogs__row.wow.wowFadeUp(data-animation-delay="0.4s")
+      .swiper-container.swiper-blog-js
+        .swiper-wrapper(masonry-blog-js)
+          each val, idx in blockData
+            +blogsBlock(
+              blockData[idx].attr,
+              blockData[idx].href,
+              blockData[idx].classMod,
+              idx,
+              blockData[idx].imgName,
+              blockData[idx].title,
+              blockData[idx].text,
+              blockData[idx].badgeArr,
+              blockData[idx].date
+            )
+        .swiper-pagination
 
   .container
-    a.blogs__btn.btn.btn--big.wow.wowFadeUp(data-animation-delay="0.55s" href="blog.html" title!="" class!= "")!= "Все статьи"
+    a.blogs__btn.btn.btn--big.wow.wowFadeUp(data-animation-delay="0.5s" href="blog.html" title!="" class!= "")!= "Все статьи"
 
 
 // BLOGS :: END

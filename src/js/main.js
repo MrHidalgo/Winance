@@ -391,6 +391,47 @@ $(document).ready(function(){
   // ====================
 
 
+  //
+  // ====================
+  let swiperBlog = 0;
+
+  function initSwiper() {
+    swiperBlog = new Swiper('.swiper-blog-js', {
+      wrapperClass: "swiper-wrapper",
+      slideClass: "blogs__block",
+      direction: 'horizontal',
+      loop: false,
+      watchOverflow: true,
+      setWrapperSize: false,
+      spaceBetween: 18,
+      slidesPerView: 'auto',
+      normalizeSlideIndex: true,
+      grabCursor: true,
+      freeMode: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+    })
+  }
+  $(_window).on("load resize", function() {
+    let msnrGrid = $("[masonry-blog-js]");
+
+    if($(_window).width() < 768) {
+
+      initSwiper();
+      msnrGrid.masonry('destroy');
+
+    } else {
+      if(swiperBlog !== 0) {
+        swiperBlog.destroy();
+      }
+
+      initMasonry('[masonry-blog-js]', '.blogs__block');
+    }
+  });
+  // ====================
+
 
   //
   // ====================
@@ -529,9 +570,9 @@ $(document).ready(function(){
         delay = $(el).data('animation-delay');
       }
 
-      var animationClass = $(el).data('animation-class') || "wowFadeUp"
+      var animationClass = $(el).data('animation-class') || "wowFadeUp";
 
-      var animationName = $(el).data('animation-name') || "wowFade"
+      var animationName = $(el).data('animation-name') || "wowFade";
 
       elWatcher.enterViewport(throttle(function() {
         $(el).addClass(animationClass);
@@ -543,14 +584,6 @@ $(document).ready(function(){
       }, 100, {
         'leading': true
       }));
-      // elWatcher.exitViewport(throttle(function() {
-      //   $(el).removeClass(animationClass);
-      //   $(el).css({
-      //     'animation-name': 'none',
-      //     'animation-delay': 0,
-      //     'visibility': 'hidden'
-      //   });
-      // }, 100));
     });
 
   }

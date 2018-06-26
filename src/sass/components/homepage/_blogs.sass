@@ -38,13 +38,6 @@
       font-size: 28px
 
 
-  &__row
-    +r(767)
-      white-space: nowrap
-      overflow-x: auto
-      height: auto !important
-
-
   &__pagination
     padding-bottom: 12px
 
@@ -90,12 +83,11 @@
     border-radius: 3px
     border: 1px solid $c-whisper
     background-color: $c-white
-    +rmin(320)
-      display: inline-block
-      vertical-align: top
-      position: static !important
-      margin-right: 18px
-      width: 300px
+    +transition(box-shadow)
+    +r(767)
+      flex: 0 0 300px
+      max-width: 300px
+      margin-bottom: 50px
     +rmin(768)
       display: block
       position: absolute !important
@@ -103,6 +95,13 @@
       width: calc((100% - 18px) / 2)
     +rmin(992)
       width: calc((100% - 36px) / 3)
+
+    &:hover
+      box-shadow: 0 0 15px 0 rgba($c-blueZodiac, 0.1)
+      +transition(box-shadow)
+      .blogs__block-img
+        transform: scale(1.1)
+        +transition(transform)
 
     &.is-hide
       display: none
@@ -154,6 +153,7 @@
           width: calc(100% - 75%)
 
     &-wrap
+      overflow: hidden
       position: relative
       display: flex
       align-items: flex-end
@@ -209,6 +209,16 @@
         margin-top: 9px
       +rmin(1200)
         margin-top: 0
+
+    &-img
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      object-fit: cover
+      object-position: center
+      +transition(transform)
 
 
   &__btn

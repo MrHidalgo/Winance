@@ -141,7 +141,8 @@ mixin blogsBlock(attr, href, classMod, count, imgName, title, text, badgeArr, da
     .blogs__block-header
       if(classMod === "image")
         //p!= imgName
-        .blogs__block-wrap(style!="background-image: url('" + imgName + "')")
+        .blogs__block-wrap
+          img.blogs__block-img(src= imgName alt!= "" title!= "")
           p!= title
       else
         p!= title
