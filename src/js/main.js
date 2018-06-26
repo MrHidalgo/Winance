@@ -292,7 +292,7 @@ $(document).ready(function(){
           height: ${objOptionBLock[idx].height};
           background-color: ${objOptionBLock[idx].color};
         "
-        class="main__line main__line-${idx}"
+        class="animated slideInUp main__line main__line-${idx}"
       ></div>
     `
   }

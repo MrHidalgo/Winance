@@ -7,13 +7,13 @@
 
     .main__row
       .main__row-left
-        h1.main__title.title!= "Инвестиционный <br>спортивный фонд <br>Winance"
+        h1.main__title.title.wow.wowFadeUp(data-animation-delay="0.3s")!= "Инвестиционный <br>спортивный фонд <br>Winance"
 
-        a.main__btn.btn.btn--color(href="" title!="")!= "Станьте инвестором"
+        a.main__btn.btn.btn--color.wow.wowFadeUp(data-animation-delay="0.4s" href="" title!="")!= "Станьте инвестором"
 
       .main__row-right
 
-        a.main__play(href="#" title="")
+        a.main__play.wow.wowFadeUp(data-animation-delay="0.3s" href="#" title="")
           i.icon-play
           .main__play-wrap
             p!= "Посмотрите!"
@@ -21,13 +21,13 @@
 
   .main__line-wrap(main-line-js)
     .main__line-box
-      .main__line-col.main__line-col--0
+      .main__line-col.main__line-col--0.wow.wowFadeUp(data-animation-delay="0.5s")
         p!= "90<sup>дней</sup>"
         p!= "Минимальный <br>депозит"
-      .main__line-col.main__line-col--1
+      .main__line-col.main__line-col--1.wow.wowFadeUp(data-animation-delay="0.55s")
         p!= "15<sup>%</sup>"
         p!= "Максимальная <br>доходность <br>в месяц"
-      .main__line-col.main__line-col--2
+      .main__line-col.main__line-col--2.wow.wowFadeUp(data-animation-delay="0.6s")
         p!= "23 584 810<sup>₽</sup>"
         p!= "Выплачено дивидендов с 2013 по 2018"
         
