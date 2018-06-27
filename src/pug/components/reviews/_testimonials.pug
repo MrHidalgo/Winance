@@ -88,19 +88,21 @@ section.testimonials
 
   .container
 
-    .testimonials__row(masonry-testimonials-js)
-      each val, idx in testimonialsBlockData
-        +testimonialsBlock(
-          testimonialsBlockData[idx].href,
-          testimonialsBlockData[idx].classMod,
-          idx,
-          testimonialsBlockData[idx].title,
-          testimonialsBlockData[idx].pos,
-          testimonialsBlockData[idx].description
-        )
+    .testimonials__row.wow.wowFadeUp(data-animation-delay="0.5s")
+      .swiper-container.swiper-testimonials-js
+        .swiper-wrapper(masonry-testimonials-js)
+          each val, idx in testimonialsBlockData
+            +testimonialsBlock(
+              testimonialsBlockData[idx].href,
+              testimonialsBlockData[idx].classMod,
+              idx,
+              testimonialsBlockData[idx].title,
+              testimonialsBlockData[idx].pos,
+              testimonialsBlockData[idx].description
+            )
 
   .container
-    a.testimonials__btn.btn.btn--big(href="#" title!="" class!= "")!= "Показать еще"
+    a.testimonials__btn.btn.btn--big.wow.wowFadeUp(data-animation-delay="0.5s" href="#" title!="" class!= "")!= "Показать еще"
 
 
 // TESTIMONIALS :: END

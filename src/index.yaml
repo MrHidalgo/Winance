@@ -10,7 +10,7 @@ PageList:
 - file: howWeEarn.html
   ready: 35
 - file: reviews.html
-  ready: 75
+  ready: 90
 - file: press.html
   ready: 90
 - file: blog.html
