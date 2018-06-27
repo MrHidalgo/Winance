@@ -40,6 +40,7 @@
     border-radius: 3px
     border: 1px solid $c-whisper
     background-color: $c-white
+    +transition(box-shadow)
     +r(767)
       flex: 0 0 300px
       max-width: 300px
@@ -51,6 +52,10 @@
       width: calc((100% - 18px) / 2)
     +rmin(992)
       width: calc((100% - 36px) / 3)
+
+    &:hover
+      box-shadow: 0 0 15px 0 rgba($c-blueZodiac, 0.1)
+      +transition(box-shadow)
 
     &-header
       padding-bottom: 32px

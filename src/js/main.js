@@ -405,7 +405,7 @@ $(document).ready(function () {
 
   $(_window).on("load resize", function () {
     if ($(_window).width() >= 768) {
-      if ($(".homepage").length > 0) {
+      if ($(".homepage .main").length > 0) {
         clearMainBLock();
         createMainBlock();
       }
@@ -436,6 +436,7 @@ $(document).ready(function () {
   let swiperBlog = 0,
     swiperTestimonials = 0,
     swiperPrint = 0,
+    swiperFaq = 0,
     swiperReasons = 0;
 
   function initSwiperBlog() {
@@ -450,11 +451,7 @@ $(document).ready(function () {
       slidesPerView: 'auto',
       normalizeSlideIndex: true,
       grabCursor: true,
-      freeMode: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true
-      },
+      freeMode: true
     })
   }
 
@@ -470,11 +467,7 @@ $(document).ready(function () {
       slidesPerView: 'auto',
       normalizeSlideIndex: true,
       grabCursor: true,
-      freeMode: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true
-      },
+      freeMode: true
     })
   }
 
@@ -490,11 +483,23 @@ $(document).ready(function () {
       slidesPerView: 'auto',
       normalizeSlideIndex: true,
       grabCursor: true,
-      freeMode: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true
-      },
+      freeMode: true
+    })
+  }
+
+  function initSwiperFaq() {
+    swiperFaq = new Swiper('.swiper-faq-js', {
+      wrapperClass: "swiper-wrapper",
+      slideClass: "quesAns__block",
+      direction: 'horizontal',
+      loop: false,
+      watchOverflow: true,
+      setWrapperSize: false,
+      spaceBetween: 18,
+      slidesPerView: 'auto',
+      normalizeSlideIndex: true,
+      grabCursor: true,
+      freeMode: true
     })
   }
 
@@ -520,8 +525,18 @@ $(document).ready(function () {
 
   function swiperMasonryInit() {
     $(_window).on("load resize", function () {
-      let msnrGridBlog = $("[masonry-blog-js]"),
+
+      function masonryOpt(blockName) {
+        return {
+          itemSelector: blockName,
+          gutter: 18,
+          horizontalOrder: true
+        };
+      }
+
+      var msnrGridBlog = $("[masonry-blog-js]"),
         msnrGridTestimonials = $("[masonry-testimonials-js]"),
+        msnrGridFaq = $("[masonry-faq-js]"),
         msnrGridPrint = $("[masonry-print-js]");
 
       if ($(_window).width() < 768) {
@@ -530,6 +545,7 @@ $(document).ready(function () {
         initSwiperTestimonials();
         initSwiperPrint();
         initSwiperReasons();
+        initSwiperFaq();
 
         if (msnrGridBlog.length) {
           msnrGridBlog.masonry('destroy');
@@ -540,30 +556,37 @@ $(document).ready(function () {
         if (msnrGridPrint.length) {
           msnrGridPrint.masonry('destroy');
         }
+        if (msnrGridFaq.length) {
+          msnrGridFaq.masonry('destroy');
+        }
 
       } else {
 
-        if (swiperBlog !== 0) {
-          swiperBlog.destroy();
+        if ($(".swiper-blog-js").length > 0 && swiperBlog !== 0) {
+          swiperBlog.destroy(false, true);
           swiperBlog = 0;
         }
-        if (swiperTestimonials !== 0) {
-          swiperTestimonials.destroy();
+        if ($(".swiper-testimonials-js").length > 0 && swiperTestimonials !== 0) {
+          swiperTestimonials.destroy(false, true);
           swiperTestimonials = 0;
         }
-        if (swiperPrint !== 0) {
-          swiperPrint.destroy();
+        if ($(".swiper-print-js").length > 0 && swiperPrint !== 0) {
+          swiperPrint.destroy(false, true);
           swiperPrint = 0;
         }
-        if (swiperReasons !== 0) {
-          swiperReasons.destroy();
+        if ($(".swiper-faq-js").length > 0 && swiperFaq !== 0) {
+          swiperFaq.destroy(false, true);
+          swiperFaq = 0;
+        }
+        if ($(".swiper-reasons-js").length > 0 && swiperReasons !== 0) {
+          swiperReasons.destroy(false, true);
           swiperReasons = 0;
         }
 
-        initMasonry('[masonry-blog-js]', '.blogs__block');
-        initMasonry('[masonry-testimonials-js]', '.testimonials__block');
-        initMasonry('[masonry-print-js]', '.print__block');
-        initMasonry('[masonry-faq-js]', '.quesAns__block');
+        msnrGridBlog.masonry(masonryOpt('.blogs__block'));
+        msnrGridTestimonials.masonry(masonryOpt('.testimonials__block'));
+        msnrGridPrint.masonry(masonryOpt('.print__block'));
+        msnrGridFaq.masonry(masonryOpt('.quesAns__block'));
       }
     });
   }
@@ -820,7 +843,7 @@ $(document).ready(function () {
     var wHost = window.location.host.toLowerCase()
     var displayCondition = wHost.indexOf("localhost") >= 0 || wHost.indexOf("surge") >= 0
     if (displayCondition) {
-      console.log(displayCondition)
+      // console.log(displayCondition)
       var wWidth = _window.width();
 
       var content = "<div class='dev-bp-debug'>" + wWidth + "</div>";

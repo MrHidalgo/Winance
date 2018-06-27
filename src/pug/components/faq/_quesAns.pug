@@ -100,7 +100,7 @@ section.quesAns
     .quesAns__pagination
       ul.quesAns__pagination-list
         each val, idx in quesAnsPagination
-          li.quesAns__pagination-item
+          li.quesAns__pagination-item.wow.wowFadeUp(data-animation-delay!= (0.55 + parseFloat(0.1 * idx)).toFixed(2) + "s")
             a.quesAns__pagination-link(
               href="#"
               title!=""
@@ -109,19 +109,21 @@ section.quesAns
               data-pagination= quesAnsPagination[idx].attr
             )!= quesAnsPagination[idx].name
 
-    .quesAns__row(masonry-faq-js)
-      each val, idx in quesAnsData
-        +quesAnsBlock(
-          quesAnsData[idx].attr,
-          quesAnsData[idx].href,
-          quesAnsData[idx].classMod,
-          idx,
-          quesAnsData[idx].title,
-          quesAnsData[idx].text
-        )
+    .quesAns__row.wow.wowFadeUp(data-animation-delay="0.6s")
+      .swiper-container.swiper-faq-js
+        .swiper-wrapper(masonry-faq-js)
+          each val, idx in quesAnsData
+            +quesAnsBlock(
+              quesAnsData[idx].attr,
+              quesAnsData[idx].href,
+              quesAnsData[idx].classMod,
+              idx,
+              quesAnsData[idx].title,
+              quesAnsData[idx].text
+            )
 
   .container
-    a.quesAns__btn.quesAns__btn--blog.btn.btn--big(href="#" title!="" class!= "")!= "Показать все"
+    a.quesAns__btn.quesAns__btn--blog.btn.btn--big.wow.wowFadeUp(data-animation-delay="0.5s" href="#" title!="" class!= "")!= "Показать все"
 
         
 // BLOGS :: END
