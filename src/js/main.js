@@ -563,24 +563,24 @@ $(document).ready(function () {
       } else {
 
         if ($(".swiper-blog-js").length > 0 && swiperBlog !== 0) {
-          swiperBlog.destroy(false, true);
-          swiperBlog = 0;
+          swiperBlog.destroy();
+          // swiperBlog = 0;
         }
         if ($(".swiper-testimonials-js").length > 0 && swiperTestimonials !== 0) {
-          swiperTestimonials.destroy(false, true);
-          swiperTestimonials = 0;
+          swiperTestimonials.destroy();
+          // swiperTestimonials = 0;
         }
         if ($(".swiper-print-js").length > 0 && swiperPrint !== 0) {
-          swiperPrint.destroy(false, true);
-          swiperPrint = 0;
+          swiperPrint.destroy();
+          // swiperPrint = 0;
         }
         if ($(".swiper-faq-js").length > 0 && swiperFaq !== 0) {
-          swiperFaq.destroy(false, true);
-          swiperFaq = 0;
+          swiperFaq.destroy();
+          // swiperFaq = 0;
         }
         if ($(".swiper-reasons-js").length > 0 && swiperReasons !== 0) {
-          swiperReasons.destroy(false, true);
-          swiperReasons = 0;
+          swiperReasons.destroy();
+          // swiperReasons = 0;
         }
 
         msnrGridBlog.masonry(masonryOpt('.blogs__block'));

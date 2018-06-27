@@ -20,6 +20,7 @@
 
 
     &__block
+      overflow: hidden
       width: calc(100% / 4)
       +r(767)
         width: 50%
@@ -64,6 +65,7 @@
         color: $c-royalBlue
         font-size: 24px
         font-weight: 600
+        +transition(color)
         +r(767)
           font-size: 20px
         +r(575)
@@ -74,6 +76,10 @@
           font-size: 22px
         +rmin(1200)
           font-size: 24px
+
+        &:hover
+          color: lighten($c-royalBlue, 15%)
+          +transition(color)
 
       &-additional
         white-space: nowrap

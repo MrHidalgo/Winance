@@ -12,14 +12,14 @@ PageList:
 - file: reviews.html
   ready: 75
 - file: press.html
-  ready: 85
+  ready: 90
 - file: blog.html
-  ready: 85
+  ready: 90
 - file: blogDetails.html
-  ready: 85
+  ready: 90
 - file: faq.html
-  ready: 75
+  ready: 90
 - file: contacts.html
-  ready: 75
+  ready: 90
 - file: cabinet.html
   ready: 5
