@@ -7,6 +7,19 @@
     +r(767)
       display: none
 
+    .nav__link,
+    .lang__link,
+    .phone__link
+      display: flex
+      align-items: center
+      justify-content: center
+      min-height: 40px
+      +transition(color)
+
+      &:hover
+        color: darken($c-white, 25%) !important
+        +transition(color)
+
 
     &-row
       display: flex
@@ -56,14 +69,46 @@
       display: flex
       justify-content: center
       width: calc(100% - (200px * 2))
+      min-height: 107px
       +r(767)
         display: none
+
+      .nav__link
+        overflow: hidden
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: center
+        min-height: 107px
+        +transition(color)
+
+        &:hover
+          color: lighten($c-royalBlue, 15%)
+          +transition(color)
+
+          &:before
+            transform: translateY(0)
+            background-color: $c-royalBlue
+            +transition(transform, background-color)
+
+        &:before
+          content: ""
+          position: absolute
+          top: 0
+          left: 0
+          width: 100%
+          height: 3px
+          background-color: transparent
+          transform: translateY(-3px)
+          +transition(transform, background-color)
+
 
 
     &-right
       display: flex
       justify-content: flex-end
       width: 200px
+      min-height: 107px
       +r(767)
         display: none
 

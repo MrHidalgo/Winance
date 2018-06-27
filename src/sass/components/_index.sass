@@ -271,6 +271,7 @@
 
 // PARLOR
 .parlor
+  position: relative
   white-space: nowrap
   display: flex
   align-items: center
@@ -285,11 +286,33 @@
     font-size: 18px
 
   &:hover
-    color: $c-curiousBlue
+    color: lighten($c-royalBlue, 15%)
     +transition(color)
+
+    &:before
+      transform: translateY(0)
+      background-color: $c-royalBlue
+      +transition(transform, background-color)
+
+    i
+      opacity: 0.65
+      +transition(opacity)
+
+  &:before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 3px
+    background-color: transparent
+    transform: translateY(-3px)
+    +transition(transform, background-color)
+
 
   &__icon
     margin-right: 5px
+    +transition(opacity)
 // \ PARLOR
 
 
