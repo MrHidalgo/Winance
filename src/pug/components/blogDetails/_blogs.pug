@@ -75,24 +75,26 @@ mixin blogsBlock(attr, href, classMod, count, imgName, title, text, badgeArr, da
 section.blogs
   .container
 
-    p.blogs__subtitle!= "Еще в блоге"
+    p.blogs__subtitle.wow.wowFadeUp(data-animation-delay="0.4s")!= "Еще в блоге"
 
-    .blogs__row(masonry-blog-js)
-      each val, idx in blockData
-        +blogsBlock(
-          blockData[idx].attr,
-          blockData[idx].href,
-          blockData[idx].classMod,
-          idx,
-          blockData[idx].imgName,
-          blockData[idx].title,
-          blockData[idx].text,
-          blockData[idx].badgeArr,
-          blockData[idx].date
-        )
+    .blogs__row.wow.wowFadeUp(data-animation-delay="0.5s")
+      .swiper-container.swiper-blog-js
+        .swiper-wrapper(masonry-blog-js)
+          each val, idx in blockData
+            +blogsBlock(
+              blockData[idx].attr,
+              blockData[idx].href,
+              blockData[idx].classMod,
+              idx,
+              blockData[idx].imgName,
+              blockData[idx].title,
+              blockData[idx].text,
+              blockData[idx].badgeArr,
+              blockData[idx].date
+            )
 
   .container
-    a.blogs__btn.blogs__btn--blogDetails.btn.btn--big(href="blog.html" title!="" class!= "")!= "Показать все"
+    a.blogs__btn.blogs__btn--blogDetails.btn.btn--big.wow.wowFadeUp(data-animation-delay="0.6s" href="blog.html" title!="" class!= "")!= "Показать все"
 
         
 // BLOGS :: END

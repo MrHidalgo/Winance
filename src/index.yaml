@@ -14,9 +14,9 @@ PageList:
 - file: press.html
   ready: 75
 - file: blog.html
-  ready: 75
+  ready: 85
 - file: blogDetails.html
-  ready: 75
+  ready: 85
 - file: faq.html
   ready: 75
 - file: contacts.html

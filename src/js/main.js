@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
   //////////
   // Global variables
@@ -22,7 +22,7 @@ $(document).ready(function(){
   ////////////
   // READY - triggered when PJAX DONE
   ////////////
-  function pageReady(){
+  function pageReady() {
     legacySupport();
     updateHeaderActiveClass();
     initHeaderScroll();
@@ -44,6 +44,8 @@ $(document).ready(function(){
     inputRangeInit();
     closeMobileMenu();
 
+    swiperMasonryInit();
+
     // development helper
     _window.on('resize', debounce(setBreakpoint, 200))
 
@@ -61,7 +63,7 @@ $(document).ready(function(){
 
 
   // some plugins work best with onload triggers
-  _window.on('load', function(){
+  _window.on('load', function () {
     // your functions
   });
 
@@ -70,7 +72,7 @@ $(document).ready(function(){
   // COMMON
   //////////
 
-  function legacySupport(){
+  function legacySupport() {
     // svg support for laggy browsers
     svg4everybody();
 
@@ -84,14 +86,15 @@ $(document).ready(function(){
 
 
   // Prevent # behavior
-	_document
-    .on('click', '[href="#"]', function(e) {
-  		e.preventDefault();
-  	})
-    .on('click', 'a[href^="#section"]', function() { // section scroll
+  _document
+    .on('click', '[href="#"]', function (e) {
+      e.preventDefault();
+    })
+    .on('click', 'a[href^="#section"]', function () { // section scroll
       var el = $(this).attr('href');
       $('body, html').animate({
-          scrollTop: $(el).offset().top}, 1000);
+        scrollTop: $(el).offset().top
+      }, 1000);
       return false;
     })
 
@@ -99,21 +102,21 @@ $(document).ready(function(){
   // HEADER SCROLL
   // add .header-static for .page or body
   // to disable sticky header
-  function initHeaderScroll(){
-    _window.on('scroll', throttle(function(e) {
+  function initHeaderScroll() {
+    _window.on('scroll', throttle(function (e) {
       var vScroll = _window.scrollTop();
       var header = $('.header').not('.header--static');
       var headerHeight = header.height();
       var firstSection = _document.find('.page__content div:first-child()').height() - headerHeight;
-      var visibleWhen = Math.round(_document.height() / _window.height()) >  2.5
+      var visibleWhen = Math.round(_document.height() / _window.height()) > 2.5
 
-      if (visibleWhen){
-        if ( vScroll > headerHeight ){
+      if (visibleWhen) {
+        if (vScroll > headerHeight) {
           header.addClass('is-fixed');
         } else {
           header.removeClass('is-fixed');
         }
-        if ( vScroll > firstSection ){
+        if (vScroll > firstSection) {
           header.addClass('is-fixed-visible');
         } else {
           header.removeClass('is-fixed-visible');
@@ -124,13 +127,13 @@ $(document).ready(function(){
 
 
   // HAMBURGER TOGGLER
-  _document.on('click', '[hamburger-js]', function(e){
+  _document.on('click', '[hamburger-js]', function (e) {
     $(e.currentTarget).toggleClass('is-active');
     $("[nav-mobile-js]").toggleClass("is-show");
     $("body, html").toggleClass("is-hideScroll");
   });
 
-  function closeMobileMenu(){
+  function closeMobileMenu() {
     $("[hamburger-js]").removeClass('is-active');
     $("[nav-mobile-js]").removeClass("is-show");
     $("body, html").removeClass("is-hideScroll");
@@ -138,9 +141,9 @@ $(document).ready(function(){
 
   // SET ACTIVE CLASS IN HEADER
   // * could be removed in production and server side rendering when header is inside barba-container
-  function updateHeaderActiveClass(){
-    $('.header__menu li').each(function(i,val){
-      if ( $(val).find('a').attr('href') == window.location.pathname.split('/').pop() ){
+  function updateHeaderActiveClass() {
+    $('.header__menu li').each(function (i, val) {
+      if ($(val).find('a').attr('href') == window.location.pathname.split('/').pop()) {
         $(val).addClass('is-active');
       } else {
         $(val).removeClass('is-active')
@@ -164,6 +167,7 @@ $(document).ready(function(){
       horizontalOrder: true
     });
   }
+
   // ====================
 
 
@@ -177,7 +181,7 @@ $(document).ready(function(){
    * @param blockName - {String}
    */
   function filterMasonry(bntName, masonryName, blockName) {
-    _document.on("click", bntName, function(e) {
+    _document.on("click", bntName, function (e) {
       var elem = $(e.currentTarget),
         attrElem = elem.attr("data-pagination"),
         blogBlock = $(blockName),
@@ -186,7 +190,7 @@ $(document).ready(function(){
       $(bntName).removeClass("is-active");
       elem.addClass("is-active");
 
-      if($(_window).width() > 767) {
+      if ($(_window).width() > 767) {
         var masonryGridOption = {
           itemSelector: blockName + '.is-show',
           gutter: 18,
@@ -195,7 +199,7 @@ $(document).ready(function(){
         masonryGrid.masonry(masonryGridOption);
       }
 
-      if(attrElem === "all") {
+      if (attrElem === "all") {
 
         blogBlock
           .removeClass("is-hide")
@@ -206,31 +210,32 @@ $(document).ready(function(){
         blogBlock
           .removeClass("is-hide")
           .addClass("is-show")
-          .each(function(idx, val) {
+          .each(function (idx, val) {
             var elemAttr = $(val).attr("data-filter");
 
-            if(elemAttr.indexOf(attrElem) === -1) {
+            if (elemAttr.indexOf(attrElem) === -1) {
               $(val)
                 .addClass("is-hide")
                 .removeClass("is-show");
-          }
-        });
+            }
+          });
       }
 
-      if($(_window).width() > 767) {
+      if ($(_window).width() > 767) {
         masonryGrid
           .masonry('reloadItems')
           .masonry('layout');
       }
     });
   }
+
   // ====================
 
 
   //
   // SLIDERS
   // ====================
-  _document.on("click", "[about-btn-js]", function(e) {
+  _document.on("click", "[about-btn-js]", function (e) {
     var elem = $(e.currentTarget),
       elemAttr = elem.attr("data-pagin"),
       boxContainer = $("[about-box-js]");
@@ -246,7 +251,7 @@ $(document).ready(function(){
 
   // CALC TABS
   // ====================
-  _document.on("click", "[tabs-btn-js]", function(e) {
+  _document.on("click", "[tabs-btn-js]", function (e) {
     var elem = $(e.currentTarget),
       elemAttr = elem.attr("data-tabs-btn");
 
@@ -260,31 +265,32 @@ $(document).ready(function(){
   // ====================
   var objOptionBLock = [
     {
-      color : 'rgba(58, 103, 217, 0.65)',
-      left : '0',
-      height : '131px'
+      color: 'rgba(58, 103, 217, 0.65)',
+      left: '0',
+      height: '131px'
     },
     {
-      color : 'rgba(58, 103, 217, 0.84)',
-      left : '240px',
-      height : '171px'
+      color: 'rgba(58, 103, 217, 0.84)',
+      left: '240px',
+      height: '171px'
     },
     {
-      color : 'rgba(58, 103, 217, 1)',
-      left : '480px',
-      height : '229px'
+      color: 'rgba(58, 103, 217, 1)',
+      left: '480px',
+      height: '229px'
     },
     {
-      color : 'rgba(16, 173, 180, 1)',
-      left : '720px',
-      height : '329px'
+      color: 'rgba(16, 173, 180, 1)',
+      left: '720px',
+      height: '329px'
     },
     {
-      color : 'rgba(58, 103, 217, 0.91)',
-      left : '960px',
-      height : '208px'
+      color: 'rgba(58, 103, 217, 0.91)',
+      left: '960px',
+      height: '208px'
     },
   ];
+
   function lineBlockTmpl(idx, width, left, right) {
     return `
       <div
@@ -299,6 +305,7 @@ $(document).ready(function(){
       ></div>
     `
   }
+
   function createMainBlock() {
     var defaultSizeBlock = 1200,
       _winWidth = _window.width(),
@@ -311,7 +318,7 @@ $(document).ready(function(){
       arrNumReverse = [];
 
     // DEFAULT BLOCK - center...
-    for(var i = 0, len = objOptionBLock.length; i < len; i++) {
+    for (var i = 0, len = objOptionBLock.length; i < len; i++) {
       defaultBlockContainer.append(lineBlockTmpl(
         i,
         "",
@@ -321,12 +328,12 @@ $(document).ready(function(){
     }
 
     // CALC NEED BLOCK LEFT AND RIGHT...
-    for(var j = 0; j < need; j++) {
+    for (var j = 0; j < need; j++) {
       var tmpNum = need;
 
       tmpNum - j;
 
-      if((tmpNum - j) > 1) {
+      if ((tmpNum - j) > 1) {
         arrNum.push(240);
         arrNumReverse.unshift(240);
       } else {
@@ -337,7 +344,7 @@ $(document).ready(function(){
 
 
     // POSITION RIGHT BLOCK...
-    for(
+    for (
       var k = 0, lenRight = arrNum.length, countStartRight = arrNum.length, sumRight = 0;
       k < lenRight;
       k++, countStartRight--
@@ -355,11 +362,13 @@ $(document).ready(function(){
 
 
     // POSITION LEFT BLOCK...
-    var sumLeft = arrNumReverse.reduce(function (previousValue, currentValue, index, array) {
-      return previousValue + currentValue;
-    });
+    if (arrNumReverse.length !== 0) {
+      var sumLeft = arrNumReverse.reduce(function (previousValue, currentValue, index, array) {
+        return previousValue + currentValue;
+      });
+    }
 
-    for(
+    for (
       var l = 0, lenLeft = arrNumReverse.length, countStartLeft = arrNumReverse.length, countEndLeft = objOptionBLock.length - 1;
       l < lenLeft;
       l++, countStartLeft--, countEndLeft--
@@ -379,22 +388,27 @@ $(document).ready(function(){
     stickyMainText(".main__line-2", ".main__line-col--1");
     stickyMainText(".main__line-3", ".main__line-col--2");
   }
+
   function clearMainBLock() {
     $("[main-line-js] .main__line").remove();
   }
+
   function stickyMainText(blockClassName, textClassName) {
     let leftWrapOffset = $(".main__line-box").offset().left,
       leftOffsetElem = $(".main__line-box " + blockClassName).offset().left,
       textBlock = $(textClassName);
 
     textBlock.css({
-      "left" : leftOffsetElem - leftWrapOffset
+      "left": leftOffsetElem - leftWrapOffset
     });
   }
-  $(_window).on("load resize", function() {
-    if($(_window).width() >= 768) {
-      clearMainBLock();
-      createMainBlock();
+
+  $(_window).on("load resize", function () {
+    if ($(_window).width() >= 768) {
+      if ($(".homepage").length > 0) {
+        clearMainBLock();
+        createMainBlock();
+      }
     }
   });
   // ====================
@@ -403,7 +417,7 @@ $(document).ready(function(){
   //
   // ====================
   function inputRangeInit() {
-    $('input[type=range]').on('input', function(e){
+    $('input[type=range]').on('input', function (e) {
       var min = e.target.min,
         max = e.target.max,
         val = e.target.value;
@@ -413,6 +427,7 @@ $(document).ready(function(){
       });
     }).trigger('input');
   }
+
   // ====================
 
 
@@ -442,6 +457,7 @@ $(document).ready(function(){
       },
     })
   }
+
   function initSwiperTestimonials() {
     swiperTestimonials = new Swiper('.swiper-testimonials-js', {
       wrapperClass: "swiper-wrapper",
@@ -461,6 +477,7 @@ $(document).ready(function(){
       },
     })
   }
+
   function initSwiperPrint() {
     swiperPrint = new Swiper('.swiper-print-js', {
       wrapperClass: "swiper-wrapper",
@@ -480,6 +497,7 @@ $(document).ready(function(){
       },
     })
   }
+
   function initSwiperReasons() {
     swiperReasons = new Swiper('.swiper-reasons-js', {
       wrapperClass: "swiper-wrapper",
@@ -500,65 +518,78 @@ $(document).ready(function(){
     })
   }
 
-  $(_window).on("load resize", function() {
-    let msnrGridBlog = $("[masonry-blog-js]"),
-      msnrGridTestimonials = $("[masonry-testimonials-js]"),
-      msnrGridPrint = $("[masonry-print-js]");
+  function swiperMasonryInit() {
+    $(_window).on("load resize", function () {
+      let msnrGridBlog = $("[masonry-blog-js]"),
+        msnrGridTestimonials = $("[masonry-testimonials-js]"),
+        msnrGridPrint = $("[masonry-print-js]");
 
-    if($(_window).width() < 768) {
+      if ($(_window).width() < 768) {
 
-      initSwiperBlog();
-      initSwiperTestimonials();
-      initSwiperPrint();
-      initSwiperReasons();
+        initSwiperBlog();
+        initSwiperTestimonials();
+        initSwiperPrint();
+        initSwiperReasons();
 
-      msnrGridBlog.masonry('destroy');
-      msnrGridTestimonials.masonry('destroy');
-      msnrGridPrint.masonry('destroy');
+        if (msnrGridBlog.length) {
+          msnrGridBlog.masonry('destroy');
+        }
+        if (msnrGridTestimonials.length) {
+          msnrGridTestimonials.masonry('destroy');
+        }
+        if (msnrGridPrint.length) {
+          msnrGridPrint.masonry('destroy');
+        }
 
-    } else {
-      if(swiperBlog !== 0) {
-        swiperBlog.destroy();
+      } else {
+
+        if (swiperBlog !== 0) {
+          swiperBlog.destroy();
+          swiperBlog = 0;
+        }
+        if (swiperTestimonials !== 0) {
+          swiperTestimonials.destroy();
+          swiperTestimonials = 0;
+        }
+        if (swiperPrint !== 0) {
+          swiperPrint.destroy();
+          swiperPrint = 0;
+        }
+        if (swiperReasons !== 0) {
+          swiperReasons.destroy();
+          swiperReasons = 0;
+        }
+
+        initMasonry('[masonry-blog-js]', '.blogs__block');
+        initMasonry('[masonry-testimonials-js]', '.testimonials__block');
+        initMasonry('[masonry-print-js]', '.print__block');
+        initMasonry('[masonry-faq-js]', '.quesAns__block');
       }
+    });
+  }
 
-      if(swiperTestimonials !== 0) {
-        swiperTestimonials.destroy();
-      }
-
-      if(swiperPrint !== 0) {
-        swiperPrint.destroy();
-      }
-
-
-      if(swiperReasons !== 0) {
-        swiperReasons.destroy();
-      }
-
-      initMasonry('[masonry-blog-js]', '.blogs__block');
-      initMasonry('[masonry-testimonials-js]', '.testimonials__block');
-      initMasonry('[masonry-print-js]', '.print__block');
-      initMasonry('[masonry-faq-js]', '.quesAns__block');
-    }
-  });
   // ====================
 
 
   //
   // ====================
-  function funcName() {}
-  _document.on("click", "", function(e) {});
+  function funcName() {
+  }
+
+  _document.on("click", "", function (e) {
+  });
   // ====================
 
 
   //////////
   // SLIDERS
   //////////
-  function initSliders(){
+  function initSliders() {
     var slickNextArrow = '<div class="slick-prev"><svg class="ico ico-back-arrow"><use xlink:href="img/sprite.svg#ico-back-arrow"></use></svg></div>';
     var slickPrevArrow = '<div class="slick-next"><svg class="ico ico-next-arrow"><use xlink:href="img/sprite.svg#ico-next-arrow"></use></svg></div>'
 
     // General purpose sliders
-    $('[js-slider]').each(function(i, slider){
+    $('[js-slider]').each(function (i, slider) {
       var self = $(slider);
 
       // set data attributes on slick instance to control
@@ -584,9 +615,7 @@ $(document).ready(function(){
     })
 
     // other individual sliders goes here
-    $('[js-myCustomSlider]').slick({
-
-    })
+    $('[js-myCustomSlider]').slick({})
 
   }
 
@@ -594,7 +623,7 @@ $(document).ready(function(){
   // MODALS
   //////////
 
-  function initPopups(){
+  function initPopups() {
     var startWindowScroll = 0;
 
     $('[playVideo-js]').magnificPopup({
@@ -617,7 +646,7 @@ $(document).ready(function(){
     });
   }
 
-  function closeMfp(){
+  function closeMfp() {
     $.magnificPopup.close();
   }
 
@@ -627,22 +656,22 @@ $(document).ready(function(){
 
   // textarea autoExpand
   _document
-    .one('focus.autoExpand', '.ui-group textarea', function(){
-        var savedValue = this.value;
-        this.value = '';
-        this.baseScrollHeight = this.scrollHeight;
-        this.value = savedValue;
+    .one('focus.autoExpand', '.ui-group textarea', function () {
+      var savedValue = this.value;
+      this.value = '';
+      this.baseScrollHeight = this.scrollHeight;
+      this.value = savedValue;
     })
-    .on('input.autoExpand', '.ui-group textarea', function(){
-        var minRows = this.getAttribute('data-min-rows')|0, rows;
-        this.rows = minRows;
-        rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 17);
-        this.rows = minRows + rows;
+    .on('input.autoExpand', '.ui-group textarea', function () {
+      var minRows = this.getAttribute('data-min-rows') | 0, rows;
+      this.rows = minRows;
+      rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 17);
+      this.rows = minRows + rows;
     });
 
   // Masked input
-  function initMasks(){
-    $("[js-dateMask]").mask("99.99.99",{placeholder:"ДД.ММ.ГГ"});
+  function initMasks() {
+    $("[js-dateMask]").mask("99.99.99", {placeholder: "ДД.ММ.ГГ"});
     $("input[type='tel']").mask("+7 (000) 000-0000", {placeholder: "+7 (___) ___-____"});
   }
 
@@ -650,13 +679,13 @@ $(document).ready(function(){
   ////////////
   // SCROLLMONITOR - WOW LIKE
   ////////////
-  function initScrollMonitor(){
-    $('.wow').each(function(i, el){
+  function initScrollMonitor() {
+    $('.wow').each(function (i, el) {
 
-      var elWatcher = scrollMonitor.create( $(el) );
+      var elWatcher = scrollMonitor.create($(el));
 
       var delay;
-      if ( $(window).width() < 768 ){
+      if ($(window).width() < 768) {
         delay = 0
       } else {
         delay = $(el).data('animation-delay');
@@ -666,7 +695,7 @@ $(document).ready(function(){
 
       var animationName = $(el).data('animation-name') || "wowFade";
 
-      elWatcher.enterViewport(throttle(function() {
+      elWatcher.enterViewport(throttle(function () {
         $(el).addClass(animationClass);
         $(el).css({
           'animation-name': animationName,
@@ -684,7 +713,7 @@ $(document).ready(function(){
   //////////
   // LAZY LOAD
   //////////
-  function initLazyLoad(){
+  function initLazyLoad() {
     _document.find('[js-lazy]').Lazy({
       threshold: 500,
       enableThrottle: true,
@@ -694,10 +723,10 @@ $(document).ready(function(){
       effectTime: 350,
       // visibleOnly: true,
       // placeholder: "data:image/gif;base64,R0lGODlhEALAPQAPzl5uLr9Nrl8e7...",
-      onError: function(element) {
-          console.log('error loading ' + element.data('src'));
+      onError: function (element) {
+        console.log('error loading ' + element.data('src'));
       },
-      beforeLoad: function(element){
+      beforeLoad: function (element) {
         // element.attr('style', '')
       }
     });
@@ -710,21 +739,21 @@ $(document).ready(function(){
   Barba.Pjax.Dom.containerClass = "page";
 
   var FadeTransition = Barba.BaseTransition.extend({
-    start: function() {
+    start: function () {
       Promise
         .all([this.newContainerLoading, this.fadeOut()])
         .then(this.fadeIn.bind(this));
     },
 
-    fadeOut: function() {
+    fadeOut: function () {
       var deferred = Barba.Utils.deferred();
 
       anime({
         targets: this.oldContainer,
-        opacity : .5,
+        opacity: .5,
         easing: easingSwing, // swing
         duration: 300,
-        complete: function(anim){
+        complete: function (anim) {
           deferred.resolve();
         }
       })
@@ -732,15 +761,15 @@ $(document).ready(function(){
       return deferred.promise
     },
 
-    fadeIn: function() {
+    fadeIn: function () {
       var _this = this;
       var $el = $(this.newContainer);
 
       $(this.oldContainer).hide();
 
       $el.css({
-        visibility : 'visible',
-        opacity : .5
+        visibility: 'visible',
+        opacity: .5
       });
 
       anime({
@@ -755,7 +784,7 @@ $(document).ready(function(){
         opacity: 1,
         easing: easingSwing, // swing
         duration: 300,
-        complete: function(anim) {
+        complete: function (anim) {
           triggerBody()
           _this.done();
         }
@@ -764,14 +793,14 @@ $(document).ready(function(){
   });
 
   // set barba transition
-  Barba.Pjax.getTransition = function() {
+  Barba.Pjax.getTransition = function () {
     return FadeTransition;
   };
 
   Barba.Prefetch.init();
   Barba.Pjax.start();
 
-  Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container, newPageRawHTML) {
+  Barba.Dispatcher.on('newPageReady', function (currentStatus, oldStatus, container, newPageRawHTML) {
 
     pageReady();
     closeMobileMenu();
@@ -779,7 +808,7 @@ $(document).ready(function(){
   });
 
   // some plugins get bindings onNewPage only that way
-  function triggerBody(){
+  function triggerBody() {
     $(window).scroll();
     $(window).resize();
   }
@@ -787,22 +816,22 @@ $(document).ready(function(){
   //////////
   // DEVELOPMENT HELPER
   //////////
-  function setBreakpoint(){
+  function setBreakpoint() {
     var wHost = window.location.host.toLowerCase()
     var displayCondition = wHost.indexOf("localhost") >= 0 || wHost.indexOf("surge") >= 0
-    if (displayCondition){
+    if (displayCondition) {
       console.log(displayCondition)
       var wWidth = _window.width();
 
-      var content = "<div class='dev-bp-debug'>"+wWidth+"</div>";
+      var content = "<div class='dev-bp-debug'>" + wWidth + "</div>";
 
       $('.page').append(content);
-      setTimeout(function(){
+      setTimeout(function () {
         $('.dev-bp-debug').fadeOut();
-      },1000);
-      setTimeout(function(){
+      }, 1000);
+      setTimeout(function () {
         $('.dev-bp-debug').remove();
-      },1500)
+      }, 1500)
     }
   }
 
