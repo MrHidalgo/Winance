@@ -307,7 +307,8 @@ $(document).ready(function(){
 
     var diffSize = (_winWidth - defaultSizeBlock) / 2,
       need = diffSize / 240,
-      arrNum = [];
+      arrNum = [],
+      arrNumReverse = [];
 
     // DEFAULT BLOCK - center...
     for(var i = 0, len = objOptionBLock.length; i < len; i++) {
@@ -327,41 +328,49 @@ $(document).ready(function(){
 
       if((tmpNum - j) > 1) {
         arrNum.push(240);
+        arrNumReverse.unshift(240);
       } else {
         arrNum.push(parseInt((need - j) * 240));
+        arrNumReverse.unshift(parseInt((need - j) * 240));
       }
     }
 
+
     // POSITION RIGHT BLOCK...
     for(
-      var k = 0, len = arrNum.length, countStart = arrNum.length, sum = 0;
-      k < len;
-      k++, countStart--
+      var k = 0, lenRight = arrNum.length, countStartRight = arrNum.length, sumRight = 0;
+      k < lenRight;
+      k++, countStartRight--
     ) {
 
-      sum += arrNum[countStart - 1];
+      sumRight += arrNum[countStartRight - 1];
 
       mainBlockContainer.append(lineBlockTmpl(
         k,
         arrNum[k] + "px",
         "auto",
-        (arrNum[k] === 240) ? (sum) + "px" : 0 + "px"
+        (arrNum[k] === 240) ? (sumRight) + "px" : 0 + "px"
       ));
     }
 
+
     // POSITION LEFT BLOCK...
+    var sumLeft = arrNumReverse.reduce(function (previousValue, currentValue, index, array) {
+      return previousValue + currentValue;
+    });
+
     for(
-      var l = 0, len = arrNum.length, countStart = arrNum.length, countEnd = objOptionBLock.length - 1, sum = 0;
-      l < len;
-      l++, countStart--, countEnd--
+      var l = 0, lenLeft = arrNumReverse.length, countStartLeft = arrNumReverse.length, countEndLeft = objOptionBLock.length - 1;
+      l < lenLeft;
+      l++, countStartLeft--, countEndLeft--
     ) {
 
-      sum += arrNum[countStart - 1];
+      sumLeft -= arrNumReverse[countStartLeft - 1];
 
       mainBlockContainer.prepend(lineBlockTmpl(
-        countEnd,
-        arrNum[l] + "px",
-        (arrNum[l] === 240) ? (sum) + "px" : 0 + "px",
+        countEndLeft,
+        arrNumReverse[countStartLeft - 1] + "px",
+        (arrNumReverse[countStartLeft - 1] === 240) ? (sumLeft) + "px" : 0 + "px",
         "auto"
       ));
     }
