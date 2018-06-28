@@ -2,7 +2,7 @@
 
 
 mixin techBlock(dataAttr, classMod, title, icon, topText, bottomText)
-  .technology__block(
+  .technology__block.animated.slideInUp(
     class!= classMod
     data-block!= dataAttr
     timeline-hover-js
@@ -68,7 +68,7 @@ mixin techBlock(dataAttr, classMod, title, icon, topText, bottomText)
 
 
     .container(hover-tech-js)
-      .technology__row
+      .technology__row.wow.wowFadeUp(data-animation-delay="0.6s")
         .technology__row-wrap.technology__row-wrap--0
           .technology__row-date(hover-elem-js data-hover-id="0" data-hover-block="0" find-hover-js)
             div
