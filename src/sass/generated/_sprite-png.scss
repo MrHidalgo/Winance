@@ -45,7 +45,7 @@ $sprite: (
 		image: '../img/sprite.png'
 	),
 	fr: (
-		offset-x: -97px,
+		offset-x: -125px,
 		offset-y: -159px,
 		width: 18px,
 		height: 10px,
@@ -54,7 +54,7 @@ $sprite: (
 		image: '../img/sprite.png'
 	),
 	gr: (
-		offset-x: -69px,
+		offset-x: -97px,
 		offset-y: -159px,
 		width: 18px,
 		height: 10px,
@@ -63,7 +63,7 @@ $sprite: (
 		image: '../img/sprite.png'
 	),
 	parlor: (
-		offset-x: -42px,
+		offset-x: -70px,
 		offset-y: -159px,
 		width: 17px,
 		height: 16px,
@@ -112,6 +112,15 @@ $sprite: (
 		offset-y: -117px,
 		width: 22px,
 		height: 22px,
+		total-width: 208px,
+		total-height: 181px,
+		image: '../img/sprite.png'
+	),
+	score: (
+		offset-x: -42px,
+		offset-y: -159px,
+		width: 18px,
+		height: 20px,
 		total-width: 208px,
 		total-height: 181px,
 		image: '../img/sprite.png'
@@ -246,6 +255,9 @@ $sprite: (
 	}
 	.icon-racket {
 		@include sprite(racket)
+	}
+	.icon-score {
+		@include sprite(score)
 	}
 	.icon-skype {
 		@include sprite(skype)

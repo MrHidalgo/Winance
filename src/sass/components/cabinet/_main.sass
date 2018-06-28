@@ -1,0 +1,146 @@
+// MAIN
+
+.cabinet
+  .main
+    padding-top: 45px
+    background-color: $c-whiteSmoke
+
+    &__row
+      display: flex
+      justify-content: space-between
+
+      &-0
+        padding-bottom: 17px
+
+        .main__row-left,
+        .main__row-right
+          width: 50%
+
+        .main__row-right
+          display: flex
+          flex-direction: column
+          align-items: flex-end
+
+      &-1
+        .main__row-left
+          width: calc(100% - 200px)
+
+        .main__row-right
+          display: flex
+          justify-content: flex-end
+          width: 200px
+
+
+    &__nav
+      &-list
+        display: flex
+      &-item
+        &:first-child
+          a
+            margin-left: 0
+      &-btn
+        position: relative
+        display: block
+        margin-left: 9px
+        margin-right: 9px
+        min-height: 36px
+        color: $c-royalBlue
+        font-size: 16px
+        font-weight: 600
+        +transition(color)
+
+        &:after
+          content: ""
+          position: absolute
+          left: 0
+          bottom: 0
+          width: 100%
+          height: 4px
+          background-color: transparent
+          +transition(background-color)
+
+        &:hover
+          color: lighten($c-royalBlue, 15%)
+          +transition(color)
+
+          &:after
+            background-color: $c-blueZodiac
+            +transition(background-color)
+
+          sup
+            opacity: 0.85
+            +transition(opacity)
+
+        sup
+          display: inline-block
+          top: -9px
+          left: -7px
+          border-radius: 50%
+          line-height: 0
+          border: 1px solid $c-whiteSmoke
+          background-color: $c-LightSeaGreen
+          color: $c-white
+          font-size: 10px
+          +transition(opacity)
+
+          span
+            display: inline-block
+            position: relative
+            top: 1px
+            padding-top: 50%
+            padding-bottom: 50%
+            margin-left: 7px
+            margin-right: 7px
+            line-height: 0
+
+
+    &__balance
+      font-size: 45px
+      span
+        &:nth-child(1)
+          font-weight: 600
+        &:nth-child(2)
+          font-weight: 400
+
+      &-details
+        color: $c-nobel
+
+
+
+    &__score
+      position: relative
+      display: flex
+      align-items: flex-start
+      min-height: 36px
+      color: $c-royalBlue
+      font-size: 16px
+      font-weight: 600
+      +transition(color)
+
+      &:after
+        content: ""
+        position: absolute
+        left: 0
+        bottom: 0
+        width: 100%
+        height: 4px
+        background-color: transparent
+        +transition(background-color)
+
+      &:hover
+        color: lighten($c-royalBlue, 15%)
+        +transition(color)
+
+        &:after
+          background-color: $c-blueZodiac
+          +transition(background-color)
+
+        i
+          opacity: 0.85
+          +transition(opacity)
+
+      i
+        margin-left: 13px
+        +transition(opacity)
+
+// \ MAIN

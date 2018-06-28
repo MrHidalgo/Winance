@@ -1,0 +1,59 @@
+// MAIN :: START
+
+
+-
+  var mainMenu = [
+    {
+      name: "Инвестиции",
+      count: "1"
+    },
+    {
+      name: "Партнерская программа",
+      count: "0"
+    },
+    {
+      name: "Информация",
+      count: "0"
+    },
+    {
+      name: "Поддержка",
+      count: "1"
+    },
+    {
+      name: "Отчеты",
+      count: "0"
+    }
+  ];
+
+
+.main
+  .container
+
+    .main__row.main__row-0
+      .main__row-left
+        h1.main__title.title!= "Личный кабинет"
+
+      .main__row-right
+        p.main__balance!= "<span>6 750.00</span> <span>$</span>"
+        p.main__balance-details!= "<span>200.00</span> <span>$</span> + <span>1 500.00</span> <span>€</span> + <span>0.00</span> <span>₽</span>"
+
+    .main__row.main__row-1
+      .main__row-left
+        .main__nav
+          ul.main__nav-list
+            each val, idx in mainMenu
+              li.main__nav-item
+                a.main__nav-btn(href="#")
+                  span!= mainMenu[idx].name
+                  if(mainMenu[idx].count !== "0")
+                    sup
+                      span!= mainMenu[idx].count
+
+
+      .main__row-right
+        a.main__score(href="#" title!="")
+          span!= "Мой счет"
+          i.icon-score
+
+
+// MAIN :: END
