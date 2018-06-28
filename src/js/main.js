@@ -45,7 +45,10 @@ $(document).ready(function () {
     closeMobileMenu();
 
     swiperMasonryInit();
-    initCalc();
+
+    if($(".calc").length > 0) {
+      initCalc();
+    }
 
     // development helper
     _window.on('resize', debounce(setBreakpoint, 200))
