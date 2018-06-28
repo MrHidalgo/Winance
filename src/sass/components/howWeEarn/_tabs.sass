@@ -1,0 +1,63 @@
+// TABS
+
+.howWeEarn
+  .tabs
+    padding-top: 60px
+    padding-bottom: 124px
+    +r(767)
+      padding-top: 30px
+      padding-bottom: 62px
+
+
+    &__container
+      display: none
+
+      &.is-active
+        display: block
+        animation-name: fadeIn
+        animation-duration: 1.25s
+
+
+    &__subtitle
+      width: 100%
+      max-width: 880px
+      padding-bottom: 44px
+      +r(767)
+        padding-bottom: 22px
+
+    &__text
+      width: 100%
+      max-width: 753px
+      padding-bottom: 82px
+      +r(767)
+        padding-bottom: 41px
+
+    &__title
+      font-size: 28px
+      font-weight: 600
+      padding-bottom: 49px
+      +r(767)
+        padding-bottom: 24px
+
+
+    &__row
+      display: flex
+      flex-wrap: wrap
+
+
+    &__col
+      width: 50%
+      padding-right: 120px
+      margin-bottom: 20px
+
+      p
+        &:nth-child(1)
+          font-size: 20px
+          font-weight: 600
+          padding-bottom: 28px
+
+        &:nth-child(2)
+          font-size: 18px
+
+
+// \ TABS

@@ -731,6 +731,9 @@ $(document).ready(function () {
 
     $("[main-tabs-js]").removeClass("is-active");
     elem.addClass("is-active");
+
+    $(".tabs__container").removeClass("is-active");
+    $(".tabs__container-" + elemAttrVal).addClass("is-active");
   });
   // ====================
 
