@@ -47,17 +47,28 @@
 
     &__col
       width: 50%
-      padding-right: 120px
       margin-bottom: 20px
+      +rmin(320)
+        width: 100%
+      +rmin(768)
+        padding-right: 50px
+      +rmin(992)
+        padding-right: 90px
+      +rmin(1200)
+        padding-right: 120px
 
       p
         &:nth-child(1)
           font-size: 20px
           font-weight: 600
           padding-bottom: 28px
+          +r(767)
+            font-size: 18px
 
         &:nth-child(2)
           font-size: 18px
+          +r(767)
+            font-size: 16px
 
 
 // \ TABS
