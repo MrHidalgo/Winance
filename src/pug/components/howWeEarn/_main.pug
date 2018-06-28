@@ -7,5 +7,27 @@ section.main.main
     h1.main__title.title.title--wrap!= "Как мы зарабатываем"
     h2.main__subtitle.subtitle!= "Большой опыт и связи в мире спорта дают нам эксклюзивные возможности для заработка в этой сфере."
 
-        
+    .main__row
+      .main__row-left
+        .main__row-wrap
+          i.icon-diagram
+        p!= "Заработок с одного счета составляет 300–1500 евро, а суммарная прибыль фонда только с одной игры достигает 1000-7000 евро."
+
+      .main__row-right
+        .main__row-wrap
+          i.icon-people
+        p!= "В среднем, ставки по одной игре делают 5 наших сотрудников, каждый работает на 2-х счетах."
+
+
+    p.main__text!= "Возможные сценарии нашей работы:"
+
+    .main__tabs
+      a.main__tabs-btn.is-active(href="#" data-id="0" main-tabs-js)
+        span!= "Кортсайдинг"
+        i.icon-plus
+
+      a.main__tabs-btn(href="#" data-id="1" main-tabs-js)
+        span!= "Внешний <br>консалтинг"
+        i.icon-plus
+
 // MAIN :: END

@@ -725,6 +725,18 @@ $(document).ready(function () {
 
   //
   // ====================
+  _document.on("click", "[main-tabs-js]", function (e) {
+    let elem = $(e.currentTarget),
+      elemAttrVal = elem.attr("data-id");
+
+    $("[main-tabs-js]").removeClass("is-active");
+    elem.addClass("is-active");
+  });
+  // ====================
+
+
+  //
+  // ====================
   function funcName() {
   }
 

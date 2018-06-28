@@ -22,4 +22,70 @@
         padding-bottom: 62px
 
 
+    &__text
+      padding-bottom: 20px
+      font-size: 18px
+      font-weight: 600
+
+
+    &__row
+      display: flex
+      padding-bottom: 107px
+      +r(767)
+        flex-direction: column
+        padding-bottom: 53px
+
+      &-left,
+      &-right
+        display: flex
+        width: 50%
+        +r(767)
+          width: 100%
+          padding-bottom: 30px
+
+          &:last-child
+            padding-bottom: 0
+
+      &-wrap
+        display: flex
+        width: 100px
+
+      p
+        width: calc(100% - 103px)
+        padding-right: 50px
+        font-size: 16px
+        font-weight: 500
+        font-style: italic
+        +r(767)
+          padding-right: 0
+
+
+    &__tabs
+      display: flex
+      align-items: flex-end
+      min-height: 201px
+
+
+      &-btn
+        position: relative
+        display: flex
+        justify-content: space-between
+        width: 50%
+        min-height: 201px
+        padding: 30px
+        background-color: $c-LightSeaGreen
+        +transition(min-height, background-color)
+
+        span
+          line-height: 1
+          color: $c-white
+          font-size: 36px
+          font-weight: 600
+
+        &.is-active
+          min-height: 158px
+          background-color: $c-royalBlue
+          +transition(min-height, background-color)
+
+
 // \ MAIN
