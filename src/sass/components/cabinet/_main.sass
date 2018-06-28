@@ -63,13 +63,13 @@
           color: lighten($c-royalBlue, 15%)
           +transition(color)
 
-          &:after
-            background-color: $c-blueZodiac
-            +transition(background-color)
-
           sup
             opacity: 0.85
             +transition(opacity)
+
+        &.is-active
+          &:after
+            background-color: $c-blueZodiac
 
         sup
           display: inline-block
@@ -131,13 +131,14 @@
         color: lighten($c-royalBlue, 15%)
         +transition(color)
 
-        &:after
-          background-color: $c-blueZodiac
-          +transition(background-color)
-
         i
           opacity: 0.85
           +transition(opacity)
+
+      &.is-active
+        &:after
+          background-color: $c-blueZodiac
+
 
       i
         margin-left: 13px

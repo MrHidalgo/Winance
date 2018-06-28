@@ -530,9 +530,9 @@ $(document).ready(function () {
    */
   function initCalc() {
     maskInput("[maskMonth-js]", "ZZ");
-    maskInput("[maskSumRu-js]", 'ZZZZZZ');
-    maskInput("[maskSumEn-js]", 'ZZZZZZZ');
-    maskInput("[maskSumEu-js]", 'ZZZZZZZ');
+    maskInput("[maskSumRu-js]", 'ZZZZZZZ');
+    maskInput("[maskSumEn-js]", 'ZZZZZZ');
+    maskInput("[maskSumEu-js]", 'ZZZZZZ');
 
     changeInputDataVal("[monthDataRu-calc-js]", 1, 12, "1");
     changeInputDataVal("[sumDataRu-calc-js]", 100, 5000000, "100");

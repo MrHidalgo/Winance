@@ -4,26 +4,42 @@
 -
   var mainMenu = [
     {
+      href: "cabinetInvestment.html",
       name: "Инвестиции",
       count: "1"
     },
     {
+      href: "cabinetPartners.html",
       name: "Партнерская программа",
       count: "0"
     },
     {
+      href: "cabinetInformation.html",
       name: "Информация",
       count: "0"
     },
     {
+      href: "cabinetSupportEmpty.html",
       name: "Поддержка",
       count: "1"
     },
     {
+      href: "cabinetReports.html",
       name: "Отчеты",
       count: "0"
     }
   ];
+
+mixin mainBtn(classMod, href, name, count)
+  a.main__nav-btn(
+    href!= href
+    title!= ""
+    class!= classMod
+  )
+    span!= name
+    if(count !== "0")
+      sup
+        span!= count
 
 
 .main
@@ -43,15 +59,26 @@
           ul.main__nav-list
             each val, idx in mainMenu
               li.main__nav-item
-                a.main__nav-btn(href="#")
-                  span!= mainMenu[idx].name
-                  if(mainMenu[idx].count !== "0")
-                    sup
-                      span!= mainMenu[idx].count
+                if(idx === 0 && (pageName === "cabinetInvestment" || pageName === "cabinetInvestmentNew" || pageName === "cabinetInvestmentPuy" || pageName === "cabinetInvestmentPuyFinish" || pageName === "cabinetInvestmentTabs"))
+                  +mainBtn("is-active", mainMenu[idx].href, mainMenu[idx].name, mainMenu[idx].count)
+                else if(idx === 1 && (pageName === "cabinetPartners"))
+                  +mainBtn("is-active", mainMenu[idx].href, mainMenu[idx].name, mainMenu[idx].count)
+                else if(idx === 2 && (pageName === "cabinetInformation"))
+                  +mainBtn("is-active", mainMenu[idx].href, mainMenu[idx].name, mainMenu[idx].count)
+                else if(idx === 3 && (pageName === "cabinetSupport" || pageName === "cabinetSupportEmpty"))
+                  +mainBtn("is-active", mainMenu[idx].href, mainMenu[idx].name, mainMenu[idx].count)
+                else if(idx === 4 && (pageName === "cabinetReports"))
+                  +mainBtn("is-active", mainMenu[idx].href, mainMenu[idx].name, mainMenu[idx].count)
+                else
+                  +mainBtn("", mainMenu[idx].href, mainMenu[idx].name, mainMenu[idx].count)
 
 
       .main__row-right
-        a.main__score(href="#" title!="")
+        a.main__score(
+          href="cabinet.html"
+          title!=""
+          class!= (pageName === "cabinetBill" || pageName === "cabinetBillConclusion" || pageName === "cabinetBillConfirmation") ? "is-active": ""
+        )
           span!= "Мой счет"
           i.icon-score
 
