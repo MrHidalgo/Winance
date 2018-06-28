@@ -740,6 +740,33 @@ $(document).ready(function () {
 
   //
   // ====================
+  $("[hover-tech-js] [hover-elem-js]").hover(
+    function(e) {
+      let elem = $(e.currentTarget),
+        elemAttrId = elem.attr("data-hover-id"),
+        elemAttrBlock = elem.attr("data-hover-block");
+
+      let hoverElem = $("[find-hover-js][data-hover-id='" + elemAttrId + "']");
+
+      let timeLineBlocks = $("[timeline-hover-js]");
+
+
+      timeLineBlocks.addClass("is-opacity");
+      $("[timeline-hover-js][data-block='" + elemAttrBlock + "']").removeClass("is-opacity");
+
+      $("[find-hover-js]").removeClass("is-hover");
+      hoverElem.addClass("is-hover");
+    },
+    function(e) {
+      $("[find-hover-js]").removeClass("is-hover");
+      $("[timeline-hover-js]").removeClass("is-opacity");
+    }
+  );
+  // ====================
+
+
+  //
+  // ====================
   function funcName() {
   }
 

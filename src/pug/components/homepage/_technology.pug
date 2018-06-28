@@ -1,8 +1,12 @@
 // TECHNOLOGY :: START
 
 
-mixin techBlock(classMod, title, icon, topText, bottomText)
-  .technology__block(class!= classMod)
+mixin techBlock(dataAttr, classMod, title, icon, topText, bottomText)
+  .technology__block(
+    class!= classMod
+    data-block!= dataAttr
+    timeline-hover-js
+  )
     if(icon)
       p
         i(class!= "icon-" + icon)
@@ -35,93 +39,93 @@ mixin techBlock(classMod, title, icon, topText, bottomText)
     .technology__box
 
       .technology__box-left
-        +techBlock("technology__block--half technology__block--40", "", "", "", "59:54")
-        +techBlock("technology__block--light technology__block--50", "", "", "", "59:55")
-        +techBlock("technology__block--60", "", "", "", "59:56")
-        +techBlock("technology__block--light technology__block--70", "", "", "", "59:57")
-        +techBlock("technology__block--80", "", "", "", "59:58")
-        +techBlock("technology__block--light technology__block--90", "", "", "", "59:59")
+        +techBlock("", "technology__block--half technology__block--40", "", "", "", "59:54")
+        +techBlock("", "technology__block--light technology__block--50", "", "", "", "59:55")
+        +techBlock("", "technology__block--60", "", "", "", "59:56")
+        +techBlock("", "technology__block--light technology__block--70", "", "", "", "59:57")
+        +techBlock("", "technology__block--80", "", "", "", "59:58")
+        +techBlock("", "technology__block--light technology__block--90", "", "", "", "59:59")
 
       .container
-        +techBlock("", "Фонд средств", "", "2 000 €", "00:00")
-        +techBlock("technology__block--light", "", "", "", "00:01")
-        +techBlock("", "", "", "", "00:02")
-        +techBlock("technology__block--light", "", "", "", "00:03")
-        +techBlock("", "", "", "", "00:04")
-        +techBlock("technology__block--light", "", "", "", "00:05")
-        +techBlock("technology__block--small", "1 000", "down", "1 000 €", "00:06")
-        +techBlock("technology__block--light technology__block--big", "1 650€", "up", "2 650 €", "00:07")
-        +techBlock("technology__block--big", "", "", "", "00:08")
-        +techBlock("technology__block--light technology__block--big", "", "", "", "00:09")
+        +techBlock("0", "", "Фонд средств", "", "2 000 €", "00:00")
+        +techBlock("0", "technology__block--light", "", "", "", "00:01")
+        +techBlock("1", "", "", "", "", "00:02")
+        +techBlock("1", "technology__block--light", "", "", "", "00:03")
+        +techBlock("2", "", "", "", "", "00:04")
+        +techBlock("2", "technology__block--light", "", "", "", "00:05")
+        +techBlock("3", "technology__block--small", "1 000", "down", "1 000 €", "00:06")
+        +techBlock("4", "technology__block--light technology__block--big", "1 650€", "up", "2 650 €", "00:07")
+        +techBlock("4", "technology__block--big", "", "", "", "00:08")
+        +techBlock("4", "technology__block--light technology__block--big", "", "", "", "00:09")
 
       .technology__box-right
-        +techBlock("technology__block--big", "", "", "", "00:10")
-        +techBlock("technology__block--light technology__block--big", "", "", "", "00:11")
-        +techBlock("technology__block--big", "", "", "", "00:12")
-        +techBlock("technology__block--light technology__block--big", "", "", "", "00:13")
-        +techBlock("technology__block--big", "", "", "", "00:14")
-        +techBlock("technology__block--light technology__block--big technology__block--half", "", "", "", "00:15")
+        +techBlock("", "technology__block--big", "", "", "", "00:10")
+        +techBlock("", "technology__block--light technology__block--big", "", "", "", "00:11")
+        +techBlock("", "technology__block--big", "", "", "", "00:12")
+        +techBlock("", "technology__block--light technology__block--big", "", "", "", "00:13")
+        +techBlock("", "technology__block--big", "", "", "", "00:14")
+        +techBlock("", "technology__block--light technology__block--big technology__block--half", "", "", "", "00:15")
 
 
-    .container
+    .container(hover-tech-js)
       .technology__row
         .technology__row-wrap.technology__row-wrap--0
-          .technology__row-date
+          .technology__row-date(hover-elem-js data-hover-id="0" data-hover-block="0" find-hover-js)
             div
               i.icon-fr
               i.icon-gr
             p!= "30:30"
 
-          .technology__row-line
+          .technology__row-line(hover-elem-js data-hover-id="0" data-hover-block="0" find-hover-js)
             -for(var i = 0; i < 10; i++)
               span
 
-          .technology__row-icon
+          .technology__row-icon(hover-elem-js data-hover-id="1" data-hover-block="1" find-hover-js)
             i.icon-racket
 
-          .technology__row-line
+          .technology__row-line(hover-elem-js data-hover-id="1" data-hover-block="1" find-hover-js)
             -for(var j = 0; j < 17; j++)
               span
 
-          .technology__row-icon
+          .technology__row-icon(hover-elem-js data-hover-id="2" data-hover-block="2" find-hover-js)
             i.icon-arrows
 
-          .technology__row-line
+          .technology__row-line(hover-elem-js data-hover-id="2" data-hover-block="2" find-hover-js)
             -for(var k = 0; k < 17; k++)
               span
 
-          .technology__row-icon
+          .technology__row-icon(hover-elem-js data-hover-id="3" data-hover-block="3" find-hover-js)
             i.icon-flag
 
-          .technology__row-line
+          .technology__row-line(hover-elem-js data-hover-id="3" data-hover-block="3" find-hover-js)
             -for(var l = 0; l < 7; l++)
               span
 
-          .technology__row-date
+          .technology__row-date(hover-elem-js data-hover-id="4" data-hover-block="4" find-hover-js)
             div
               i.icon-fr
               i.icon-gr
             p!= "30:40"
 
         .technology__row-wrap.technology__row-wrap--1
-          p!= "Счет матча"
-          p!= "Наш агент <br>лично заметил <br>изменение <br>счета"
-          p!= "Передача <br>данных в наш <br>дата-центр"
-          p!= "Ставка"
-          p!= "Официальное <br>изменение <br>счета"
+          p(hover-elem-js data-hover-id="0" data-hover-block="0" find-hover-js)!= "Счет матча"
+          p(hover-elem-js data-hover-id="1" data-hover-block="1" find-hover-js)!= "Наш агент <br>лично заметил <br>изменение <br>счета"
+          p(hover-elem-js data-hover-id="2" data-hover-block="2" find-hover-js)!= "Передача <br>данных в наш <br>дата-центр"
+          p(hover-elem-js data-hover-id="3" data-hover-block="3" find-hover-js)!= "Ставка"
+          p(hover-elem-js data-hover-id="4" data-hover-block="4" find-hover-js)!= "Официальное <br>изменение <br>счета"
 
 
       .technology__col.technology__col-0
         .technology__col-left.wow.wowFadeUp(data-animation-delay="0.4s")
-          p!= "<strong>Небольшая временная задержка,</strong> <br>возникающая при прямой трансляции матча, <br>позволяет сделать ставку на уже известный <br>результат игры."
+          p(hover-elem-js data-hover-id="0" data-hover-block="0" find-hover-js)!= "<strong>Небольшая временная задержка,</strong> <br>возникающая при прямой трансляции матча, <br>позволяет сделать ставку на уже известный <br>результат игры."
         .technology__col-right.wow.wowFadeUp(data-animation-delay="0.5s")
-          p!= "На основе полученных данных наши <strong>специалисты успевают сделать</strong> <br>ставки до того, как букмекеры отреагируют на <br>изменения хода матча и скорректируют <br>свою линию."
+          p(hover-elem-js data-hover-id="3" data-hover-block="3" find-hover-js)!= "На основе полученных данных наши <strong>специалисты успевают сделать</strong> <br>ставки до того, как букмекеры отреагируют на <br>изменения хода матча и скорректируют <br>свою линию."
 
       .technology__col.technology__col-1
         .technology__col-left.wow.wowFadeUp(data-animation-delay="0.4s")
-          p!= "<strong>Средства, полученные от инвесторов,</strong> <br>составляют оборотный фонд и<br> распределяются по игровым кошелькам в <br>определенных пропорциях (зависит от <br>уровня турнира и букмекерской конторы — <br>зная их особенности мы понимаем, на <br>какую сумму лучше пополнить тот или <br>иной игровой кошелек)."
+          p(hover-elem-js data-hover-id="0" data-hover-block="0" find-hover-js)!= "<strong>Средства, полученные от инвесторов,</strong> <br>составляют оборотный фонд и<br> распределяются по игровым кошелькам в <br>определенных пропорциях (зависит от <br>уровня турнира и букмекерской конторы — <br>зная их особенности мы понимаем, на <br>какую сумму лучше пополнить тот или <br>иной игровой кошелек)."
         .technology__col-right.wow.wowFadeUp(data-animation-delay="0.5s")
-          p!= "Специальный зритель матча передает <br>данные о счете в наш центр обработки <br>информации."
+          p(hover-elem-js data-hover-id="2" data-hover-block="2" find-hover-js)!= "Специальный зритель матча передает <br>данные о счете в наш центр обработки <br>информации."
 
 
 
