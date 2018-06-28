@@ -64,6 +64,10 @@
       display: flex
       align-items: flex-end
       min-height: 201px
+      +r(767)
+        min-height: 170px
+      +r(575)
+        flex-direction: column
 
 
       &-btn
@@ -75,17 +79,39 @@
         padding: 30px
         background-color: $c-LightSeaGreen
         +transition(min-height, background-color)
+        +r(767)
+          min-height: 170px
+        +r(575)
+          width: 100%
 
         span
           line-height: 1
           color: $c-white
-          font-size: 36px
           font-weight: 600
+          +rmin(320)
+            font-size: 25px
+          +rmin(768)
+            font-size: 28px
+          +rmin(992)
+            font-size: 33px
+          +rmin(1200)
+            font-size: 36px
+          +r(575)
+            font-size: 20px
+
+        i
+          +r(767)
+            display: none
+          +r(575)
+            display: block
+            transform: scale(0.75)
 
         &.is-active
           min-height: 158px
           background-color: $c-royalBlue
           +transition(min-height, background-color)
+          +r(767)
+            min-height: 128px
 
 
 // \ MAIN
