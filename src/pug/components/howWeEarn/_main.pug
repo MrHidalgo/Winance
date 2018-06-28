@@ -4,29 +4,29 @@
 section.main.main
   .container
 
-    h1.main__title.title.title--wrap!= "Как мы зарабатываем"
-    h2.main__subtitle.subtitle!= "Большой опыт и связи в мире спорта дают нам эксклюзивные возможности для заработка в этой сфере."
+    h1.main__title.title.title--wrap.wow.wowFadeUp(data-animation-delay="0.3s")!= "Как мы зарабатываем"
+    h2.main__subtitle.subtitle.wow.wowFadeUp(data-animation-delay="0.4s")!= "Большой опыт и связи в мире спорта дают нам эксклюзивные возможности для заработка в этой сфере."
 
     .main__row
-      .main__row-left
+      .main__row-left.wow.wowFadeUp(data-animation-delay="0.5s")
         .main__row-wrap
           i.icon-diagram
         p!= "Заработок с одного счета составляет 300–1500 евро, а суммарная прибыль фонда только с одной игры достигает 1000-7000 евро."
 
-      .main__row-right
+      .main__row-right.wow.wowFadeUp(data-animation-delay="0.55s")
         .main__row-wrap
           i.icon-people
         p!= "В среднем, ставки по одной игре делают 5 наших сотрудников, каждый работает на 2-х счетах."
 
 
-    p.main__text!= "Возможные сценарии нашей работы:"
+    p.main__text.wow.wowFadeUp(data-animation-delay="0.6s")!= "Возможные сценарии нашей работы:"
 
     .main__tabs
-      a.main__tabs-btn.is-active(href="#" data-id="0" main-tabs-js)
+      a.main__tabs-btn.is-active.animated.slideInUp(href="#" data-id="0" main-tabs-js)
         span!= "Кортсайдинг"
         i.icon-plus
 
-      a.main__tabs-btn(href="#" data-id="1" main-tabs-js)
+      a.main__tabs-btn.animated.slideInUp(href="#" data-id="1" main-tabs-js)
         span!= "Внешний <br>консалтинг"
         i.icon-plus
 
