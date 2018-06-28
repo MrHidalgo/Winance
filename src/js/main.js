@@ -763,7 +763,7 @@ $(document).ready(function () {
     }
   );
 
-  $("[timeline-hover-js]").hover(
+  $("[timeline-hover-js]").not("[timeline-hover-js][data-block='']").hover(
     function(e) {
       let elem = $(e.currentTarget),
         elemAttrId = elem.attr("data-block");
