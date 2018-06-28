@@ -45,6 +45,7 @@ $(document).ready(function () {
     closeMobileMenu();
 
     swiperMasonryInit();
+    initCalc();
 
     // development helper
     _window.on('resize', debounce(setBreakpoint, 200))
@@ -257,6 +258,9 @@ $(document).ready(function () {
 
     $("[tabs-btn-js]").removeClass("is-active");
     elem.addClass("is-active");
+
+    $(".calc__tabs-body").removeClass("is-active");
+    $(".calc__tabs-body[data-tabs-body='" + elemAttr + "']").addClass("is-active");
   });
   // ====================
 
@@ -429,6 +433,133 @@ $(document).ready(function () {
   }
 
   // ====================
+  // ====================
+  function resizeInputs(elem) {
+    let text = elem.val().replace(/\s+/g, ' '),
+      i = elem.next('i');
+
+    let width = i.width();
+
+    if(text !== '') {
+      i.text(text);
+    } else {
+      i.text("");
+    }
+
+    width = i.width();
+    elem.css('width', width + 8);
+  }
+
+  function initCalcValue(rangeNameElem, inputDataElem) {
+    let monthRange = $(rangeNameElem),
+      monthRangeVal = monthRange.val(),
+      monthRangeMax = monthRange.max,
+      monthRangeMin = monthRange.min;
+
+    let monthDataElem = $(inputDataElem);
+
+    monthDataElem.value = monthRangeVal;
+    monthRange.css({
+      'backgroundSize': (monthRangeVal - monthRangeMin) * 100 / (monthRangeMax - monthRangeMin) + '% 100%'
+    });
+    resizeInputs(monthDataElem);
+  }
+
+  function changeInputDataVal(inputElem, minVal, maxVal, defaultVal) {
+    $(inputElem).on("input", function(e) {
+      console.log(`changeInputDataVal`);
+      let elem = $(e.target),
+        elemVal = elem.val(),
+        rangeElem = elem.closest(".calc__tabs-col").find("input[type='range']"),
+        rangeMax = rangeElem[0].max,
+        rangeMin = rangeElem[0].min;
+
+      if(elemVal >= minVal && elemVal <= maxVal) {
+        rangeElem.val(elemVal);
+        rangeElem.css({
+          'backgroundSize': (elemVal - rangeMin) * 100 / (rangeMax - rangeMin) + '% 100%'
+        });
+      } else {
+        rangeElem.val(defaultVal);
+        rangeElem.css({
+          'backgroundSize': '0% 100%'
+        });
+      }
+
+      resizeInputs(elem);
+    });
+  }
+
+  function limitValueInput(inputDataElem, minVal) {
+    $(inputDataElem).on("blur", function(e) {
+      let elem = $(e.target);
+
+      if(elem.val() === "") {
+        elem.val(minVal);
+      }
+    });
+  }
+
+  function maskInput(inputElem, maxVal) {
+    $(inputElem).mask(maxVal, {
+      translation: {
+        'Z': {
+          pattern: /[0-9]/,
+          optional: true
+        }
+      }
+    });
+  }
+
+  function rangeInput(rangeName, inputDataElem) {
+    $(rangeName).on("input", function(e) {
+      let elem = $(e.target),
+        elemVal = (elem.val()),
+        monthData = $(inputDataElem);
+
+      monthData.val(elemVal);
+      resizeInputs(monthData);
+    });
+  }
+
+  /**
+   * INIT CALC DATA
+   */
+  function initCalc() {
+    maskInput("[maskMonth-js]", "ZZ");
+    maskInput("[maskSumRu-js]", 'ZZZZZZ');
+    maskInput("[maskSumEn-js]", 'ZZZZZZZ');
+    maskInput("[maskSumEu-js]", 'ZZZZZZZ');
+
+    changeInputDataVal("[monthDataRu-calc-js]", 1, 12, "1");
+    changeInputDataVal("[sumDataRu-calc-js]", 100, 5000000, "100");
+    changeInputDataVal("[monthDataEn-calc-js]", 1, 12, "1");
+    changeInputDataVal("[sumDataEn-calc-js]", 100, 100000, "100");
+    changeInputDataVal("[monthDataEu-calc-js]", 1, 12, "1");
+    changeInputDataVal("[sumDataEu-calc-js]", 100, 100000, "100");
+
+    limitValueInput("[monthDataRu-calc-js]", "1");
+    limitValueInput("[sumDataRu-calc-js]", "100");
+    limitValueInput("[monthDataEn-calc-js]", "1");
+    limitValueInput("[sumDataEn-calc-js]", "100");
+    limitValueInput("[monthDataEu-calc-js]", "1");
+    limitValueInput("[sumDataEu-calc-js]", "100");
+
+    rangeInput("[monthRangeRu-calc-js]", "[monthDataRu-calc-js]");
+    rangeInput("[sumRangeRu-calc-js]", "[sumDataRu-calc-js]");
+    rangeInput("[monthRangeEn-calc-js]", "[monthDataEn-calc-js]");
+    rangeInput("[sumRangeEn-calc-js]", "[sumDataEn-calc-js]");
+    rangeInput("[monthRangeEu-calc-js]", "[monthDataEu-calc-js]");
+    rangeInput("[sumRangeEu-calc-js]", "[sumDataEu-calc-js]");
+
+    initCalcValue("[monthRangeRu-calc-js]", "[monthDataRu-calc-js]");
+    initCalcValue("[sumRangeRu-calc-js]", "[sumDataRu-calc-js]");
+    initCalcValue("[monthRangeEn-calc-js]", "[monthDataEn-calc-js]");
+    initCalcValue("[sumRangeEn-calc-js]", "[sumDataEn-calc-js]");
+    initCalcValue("[monthRangeEu-calc-js]", "[monthDataEu-calc-js]");
+    initCalcValue("[sumRangeEu-calc-js]", "[sumDataEu-calc-js]");
+  }
+  // ====================
 
 
   //
@@ -564,23 +695,18 @@ $(document).ready(function () {
 
         if ($(".swiper-blog-js").length > 0 && swiperBlog !== 0) {
           swiperBlog.destroy();
-          // swiperBlog = 0;
         }
         if ($(".swiper-testimonials-js").length > 0 && swiperTestimonials !== 0) {
           swiperTestimonials.destroy();
-          // swiperTestimonials = 0;
         }
         if ($(".swiper-print-js").length > 0 && swiperPrint !== 0) {
           swiperPrint.destroy();
-          // swiperPrint = 0;
         }
         if ($(".swiper-faq-js").length > 0 && swiperFaq !== 0) {
           swiperFaq.destroy();
-          // swiperFaq = 0;
         }
         if ($(".swiper-reasons-js").length > 0 && swiperReasons !== 0) {
           swiperReasons.destroy();
-          // swiperReasons = 0;
         }
 
         msnrGridBlog.masonry(masonryOpt('.blogs__block'));

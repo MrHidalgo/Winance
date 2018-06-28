@@ -362,9 +362,10 @@ input[type=range]
   padding: 0
   background-color: rgba($c-blueZodiac, 0.3)
   background-image: linear-gradient($c-blueZodiac, $c-blueZodiac)
-  background-size: 50% 100%
+  background-size: 0 100%
   background-repeat: no-repeat
   -webkit-appearance: none
+  +transition(background-color, background-image, background-size, background-repeat)
 
 input[type=range]::-webkit-slider-runnable-track
   box-shadow: none
