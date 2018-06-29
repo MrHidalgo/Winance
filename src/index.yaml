@@ -22,7 +22,7 @@ PageList:
 - file: contacts.html
   ready: 85
 - file: cabinet.html
-  ready: 5
+  ready: 50
 - file: cabinetConclusion.html
   ready: 5
 - file: cabinetConfirmation.html

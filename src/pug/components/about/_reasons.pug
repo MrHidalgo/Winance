@@ -6,49 +6,7 @@
 
     h1.reasons__title.title.wow.wowFadeUp(data-animation-delay="0.3s")!= "Причины доверять фонду"
 
-    .reasons__row
-      .swiper-container.swiper-reasons-js
-        .swiper-wrapper
-          .reasons__box.reasons__box-0.reasons__box--big.wow.wowFadeUp(data-animation-delay="0.4s")
-            .reasons__box-left
-              p.reasons__box-title.wow.wowFadeUp(data-animation-delay="0.45s")!= "Высокая <br>доходность"
-              p.reasons__box-text.wow.wowFadeUp(data-animation-delay="0.5s")!= "<span>Средняя ставка в 2 раза выше</span>, чем в российских частных <br>фондах"
-              p.reasons__box-text.reasons__box-text--p.wow.wowFadeUp(data-animation-delay="0.55s")!= "Максимальная доходность <br><span>до 15% в месяц!</span>"
-
-            .reasons__box-right
-              img.reasons__box-img(src="./img/profit.svg")
-
-          .reasons__box.reasons__box-n
-            .reasons__box-wrap
-              img.reasons__box-img(src="./img/profit.svg")
-            p.reasons__box-title!= "Высокая <br>доходность"
-            p.reasons__box-text!= "<span>Средняя ставка в 2 раза выше</span>, чем в российских частных <br>фондах"
-
-          .reasons__box.reasons__box-1.wow.wowFadeUp(data-animation-delay="0.5s")
-            .reasons__box-wrap.wow.wowFadeUp(data-animation-delay="0.35s")
-              img.reasons__box-img(src="./img/pays.svg")
-            p.reasons__box-title.wow.wowFadeUp(data-animation-delay="0.5s")!= "Еженедельные выплаты"
-            p.reasons__box-text.wow.wowFadeUp(data-animation-delay="0.55s")!= "Получайте дивиденды хоть каждую неделю."
-
-          .reasons__box.reasons__box-2.wow.wowFadeUp(data-animation-delay="0.6s")
-            .reasons__box-wrap.wow.wowFadeUp(data-animation-delay="0.3s")
-              img.reasons__box-img(src="./img/security.svg")
-            p.reasons__box-title.wow.wowFadeUp(data-animation-delay="0.5s")!= "Гарантии <br>и безопасность"
-            p.reasons__box-text.wow.wowFadeUp(data-animation-delay="0.55s")!= "Инвестиции защищены официальным договором, <br><span>риски менее 1%.</span>"
-
-          .reasons__box.reasons__box-3.wow.wowFadeUp(data-animation-delay="0.7s")
-            .reasons__box-wrap.wow.wowFadeUp(data-animation-delay="0.3s")
-              img.reasons__box-img(src="./img/innovations.svg")
-            p.reasons__box-title.wow.wowFadeUp(data-animation-delay="0.5s")!= "Инновационность"
-            p.reasons__box-text.wow.wowFadeUp(data-animation-delay="0.55s")!= "Новый для России <br>инвестиционный инструмент, <br><span>доказавший свою <br>эффективность</span> за рубежом."
-
-          .reasons__box.reasons__box-4.wow.wowFadeUp(data-animation-delay="0.8s")
-            .reasons__box-wrap.wow.wowFadeUp(data-animation-delay="0.3s")
-              img.reasons__box-img(src="./img/team.svg")
-            p.reasons__box-title.wow.wowFadeUp(data-animation-delay="0.5s")!= "Опытная команда"
-            p.reasons__box-text.wow.wowFadeUp(data-animation-delay="0.55s")!= "<span>5 лет</span> зарабатываем <br>на спорте, деятельность <br>подтверждена."
-
-        .swiper-pagination
+    include ../common/_reasonsBox
 
 
 // REASONS :: END
