@@ -1,0 +1,100 @@
+// PARTNERS
+
+.cabinet
+  .partners
+    padding-top: 73px
+    padding-bottom: 161px
+    +r(767)
+      padding-top: 36px
+      padding-bottom: 80px
+
+
+    &__container
+      &-0
+      &-1
+      &-2
+        padding-bottom: 48px
+      &-3
+        padding-bottom: 44px
+      &-4
+
+
+    &__row
+      display: flex
+      align-items: center
+
+      &-left,
+      &-right
+        width: 50%
+
+
+    &__pagination
+      &-list
+        display: flex
+        flex-wrap: wrap
+
+      &-item
+        display: flex
+        align-items: center
+        padding-bottom: 10px
+
+      &-title
+        margin-right: 30px
+        font-size: 18px
+
+      &-link
+        display: flex
+        align-items: center
+        justify-content: center
+        height: 32px
+        border-radius: 3px
+        border: 1px solid rgba($c-royalBlue, 0.2)
+        margin-right: 10px
+        padding-left: 10px
+        padding-right: 10px
+        color: $c-royalBlue
+        text-align: center
+        font-size: 18px
+        +transition(border-color, background-color, color)
+        +r(767)
+          font-size: 16px
+
+        &:hover
+          border-color: $c-royalBlue
+          +transition(border-color)
+        &.is-active
+          border-color: transparent
+          background-color: rgba($c-blueZodiac, 0.24)
+          color: $c-blueZodiac
+          +transition(border-color, background-color, color)
+
+    &__banner
+      display: flex
+      align-items: flex-start
+
+      &-left
+        width: 310px
+
+        img
+          display: block
+          max-width: 100%
+          height: auto
+
+      &-right
+        width: calc(100% - 310px)
+        padding: 20px 20px 30px 20px
+        border-radius: 3px
+        border: 1px solid $c-whisper
+        background-color: $c-whiteSmoke
+
+        p
+          color: $c-nobel
+          font-size: 14px
+          width: 100%
+          max-width: 500px
+
+        a
+          margin: 0
+          margin-top: 41px
+
+// \ PARTNERS

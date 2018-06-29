@@ -1,0 +1,71 @@
+// PARTNERS :: START
+
+
+.partners
+  .container
+
+    h2.partners__title.cabinet__title!= "Партнерская программа"
+
+    .partners__container.partners__container-0
+    .partners__container.partners__container-1
+
+    h2.partners__title.cabinet__title!= "Баннеры"
+
+    .partners__container.partners__container-2
+      .partners__row
+        .partners__row-left
+
+          .partners__pagination
+            ul.partners__pagination-list
+              li.partners__pagination-item
+                p.partners__pagination-title!= "Размер:"
+              li.partners__pagination-item
+                a.partners__pagination-link.is-active(partners-size-js href="#" title="")!= "240x400"
+              li.partners__pagination-item
+                a.partners__pagination-link(partners-size-js href="#" title="")!= "468x60"
+              li.partners__pagination-item
+                a.partners__pagination-link(partners-size-js href="#" title="")!= "728-90"
+
+        .partners__row-right
+
+          .partners__pagination
+            ul.partners__pagination-list
+              li.partners__pagination-item
+                p.partners__pagination-title!= "Формат:"
+              li.partners__pagination-item
+                a.partners__pagination-link.is-active(partnera-format-js href="#" title="")!= "GIF"
+              li.partners__pagination-item
+                a.partners__pagination-link(partnera-format-js href="#" title="")!= "html-5"
+
+    .partners__container.partners__container-3
+      .partners__banner
+        .partners__banner-left
+          img.partners__banner-img(
+            src="./img/img-banner-0__partners.png"
+            srcset="./img/img-banner-0__partners@2x.png 2x"
+            class=""
+            title=""
+            alt=""
+          )
+        .partners__banner-right
+          .partners__banner-box
+            p= '<a href="https://respectbet.com/rb/3940039173/" title="respect_1"><img src="https://respectbet.com/banners/respect_1.gif" width="240" height="400" border=0 alt="https://respectbet.com"></a>'
+            a.btn(href="#" title="")!= "Скопировать код"
+
+    .partners__container.partners__container-4
+      .partners__banner
+        .partners__banner-left
+          img.partners__banner-img(
+            src="./img/img-banner-1__partners.png"
+            srcset="./img/img-banner-1__partners@2x.png 2x"
+            class=""
+            title=""
+            alt=""
+          )
+        .partners__banner-right
+          .partners__banner-box
+            p= '<a href="https://respectbet.com/rb/3940039173/" title="respect_1"><img src="https://respectbet.com/banners/respect_1.gif" width="240" height="400" border=0 alt="https://respectbet.com"></a>'
+            a.btn(href="#" title="")!= "Скопировать код"
+
+
+// PARTNERS :: END

@@ -48,6 +48,9 @@ $(document).ready(function () {
 
     swiperMasonryInit();
 
+    cabinetPartnerPagination("[partners-size-js]");
+    cabinetPartnerPagination("[partnera-format-js]");
+
     if($(".calc").length > 0) {
       initCalc();
     }
@@ -825,6 +828,19 @@ $(document).ready(function () {
 
   _document.on("click", "", function (e) {
   });
+  // ====================
+
+
+  //
+  // ====================
+  function cabinetPartnerPagination(btnName) {
+    _document.on("click", btnName, function(e) {
+      let elem = $(e.target);
+
+      $(btnName).removeClass("is-active");
+      elem.addClass("is-active");
+    })
+  }
   // ====================
 
 
