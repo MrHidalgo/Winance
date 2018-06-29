@@ -1,0 +1,93 @@
+// SUPPORT :: START
+
+-
+  var supportPagination = [
+    {
+      classMod: "default",
+      name: "Все",
+      attr: "all"
+    },
+    {
+      classMod: "active",
+      name: "Активные",
+      attr: "active"
+    },
+    {
+      classMod: "close",
+      name: "Закрытые",
+      attr: "close"
+    }
+  ];
+
+  var supportBox = [
+    {
+      attr: "active",
+      classMod: "active",
+      date: "29 апр. 2018",
+      badge: "активный",
+      title: "Время вывода средств",
+      subtitle: "Поддержка: <sup><span>1</span></sup>",
+      text: "Первый клуб сети открылся в декабре 2005 года и уже больше 10 лет удерживает позиции самого востребованного и посещаемого фитнес-клуба в Приморском районе Санкт-Петербурга."
+    },
+    {
+      attr: "active",
+      classMod: "active",
+      date: "29 апр. 2018",
+      badge: "активный",
+      title: "Время вывода средств",
+      subtitle: "Вы:",
+      text: "Безупречный сервис, качественные тренажеры, известные спортсмены-тренеры – вот составляющие многолетнего успеха. Именно поэтому процентное соотношение постоянных и новых клиентов составляет 80% и 20%, соответственно. Выбрав фитнес-клубы OLYMP однажды, Вы останетесь в команде надолго."
+    },
+    {
+      attr: "close",
+      classMod: "close",
+      date: "29 апр. 2018",
+      badge: "закрытый",
+      title: "Время вывода средств",
+      subtitle: "Последнее сообщение",
+      text: "Первый клуб сети открылся в декабре 2005 года и уже больше 10 лет удерживает позиции самого востребованного и посещаемого фитнес-клуба в Приморском районе Санкт-Петербурга."
+    }
+  ];
+
+.support
+  .container
+
+    .support__container.support__container-0
+      h1.support__title.cabinet__title!= "Тикеты"
+      a.btn.btn--color.btn--small(href="#")!= "Открыть новый тикет"
+
+    .support__container.support__container-1
+      .support__pagination
+        ul.support__pagination-list
+          each val, idx in supportPagination
+            li.support__pagination-item
+              a.support__pagination-link(
+                href="#"
+                title!= ""
+                class!= (idx === 0) ? "is-active support__pagination-link--" + supportPagination[idx].classMod: "support__pagination-link--" + supportPagination[idx].classMod
+                support-pagination-js
+                data-pagination!= supportPagination[idx].attr
+              )!= supportPagination[idx].name
+
+    .support__container.support__container-2
+      .support__col(masonry-support-js)
+        each val, idx in supportBox
+          .support__box.is-show(
+            class!= (classMod !== "") ? "support__box-" + idx + " support__box--" + supportBox[idx].classMod: "support__box-" + idx
+            data-filter= supportBox[idx].attr
+          )
+            .support__box-header
+              p!= supportBox[idx].date
+              .support__box-badge
+                p!= supportBox[idx].badge
+
+            .support__box-body
+              p!= "Тема"
+              p!= supportBox[idx].title
+
+            .support__box-footer
+              p!= supportBox[idx].subtitle
+              p!= supportBox[idx].text
+
+
+// SUPPORT :: END

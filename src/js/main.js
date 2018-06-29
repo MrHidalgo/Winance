@@ -37,9 +37,11 @@ $(document).ready(function () {
     initMasonry('[masonry-testimonials-js]', '.testimonials__block');
     initMasonry('[masonry-print-js]', '.print__block');
     initMasonry('[masonry-faq-js]', '.quesAns__block');
+    initMasonry('[masonry-support-js]', '.support__box');
 
     filterMasonry("[blogs-pagination-js]", "[masonry-blog-js]", ".blogs__block");
     filterMasonry("[quesAns-pagination-js]", "[masonry-faq-js]", ".quesAns__block");
+    filterMasonry("[support-pagination-js]", "[masonry-support-js]", ".support__box");
 
     inputRangeInit();
     closeMobileMenu();
