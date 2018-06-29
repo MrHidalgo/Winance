@@ -785,6 +785,28 @@ $(document).ready(function () {
 
   //
   // ====================
+  // function initSelectCabinetNav() {
+  //   $("select.select__cabinet-nav")
+  //     .selectric()
+  //     .on("selectric-before-close", function(e) {
+  //       var elem = e.target,
+  //         idx = elem.selectedIndex;
+  //         // val = elem.value,
+  //         // attrOpt = elem[idx].attributes["data-opt"].value;
+  //
+  //       console.log(e);
+  //       console.log(`elem: `, elem);
+  //       console.log(`idx: `, idx);
+  //       // console.log(`val: `, val);
+  //       // console.log(`attrOpt: `, attrOpt);
+  //     });
+  // }
+  // initSelectCabinetNav();
+  // ====================
+
+
+  //
+  // ====================
   function funcName() {
   }
 
