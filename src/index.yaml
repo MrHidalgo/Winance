@@ -32,7 +32,7 @@ PageList:
 - file: cabinetSupport.html
   ready: 10
 - file: cabinetSupportEmpty.html
-  ready: 10
+  ready: 60
 - file: cabinetReports.html
   ready: 60
 - file: cabinetPartners.html

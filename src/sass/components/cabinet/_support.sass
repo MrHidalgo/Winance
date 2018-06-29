@@ -1,0 +1,47 @@
+// SUPPORT
+
+.cabinet
+  .support
+    padding-top: 73px
+    padding-bottom: 146px
+    +r(767)
+      padding-top: 36px
+      padding-bottom: 73px
+
+
+    &--empty
+      .support__row
+        display: flex
+        flex-wrap: wrap
+        align-items: flex-start
+
+
+    &__block
+      width: 100%
+      min-height: 94px
+      padding: 20px
+      margin-bottom: 20px
+      background-color: $c-whiteSmoke
+      +rmin(992)
+        width: calc(50% - 10px)
+        margin-bottom: 0
+
+      &:nth-child(even)
+        +rmin(992)
+          margin-left: 10px
+      &:nth-child(odd)
+        +rmin(992)
+          margin-right: 10px
+
+      p
+        font-size: 18px
+
+        a
+          color: $c-royalBlue
+
+      a
+        margin-top: 22px
+        margin-left: 0
+
+
+// \ SUPPORT
