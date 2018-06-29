@@ -1,0 +1,98 @@
+// INFO
+
+.cabinet
+  .info
+    padding-top: 73px
+    padding-bottom: 143px
+    +r(767)
+      padding-top: 36px
+      padding-bottom: 71px
+
+    &__row
+      display: flex
+      +r(991)
+        flex-wrap: wrap
+
+
+      &-left,
+      &-right
+        width: 100%
+        +rmin(992)
+          width: 50%
+
+      &-left
+        +rmin(992)
+          margin-right: 10px
+
+      &-right
+        +rmin(992)
+          margin-left: 10px
+
+
+    &__box
+      margin-bottom: 20px
+      padding: 20px
+      background-color: $c-whiteSmoke
+
+      .form__field
+        max-width: 100%
+        margin-bottom: 20px
+
+      &-col
+        display: flex
+        padding-top: 53px
+        +r(767)
+          flex-wrap: wrap
+          padding-top: 30px
+
+        a
+          margin: 0
+
+          &:last-child
+            +r(767)
+              margin-top: 20px
+            +rmin(768)
+              margin-left: 20px
+
+      &-wrap
+        display: flex
+        align-items: center
+        padding-bottom: 15px
+        +r(767)
+          flex-wrap: wrap
+
+        &:last-child
+          padding-bottom: 0
+
+        &--img
+          .info__box-left
+            width: 90px
+          .info__box-right
+            width: calc(100% - 90px)
+
+      &-left
+        width: 190px
+        +r(767)
+          width: 100%
+
+        p
+          color: $c-nobel
+          font-size: 14px
+          font-style: italic
+
+        img
+          width: 60px
+
+      &-right
+        width: calc(100% - 190px)
+        +r(767)
+          width: 100%
+
+        p
+          font-size: 18px
+
+        a
+          color: $c-royalBlue
+          font-size: 18px
+
+// \ INFO

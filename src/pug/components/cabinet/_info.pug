@@ -1,0 +1,92 @@
+// INFO :: START
+
+
+.info
+  .container
+
+    .info__row
+      .info__row-left
+        h2.info__title.cabinet__title!= "Личные данные"
+
+        .info__box
+          .info__box-wrap.info__box-wrap--img
+            .info__box-left
+              img(src="./img/docs.svg" title="" alt="")
+            .info__box-right
+              a(href="#" title="" class="")!= "Ваш договор"
+
+        .info__box
+          form(action="" method="")
+            .form__field.form__field--p.form__field--readonly
+              input.form__input(readonly type="text" name="name" class="" id="info_fullname" placeholder="Шусман Евгений Моисеевич")
+              label.form__label(for="info_fullname")!= "ФИО"
+
+            .form__field.form__field--p.form__field--readonly
+              input.form__input(readonly type="text" name="name" class="" id="info_birthday" placeholder="15.03.1964")
+              label.form__label(for="info_birthday")!= "Дата рождения"
+
+            .form__field.form__field--p.form__field--readonly
+              input.form__input(readonly type="text" name="name" class="" id="info_address" placeholder="606031 Дзержинск Удриса 5-124")
+              label.form__label(for="info_address")!= "Адрес регистрации"
+
+            .form__field.form__field--p.form__field--readonly
+              input.form__input(readonly type="text" name="name" class="" id="info_phone" placeholder="+79043910370")
+              label.form__label(for="info_phone")!= "Телефон"
+
+            .form__field.form__field--p.form__field--readonly
+              input.form__input(readonly type="text" name="name" class="" id="info_email" placeholder="kremlinmmgp@gmail.com")
+              label.form__label(for="info_email")!= "Почта"
+
+            .info__box-col
+              a.btn(href="#" title="" class="")!= "Редактировать"
+              a.btn(href="#" title="" class="")!= "Сменить пароль"
+
+      .info__row-right
+        h2.info__title.cabinet__title!= "Платежные реквезиты"
+
+        .info__box
+          .info__box-wrap
+            .info__box-left
+              p!= "Платежная система"
+            .info__box-right
+              p!= "Qiwi RUB"
+
+          .info__box-wrap
+            .info__box-left
+              p!= "Валюта"
+            .info__box-right
+              p!= "RUB"
+
+          .info__box-wrap
+            .info__box-left
+              p!= "Реквизиты"
+            .info__box-right
+              p!= "+79043910370"
+
+        .info__box
+          .info__box-wrap
+            .info__box-left
+              p!= "Платежная система"
+            .info__box-right
+              p!= "Другой банк"
+
+          .info__box-wrap
+            .info__box-left
+              p!= "Валюта"
+            .info__box-right
+              p!= "RUB"
+
+          .info__box-wrap
+            .info__box-left
+              p!= "Реквизиты"
+            .info__box-right
+              p!= "40817810700003423655, 044525974"
+
+        .info__box
+          a.btn.btn--small(href="#")!= "Добавить реквезиты"
+
+
+
+
+
+// INFO :: END
