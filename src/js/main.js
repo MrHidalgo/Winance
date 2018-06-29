@@ -196,12 +196,17 @@ $(document).ready(function () {
       $(bntName).removeClass("is-active");
       elem.addClass("is-active");
 
+      var masonryGridOption = {
+        itemSelector: blockName + '.is-show',
+        gutter: 18,
+        horizontalOrder: true
+      };
+
       if ($(_window).width() > 767) {
-        var masonryGridOption = {
-          itemSelector: blockName + '.is-show',
-          gutter: 18,
-          horizontalOrder: true
-        };
+        masonryGrid.masonry(masonryGridOption);
+      }
+
+      if($(".support__box").length > 0) {
         masonryGrid.masonry(masonryGridOption);
       }
 
@@ -225,6 +230,12 @@ $(document).ready(function () {
                 .removeClass("is-show");
             }
           });
+
+        if($(".support__box").length > 0) {
+          masonryGrid
+            .masonry('reloadItems')
+            .masonry('layout');
+        }
       }
 
       if ($(_window).width() > 767) {

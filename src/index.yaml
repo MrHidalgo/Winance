@@ -30,15 +30,15 @@ PageList:
 - file: cabinetInformation.html
   ready: 10
 - file: cabinetSupport.html
-  ready: 10
+  ready: 65
 - file: cabinetSupportEmpty.html
-  ready: 60
+  ready: 65
 - file: cabinetReports.html
-  ready: 60
+  ready: 65
 - file: cabinetPartners.html
   ready: 10
 - file: cabinetInvestment.html
-  ready: 60
+  ready: 65
 - file: cabinetInvestmentNew.html
   ready: 10
 - file: cabinetInvestmentPuy.html
