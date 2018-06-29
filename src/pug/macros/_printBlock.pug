@@ -1,0 +1,17 @@
+// PRINT :: START
+
+
+.swiper-container.swiper-print-js
+  .swiper-wrapper(masonry-print-js)
+    each val, idx in printBlockData
+      +printBlock(
+        printBlockData[idx].href,
+        printBlockData[idx].classMod,
+        idx,
+        printBlockData[idx].imageName,
+        printBlockData[idx].imageNameRetina,
+        printBlockData[idx].description
+      )
+
+
+// PRINT :: END

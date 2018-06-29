@@ -67,35 +67,14 @@
     }
   ];
 
-mixin printBlock(href, classMod, idx, imageName, imageNameRetina, description)
-  a.print__block(title!='' href!= href class!= 'print__block-' + idx + ' ' + classMod)
-    .print__block-header
-      img.print__block-image(
-        src!="./img/" + imageName
-        srcset!= "./img/" + imageNameRetina + " 2x"
-        class!= ""
-        title!= ""
-        alt!= ""
-      )
-
-    .print__block-body
-      p!= description
 
 section.print
   .container
 
     .print__row.wow.wowFadeUp(data-animation-delay="0.5s")
-      .swiper-container.swiper-print-js
-        .swiper-wrapper(masonry-print-js)
-          each val, idx in printBlockData
-            +printBlock(
-              printBlockData[idx].href,
-              printBlockData[idx].classMod,
-              idx,
-              printBlockData[idx].imageName,
-              printBlockData[idx].imageNameRetina,
-              printBlockData[idx].description
-            )
+
+      include ../../macros/_printBlock
+
 
     .container
       a.print__btn.btn.btn--big.wow.wowFadeUp(data-animation-delay="0.6s" href="#" title!="" class!= "")!= "Показать еще"

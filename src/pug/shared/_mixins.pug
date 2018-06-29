@@ -113,3 +113,19 @@ mixin testimonialsBlock(href, classMod, idx, title, pos, description)
 
     .testimonials__block-body
       p!= description
+
+
+//- PRESS BLOCK
+mixin printBlock(href, classMod, idx, imageName, imageNameRetina, description)
+  a.print__block(title!='' href!= href class!= 'print__block-' + idx + ' ' + classMod)
+    .print__block-header
+      img.print__block-image(
+        src!="./img/" + imageName
+        srcset!= "./img/" + imageNameRetina + " 2x"
+        class!= ""
+        title!= ""
+        alt!= ""
+      )
+
+    .print__block-body
+      p!= description
