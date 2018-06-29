@@ -69,3 +69,32 @@ mixin social(title, arr)
           a.social__link(href!= arr[idx].href title!= "" class!= "social__link--" + arr[idx].class)
             i.social__icon(class!= arr[idx].icon)
 
+
+//- BLOG BLOCK
+mixin blogsBlock(attr, href, classMod, count, imgName, title, text, badgeArr, date)
+  a.blogs__block.is-show(
+    href!= href
+    class!= (classMod !== "") ? "blogs__block-" + count + " blogs__block--" + classMod: "blogs__block-" + count
+    data-filter= attr
+  )
+    .blogs__block-header
+      if(classMod === "image")
+        .blogs__block-wrap
+          img.blogs__block-img(src= imgName alt!= "" title!= "")
+          p!= title
+      else
+        p!= title
+
+    .blogs__block-body
+      p!= text
+
+    .blogs__block-footer
+      .blogs__block-footer--left
+        .blogs__block-badge
+          each badge in badgeArr
+            p!= badge
+
+      .blogs__block-footer--right
+        .blogs__block-date
+          p!= date
+

@@ -131,34 +131,6 @@
   ];
 
 
-mixin blogsBlock(attr, href, classMod, count, imgName, title, text, badgeArr, date)
-  a.blogs__block.is-show(
-    href!= href
-    class!= (classMod !== "") ? "blogs__block-" + count + " blogs__block--" + classMod: "blogs__block-" + count
-    data-filter= attr
-  )
-    .blogs__block-header
-      if(classMod === "image")
-        .blogs__block-wrap
-          img.blogs__block-img(src= imgName alt!= "" title!= "")
-          p!= title
-      else
-        p!= title
-
-    .blogs__block-body
-      p!= text
-
-    .blogs__block-footer
-      .blogs__block-footer--left
-        .blogs__block-badge
-          each badge in badgeArr
-            p!= badge
-
-      .blogs__block-footer--right
-        .blogs__block-date
-          p!= date
-
-
 section.blogs
   .container
 
@@ -175,20 +147,8 @@ section.blogs
             )!= blogsPagination[idx].name
 
     .blogs__row.wow.wowFadeUp(data-animation-delay="0.7s")
-      .swiper-container.swiper-blog-js
-        .swiper-wrapper(masonry-blog-js)
-          each val, idx in blockData
-            +blogsBlock(
-              blockData[idx].attr,
-              blockData[idx].href,
-              blockData[idx].classMod,
-              idx,
-              blockData[idx].imgName,
-              blockData[idx].title,
-              blockData[idx].text,
-              blockData[idx].badgeArr,
-              blockData[idx].date
-            )
+
+      include ../../macros/_blogsBlock
 
   .container
     a.blogs__btn.blogs__btn--blog.btn.btn--big.wow.wowFadeUp(data-animation-delay="0.4s" href="#" title!="" class!= "")!= "Показать еще"

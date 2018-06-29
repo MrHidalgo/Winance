@@ -1,0 +1,21 @@
+// BLOGS :: START
+
+
+.swiper-container.swiper-blog-js
+  .swiper-wrapper(masonry-blog-js)
+    each val, idx in blockData
+      +blogsBlock(
+        blockData[idx].attr,
+        blockData[idx].href,
+        blockData[idx].classMod,
+        idx,
+        blockData[idx].imgName,
+        blockData[idx].title,
+        blockData[idx].text,
+        blockData[idx].badgeArr,
+        blockData[idx].date
+      )
+
+
+// BLOGS :: END
+
