@@ -1,0 +1,17 @@
+// TESTIMONIALS :: START
+
+
+.swiper-container.swiper-testimonials-js
+  .swiper-wrapper(masonry-testimonials-js)
+    each val, idx in testimonialsBlockData
+      +testimonialsBlock(
+        testimonialsBlockData[idx].href,
+        testimonialsBlockData[idx].classMod,
+        idx,
+        testimonialsBlockData[idx].title,
+        testimonialsBlockData[idx].pos,
+        testimonialsBlockData[idx].description
+      )
+
+
+// TESTIMONIALS :: END

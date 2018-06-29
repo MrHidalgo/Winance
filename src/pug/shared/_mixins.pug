@@ -98,3 +98,18 @@ mixin blogsBlock(attr, href, classMod, count, imgName, title, text, badgeArr, da
         .blogs__block-date
           p!= date
 
+
+//- TESTIMONIALS BLOCK
+mixin testimonialsBlock(href, classMod, idx, title, pos, description)
+  a.testimonials__block(title!='' href!= href class!= 'testimonials__block-' + idx + ' ' + classMod)
+    .testimonials__block-header
+      .testimonials__block-left
+        .testimonials__block-icon
+          i.icon-user
+
+      .testimonials__block-right
+        p!= title
+        p!= pos
+
+    .testimonials__block-body
+      p!= description
