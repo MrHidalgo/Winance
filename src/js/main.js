@@ -52,6 +52,9 @@ $(document).ready(function () {
       initCalc();
     }
 
+    viewportControl()
+    _window.on('resize', debounce(viewportControl, 200))
+
     // development helper
     _window.on('resize', debounce(setBreakpoint, 200))
 
@@ -922,6 +925,16 @@ $(document).ready(function () {
     $("input[type='tel']").mask("+7 (000) 000-0000", {placeholder: "+7 (___) ___-____"});
   }
 
+  function viewportControl(){
+    var viewportMeta = _document.find('meta[name="viewport"]');
+    if ( !viewportMeta.length > 0 ) return
+
+    if (_window.width() < 360) {
+      viewportMeta.attr('content', 'width=360, initial-scale=1, minimum-scale=1, user-scalable=no');
+    } else {
+      viewportMeta.attr('content', 'width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no');
+    }
+  }
 
   ////////////
   // SCROLLMONITOR - WOW LIKE
