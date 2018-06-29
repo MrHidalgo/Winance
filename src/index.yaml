@@ -22,7 +22,7 @@ PageList:
 - file: contacts.html
   ready: 85
 - file: cabinet.html
-  ready: 60
+  ready: 10
 - file: cabinetConclusion.html
   ready: 10
 - file: cabinetConfirmation.html
@@ -38,7 +38,7 @@ PageList:
 - file: cabinetPartners.html
   ready: 10
 - file: cabinetInvestment.html
-  ready: 10
+  ready: 60
 - file: cabinetInvestmentNew.html
   ready: 10
 - file: cabinetInvestmentPuy.html
