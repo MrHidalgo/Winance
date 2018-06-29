@@ -34,7 +34,7 @@ PageList:
 - file: cabinetSupportEmpty.html
   ready: 10
 - file: cabinetReports.html
-  ready: 10
+  ready: 60
 - file: cabinetPartners.html
   ready: 10
 - file: cabinetInvestment.html
