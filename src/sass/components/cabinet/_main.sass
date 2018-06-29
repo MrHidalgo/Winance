@@ -5,9 +5,19 @@
     padding-top: 45px
     background-color: $c-whiteSmoke
 
+
+    &__title
+      +r(767)
+        padding-bottom: 20px
+        font-size: 30px
+
+
     &__row
       display: flex
       justify-content: space-between
+      +r(767)
+        flex-direction: column
+        justify-content: flex-start
 
       &-0
         padding-bottom: 17px
@@ -15,13 +25,20 @@
         .main__row-left,
         .main__row-right
           width: 50%
+          +r(767)
+            width: 100%
 
         .main__row-right
           display: flex
           flex-direction: column
           align-items: flex-end
+          +r(767)
+            align-items: flex-start
 
       &-1
+        +r(767)
+          display: none
+
         .main__row-left
           width: calc(100% - 200px)
 
@@ -96,6 +113,8 @@
 
     &__balance
       font-size: 45px
+      +r(767)
+        font-size: 36px
       span
         &:nth-child(1)
           font-weight: 600
@@ -104,6 +123,9 @@
 
       &-details
         color: $c-nobel
+        +r(767)
+          padding-bottom: 17px
+
 
 
 
