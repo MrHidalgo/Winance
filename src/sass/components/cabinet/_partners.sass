@@ -11,21 +11,31 @@
 
     &__container
       &-0
+        padding-bottom: 20px
       &-1
+        padding-bottom: 100px
+        +r(767)
+          padding-bottom: 50px
       &-2
         padding-bottom: 48px
       &-3
         padding-bottom: 44px
-      &-4
 
 
     &__row
       display: flex
-      align-items: center
+      +r(767)
+        flex-wrap: wrap
+
+      &--center
+        align-items: center
 
       &-left,
       &-right
         width: 50%
+        +r(767)
+          width: 100%
+          margin-bottom: 20px
 
 
     &__pagination
@@ -37,6 +47,9 @@
         display: flex
         align-items: center
         padding-bottom: 10px
+        +r(767)
+          &:nth-child(1)
+            width: 100%
 
       &-title
         margin-right: 30px
@@ -68,12 +81,19 @@
           color: $c-blueZodiac
           +transition(border-color, background-color, color)
 
+
+
     &__banner
       display: flex
       align-items: flex-start
+      +r(767)
+        flex-wrap: wrap
 
       &-left
         width: 310px
+        +r(767)
+          width: 100%
+          margin-bottom: 20px
 
         img
           display: block
@@ -86,6 +106,8 @@
         border-radius: 3px
         border: 1px solid $c-whisper
         background-color: $c-whiteSmoke
+        +r(767)
+          width: 100%
 
         p
           color: $c-nobel
@@ -96,5 +118,213 @@
         a
           margin: 0
           margin-top: 41px
+
+
+
+    &__block
+      display: flex
+      flex-direction: column
+      width: calc(50% - 10px)
+      min-height: 311px
+      background-color: $c-whiteSmoke
+      +r(767)
+        width: 100%
+        margin-bottom: 20px
+
+      &:nth-child(odd)
+        +rmin(768)
+          margin-right: 10px
+      &:nth-child(even)
+        +rmin(768)
+          margin-left: 10px
+
+      &-0
+        .partners__block-top
+          display: flex
+          flex-direction: column
+          justify-content: center
+          padding: 0 30px
+          background-color: $c-LightSeaGreen
+          +r(575)
+            padding: 0 15px
+
+          p
+            color: $c-white
+            &:nth-child(1)
+              padding-bottom: 10px
+              font-size: 14px
+              font-style: italic
+
+            &:nth-child(2)
+              overflow: hidden
+              text-overflow: ellipsis
+              +rmin(320)
+                font-size: 20px
+              +rmin(1200)
+                font-size: 24px
+
+        .partners__block-bottom
+          display: flex
+          align-items: flex-start
+          padding: 36px 0 0 30px
+          +rmin(320)
+            padding: 36px 15px 0
+          +rmin(576)
+            padding-left: 30px
+          +rmin(992)
+            padding: 36px 0 0 30px
+
+          a
+            margin: 0
+
+      &-1
+        .partners__block-top
+          padding-top: 48px
+          padding-left: 30px
+          +r(575)
+            padding-right: 30px
+            padding-left: 15px
+
+          img
+            display: block
+            max-width: 100%
+            height: auto
+
+        .partners__block-bottom
+          display: flex
+          align-items: center
+          padding: 0 30px
+          +r(575)
+            padding: 0 15px
+
+          p
+            font-size: 18px
+            +r(767)
+              font-size: 16px
+            span
+              font-weight: 700
+
+
+      &-top,
+      &-bottom
+        height: 50%
+
+
+
+    &__table
+      padding-top: 16px
+      padding-bottom: 12px
+      background-color: $c-whiteSmoke
+
+      &-row
+        display: flex
+        min-height: 40px
+        padding-left: 30px
+        +r(767)
+          flex-wrap: wrap
+          padding: 15px
+
+        &-0
+          margin-bottom: 12px
+          +r(767)
+            min-height: 89px
+            margin: 0
+            border-bottom: 1px solid $c-white
+          .partners__table-col
+            width: 50%
+            +r(767)
+              align-items: flex-start
+              width: 100%
+              padding-top: 10px
+            &:nth-child(1)
+              p
+                font-size: 18px
+            &:nth-child(2)
+              +r(767)
+                display: none
+              p
+                color: $c-nobel
+
+        &-1,
+        &-2,
+        &-3
+          .partners__table-col
+            &:nth-child(1),
+            &:nth-child(2)
+              width: 25%
+              +r(767)
+                width: 50%
+                padding-bottom: 35px
+
+            +r(767)
+              width: calc(100% / 3)
+
+            &--desktop
+              +rmin(768)
+                width: calc((100% - 50%) / 3)
+
+        &-1
+          +r(767)
+            display: none
+          .partners__table-col
+            p
+              color: $c-nobel
+
+
+
+        &-4,
+        &-5
+          .partners__table-col
+            &:nth-child(1)
+              width: 50%
+              +r(767)
+                width: 100%
+                padding-bottom: 35px
+
+              p
+                color: $c-nobel
+
+            +r(767)
+              width: calc(100% / 3)
+
+            &--desktop
+              +rmin(768)
+                width: calc((100% - 50%) / 3)
+
+              p
+                font-weight: 700
+
+
+        &-4
+          margin-top: 25px
+
+
+        &-1,
+        &-2,
+        &-3
+          +rmin(768)
+            border-bottom: 1px solid $c-white
+
+        &-2,
+        &-3
+          +r(767)
+            border-bottom: 1px solid $c-white
+
+
+
+      &-col
+        display: flex
+        align-items: center
+        +r(767)
+          display: block
+
+        &--mobile
+          display: none
+          +r(767)
+            display: block
+
+          p
+            color: $c-nobel
+            font-weight: 500 !important
 
 // \ PARTNERS
