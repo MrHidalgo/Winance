@@ -5,7 +5,7 @@ $sprite: (
 		width: 27px,
 		height: 24px,
 		total-width: 208px,
-		total-height: 181px,
+		total-height: 202px,
 		image: '../img/sprite.png'
 	),
 	diagram: (
@@ -14,7 +14,7 @@ $sprite: (
 		width: 50px,
 		height: 39px,
 		total-width: 208px,
-		total-height: 181px,
+		total-height: 202px,
 		image: '../img/sprite.png'
 	),
 	down: (
@@ -23,7 +23,7 @@ $sprite: (
 		width: 9px,
 		height: 11px,
 		total-width: 208px,
-		total-height: 181px,
+		total-height: 202px,
 		image: '../img/sprite.png'
 	),
 	email: (
@@ -32,7 +32,7 @@ $sprite: (
 		width: 32px,
 		height: 22px,
 		total-width: 208px,
-		total-height: 181px,
+		total-height: 202px,
 		image: '../img/sprite.png'
 	),
 	flag: (
@@ -41,7 +41,7 @@ $sprite: (
 		width: 15px,
 		height: 21px,
 		total-width: 208px,
-		total-height: 181px,
+		total-height: 202px,
 		image: '../img/sprite.png'
 	),
 	fr: (
@@ -50,7 +50,7 @@ $sprite: (
 		width: 18px,
 		height: 10px,
 		total-width: 208px,
-		total-height: 181px,
+		total-height: 202px,
 		image: '../img/sprite.png'
 	),
 	gr: (
@@ -59,7 +59,7 @@ $sprite: (
 		width: 18px,
 		height: 10px,
 		total-width: 208px,
-		total-height: 181px,
+		total-height: 202px,
 		image: '../img/sprite.png'
 	),
 	parlor: (
@@ -68,7 +68,7 @@ $sprite: (
 		width: 17px,
 		height: 16px,
 		total-width: 208px,
-		total-height: 181px,
+		total-height: 202px,
 		image: '../img/sprite.png'
 	),
 	people: (
@@ -77,7 +77,7 @@ $sprite: (
 		width: 51px,
 		height: 39px,
 		total-width: 208px,
-		total-height: 181px,
+		total-height: 202px,
 		image: '../img/sprite.png'
 	),
 	phone: (
@@ -86,7 +86,7 @@ $sprite: (
 		width: 20px,
 		height: 33px,
 		total-width: 208px,
-		total-height: 181px,
+		total-height: 202px,
 		image: '../img/sprite.png'
 	),
 	play: (
@@ -95,7 +95,7 @@ $sprite: (
 		width: 100px,
 		height: 100px,
 		total-width: 208px,
-		total-height: 181px,
+		total-height: 202px,
 		image: '../img/sprite.png'
 	),
 	plus: (
@@ -104,7 +104,16 @@ $sprite: (
 		width: 60px,
 		height: 60px,
 		total-width: 208px,
-		total-height: 181px,
+		total-height: 202px,
+		image: '../img/sprite.png'
+	),
+	pointer: (
+		offset-x: 0px,
+		offset-y: -191px,
+		width: 12px,
+		height: 11px,
+		total-width: 208px,
+		total-height: 202px,
 		image: '../img/sprite.png'
 	),
 	racket: (
@@ -113,7 +122,7 @@ $sprite: (
 		width: 22px,
 		height: 22px,
 		total-width: 208px,
-		total-height: 181px,
+		total-height: 202px,
 		image: '../img/sprite.png'
 	),
 	score: (
@@ -122,7 +131,7 @@ $sprite: (
 		width: 18px,
 		height: 20px,
 		total-width: 208px,
-		total-height: 181px,
+		total-height: 202px,
 		image: '../img/sprite.png'
 	),
 	skype: (
@@ -131,7 +140,7 @@ $sprite: (
 		width: 29px,
 		height: 34px,
 		total-width: 208px,
-		total-height: 181px,
+		total-height: 202px,
 		image: '../img/sprite.png'
 	),
 	telegram: (
@@ -140,7 +149,7 @@ $sprite: (
 		width: 34px,
 		height: 28px,
 		total-width: 208px,
-		total-height: 181px,
+		total-height: 202px,
 		image: '../img/sprite.png'
 	),
 	up: (
@@ -149,7 +158,7 @@ $sprite: (
 		width: 9px,
 		height: 11px,
 		total-width: 208px,
-		total-height: 181px,
+		total-height: 202px,
 		image: '../img/sprite.png'
 	),
 	user: (
@@ -158,7 +167,7 @@ $sprite: (
 		width: 28px,
 		height: 30px,
 		total-width: 208px,
-		total-height: 181px,
+		total-height: 202px,
 		image: '../img/sprite.png'
 	),
 );
@@ -252,6 +261,9 @@ $sprite: (
 	}
 	.icon-plus {
 		@include sprite(plus)
+	}
+	.icon-pointer {
+		@include sprite(pointer)
 	}
 	.icon-racket {
 		@include sprite(racket)
