@@ -197,7 +197,43 @@
           border-color: $c-nobel
           +transition(border-color)
 
+    &--select
+      border-bottom: 2px solid rgba($c-royalBlue, 0.5)
+      +transition(border-color)
 
+      &:hover,
+      &:focus
+        border-color: $c-royalBlue
+        +transition(border-color)
+
+      .selectric
+        //overflow: auto
+        height: 100%
+        border: none
+        background-color: transparent
+
+        &-wrapper
+          height: 100%
+
+        .label,
+        .button
+          height: 100%
+
+        .label
+          //overflow: auto
+          display: flex
+          align-items: center
+          margin-left: 0
+          //margin-right: 0
+          line-height: normal
+          font-size: 18px
+
+        .button
+          //right: -38px
+          background-color: transparent
+
+          &:after
+            border-top-color: $c-blueZodiac
 
   &__input
     position: absolute

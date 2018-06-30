@@ -1,6 +1,66 @@
 // BILL CONCLUSION :: START
 
-.bill
+.bill.bill--conclusion
   .container
+
+    .bill__box
+      .bill__box-nav
+        ul
+          li
+            a(href="" title="" class="is-active")!= "Заявка"
+          li
+            i.icon-pointer
+          li
+            a(href="" title="" class="")!= "Подтверждение"
+
+      form.bill__box-form(action="" method="" autocomplete="off")
+        .bill__box-wrap
+          .bill__box-left
+
+            .form__field.form__field--select.form__field--p
+              select(name="" id="bill" selectric-js)
+                option(value="")!= "RUB"
+                option(value="")!= "USD"
+                option(value="")!= "EUR"
+              label.form__label(for="bill")!= "Счет"
+
+            .form__field.form__field.form__field--p
+              input.form__input(type="text" name="code" class="" id="bill_cancellation_amount" placeholder="")
+              label.form__label(for="bill_cancellation_amount")!= "Сумма списания"
+
+            .form__field.form__field--select.form__field--p
+              select(name="" id="bill_output_method" selectric-js)
+                option(value="")!= "QIWI"
+                option(value="")!= "QIWI"
+                option(value="")!= "QIWI"
+              label.form__label(for="bill_output_method")!= "Способ вывода"
+
+          .bill__box-right
+
+            .form__field.form__field--select.form__field--p
+              select(name="" id="bill_currency_withdrawal" selectric-js)
+                option(value="")!= "RUB"
+                option(value="")!= "USD"
+                option(value="")!= "EUR"
+              label.form__label(for="bill_currency_withdrawal")!= "Валюта вывода"
+
+            .form__field.form__field--p
+              input.form__input(type="text" name="code" class="" id="bill_amount_payment" placeholder="")
+              label.form__label(for="bill_amount_payment")!= "Сумма выплаты"
+
+            .form__field.form__field--select.form__field--p
+              select(name="" id="bill_phone" selectric-js)
+                option(value="")!= "+7 (904) 391-03-70"
+                option(value="")!= "+7 (904) 391-03-71"
+                option(value="")!= "+7 (904) 391-03-72"
+              label.form__label(for="bill_phone")!= "Реквизиты"
+
+            .form__field.form__field--p
+              input.form__input(type="text" name="code" class="" id="bill_phone_requisites" placeholder="30000")
+              label.form__label(for="bill_phone_requisites")!= "+7 (904) 391-03-70"
+
+            .form__field-btn
+              button.btn.btn--full.btn--color(type="button")!= "Оформить заявку"
+
 
 // BILL CONCLUSION :: END
