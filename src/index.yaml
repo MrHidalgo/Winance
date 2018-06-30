@@ -24,7 +24,7 @@ PageList:
 - file: cabinet.html
   ready: 10
 - file: cabinetConclusion.html
-  ready: 10
+  ready: 65
 - file: cabinetConfirmation.html
   ready: 65
 - file: cabinetInformation.html
