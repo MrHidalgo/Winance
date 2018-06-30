@@ -1,6 +1,54 @@
 // BILL :: START
 
-.bill
+.bill.bill--main
   .container
+
+    .bill__container.bill__container-0
+      h1.bill__title.cabinet__title!= "Мой счет"
+
+      .bill__block-wrap
+        .bill__block.bill__block-0
+          p.bill__block-badge!= "Доллары"
+          p.bill__block-title!= "<span>350.00</span> $"
+          .bill__block-list
+            p!= "<span>200</span> $"
+            span!= "– Заработано всего"
+
+          .bill__block-list
+            p!= "<span>50</span> $"
+            span!= "– Привлеченные инвестиций"
+
+          a.btn.btn--esmall.btn--colorWT(href="#" class="" title="")!= "Вывести средства"
+
+        .bill__block.bill__block-1
+          p.bill__block-badge!= "Евро"
+          p.bill__block-title!= "<span>100.00</span> €"
+          .bill__block-list
+            p!= "<span>200</span> $"
+            span!= "– Заработано всего"
+
+          .bill__block-list
+            p!= "<span>50</span> $"
+            span!= "– Привлеченные инвестиций"
+
+          a.btn.btn--esmall.btn--colorWT(href="#" class="" title="")!= "Вывести средства"
+
+        .bill__block.bill__block-2
+          p.bill__block-badge!= "Рубли"
+          p.bill__block-title!= "<span>0.00</span> ₽"
+          .bill__block-list
+            p!= "<span>0</span> $"
+            span!= "– Заработано всего"
+
+          .bill__block-list
+            p!= "<span>0</span> $"
+            span!= "– Привлеченные инвестиций"
+
+          a.btn.btn--esmall.btn--colorWT(href="#" class="" title="")!= ""
+
+
+
+    .bill__container.bill__container-1
+      h1.bill__title.cabinet__title!= "История"
 
 // BILL :: END

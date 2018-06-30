@@ -106,10 +106,21 @@
 
     &:hover,
     &:focus
-      border: $c-white
+      border-color: $c-white
       background-color: $c-white
       color: $c-blueZodiac
       +transition(color)
+
+  &--colorWT
+    border-color: rgba($c-white, 0.5)
+    background-color: transparent
+    color: $c-white
+    +transition(border-color)
+
+    &:hover,
+    &:focus
+      border-color: $c-white
+      +transition(border-color)
 // \ BTN
 
 

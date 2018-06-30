@@ -44,8 +44,6 @@
           flex-wrap: wrap
 
 
-
-
     &__box
       padding: 30px 30px 53px
       background-color: $c-whiteSmoke
@@ -105,6 +103,78 @@
         width: 100%
         max-width: 459px
         font-size: 18px
+
+
+    &__container
+      &-0
+        padding-bottom: 84px
+        +r(767)
+          padding-bottom: 42px
+
+      &-1
+
+
+    &__block
+      display: flex
+      flex-direction: column
+      justify-content: flex-end
+      width: calc(100% / 3)
+      padding: 30px
+      color: $c-white
+      +r(767)
+        width: 100%
+        padding: 15px
+
+      &-wrap
+        overflow: hidden
+        display: flex
+        align-items: flex-end
+        +r(767)
+          flex-wrap: wrap
+
+      &-0
+        min-height: 390px
+        background-color: $c-LightSeaGreen
+      &-1
+        min-height: 345px
+        background-color: rgba($c-LightSeaGreen, 0.9)
+      &-2
+        min-height: 305px
+        background-color: $c-royalBlue
+
+        > a
+          opacity: 0
+
+      &-badge
+        padding-bottom: 10px
+        color: rgba($c-white, 0.5)
+        font-style: italic
+
+      &-title
+        padding-bottom: 25px
+        line-height: 1
+        font-size: 45px
+        font-weight: 300
+        span
+          font-weight: 600
+
+      &-list
+        display: flex
+        align-items: center
+        p
+          padding-right: 5px
+          font-size: 24px
+          font-weight: 300
+          > span
+            font-weight: 600
+        > span
+          color: rgba($c-white, 0.5)
+          font-style: italic
+
+      a
+        margin: 0
+        margin-top: 28px
+
 
 
 // \ BILL
