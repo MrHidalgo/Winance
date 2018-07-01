@@ -46,4 +46,4 @@ PageList:
 - file: cabinetInvestmentPuyFinish.html
   ready: 65
 - file: cabinetInvestmentTabs.html
-  ready: 10
+  ready: 65
