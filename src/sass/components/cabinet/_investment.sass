@@ -64,7 +64,6 @@
           +r(767)
             position: static
 
-
     &--puy
       padding-top: 66px
       padding-bottom: 241px
@@ -130,13 +129,16 @@
               .form__label
                 width: 175px
 
-    &--new
+    &--new,
+    &--tabs
       padding-top: 66px
       padding-bottom: 264px
       +r(767)
         padding-top: 33px
         padding-bottom: 132px
 
+      .cabinet__title
+        padding-bottom: 0
 
       .investment__row
         display: flex
@@ -151,209 +153,242 @@
         &--1
           padding-bottom: 27px
 
-
-      .investment__pagination
-        &-list
-          display: flex
-          flex-wrap: wrap
-
-        &-item
-          display: flex
-          align-items: center
-          padding-bottom: 10px
-          +r(767)
-            &:nth-child(1)
-              width: 100%
-
-        &-link
-          display: flex
-          align-items: center
-          justify-content: center
-          height: 32px
-          border-radius: 3px
-          border: 1px solid rgba($c-royalBlue, 0.2)
-          margin-right: 10px
-          padding-left: 10px
-          padding-right: 10px
-          color: $c-royalBlue
-          text-align: center
-          font-size: 18px
-          +transition(border-color, background-color, color)
-          +r(767)
-            font-size: 16px
-
-          &:hover
-            border-color: $c-royalBlue
-            +transition(border-color)
-          &.is-active
-            border-color: transparent
-            background-color: rgba($c-blueZodiac, 0.24)
-            color: $c-blueZodiac
-            +transition(border-color, background-color, color)
-
-          &--active
-            color: $c-LightSeaGreen
-          &--close
-            color: $c-bittersweet
-
-
       .investment__container
-        margin-bottom: 20px
+        margin-bottom: 40px
 
 
-      .investment__block
+    &__pagination
+      &-list
         display: flex
-        flex-direction: column
-        min-height: 266px
-        background-color: $c-whiteSmoke
+        flex-wrap: wrap
 
-        &-header
-          position: relative
-          display: flex
-          align-items: flex-end
-          justify-content: space-between
-          height: 80px
-          +r(767)
-            flex-wrap: wrap
-            flex-direction: column
-            justify-content: flex-end
-            height: 140px
-
-        &-badge
-          display: flex
-          align-items: center
-          z-index: 1
-          position: absolute
-          top: 0
-          right: 0
-          height: 26px
-          padding-left: 5px
-          padding-right: 5px
-          background-color: #F5A623
-          color: $c-white
-          text-transform: uppercase
-          letter-spacing: 1.5px
-          font-size: 12px
-          font-weight: 600
-
-        &-line
-          width: calc(100% / 12)
-          height: 100%
-          background-color: $c-black
-
-          &:last-child
-            border-right: none
-
-          &--wrap
-            display: flex
-            z-index: 0
-            position: absolute
-            left: 0
-            top: 0
-            width: 100%
-            height: 100%
-          &--blue
-            background-color: $c-royalBlue
-            border-right: 1px solid $c-black
-          &--green
-            background-color: $c-LightSeaGreen
-            border-right: 1px solid $c-black
-
-        &-title
-          z-index: 1
-          position: relative
-          padding-left: 20px
-          padding-bottom: 5px
-          color: $c-white
-          font-size: 24px
-          font-weight: 600
-          +r(767)
-            width: 100%
-            padding-bottom: 15px
-
-        &-description
-          z-index: 1
-          position: relative
-          display: flex
-          align-items: center
-          padding-right: 20px
-          padding-bottom: 10px
-          color: $c-white
-          +r(767)
-            flex-wrap: wrap
-            width: 100%
-            padding-right: 0
-            padding-left: 20px
-
-          span
-            +r(767)
-              display: block
-            &:nth-child(1)
-              margin-right: 20px
-              +r(767)
-                width: 100%
-            &:nth-child(2)
-              margin-right: 5px
-              +r(767)
-                display: inline-block
-
-        &-footer
-          display: flex
-          padding: 30px 25px
-          +r(767)
-            flex-wrap: wrap
-
-        &-left,
-        &-right
-          width: 50%
-          +r(767)
+      &-item
+        display: flex
+        align-items: center
+        padding-bottom: 10px
+        +r(767)
+          &:nth-child(1)
             width: 100%
 
-        &-left
-          display: flex
+      &-link
+        display: flex
+        align-items: center
+        justify-content: center
+        height: 32px
+        border-radius: 3px
+        border: 1px solid rgba($c-royalBlue, 0.2)
+        margin-right: 10px
+        padding-left: 10px
+        padding-right: 10px
+        color: $c-royalBlue
+        text-align: center
+        font-size: 18px
+        +transition(border-color, background-color, color)
+        +r(767)
+          font-size: 16px
+
+        &:hover
+          border-color: $c-royalBlue
+          +transition(border-color)
+        &.is-active
+          border-color: transparent
+          background-color: rgba($c-blueZodiac, 0.24)
+          color: $c-blueZodiac
+          +transition(border-color, background-color, color)
+
+        &--active
+          color: $c-LightSeaGreen
+        &--close
+          color: $c-bittersweet
+
+
+
+    &__block
+      display: flex
+      flex-direction: column
+      min-height: 266px
+      background-color: $c-whiteSmoke
+
+      &--active
+        .investment__block-badge
+          background-color: $c-apple
+      &--close
+        .investment__block-badge
+          background-color: $c-bittersweet
+
+
+      &-header
+        position: relative
+        display: flex
+        align-items: flex-end
+        justify-content: space-between
+        height: 80px
+        +r(767)
           flex-wrap: wrap
+          flex-direction: column
+          justify-content: flex-end
+          height: 140px
+
+      &-badge
+        display: flex
+        align-items: center
+        z-index: 1
+        position: absolute
+        top: 0
+        right: 0
+        height: 26px
+        padding-left: 5px
+        padding-right: 5px
+        background-color: #F5A623
+        color: $c-white
+        text-transform: uppercase
+        letter-spacing: 1.5px
+        font-size: 12px
+        font-weight: 600
+
+      &-line
+        width: calc(100% / 12)
+        height: 100%
+        background-color: $c-eclipse
+
+        &:last-child
+          border-right: none
+
+        &--wrap
+          display: flex
+          z-index: 0
+          position: absolute
+          left: 0
+          top: 0
+          width: 100%
+          height: 100%
+        &--blue
+          background-color: $c-royalBlue
+          border-right: 1px solid $c-black
+        &--green
+          background-color: $c-LightSeaGreen
+          border-right: 1px solid $c-black
+        &--black
+          background-color: $c-eclipse
+          border-right: 1px solid $c-black
+
+      &-title
+        z-index: 1
+        position: relative
+        padding-left: 20px
+        padding-bottom: 5px
+        color: $c-white
+        font-size: 24px
+        font-weight: 600
+        +r(767)
+          width: 100%
+          padding-bottom: 15px
+
+      &-description
+        z-index: 1
+        position: relative
+        display: flex
+        align-items: center
+        padding-right: 20px
+        padding-bottom: 10px
+        color: $c-white
+        +r(767)
+          flex-wrap: wrap
+          width: 100%
+          padding-right: 0
+          padding-left: 20px
+
+        span
           +r(767)
-            flex-wrap: wrap
-          .investment__block-half
-            width: 50%
-            padding-bottom: 10px
+            display: block
+          &:nth-child(1)
             +r(767)
               width: 100%
-
-
-        &-subtitle
-          padding-bottom: 5px
-          color: $c-nobel
-          font-style: italic
-
-        &-sum
-          font-weight: 400
-          span
-            font-weight: 600
-          &--0
-            font-size: 36px
-          &--1
-            font-size: 24px
-
-        &-text
-          padding-top: 10px
-
-        &-btn
-          display: flex
-          +r(767)
-            flex-wrap: wrap
-
-          > a
-            max-width: 50%
-            margin: 0
-            margin-bottom: 10px
+          &:nth-child(2)
+            margin-right: 5px
+            margin-left: 20px
             +r(767)
-              max-width: 100%
+              display: inline-block
+              margin-left: 0
 
-            &:nth-child(1)
-              margin-right: 5px
+      &-footer
+        display: flex
+        padding: 30px 25px
+        +r(767)
+          flex-wrap: wrap
+
+      &-left,
+      &-right
+        width: 50%
+        +r(767)
+          width: 100%
+
+      &-left
+        display: flex
+        flex-wrap: wrap
+        +r(767)
+          flex-wrap: wrap
+        .investment__block-half
+          width: 50%
+          padding-bottom: 10px
+          +r(767)
+            width: 100%
+
+      &-subtitle
+        padding-bottom: 5px
+        color: $c-nobel
+        font-style: italic
+
+      &-sum
+        font-weight: 400
+        span
+          font-weight: 600
+        &--0
+          font-size: 36px
+        &--1
+          font-size: 24px
+
+      &-text
+        padding-top: 10px
+      &-btn
+        display: flex
+        +r(767)
+          flex-wrap: wrap
+
+        > a
+          max-width: 50%
+          margin: 0
+          margin-bottom: 10px
+          +r(767)
+            max-width: 100%
+
+          &:nth-child(1)
+            margin-right: 5px
+          &:nth-child(2)
+            margin-left: 5px
+      &-wrap
+        display: flex
+        padding-bottom: 20px
+        +r(767)
+          justify-content: space-between
+
+        > a
+          margin-left: 30px
+          color: $c-royalBlue
+
+      &-list
+        li
+          padding-bottom: 5px
+          &:last-child
+            padding-bottom: 0
+          span
+            &.plus
+              color: $c-apple
+            &.minus
+              color: $c-bittersweet
             &:nth-child(2)
-              margin-left: 5px
+              display: block
+              padding-bottom: 15px
 
 
 // \ INVESTMENT
