@@ -1,0 +1,58 @@
+// INVESTMENT :: START
+
+
+.investment.investment--puy
+  .container
+
+    h1.investment__title.cabinet__title!= "Оплата контракта № <span>1301</span>"
+
+    .investment__form
+      .investment__form-wrap
+        p.investment__form-title!= "W 12 месяцев"
+        p.investment__form-subtitle!= "20.02.2018 → 15.02.2019"
+
+      form(action="" method="" autocomplete="off")
+        .investment__form-row
+          .investment__form-left
+
+            .form__field.form__field--p
+              input.form__input(type="text" name="" class="" id="investment_contract" placeholder="1301")
+              label.form__label(for="investment_contract")!= "Контракт №"
+
+            .form__field.form__field--p
+              input.form__input(type="text" name="" class="" id="investment_currency" placeholder="RUB")
+              label.form__label(for="investment_currency")!= "Валюта контракта"
+
+            .form__field.form__field--p
+              input.form__input(type="text" name="" class="" id="investment_sum_contract" placeholder="30000")
+              label.form__label(for="investment_sum_contract")!= "Сумма по контракту"
+
+          .investment__form-right
+
+            .form__field.form__field--p.form__field--custom
+              input.form__input(type="text" name="" class="" id="investment_sum_currency" placeholder="30000")
+              label.form__label(for="investment_sum_currency")!= "Сумма в валюте контракта"
+
+            .form__field.form__field--select.form__field--p
+              select(name="" id="investment_0" selectric-js)
+                option(value="")!= "Сбербанк"
+                option(value="")!= "Сбербанк"
+                option(value="")!= "Сбербанк"
+              label.form__label(for="investment_0")!= "Способ оплаты"
+
+            .form__field.form__field--select.form__field--p
+              select(name="" id="investment_1" selectric-js)
+                option(value="")!= "RUB"
+                option(value="")!= "RUB"
+                option(value="")!= "RUB"
+              label.form__label(for="investment_1")!= "Валюта оплаты"
+
+            .form__field.form__field--p
+              input.form__input(type="text" name="" class="" id="investment_sum_finish" placeholder="30000")
+              label.form__label(for="investment_sum_finish")!= "Сумма оплаты"
+
+            .form__field-btn
+              button.btn.btn--full.btn--color(type="buttom")!= "Оплатить"
+
+
+// INVESTMENT :: END
