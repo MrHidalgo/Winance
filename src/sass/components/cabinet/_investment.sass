@@ -213,6 +213,11 @@
           align-items: flex-end
           justify-content: space-between
           height: 80px
+          +r(767)
+            flex-wrap: wrap
+            flex-direction: column
+            justify-content: flex-end
+            height: 140px
 
         &-badge
           display: flex
@@ -262,6 +267,9 @@
           color: $c-white
           font-size: 24px
           font-weight: 600
+          +r(767)
+            width: 100%
+            padding-bottom: 15px
 
         &-description
           z-index: 1
@@ -271,27 +279,46 @@
           padding-right: 20px
           padding-bottom: 10px
           color: $c-white
+          +r(767)
+            flex-wrap: wrap
+            width: 100%
+            padding-right: 0
+            padding-left: 20px
 
           span
+            +r(767)
+              display: block
             &:nth-child(1)
               margin-right: 20px
+              +r(767)
+                width: 100%
             &:nth-child(2)
               margin-right: 5px
+              +r(767)
+                display: inline-block
 
         &-footer
           display: flex
           padding: 30px 25px
+          +r(767)
+            flex-wrap: wrap
 
         &-left,
         &-right
           width: 50%
+          +r(767)
+            width: 100%
 
         &-left
           display: flex
           flex-wrap: wrap
+          +r(767)
+            flex-wrap: wrap
           .investment__block-half
             width: 50%
             padding-bottom: 10px
+            +r(767)
+              width: 100%
 
 
         &-subtitle
@@ -313,11 +340,16 @@
 
         &-btn
           display: flex
+          +r(767)
+            flex-wrap: wrap
 
           > a
             max-width: 50%
             margin: 0
             margin-bottom: 10px
+            +r(767)
+              max-width: 100%
+
             &:nth-child(1)
               margin-right: 5px
             &:nth-child(2)
