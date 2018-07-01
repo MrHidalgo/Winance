@@ -145,6 +145,8 @@
 
         > a
           opacity: 0
+          +r(767)
+            display: none
 
       &-0,
       &-1,
@@ -203,7 +205,10 @@
             flex-wrap: wrap
 
           .form__field
-            margin-right: 20px
+            +r(767)
+              margin-left: 0
+            +rmin(768)
+              margin-right: 20px
 
         &--1
           margin-bottom: 25px
@@ -261,14 +266,21 @@
     &__table
       padding: 70px 0 0
       background-color: $c-whiteSmoke
+      +r(767)
+        padding-top: 0
 
       &-row
         display: flex
         min-height: 40px
         border-bottom: 1px solid $c-white
         animation-name: fadeIn
+        +r(767)
+          flex-wrap: wrap
+          min-height: auto
 
         &:nth-child(1)
+          +r(767)
+            display: none
           .bill__table-col
             p
               color: $c-nobel
@@ -282,23 +294,50 @@
         min-height: 40px
         padding-top: 5px
         padding-bottom: 5px
+        +r(767)
+          min-height: auto
 
         &--0
           padding-left: 30px
           max-width: 170px
+          +r(767)
+            order: 1
+            max-width: 50%
+            padding-left: 15px
+            p
+              color: $c-nobel
+              font-style: italic
         &--1
           max-width: 580px
+          +r(767)
+            order: 3
+            max-width: 100%
+            padding-left: 15px
         &--2
           max-width: 270px
+          +r(767)
+            order: 4
+            max-width: 100%
+            padding-left: 15px
+
         &--3
           justify-content: flex-end
           padding-right: 30px
           max-width: calc(100% - (170px + 580px + 270px))
+          +r(767)
+            order: 2
+            max-width: 50%
+            padding-right: 15px
+            p
+              color: $c-nobel
+              font-style: italic
 
         p
           span
             +r(991)
               display: block
+            +r(767)
+              display: inline-block
             &.plus
               color: $c-LightSeaGreen
             &.minus
