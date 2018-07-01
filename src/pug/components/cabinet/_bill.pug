@@ -51,4 +51,35 @@
     .bill__container.bill__container-1
       h1.bill__title.cabinet__title!= "История"
 
+      .bill__filter
+        .bill__filter-row.bill__filter-row--0
+          .form__field.form__field--select
+            select(name="" id="bill_filter_0" selectric-js)
+              option(value="")!= "Все"
+              option(value="")!= "Все"
+              option(value="")!= "Все"
+              option(value="")!= "Все"
+            label.form__label(for="bill_filter_0")!= "Валюта вывода"
+
+          .form__field.form__field--select
+            select(name="" id="bill_filter_1" selectric-js)
+              option(value="")!= "Все"
+              option(value="")!= "Все"
+              option(value="")!= "Все"
+              option(value="")!= "Все"
+            label.form__label(for="bill_filter_1")!= "Счета"
+
+        .bill__filter-row.bill__filter-row--1
+
+          .bill__pagination
+            ul.bill__pagination-list
+              li.bill__pagination-item
+                p.bill__pagination-title!= "Операции:"
+              li.bill__pagination-item
+                a.bill__pagination-link.is-active(bill-filter-js href="#" title="")!= "Все"
+              li.bill__pagination-item
+                a.bill__pagination-link.bill__pagination-link--add(bill-filter-js href="#" title="")!= "Пополнение"
+              li.bill__pagination-item
+                a.bill__pagination-link.bill__pagination-link--remove(bill-filter-js href="#" title="")!= "Снятие"
+
 // BILL :: END

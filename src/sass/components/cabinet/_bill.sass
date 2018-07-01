@@ -194,5 +194,67 @@
         margin-top: 28px
 
 
+    &__filter
+      &-row
+        &--0
+          display: flex
+          margin-bottom: 20px
+          +r(767)
+            flex-wrap: wrap
+
+          .form__field
+            margin-right: 20px
+
+        &--1
+          margin-bottom: 25px
+
+
+    &__pagination
+      &-list
+        display: flex
+        flex-wrap: wrap
+
+      &-item
+        display: flex
+        align-items: center
+        padding-bottom: 10px
+        +r(767)
+          &:nth-child(1)
+            width: 100%
+
+      &-title
+        margin-right: 30px
+        font-size: 18px
+
+      &-link
+        display: flex
+        align-items: center
+        justify-content: center
+        height: 32px
+        border-radius: 3px
+        border: 1px solid rgba($c-royalBlue, 0.2)
+        margin-right: 10px
+        padding-left: 10px
+        padding-right: 10px
+        color: $c-royalBlue
+        text-align: center
+        font-size: 18px
+        +transition(border-color, background-color, color)
+        +r(767)
+          font-size: 16px
+
+        &:hover
+          border-color: $c-royalBlue
+          +transition(border-color)
+        &.is-active
+          border-color: transparent
+          background-color: rgba($c-blueZodiac, 0.24)
+          color: $c-blueZodiac
+          +transition(border-color, background-color, color)
+
+        &--add
+          color: $c-LightSeaGreen
+        &--remove
+          color: $c-bittersweet
 
 // \ BILL

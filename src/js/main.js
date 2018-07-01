@@ -48,8 +48,12 @@ $(document).ready(function () {
 
     swiperMasonryInit();
 
-    cabinetPartnerPagination("[partners-size-js]");
-    cabinetPartnerPagination("[partnera-format-js]");
+    cabinetPagination("[partners-size-js]");
+    cabinetPagination("[partnera-format-js]");
+    cabinetPagination("[bill-filter-js]");
+
+    technologyHoverBlock();
+    technologyHoverTimeLine();
 
     if($(".calc").length > 0) {
       initCalc();
@@ -759,46 +763,49 @@ $(document).ready(function () {
 
   //
   // ====================
-  $("[hover-tech-js] [hover-elem-js]").hover(
-    function(e) {
-      let elem = $(e.currentTarget),
-        elemAttrId = elem.attr("data-hover-id"),
-        elemAttrBlock = elem.attr("data-hover-block");
+  function technologyHoverBlock() {
+    $("[hover-tech-js] [hover-elem-js]").hover(
+      function(e) {
+        let elem = $(e.currentTarget),
+          elemAttrId = elem.attr("data-hover-id"),
+          elemAttrBlock = elem.attr("data-hover-block");
 
-      let hoverElem = $("[find-hover-js][data-hover-id='" + elemAttrId + "']");
+        let hoverElem = $("[find-hover-js][data-hover-id='" + elemAttrId + "']");
 
-      let timeLineBlocks = $("[timeline-hover-js]");
+        let timeLineBlocks = $("[timeline-hover-js]");
 
 
-      timeLineBlocks.addClass("is-opacity");
-      $("[timeline-hover-js][data-block='" + elemAttrBlock + "']").removeClass("is-opacity");
+        timeLineBlocks.addClass("is-opacity");
+        $("[timeline-hover-js][data-block='" + elemAttrBlock + "']").removeClass("is-opacity");
 
-      $("[find-hover-js]").removeClass("is-hover");
-      hoverElem.addClass("is-hover");
-    },
-    function(e) {
-      $("[find-hover-js]").removeClass("is-hover");
-      $("[timeline-hover-js]").removeClass("is-opacity");
-    }
-  );
+        $("[find-hover-js]").removeClass("is-hover");
+        hoverElem.addClass("is-hover");
+      },
+      function(e) {
+        $("[find-hover-js]").removeClass("is-hover");
+        $("[timeline-hover-js]").removeClass("is-opacity");
+      }
+    );
+  }
+  function technologyHoverTimeLine() {
+    $("[timeline-hover-js]").not("[timeline-hover-js][data-block='']").hover(
+      function(e) {
+        let elem = $(e.currentTarget),
+          elemAttrId = elem.attr("data-block");
 
-  $("[timeline-hover-js]").not("[timeline-hover-js][data-block='']").hover(
-    function(e) {
-      let elem = $(e.currentTarget),
-        elemAttrId = elem.attr("data-block");
+        let timeLineBlocks = $("[timeline-hover-js]");
 
-      let timeLineBlocks = $("[timeline-hover-js]");
+        $("[find-hover-js][data-hover-id='" + elemAttrId + "']").addClass("is-hover");
 
-      $("[find-hover-js][data-hover-id='" + elemAttrId + "']").addClass("is-hover");
-
-      timeLineBlocks.addClass("is-opacity");
-      $("[timeline-hover-js][data-block='" + elemAttrId + "']").removeClass("is-opacity");
-    },
-    function(e) {
-      $("[find-hover-js]").removeClass("is-hover");
-      $("[timeline-hover-js]").removeClass("is-opacity");
-    }
-  );
+        timeLineBlocks.addClass("is-opacity");
+        $("[timeline-hover-js][data-block='" + elemAttrId + "']").removeClass("is-opacity");
+      },
+      function(e) {
+        $("[find-hover-js]").removeClass("is-hover");
+        $("[timeline-hover-js]").removeClass("is-opacity");
+      }
+    );
+  }
   // ====================
 
 
@@ -834,7 +841,7 @@ $(document).ready(function () {
 
   //
   // ====================
-  function cabinetPartnerPagination(btnName) {
+  function cabinetPagination(btnName) {
     _document.on("click", btnName, function(e) {
       let elem = $(e.target);
 
