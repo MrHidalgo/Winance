@@ -40,7 +40,7 @@ PageList:
 - file: cabinetInvestment.html
   ready: 65
 - file: cabinetInvestmentNew.html
-  ready: 10
+  ready: 65
 - file: cabinetInvestmentPuy.html
   ready: 65
 - file: cabinetInvestmentPuyFinish.html

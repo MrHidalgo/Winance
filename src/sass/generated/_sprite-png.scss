@@ -8,6 +8,15 @@ $sprite: (
 		total-height: 202px,
 		image: '../img/sprite.png'
 	),
+	clock: (
+		offset-x: -97px,
+		offset-y: -159px,
+		width: 14px,
+		height: 14px,
+		total-width: 208px,
+		total-height: 202px,
+		image: '../img/sprite.png'
+	),
 	diagram: (
 		offset-x: -61px,
 		offset-y: -110px,
@@ -45,7 +54,7 @@ $sprite: (
 		image: '../img/sprite.png'
 	),
 	fr: (
-		offset-x: -125px,
+		offset-x: -149px,
 		offset-y: -159px,
 		width: 18px,
 		height: 10px,
@@ -54,7 +63,7 @@ $sprite: (
 		image: '../img/sprite.png'
 	),
 	gr: (
-		offset-x: -97px,
+		offset-x: -121px,
 		offset-y: -159px,
 		width: 18px,
 		height: 10px,
@@ -228,6 +237,9 @@ $sprite: (
 
 	.icon-arrows {
 		@include sprite(arrows)
+	}
+	.icon-clock {
+		@include sprite(clock)
 	}
 	.icon-diagram {
 		@include sprite(diagram)

@@ -51,6 +51,7 @@ $(document).ready(function () {
     cabinetPagination("[partners-size-js]");
     cabinetPagination("[partnera-format-js]");
     cabinetPagination("[bill-filter-js]");
+    cabinetPagination("[investment-filter-js]");
 
     technologyHoverBlock();
     technologyHoverTimeLine();

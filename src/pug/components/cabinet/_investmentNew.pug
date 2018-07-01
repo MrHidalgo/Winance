@@ -1,0 +1,69 @@
+// INVESTMENT :: START
+
+
+.investment.investment--new
+  .container
+
+    .investment__row.investment__row--0
+      h1.investment__title.cabinet__title!= "Ваши вклады"
+      a.btn.btn--color.btn--medium(href="#" title="" class="")!= "Открыть новый вклад"
+
+    .investment__row.investment__row--1
+      .investment__pagination
+        ul.investment__pagination-list
+          li.investment__pagination-item
+            a.investment__pagination-link.is-active(investment-filter-js href="#" title="")!= "Все"
+          li.investment__pagination-item
+            a.investment__pagination-link.investment__pagination-link--active(investment-filter-js href="#" title="")!= "Активные"
+          li.investment__pagination-item
+            a.investment__pagination-link.investment__pagination-link--close(investment-filter-js href="#" title="")!= "Закрытые"
+
+
+    .investment__container
+      .investment__block.investment__block--new
+        .investment__block-header
+          p.investment__block-badge!= "Новый. Требует оплаты"
+          p.investment__block-title!= "Вклад W 12"
+          p.investment__block-description
+            span!= "20.02.2018 → 15.02.2019"
+            span!= "Осталось дней: 234"
+            i.icon-clock
+
+          .investment__block-line--wrap
+            .investment__block-line.investment__block-line--0.investment__block-line--green
+            .investment__block-line.investment__block-line--1.investment__block-line--blue
+            .investment__block-line.investment__block-line--2.investment__block-line--blue
+            .investment__block-line.investment__block-line--3.investment__block-line--blue
+            .investment__block-line.investment__block-line--4.investment__block-line--blue
+            .investment__block-line.investment__block-line--5.investment__block-line--blue
+            .investment__block-line.investment__block-line--6.investment__block-line--blue
+            .investment__block-line.investment__block-line--7.investment__block-line--blue
+            .investment__block-line.investment__block-line--8.investment__block-line--blue
+            .investment__block-line.investment__block-line--9.investment__block-line--blue
+            .investment__block-line.investment__block-line--10.investment__block-line--blue
+            .investment__block-line.investment__block-line--11.investment__block-line--blue
+
+        .investment__block-footer
+          .investment__block-left
+            .investment__block-half
+              p.investment__block-subtitle!= "Заработано из <span>24 000.00</span> ₽"
+              p.investment__block-sum.investment__block-sum--0!= "<span>0.00</span> ₽"
+
+            .investment__block-half
+              p.investment__block-subtitle!= "Инвестиции"
+              p.investment__block-sum.investment__block-sum--1!= "<span>30 000</span> ₽"
+
+            .investment__block-half
+              p.investment__block-subtitle!= "Прибыль в неделю"
+              p.investment__block-sum.investment__block-sum--1!= "<span>15</span> %"
+
+          .investment__block-right
+            p.investment__block-subtitle!= "Операции"
+
+            .investment__block-btn
+              a.btn.btn--color(href="#" title="" class="")!= "Оплатить"
+              a.btn(href="#" title="" class="")!= "Отменить"
+
+            p.investment__block-text!= "Осталось 72 часа. По истечению времени заявка будет удалена."
+
+// INVESTMENT :: END
