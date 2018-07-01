@@ -22,9 +22,14 @@
         min-height: 305px
         margin-left: auto
         margin-right: auto
+        +r(767)
+          width: auto
+          min-height: auto
 
         &-line
           width: 67px
+          +r(767)
+            display: none
 
           &--0
             height: 98px
@@ -56,5 +61,7 @@
           left: 0
           right: 0
           bottom: 58px
+          +r(767)
+            position: static
 
 // \ INVESTMENT
