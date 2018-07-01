@@ -257,4 +257,51 @@
         &--remove
           color: $c-bittersweet
 
+
+    &__table
+      padding: 70px 0 0
+      background-color: $c-whiteSmoke
+
+      &-row
+        display: flex
+        min-height: 40px
+        border-bottom: 1px solid $c-white
+
+        &:nth-child(1)
+          .bill__table-col
+            p
+              color: $c-nobel
+        &:last-child
+          border-bottom: none
+
+      &-col
+        display: flex
+        align-items: center
+        width: 100%
+        min-height: 40px
+        padding-top: 5px
+        padding-bottom: 5px
+
+        &--0
+          padding-left: 30px
+          max-width: 170px
+        &--1
+          max-width: 580px
+        &--2
+          max-width: 270px
+        &--3
+          justify-content: flex-end
+          padding-right: 30px
+          max-width: calc(100% - (170px + 580px + 270px))
+
+        p
+          span
+            +r(991)
+              display: block
+            &.plus
+              color: $c-LightSeaGreen
+            &.minus
+              color: $c-bittersweet
+
+
 // \ BILL

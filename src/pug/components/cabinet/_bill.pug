@@ -1,5 +1,16 @@
 // BILL :: START
 
+mixin tableRow(valDate, valOpr, valCode, valDone)
+  .bill__table-row
+    .bill__table-col.bill__table-col--0
+      p!= valDate
+    .bill__table-col.bill__table-col--1
+      p!= valOpr
+    .bill__table-col.bill__table-col--2
+      p!= valCode
+    .bill__table-col.bill__table-col--3
+      p!= valDone
+
 .bill.bill--main
   .container
 
@@ -81,5 +92,44 @@
                 a.bill__pagination-link.bill__pagination-link--add(bill-filter-js href="#" title="")!= "Пополнение"
               li.bill__pagination-item
                 a.bill__pagination-link.bill__pagination-link--remove(bill-filter-js href="#" title="")!= "Снятие"
+
+        .bill__table
+          .bill__table-row
+            .bill__table-col.bill__table-col--0
+              p!= "Дата"
+            .bill__table-col.bill__table-col--1
+              p!= "Операция"
+            .bill__table-col.bill__table-col--2
+              p!= "Код системы"
+            .bill__table-col.bill__table-col--3
+              p!= "Статус"
+
+          +tableRow("17.11.2018", "<span class='plus'>+ 750.00 RUB</span> Начисление процента - 3%", "OTHERBANK", "Выполнена")
+          +tableRow("17.11.2018", "<span class='minus'>- 12500.00</span> RUB QIWIR", "QIWIRUB", "Выполнена")
+          +tableRow("17.11.2018", "<span class='plus'>+ 750.00 RUB</span> Начисление процента - 3%", "OTHERBANK", "Выполнена")
+          +tableRow("17.11.2018", "<span class='minus'>- 12500.00</span> RUB QIWIR", "QIWIRUB", "Выполнена")
+          +tableRow("17.11.2018", "<span class='minus'>- 12500.00</span> RUB QIWIR", "QIWIRUB", "Выполнена")
+          +tableRow("17.11.2018", "<span class='plus'>+ 750.00 RUB</span> Начисление процента - 3%", "OTHERBANK", "Выполнена")
+          +tableRow("17.11.2018", "<span class='minus'>- 12500.00</span> RUB QIWIR", "QIWIRUB", "Выполнена")
+          +tableRow("17.11.2018", "<span class='minus'>- 12500.00</span> RUB QIWIR", "QIWIRUB", "Выполнена")
+          +tableRow("17.11.2018", "<span class='plus'>+ 750.00 RUB</span> Начисление процента - 3%", "OTHERBANK", "Выполнена")
+          +tableRow("17.11.2018", "<span class='minus'>- 12500.00</span> RUB QIWIR", "QIWIRUB", "Выполнена")
+          +tableRow("17.11.2018", "<span class='minus'>- 12500.00</span> RUB QIWIR", "QIWIRUB", "Выполнена")
+          +tableRow("17.11.2018", "<span class='plus'>+ 750.00 RUB</span> Начисление процента - 3%", "OTHERBANK", "Выполнена")
+          +tableRow("17.11.2018", "<span class='minus'>- 12500.00</span> RUB QIWIR", "QIWIRUB", "Выполнена")
+          +tableRow("17.11.2018", "<span class='minus'>- 12500.00</span> RUB QIWIR", "QIWIRUB", "Выполнена")
+          +tableRow("17.11.2018", "<span class='plus'>+ 750.00 RUB</span> Начисление процента - 3%", "OTHERBANK", "Выполнена")
+          +tableRow("17.11.2018", "<span class='minus'>- 12500.00</span> RUB QIWIR", "QIWIRUB", "Выполнена")
+          +tableRow("17.11.2018", "<span class='minus'>- 12500.00</span> RUB QIWIR", "QIWIRUB", "Выполнена")
+          +tableRow("17.11.2018", "<span class='plus'>+ 750.00 RUB</span> Начисление процента - 3%", "OTHERBANK", "Выполнена")
+          +tableRow("17.11.2018", "<span class='minus'>- 12500.00</span> RUB QIWIR", "QIWIRUB", "Выполнена")
+          +tableRow("17.11.2018", "<span class='minus'>- 12500.00</span> RUB QIWIR", "QIWIRUB", "Выполнена")
+          +tableRow("17.11.2018", "<span class='plus'>+ 750.00 RUB</span> Начисление процента - 3%", "OTHERBANK", "Выполнена")
+          +tableRow("17.11.2018", "<span class='minus'>- 12500.00</span> RUB QIWIR", "QIWIRUB", "Выполнена")
+          +tableRow("17.11.2018", "<span class='minus'>- 12500.00</span> RUB QIWIR", "QIWIRUB", "Выполнена")
+          +tableRow("17.11.2018", "<span class='plus'>+ 750.00 RUB</span> Начисление процента - 3%", "OTHERBANK", "Выполнена")
+          +tableRow("17.11.2018", "<span class='minus'>- 12500.00</span> RUB QIWIR", "QIWIRUB", "Выполнена")
+          +tableRow("17.11.2018", "<span class='minus'>- 12500.00</span> RUB QIWIR", "QIWIRUB", "Выполнена")
+
 
 // BILL :: END
