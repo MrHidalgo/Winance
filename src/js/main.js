@@ -55,15 +55,18 @@ $(document).ready(function () {
     technologyHoverBlock();
     technologyHoverTimeLine();
 
+    initSelect();
+    billFilterTable();
+
     if($(".calc").length > 0) {
       initCalc();
     }
 
-    viewportControl()
-    _window.on('resize', debounce(viewportControl, 200))
+    viewportControl();
+    _window.on('resize', debounce(viewportControl, 200));
 
     // development helper
-    _window.on('resize', debounce(setBreakpoint, 200))
+    _window.on('resize', debounce(setBreakpoint, 200));
 
     // AVAILABLE in _components folder
     // copy paste in main.js and initialize here
@@ -825,21 +828,9 @@ $(document).ready(function () {
         }
       });
   }
-  initSelect();
   // ====================
 
 
-  //
-  // ====================
-  function funcName() {
-  }
-
-  _document.on("click", "", function (e) {
-  });
-  // ====================
-
-
-  //
   // ====================
   function cabinetPagination(btnName) {
     _document.on("click", btnName, function(e) {
@@ -852,9 +843,43 @@ $(document).ready(function () {
   // ====================
 
 
+  // ====================
+  function billFilterTable() {
+    _document.on("click", "[bill-filter-js]", function (e) {
+      let elem = $(e.target),
+        elemAttr = elem.attr("data-pagination");
+
+      let table = $("[bill-table-js]"),
+        tableRow = $("[bill-table-js] .bill__table-row"),
+        tableRowFilter = $("[bill-table-js] .bill__table-row[data-filter='" + elemAttr + "']");
+
+      tableRow.css({
+        display : "flex"
+      });
+      tableRowFilter.css({
+        display : "none"
+      });
+    });
+  }
+  // ====================
+
+
+  // ====================
+  function funcName() {
+  }
+
+  _document.on("click", "", function (e) {
+  });
+  // ====================
+
+
+  // ====================
+  // ====================
+
   //////////
   // SLIDERS
   //////////
+
   function initSliders() {
     var slickNextArrow = '<div class="slick-prev"><svg class="ico ico-back-arrow"><use xlink:href="img/sprite.svg#ico-back-arrow"></use></svg></div>';
     var slickPrevArrow = '<div class="slick-next"><svg class="ico ico-next-arrow"><use xlink:href="img/sprite.svg#ico-next-arrow"></use></svg></div>'
