@@ -80,21 +80,40 @@
           display: flex
           align-items: center
           padding-bottom: 62px
+          +r(767)
+            flex-wrap: wrap
+            padding-bottom: 31px
 
           > p
             line-height: 1
+            +r(767)
+              width: 100%
+              padding-bottom: 5px
 
         &-title
           margin-right: 71px
           font-size: 24px
           font-weight: 600
+          +r(767)
+            font-size: 20px
 
         &-row
           display: flex
+          +r(767)
+            flex-wrap: wrap
+
+        &-left
+          +rmin(768)
+            padding-right: 15px
+        &-right
+          +rmin(768)
+            padding-left: 15px
 
         &-left,
         &-right
           width: 50%
+          +r(767)
+            width: 100%
 
           .form__field-btn
             width: 100%
