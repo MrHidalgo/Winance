@@ -47,6 +47,17 @@
           justify-content: flex-end
           width: 200px
 
+      &-2
+        display: none
+        +r(767)
+          display: block
+        .form__field
+          width: 100%
+          max-width: 100%
+          padding-right: 0
+        .form__label
+          width: 0
+
 
     &__nav
       &-list
@@ -128,8 +139,6 @@
         color: $c-nobel
         +r(767)
           padding-bottom: 17px
-
-
 
 
     &__score

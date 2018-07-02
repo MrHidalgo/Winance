@@ -12,15 +12,15 @@
       .investment__pagination
         ul.investment__pagination-list
           li.investment__pagination-item
-            a.investment__pagination-link.is-active(investment-filter-js href="#" title="")!= "Все"
+            a.investment__pagination-link.is-active(investment-filter-js data-pagination="all" href="#" title="")!= "Все"
           li.investment__pagination-item
-            a.investment__pagination-link.investment__pagination-link--active(investment-filter-js href="#" title="")!= "Активные"
+            a.investment__pagination-link.investment__pagination-link--active(investment-filter-js data-pagination="active" href="#" title="")!= "Активные"
           li.investment__pagination-item
-            a.investment__pagination-link.investment__pagination-link--close(investment-filter-js href="#" title="")!= "Закрытые"
+            a.investment__pagination-link.investment__pagination-link--close(investment-filter-js data-pagination="close" href="#" title="")!= "Закрытые"
 
 
     .investment__container
-      .investment__block.investment__block--active
+      .investment__block.animated.investment__block--active(investment-block-js data-filter="active")
         .investment__block-header
           p.investment__block-badge!= "АКТИВНЫЙ"
           p.investment__block-title!= "Вклад W 12"
@@ -69,7 +69,7 @@
 
 
     .investment__container
-      .investment__block.investment__block--active
+      .investment__block.animated.investment__block--active(investment-block-js data-filter="active")
         .investment__block-header
           p.investment__block-badge!= "активный"
           p.investment__block-title!= "Вклад W 3"
@@ -118,7 +118,7 @@
 
 
     .investment__container
-      .investment__block.investment__block--close
+      .investment__block.animated.investment__block--close(investment-block-js data-filter="close")
         .investment__block-header
           p.investment__block-badge!= "закрытый"
           p.investment__block-title!= "Вклад W 12"

@@ -821,10 +821,10 @@ $(document).ready(function () {
         inheritOriginalWidth: true,
         onInit: function(event) {
           let elem = $(event),
-            elemWidth = elem[0].offsetWidth + (38 / 2);
+            elemWidth = elem[0].offsetWidth;
 
           elem.closest(".selectric-wrapper").css({
-            width: elemWidth
+            width: (elemWidth < 200) ? elemWidth + (38 / 2) : elemWidth + 38
           })
         }
       });
@@ -862,6 +862,26 @@ $(document).ready(function () {
       });
     });
   }
+  // ====================
+
+
+  // ====================
+  function investmentFilterBlock() {
+    _document.on("click", "[investment-filter-js]", function (e) {
+      let elem = $(e.target),
+        elemAttr = elem.attr("data-pagination");
+
+      let investmentBlock = $("[investment-block-js]");
+
+      if(elemAttr === "all") {
+        investmentBlock.show();
+      } else {
+        investmentBlock.hide();
+        $(".investment__block[data-filter='" + elemAttr + "']").show();
+      }
+    });
+  }
+  investmentFilterBlock();
   // ====================
 
 

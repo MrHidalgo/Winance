@@ -82,14 +82,16 @@ mixin mainBtn(classMod, href, name, count)
           span!= "Мой счет"
           i.icon-score
 
-    //.main__row.main__row-2
-    //  .select__field
-    //    select.select__cabinet.select__cabinet-nav
-    //      option(data-id="0" data-opt="1" value!="cabinetInvestment.html")!= "Инвестиции"
-    //      option(data-id="1" data-opt="0" value!="cabinetPartners.html")!= "Партнерская программа"
-    //      option(data-id="2" data-opt="0" value!="cabinetInformation.html")!= "Информация"
-    //      option(data-id="3" data-opt="1" value!="cabinetSupportEmpty.html")!= "Поддержка"
-    //      option(data-id="4" data-opt="0" value!="cabinetReports.html")!= "Отчеты"
+    .main__row.main__row-2
+      .form__field.form__field--select.form__field--p
+        select(name="" id="menu" selectric-js)
+          option(value!="cabinetInvestment.html")!= "Инвестиции"
+          option(value!="cabinetPartners.html")!= "Партнерская программа"
+          option(value!="cabinetInformation.html")!= "Информация"
+          option(value!="cabinetSupportEmpty.html")!= "Поддержка"
+          option(value!="cabinetReports.html")!= "Отчеты"
+          option(value!="cabinet.html")!= "Мой счет"
+        label.form__label(for="menu")!= ""
 
 
 // MAIN :: END
