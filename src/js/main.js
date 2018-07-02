@@ -58,6 +58,7 @@ $(document).ready(function () {
 
     initSelect();
     billFilterTable();
+    investmentFilterBlock();
 
     if($(".calc").length > 0) {
       initCalc();
@@ -881,7 +882,6 @@ $(document).ready(function () {
       }
     });
   }
-  investmentFilterBlock();
   // ====================
 
 
