@@ -13,9 +13,14 @@
         .partners__block.partners__block-0
           .partners__block-top
             p!= "Ваша партнерская ссылка:"
-            p= "https://respectbet.com/rb/3940039173"
+            p#copyLink= "https://respectbet.com/rb/3940039173"
           .partners__block-bottom
-            a.btn.btn--medium(href="" title="")!= "Скопировать ссылку"
+            a.btn.btn--medium(
+              href="#"
+              title=""
+              data-clipboard-action="copy" data-clipboard-target="#copyLink"
+              copy-btn-js
+            )!= "Скопировать ссылку"
 
         .partners__block.partners__block-1
           .partners__block-top
@@ -166,8 +171,14 @@
 
         .partners__banner-right
           .partners__banner-box
-            p= '<a href="https://respectbet.com/rb/3940039173/" title="respect_1"><img src="https://respectbet.com/banners/respect_1.gif" width="240" height="400" border=0 alt="https://respectbet.com"></a>'
-            a.btn(href="#" title="")!= "Скопировать код"
+            p#copyBanner1= '<a href="https://respectbet.com/rb/3940039173/" title="respect_1"><img src="https://respectbet.com/banners/respect_1.gif" width="240" height="400" border=0 alt="https://respectbet.com"></a>'
+            a.btn(
+              href="#"
+              title=""
+              data-clipboard-action="copy"
+              data-clipboard-target="#copyBanner1"
+              copy-btn-js
+            )!= "Скопировать код"
 
 
     .partners__container.partners__container-4
@@ -185,8 +196,14 @@
 
         .partners__banner-right
           .partners__banner-box
-            p= '<a href="https://respectbet.com/rb/3940039173/" title="respect_1"><img src="https://respectbet.com/banners/respect_1.gif" width="240" height="400" border=0 alt="https://respectbet.com"></a>'
-            a.btn(href="#" title="")!= "Скопировать код"
+            p#copyBanner2= '<a href="https://respectbet.com/rb/3940039173/" title="respect_1"><img src="https://respectbet.com/banners/respect_1.gif" width="240" height="400" border=0 alt="https://respectbet.com"></a>'
+            a.btn(
+              href="#"
+              title=""
+              data-clipboard-action="copy"
+              data-clipboard-target="#copyBanner2"
+              copy-btn-js
+            )!= "Скопировать код"
 
 
 // PARTNERS :: END

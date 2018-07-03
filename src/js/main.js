@@ -66,6 +66,8 @@ $(document).ready(function () {
 
     editFormCabinetInformation();
 
+    initCopyText("[copy-btn-js]");
+
     if($(".calc").length > 0) {
       initCalc();
     }
@@ -1015,6 +1017,13 @@ $(document).ready(function () {
 
       _formInputParent.removeClass("form__field--readonly");
     });
+  }
+  // ====================
+
+
+  // ====================
+  function initCopyText(copyBtnName) {
+    new ClipboardJS(copyBtnName);
   }
   // ====================
 
