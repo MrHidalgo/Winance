@@ -1105,6 +1105,36 @@ $(document).ready(function () {
   function initMasks() {
     $("[js-dateMask]").mask("99.99.99", {placeholder: "ДД.ММ.ГГ"});
     $("input[type='tel']").mask("+7 (000) 000-0000", {placeholder: "+7 (___) ___-____"});
+
+    $("[js-mask-number]").mask("#");
+
+    _document
+      .on('keydown', '[js-mask-price]', function(e){
+        // https://stackoverflow.com/questions/22342186/textbox-mask-allow-number-only
+        // Allow: backspace, delete, tab, escape, enter and .
+        // dissallow . (190) for now
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110]) !== -1 ||
+          // Allow: Ctrl+A
+          (e.keyCode == 65 && e.ctrlKey === true) ||
+          // Allow: home, end, left, right
+          (e.keyCode >= 35 && e.keyCode <= 39)) {
+          return;
+        }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+          e.preventDefault();
+        }
+        if ( $(this).val().length > 10 ){
+          e.preventDefault();
+        }
+      })
+      .on('keyup', '[js-mask-price]', function(e){
+        // if number is typed format with space
+        if ($(this).val().length > 0){
+          $(this).val( $(this).val().replace(/ /g,"") );
+          $(this).val( $(this).val().replace(/\B(?=(\d{3})+(?!\d))/g, " ") );
+        }
+      })
   }
 
   function viewportControl(){

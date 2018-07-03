@@ -25,7 +25,7 @@
               label.form__label(for="bill")!= "Счет"
 
             .form__field.form__field.form__field--p
-              input.form__input(type="text" name="code" class="" id="bill_cancellation_amount" placeholder="")
+              input.form__input(type="text" name="code" class="" id="bill_cancellation_amount" placeholder="" js-mask-number)
               label.form__label(for="bill_cancellation_amount")!= "Сумма списания"
 
             .form__field.form__field--select.form__field--p
@@ -45,7 +45,7 @@
               label.form__label(for="bill_currency_withdrawal")!= "Валюта вывода"
 
             .form__field.form__field--p
-              input.form__input(type="text" name="code" class="" id="bill_amount_payment" placeholder="")
+              input.form__input(type="text" name="code" class="" id="bill_amount_payment" placeholder="" js-mask-number)
               label.form__label(for="bill_amount_payment")!= "Сумма выплаты"
 
             .form__field.form__field--select.form__field--p
@@ -56,7 +56,7 @@
               label.form__label(for="bill_phone")!= "Реквизиты"
 
             .form__field.form__field--p
-              input.form__input(type="text" name="code" class="" id="bill_phone_requisites" placeholder="30000")
+              input.form__input(type="text" name="code" class="" id="bill_phone_requisites" placeholder="30000" js-mask-number)
               label.form__label(for="bill_phone_requisites")!= "+7 (904) 391-03-70"
 
             .form__field-btn

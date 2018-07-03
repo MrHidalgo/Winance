@@ -16,7 +16,7 @@
           .investment__form-left
 
             .form__field.form__field--p
-              input.form__input(type="text" name="" class="" id="investment_contract" placeholder="1301")
+              input.form__input(type="text" name="" class="" id="investment_contract" placeholder="1301" js-mask-number)
               label.form__label(for="investment_contract")!= "Контракт №"
 
             .form__field.form__field--p
@@ -24,13 +24,13 @@
               label.form__label(for="investment_currency")!= "Валюта контракта"
 
             .form__field.form__field--p
-              input.form__input(type="text" name="" class="" id="investment_sum_contract" placeholder="30000")
+              input.form__input(type="text" name="" class="" id="investment_sum_contract" placeholder="30000" js-mask-number)
               label.form__label(for="investment_sum_contract")!= "Сумма по контракту"
 
           .investment__form-right
 
             .form__field.form__field--p.form__field--custom
-              input.form__input(type="text" name="" class="" id="investment_sum_currency" placeholder="30000")
+              input.form__input(type="text" name="" class="" id="investment_sum_currency" placeholder="30000" js-mask-number)
               label.form__label(for="investment_sum_currency")!= "Сумма в валюте контракта"
 
             .form__field.form__field--select.form__field--p
@@ -48,7 +48,7 @@
               label.form__label(for="investment_1")!= "Валюта оплаты"
 
             .form__field.form__field--p
-              input.form__input(type="text" name="" class="" id="investment_sum_finish" placeholder="30000")
+              input.form__input(type="text" name="" class="" id="investment_sum_finish" placeholder="30000" js-mask-number)
               label.form__label(for="investment_sum_finish")!= "Сумма оплаты"
 
             .form__field-btn
