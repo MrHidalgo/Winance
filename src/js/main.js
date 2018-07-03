@@ -60,6 +60,8 @@ $(document).ready(function () {
     billFilterTable();
     investmentFilterBlock();
 
+    // initTypograf();
+
     if($(".calc").length > 0) {
       initCalc();
     }
@@ -725,19 +727,19 @@ $(document).ready(function () {
       } else {
 
         if ($(".swiper-blog-js").length > 0 && swiperBlog !== 0) {
-          swiperBlog.destroy();
+          swiperBlog.destroy(true, true);
         }
         if ($(".swiper-testimonials-js").length > 0 && swiperTestimonials !== 0) {
-          swiperTestimonials.destroy();
+          swiperTestimonials.destroy(true, true);
         }
         if ($(".swiper-print-js").length > 0 && swiperPrint !== 0) {
-          swiperPrint.destroy();
+          swiperPrint.destroy(true, true);
         }
         if ($(".swiper-faq-js").length > 0 && swiperFaq !== 0) {
-          swiperFaq.destroy();
+          swiperFaq.destroy(true, true);
         }
         if ($(".swiper-reasons-js").length > 0 && swiperReasons !== 0) {
-          swiperReasons.destroy();
+          swiperReasons.destroy(true, true);
         }
 
         msnrGridBlog.masonry(masonryOpt('.blogs__block'));
@@ -881,6 +883,19 @@ $(document).ready(function () {
         $(".investment__block[data-filter='" + elemAttr + "']").show();
       }
     });
+  }
+  // ====================
+
+
+  // ====================
+  function initTypograf() {
+    var tp = new Typograf({
+      locale: ['ru', 'en-US']
+    });
+
+    var elem = document.querySelector('.page__content');
+
+    elem.innerHTML = tp.execute(elem.innerHTML);
   }
   // ====================
 

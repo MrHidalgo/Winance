@@ -62,16 +62,22 @@
 
 
     &-left
-      width: 200px
+      +rmin(768)
+        width: 150px
+      +rmin(992)
+        width: 200px
 
 
     &-middle
       display: flex
       justify-content: center
-      width: calc(100% - (200px * 2))
       min-height: 107px
       +r(767)
         display: none
+      +rmin(768)
+        width: calc(100% - (150px + 100px))
+      +rmin(992)
+        width: calc(100% - (200px * 2))
 
       .nav__link
         overflow: hidden
@@ -103,14 +109,16 @@
           +transition(transform, background-color)
 
 
-
     &-right
       display: flex
       justify-content: flex-end
-      width: 200px
       min-height: 107px
       +r(767)
         display: none
+      +rmin(768)
+        width: 100px
+      +rmin(992)
+        width: 200px
 
     &-mobile
       display: none
