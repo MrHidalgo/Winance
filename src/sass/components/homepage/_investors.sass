@@ -2,9 +2,15 @@
 
 .investors
   position: relative
-  +r(767)
-    padding-top: 30px
-    background-color: $c-whiteSmoke
+
+  .calc
+    +r(575)
+      .container
+        padding-left: 0
+        padding-right: 0
+      .calc__title
+        padding-left: 15px
+        padding-right: 15px
 
 
   &__bg
@@ -32,9 +38,6 @@
   .container
     z-index: 1
     position: relative
-    +r(575)
-      padding-left: 0
-      padding-right: 0
 
 
   &__title
