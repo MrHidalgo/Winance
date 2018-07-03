@@ -218,7 +218,6 @@
         +transition(border-color)
 
       .selectric
-        //overflow: auto
         height: 100%
         border: none
         background-color: transparent
@@ -226,21 +225,39 @@
         &-wrapper
           height: 100%
 
+        &-items
+          top: calc(100% + 2px)
+          border: none
+          background-color: $c-white
+
+          li
+            cursor: pointer
+            border-bottom: 2px solid rgba($c-royalBlue, 0.5)
+            color: $c-blueZodiac
+            font-size: 18px
+            +transition(border-color, background-color)
+
+            &:last-child
+              border-bottom: none
+
+            &:hover,
+            &.selected
+              border-color: $c-royalBlue
+              background-color: $c-white
+              +transition(border-color, background-color)
+
         .label,
         .button
           height: 100%
 
         .label
-          //overflow: auto
           display: flex
           align-items: center
           margin-left: 0
-          //margin-right: 0
           line-height: normal
           font-size: 18px
 
         .button
-          //right: -38px
           background-color: transparent
 
           &:after
