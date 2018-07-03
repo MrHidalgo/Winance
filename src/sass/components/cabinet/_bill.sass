@@ -111,8 +111,6 @@
         +r(767)
           padding-bottom: 42px
 
-      &-1
-
 
     &__block
       display: flex
@@ -161,14 +159,15 @@
         font-style: italic
 
       &-title
+        white-space: nowrap
         padding-bottom: 25px
         line-height: 1
         font-size: 45px
         font-weight: 300
         +rmin(320)
-          font-size: 35px
-        +rmin(768)
           font-size: 30px
+        +rmin(768)
+          font-size: 35px
         +rmin(992)
           font-size: 45px
         span
@@ -178,9 +177,11 @@
         display: flex
         align-items: center
         p
+          white-space: nowrap
           padding-right: 5px
-          font-size: 24px
           font-weight: 300
+          +rmin(320)
+            font-size: 18px
           +rmin(768)
             font-size: 20px
           +rmin(992)
@@ -200,7 +201,7 @@
       &-row
         &--0
           display: flex
-          margin-bottom: 20px
+          margin-bottom: 58px
           +r(767)
             flex-wrap: wrap
 
