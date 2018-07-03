@@ -64,6 +64,8 @@ $(document).ready(function () {
 
     initShowMore();
 
+    editFormCabinetInformation();
+
     if($(".calc").length > 0) {
       initCalc();
     }
@@ -996,6 +998,23 @@ $(document).ready(function () {
     showMore("[blogs-more-js]", "[masonry-blog-js]", ".blogs__block", blogTemplate);
     showMore("[press-more-js]", "[masonry-print-js]", ".print__block", pressTemplate);
     showMore("[faq-more-js]", "[masonry-faq-js]", ".quesAns__block", faqTemplate);
+  }
+  // ====================
+
+
+  // ====================
+  function editFormCabinetInformation() {
+    _document.on("click", "[edit-form-js]", function (e) {
+      let _form = $("[form-info-js]"),
+        _formInput = _form.find("input"),
+        _formInputParent = _formInput.closest(".form__field");
+
+      _formInput.each(function(idx, val) {
+        $(val).removeAttr("readonly");
+      });
+
+      _formInputParent.removeClass("form__field--readonly");
+    });
   }
   // ====================
 
