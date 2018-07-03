@@ -62,6 +62,8 @@ $(document).ready(function () {
 
     // initTypograf();
 
+    showMore("[testimonials-more-js]", "[masonry-testimonials-js]", ".testimonials__block", testimonialsTemplate);
+
     if($(".calc").length > 0) {
       initCalc();
     }
@@ -899,6 +901,45 @@ $(document).ready(function () {
     var elem = document.querySelector('.page__content');
 
     elem.innerHTML = tp.execute(elem.innerHTML);
+  }
+  // ====================
+
+
+  // ====================
+  function testimonialsTemplate(classMod){
+    return `
+      <a class="testimonials__block testimonials__block-${classMod}" title="" href="#">
+        <div class="testimonials__block-header">
+          <div class="testimonials__block-left">
+            <div class="testimonials__block-icon"><i class="icon-user"></i></div>
+          </div>
+          <div class="testimonials__block-right">
+            <p>Артем Коновалов</p>
+            <p>Начинающий инвестор</p>
+          </div>
+        </div>
+        <div class="testimonials__block-body">
+          <p>За 2,5 года площадка StartTrack привлекла в 39 компаний более 940 млн рублей. Площадка является посредником, предоставляет сервис и инфраструктуру, а договорные отношения между инвесторами и компаниями-заемщиками регулируются ГК РФ.</p>
+        </div>
+      </a>
+    `;
+  }
+
+  function showMore(btnName, appendContainer, countBlockName, templateName) {
+    _document.on("click", btnName, function (e) {
+      let blockMainName = $(appendContainer),
+        count = blockMainName.find(countBlockName).length,
+        content = templateName(count);
+
+      if(count < 15) {
+        blockMainName
+          .append(content)
+          .masonry("reloadItems")
+          .masonry("layout");
+      } else {
+        return false;
+      }
+    });
   }
   // ====================
 
