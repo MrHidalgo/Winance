@@ -34,7 +34,7 @@ PageList:
 - file: cabinetSupportEmpty.html
   ready: 70
 - file: cabinetSupportTicket.html
-  ready: 5
+  ready: 70
 - file: cabinetReports.html
   ready: 70
 - file: cabinetPartners.html
