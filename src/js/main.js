@@ -629,7 +629,7 @@ $(document).ready(function () {
       loop: false,
       watchOverflow: true,
       setWrapperSize: false,
-      spaceBetween: 18,
+      // spaceBetween: 18,
       slidesPerView: 'auto',
       normalizeSlideIndex: true,
       grabCursor: true,
