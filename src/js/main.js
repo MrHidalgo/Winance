@@ -49,7 +49,7 @@ $(document).ready(function () {
     swiperMasonryInit();
 
     cabinetPagination("[partners-size-js]");
-    cabinetPagination("[partnera-format-js]");
+    cabinetPagination("[partner-format-js]");
     cabinetPagination("[bill-filter-js]");
     cabinetPagination("[investment-filter-js]");
 

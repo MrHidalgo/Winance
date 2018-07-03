@@ -1,0 +1,51 @@
+// SUPPORT TICKET :: START
+
+mixin messageBlock(classMod, whoName, date, text)
+  .support__message(class!= (classMod) ? "support__message--" + classMod: "")
+    div
+      p!= whoName
+      p!= date
+    div
+      p!= text
+
+.support.support--ticket
+  .container
+
+
+    .support__container.support__container-0
+      h1.support__title.cabinet__title!= "Тема тикета указаная при создании"
+
+
+    .support__container.support__container-1
+      .support__info-wrap
+        p.support__info.support__info-0
+          != "Статус:"
+          span!= "АКТИВНЫЙ"
+        a.btn.support__info.support__info-btn(href="#" title="" class="")!= "Закрыть тикет"
+        p.support__info.support__info-1!= "23 июня 2018 г., 9:49:52"
+        p.support__info.support__info-2
+          span!= "Отдел:"
+          != "Технический"
+
+
+    .support__container.support__container-2
+      .support__chat
+        p.support__chat-title!= "Ваше новое сообщение"
+
+        form(action="" method="")
+          .support__chat-field
+            textarea(class="" name="" placeholder="Введите текст")
+            button.btn.btn--small(type="button")!= "Отправить сообщение"
+
+
+    .support__container.support__container-3
+      .support__message-wrap
+        +messageBlock("", "Вы:", "23 июня 2018 г., 9:49:52", "Спасибо!")
+        +messageBlock("winance", "Winance:", "23 июня 2018 г., 9:49:52", "Первый клуб сети открылся в декабре 2005 года и уже больше 10 лет удерживает позиции самого востребованного и посещаемого фитнес-клуба в Приморском районе Санкт-Петербурга.Первый клуб сети открылся в декабре 2005 года и уже больше 10 лет удерживает позиции самого востребованного и посещаемого фитнес-клуба в Приморском районе Санкт-Петербурга.")
+        +messageBlock("", "Вы:", "23 июня 2018 г., 9:49:52", "Первый клуб сети открылся в декабре 2005 года и уже больше 10 лет удерживает позиции самого востребованного и посещаемого фитнес-клуба в Приморском районе Санкт-Петербурга.")
+        +messageBlock("winance", "Winance:", "23 июня 2018 г., 9:49:52", "Первый клуб сети открылся в декабре 2005 года и уже больше 10 лет удерживает позиции самого востребованного и посещаемого фитнес-клуба в Приморском районе Санкт-Петербурга.Первый клуб сети открылся в декабре 2005 года и уже больше 10 лет удерживает позиции самого востребованного и посещаемого фитнес-клуба в Приморском районе Санкт-Петербурга.")
+        +messageBlock("", "Вы:", "23 июня 2018 г., 9:49:52", "Первый клуб сети открылся в декабре 2005 года и уже больше 10 лет удерживает позиции самого востребованного и посещаемого фитнес-клуба в Приморском районе Санкт-Петербурга.")
+
+
+
+// SUPPORT TICKET :: END

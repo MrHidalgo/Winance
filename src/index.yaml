@@ -33,6 +33,8 @@ PageList:
   ready: 70
 - file: cabinetSupportEmpty.html
   ready: 70
+- file: cabinetSupportTicket.html
+  ready: 5
 - file: cabinetReports.html
   ready: 70
 - file: cabinetPartners.html
