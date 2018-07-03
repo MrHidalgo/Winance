@@ -82,8 +82,10 @@
 
       sup
         padding-left: 5px
+        color: $c-blueZodiac
         font-size: 14px
         font-style: italic
+        font-weight: 500
         +r(767)
           position: static
           padding-left: 0
@@ -158,7 +160,7 @@
         p
           &:nth-child(1)
             padding-bottom: 16px
-            color: #rgba($c-blueZodiac, 0.5)
+            color: rgba($c-blueZodiac, 0.5)
             font-style: italic
           &:nth-child(2)
             font-size: 36px
@@ -222,7 +224,7 @@
         p
           &:nth-child(1)
             padding-bottom: 16px
-            color: #rgba($c-blueZodiac, 0.5)
+            color: rgba($c-blueZodiac, 0.5)
             font-style: italic
           &:nth-child(2)
             font-size: 36px
@@ -243,19 +245,23 @@
 
         p
           padding-bottom: 18px
-          color: #rgba($c-blueZodiac, 0.5)
+          color: rgba($c-blueZodiac, 0.5)
           font-style: italic
 
       &-4
         display: flex
         align-items: flex-end
         width: calc((100% / 3) * 2)
-        padding-left: 46px
+        padding-left: 30px
         +r(767)
           width: 100%
           padding-top: 25px
           padding-left: 15px
           padding-right: 15px
+
+        p
+          color: rgba($c-blueZodiac, 0.5)
+          font-style: italic
 
       &-5
         display: flex
@@ -268,7 +274,7 @@
 
           p
             padding-bottom: 10px
-            color: #rgba($c-blueZodiac, 0.5)
+            color: rgba($c-blueZodiac, 0.5)
             font-style: italic
 
           span
