@@ -62,7 +62,7 @@ $(document).ready(function () {
 
     // initTypograf();
 
-    showMore("[testimonials-more-js]", "[masonry-testimonials-js]", ".testimonials__block", testimonialsTemplate);
+    initShowMore();
 
     if($(".calc").length > 0) {
       initCalc();
@@ -613,7 +613,7 @@ $(document).ready(function () {
       loop: false,
       watchOverflow: true,
       setWrapperSize: false,
-      spaceBetween: 18,
+      // spaceBetween: 18,
       slidesPerView: 'auto',
       normalizeSlideIndex: true,
       grabCursor: true,
@@ -925,6 +925,31 @@ $(document).ready(function () {
     `;
   }
 
+  function blogTemplate(classMod) {
+    return `
+      <a class="blogs__block is-show blogs__block-${classMod}" href="blogDetailsWImage.html" data-filter="business">
+        <div class="blogs__block-header">
+          <p>Бизнес-планы – готовые <br>примеры вашего предприятия <br>с расчетами</p>
+        </div>
+        <div class="blogs__block-body">
+          <p>От эффективности вашего поведения на рынке зависит ваш заработок. Поэтому придерживаться правильной политики при трейдинге – значит обеспечить себе доход. Выбрать ее достаточно сложно, так как экономика никогда не стоит на месте, все постоянно меняется.</p>
+        </div>
+        <div class="blogs__block-footer">
+          <div class="blogs__block-footer--left">
+            <div class="blogs__block-badge">
+              <p><span>#</span> Бизнес</p>
+            </div>
+          </div>
+          <div class="blogs__block-footer--right">
+            <div class="blogs__block-date">
+              <p>12 августа 2018</p>
+            </div>
+          </div>
+        </div>
+      </a>
+    `;
+  }
+
   function showMore(btnName, appendContainer, countBlockName, templateName) {
     _document.on("click", btnName, function (e) {
       let blockMainName = $(appendContainer),
@@ -940,6 +965,11 @@ $(document).ready(function () {
         return false;
       }
     });
+  }
+
+  function initShowMore() {
+    showMore("[testimonials-more-js]", "[masonry-testimonials-js]", ".testimonials__block", testimonialsTemplate);
+    showMore("[blogs-more-js]", "[masonry-blog-js]", ".blogs__block", blogTemplate);
   }
   // ====================
 

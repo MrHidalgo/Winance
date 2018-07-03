@@ -151,7 +151,13 @@ section.blogs
       include ../../macros/_blogsBlock
 
   .container
-    a.blogs__btn.blogs__btn--blog.btn.btn--big.wow.wowFadeUp(data-animation-delay="0.4s" href="#" title!="" class!= "")!= "Показать еще"
+    a.blogs__btn.blogs__btn--blog.btn.btn--big.wow.wowFadeUp(
+      data-animation-delay="0.4s"
+      href="#"
+      title!=""
+      class!= ""
+      blogs-more-js
+    )!= "Показать еще"
 
         
 // BLOGS :: END
