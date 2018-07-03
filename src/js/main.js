@@ -953,7 +953,7 @@ $(document).ready(function () {
   function pressTemplate(classMod) {
     return `
       <a class="print__block print__block-${classMod}" title="" href="press.html">
-        <div class="print__block-header"><img class="print__block-image" src="./img/img-logo__press.png" srcset="./img/img-logo__press@2x.png 2x" title="" alt=""></div>
+        <div class="print__block-header"><img class="print__block-image" src="./img/img-logo-0__press.png" srcset="./img/img-logo__press@2x.png 2x" title="" alt=""></div>
         <div class="print__block-body">
           <p>«ВЭБ Инновации» проинвестирует в StartTrack 200 млн рублей. Сегодня через площадку StartTrack проходит 60% коллективных инвестиций в РФ в малый и средний бизнес. Инвестиционный потенциал площадки и 2000 аккредитованных инвесторов превышает 7 миллиардов рублей.</p>
         </div>
