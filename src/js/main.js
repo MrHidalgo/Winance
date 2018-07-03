@@ -661,7 +661,7 @@ $(document).ready(function () {
       loop: false,
       watchOverflow: true,
       setWrapperSize: false,
-      spaceBetween: 18,
+      // spaceBetween: 18,
       slidesPerView: 'auto',
       normalizeSlideIndex: true,
       grabCursor: true,
@@ -961,13 +961,26 @@ $(document).ready(function () {
     `;
   }
 
+  function faqTemplate(classMod) {
+    return `
+      <a class="quesAns__block is-show quesAns__block-${classMod}" href="#" data-filter="investors">
+        <div class="quesAns__block-header">
+          <p>Бизнес-планы – готовые <br>примеры вашего предприятия с расчетами</p>
+        </div>
+        <div class="quesAns__block-body">
+          <p>Отметим, что все приведенные цифры приблизительны и могут отличаться в зависимости от региона. Итак, обратимся к первичной информации: Первоначальные вложения составят около 2 миллионов. Окупаемость – порядка двух лет. Необходимая площадь...</p>
+        </div>
+      </a>
+    `;
+  }
+
   function showMore(btnName, appendContainer, countBlockName, templateName) {
     _document.on("click", btnName, function (e) {
       let blockMainName = $(appendContainer),
         count = blockMainName.find(countBlockName).length,
         content = templateName(count);
 
-      if(count < 15) {
+      if(count < 12) {
         blockMainName
           .append(content)
           .masonry("reloadItems")
@@ -982,6 +995,7 @@ $(document).ready(function () {
     showMore("[testimonials-more-js]", "[masonry-testimonials-js]", ".testimonials__block", testimonialsTemplate);
     showMore("[blogs-more-js]", "[masonry-blog-js]", ".blogs__block", blogTemplate);
     showMore("[press-more-js]", "[masonry-print-js]", ".print__block", pressTemplate);
+    showMore("[faq-more-js]", "[masonry-faq-js]", ".quesAns__block", faqTemplate);
   }
   // ====================
 
