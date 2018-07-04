@@ -68,6 +68,8 @@ $(document).ready(function () {
 
     initCopyText("[copy-btn-js]");
 
+    modalSignTrigger();
+
     if($(".calc").length > 0) {
       initCalc();
     }
@@ -828,7 +830,6 @@ $(document).ready(function () {
   //
   // ====================
   function initSelect() {
-    console.log(`initSelect`);
     $("[selectric-js]")
       .selectric({
         inheritOriginalWidth: true,
@@ -1030,6 +1031,22 @@ $(document).ready(function () {
 
 
   // ====================
+  function modalSignTrigger() {
+    _document.on("click", "[change-sign-js]", function (e) {
+      let elem = $(e.currentTarget),
+        elemAttr = elem.attr("data-id");
+
+      $("[change-sign-js], .modal__body").removeClass("is-active");
+
+      elem.addClass("is-active");
+      $(".modal__body-" + elemAttr).addClass("is-active");
+    });
+  }
+  // ====================
+
+
+
+  // ====================
   function funcName() {
   }
 
@@ -1106,7 +1123,9 @@ $(document).ready(function () {
       }
     });
 
-    $('[review-btn-js], [ticket-new-js], [faq-new-js], [about-request-js]').magnificPopup({
+    const modalBtn = "[review-btn-js], [ticket-new-js], [faq-new-js], [about-request-js], [sign-js]";
+
+    $(modalBtn).magnificPopup({
       type: 'inline',
       fixedContentPos: true,
       fixedBgPos: true,

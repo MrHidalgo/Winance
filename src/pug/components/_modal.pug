@@ -40,7 +40,7 @@
 
 // MODAL TICKET :: END
 
-#modalTicket.modal.modal--reviews.mfp-hide.mfp-with-anim
+#modalTicket.modal.modal--ticket.mfp-hide.mfp-with-anim
   .modal__header
   .modal__body
     p.modal__title!= "Задайте свой вопрос"
@@ -78,7 +78,7 @@
 
 // MODAL FAQ :: END
 
-#modalFaq.modal.modal--reviews.mfp-hide.mfp-with-anim
+#modalFaq.modal.modal--faq.mfp-hide.mfp-with-anim
   .modal__header
   .modal__body
     p.modal__title!= "Если вы пока не нашли ответа на свой вопрос — спрашивайте!"
@@ -103,10 +103,9 @@
 // MODAL FAQ :: END
 
 
+// MODAL ABOUT REQUEST :: END
 
-// MODAL ABOUT :: END
-
-#modalAbout.modal.modal--reviews.mfp-hide.mfp-with-anim
+#modalAbout.modal.modal--request.mfp-hide.mfp-with-anim
   .modal__header
   .modal__body
     p.modal__title!= "Получите отчеты о деятельности фонда за последние 3 года"
@@ -124,4 +123,42 @@
       .form__field-btn
         button.form__btn.btn.btn--color.btn--full(type="submit")!= "Запросить"
 
-// MODAL ABOUT :: END
+// MODAL ABOUT REQUEST :: END
+
+
+// MODAL ABOUT REQUEST :: END
+
+#modalSign.modal.modal--sign.mfp-hide.mfp-with-anim
+  .modal__header
+    a.is-active(
+      href="#" title="" class=""
+      data-id="0"
+      change-sign-js
+    )!= "Вход"
+    a(
+      href="#" title="" class=""
+      data-id="1"
+      change-sign-js
+    )!= "Регистрация"
+
+  .modal__body.modal__body-0.is-active
+    form(action="" method="" autocomplete="off")
+
+      .form__field.form__field--p
+        input.form__input(type="text" name="signin_email" class="" id="signin_email" placeholder="")
+        label.form__label(for="signin_email")!= "Адрес почты"
+
+      .form__field.form__field--p
+        input.form__input(type="text" name="signin_password" class="" id="signin_password" placeholder="")
+        label.form__label(for="signin_password")!= "Пароль"
+
+      .form__field-btn
+        button.form__btn.btn.btn--color.btn--full(type="submit")!= "Войти"
+
+      .form__field-link
+        a.form__link(href="#" title="" class="")!= "Забыли пароль?"
+
+  .modal__body.modal__body-1
+    form(action="" method="" autocomplete="off")
+
+// MODAL ABOUT REQUEST :: END
