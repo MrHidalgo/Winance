@@ -3,11 +3,43 @@
 .modal
   position: relative
   width: 100%
-  max-width: 790px
   min-height: 445px
   margin: 40px auto
   background-color: $c-white
-  //box-shadow: 0 15px 35px 0 rgba(0, 0, 0, 0.15)
+
+  &--video
+    max-width: 790px
+
+  &--reviews
+    overflow: hidden
+    max-width: 427px
+    border-radius: 3px
+
+    .modal
+      &__header
+        height: 60px
+        background-color: $c-whiteSmoke
+
+      &__body
+        padding: 0 20px 30px
+
+    .mfp-close
+      top: 0
+      right: 0
+      padding: 8px 10px
+
+  &__title
+    padding: 43px 0 48px
+    font-size: 20px
+    font-weight: 600
+    +r(767)
+      font-size: 18px
+
+  form
+    .form__field
+      max-width: 100%
+      &--p
+        margin-bottom: 15px
 
 
 .mfp-bg

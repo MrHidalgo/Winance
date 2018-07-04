@@ -6,5 +6,32 @@
 
 // MODAL VIDEO :: END
 
-// MODAL :: START
-// MODAL :: END
+// MODAL TESTIMONIALS :: START
+
+#modalReviews.modal.modal--reviews.mfp-hide.mfp-with-anim
+  .modal__header
+  .modal__body
+    p.modal__title!= "Оставьте отзыв о нашем сотрудничестве"
+
+    form(action="" method="" autocomplete="off")
+
+      .form__field.form__field--p
+        input.form__input(type="text" name="name" class="" id="reviews_name" placeholder="")
+        label.form__label(for="reviews_name")!= "Имя"
+
+      .form__field.form__field--p
+        input.form__input(type="text" name="name" class="" id="reviews_surname" placeholder="")
+        label.form__label(for="reviews_surname")!= "Фамилия"
+
+      .form__field.form__field--p
+        input.form__input(type="text" name="name" class="" id="reviews_email" placeholder="")
+        label.form__label(for="reviews_email")!= "Почта"
+
+      .form__field.form__field-textarea.form__field--p
+        textarea.form__textarea(name="" class="" id="reviews_message")
+        label.form__label(for="reviews_message")!= "Ваш отзыв"
+
+      .form__field-btn
+        button.form__btn.btn.btn--color.btn--full(type="submit")!= "Оставть отзыв"
+
+// MODAL TESTIMONIALS :: END

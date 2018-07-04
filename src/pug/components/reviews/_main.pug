@@ -10,6 +10,12 @@ section.main
         h2.main__subtitle.subtitle.wow.wowFadeUp(data-animation-delay="0.4s")!= "Для нас важно получать обратную связь от наших клиентов, она позволяет нам становиться лучше с каждым днем."
 
       .main__row-right
-        a.main__btn.btn.btn--color.wow.wowFadeUp(data-animation-delay="0.4s" href="#" title!="" class!= "")!= "Оставить отзыв"
+        a.main__btn.btn.btn--color.wow.wowFadeUp(
+          data-animation-delay="0.4s"
+          href="#modalReviews"
+          title!=""
+          class!= ""
+          review-btn-js
+        )!= "Оставить отзыв"
 
 // MAIN :: END
