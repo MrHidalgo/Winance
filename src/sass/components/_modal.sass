@@ -94,11 +94,42 @@
     +r(767)
       font-size: 18px
 
+  &__subtitle
+    padding-bottom: 15px
+    color: $c-nobel
+    font-size: 14px
+    font-style: italic
+
+    &--m
+      margin-top: 40px
+
   form
     .form__field
       max-width: 100%
       &--p
         margin-bottom: 15px
+      &--m
+        margin-bottom: 90px
+      &-group
+        display: flex
+        .form__field
+          &:nth-child(1)
+            margin-right: 10px
+          &:nth-child(2)
+            margin-left: 10px
+            margin-right: 10px
+          &:nth-child(3)
+            margin-left: 10px
+
+    .form__field-checkbox
+      padding-left: 30px
+      padding-right: 10px
+      color: $c-nobel
+      font-style: italic
+      label
+        padding-left: 40px
+        a
+          color: $c-royalBlue
 
 
 .mfp-bg

@@ -838,7 +838,7 @@ $(document).ready(function () {
             elemWidth = parseInt($(elem).closest(".selectric-wrapper").css("width"));
 
           elem.closest(".selectric-wrapper").css({
-            width: (elemWidth < 200) ? elemWidth + 38 : elemWidth + (38 / 2)
+            width: (elemWidth < 200) ? elemWidth + 30 : elemWidth + (30 / 2)
           })
         }
       });
