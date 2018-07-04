@@ -828,15 +828,16 @@ $(document).ready(function () {
   //
   // ====================
   function initSelect() {
+    console.log(`initSelect`);
     $("[selectric-js]")
       .selectric({
         inheritOriginalWidth: true,
         onInit: function(event) {
           let elem = $(event),
-            elemWidth = elem[0].offsetWidth;
+            elemWidth = parseInt($(elem).closest(".selectric-wrapper").css("width"));
 
           elem.closest(".selectric-wrapper").css({
-            width: (elemWidth < 200) ? elemWidth + (38 / 2) : elemWidth + 38
+            width: (elemWidth < 200) ? elemWidth + 38 : elemWidth + (38 / 2)
           })
         }
       });
@@ -1105,7 +1106,7 @@ $(document).ready(function () {
       }
     });
 
-    $('[review-btn-js]').magnificPopup({
+    $('[review-btn-js], [ticket-new-js]').magnificPopup({
       type: 'inline',
       fixedContentPos: true,
       fixedBgPos: true,

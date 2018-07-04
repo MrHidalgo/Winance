@@ -6,6 +6,7 @@
 
 // MODAL VIDEO :: END
 
+
 // MODAL TESTIMONIALS :: START
 
 #modalReviews.modal.modal--reviews.mfp-hide.mfp-with-anim
@@ -16,22 +17,60 @@
     form(action="" method="" autocomplete="off")
 
       .form__field.form__field--p
-        input.form__input(type="text" name="name" class="" id="reviews_name" placeholder="")
+        input.form__input(type="text" name="reviews_name" class="" id="reviews_name" placeholder="")
         label.form__label(for="reviews_name")!= "Имя"
 
       .form__field.form__field--p
-        input.form__input(type="text" name="name" class="" id="reviews_surname" placeholder="")
+        input.form__input(type="text" name="reviews_surname" class="" id="reviews_surname" placeholder="")
         label.form__label(for="reviews_surname")!= "Фамилия"
 
       .form__field.form__field--p
-        input.form__input(type="text" name="name" class="" id="reviews_email" placeholder="")
+        input.form__input(type="text" name="reviews_email" class="" id="reviews_email" placeholder="")
         label.form__label(for="reviews_email")!= "Почта"
 
       .form__field.form__field-textarea.form__field--p
-        textarea.form__textarea(name="" class="" id="reviews_message")
+        textarea.form__textarea(name="reviews_message" class="" id="reviews_message")
         label.form__label(for="reviews_message")!= "Ваш отзыв"
 
       .form__field-btn
         button.form__btn.btn.btn--color.btn--full(type="submit")!= "Оставть отзыв"
 
 // MODAL TESTIMONIALS :: END
+
+
+// MODAL TICKET :: END
+
+#modalTicket.modal.modal--reviews.mfp-hide.mfp-with-anim
+  .modal__header
+  .modal__body
+    p.modal__title!= "Задайте свой вопрос"
+
+    form(action="" method="" autocomplete="off")
+
+      .form__field.form__field--p
+        input.form__input(type="text" name="ticket_subject" class="" id="ticket_subject" placeholder="")
+        label.form__label(for="ticket_subject")!= "Тама"
+
+      .form__field.form__field--select.form__field--p
+        select(name="" id="ticket_department" selectric-js)
+          option(value="Технический")!= " Технический"
+          option(value="Технический")!= " Технический"
+          option(value="Технический")!= " Технический"
+        label.form__label(for="ticket_department")!= "Отдел"
+
+      .form__field.form__field--p
+        input.form__input(type="text" name="ticket_name" class="" id="ticket_name" placeholder="Евгений")
+        label.form__label(for="ticket_name")!= "Имя"
+
+      .form__field.form__field--p
+        input.form__input(type="text" name="ticket_email" class="" id="ticket_email" placeholder="mail@mail.ru")
+        label.form__label(for="ticket_email")!= "E-mail"
+
+      .form__field.form__field-textarea.form__field--p
+        textarea.form__textarea(name="ticket_message" class="" id="ticket_message")
+        label.form__label(for="ticket_message")!= "Ваш вопрос"
+
+      .form__field-btn
+        button.form__btn.btn.btn--color.btn--full(type="submit")!= "Отправить"
+
+// MODAL TICKET :: END
