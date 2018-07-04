@@ -74,3 +74,30 @@
         button.form__btn.btn.btn--color.btn--full(type="submit")!= "Отправить"
 
 // MODAL TICKET :: END
+
+
+// MODAL FAQ :: END
+
+#modalFaq.modal.modal--reviews.mfp-hide.mfp-with-anim
+  .modal__header
+  .modal__body
+    p.modal__title!= "Если вы пока не нашли ответа на свой вопрос — спрашивайте!"
+
+    form(action="" method="" autocomplete="off")
+
+      .form__field.form__field--p
+        input.form__input(type="text" name="faq_name" class="" id="faq_name" placeholder="")
+        label.form__label(for="faq_name")!= "Тама"
+
+      .form__field.form__field--p
+        input.form__input(type="text" name="faq_email" class="" id="faq_email" placeholder="")
+        label.form__label(for="faq_email")!= "Почта"
+
+      .form__field.form__field-textarea.form__field--p
+        textarea.form__textarea(name="faq_message" class="" id="faq_message")
+        label.form__label(for="faq_message")!= "Ваш вопрос"
+
+      .form__field-btn
+        button.form__btn.btn.btn--color.btn--full(type="submit")!= "Задать вопрос"
+
+// MODAL FAQ :: END

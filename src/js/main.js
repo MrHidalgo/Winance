@@ -1106,7 +1106,7 @@ $(document).ready(function () {
       }
     });
 
-    $('[review-btn-js], [ticket-new-js]').magnificPopup({
+    $('[review-btn-js], [ticket-new-js], [faq-new-js]').magnificPopup({
       type: 'inline',
       fixedContentPos: true,
       fixedBgPos: true,
