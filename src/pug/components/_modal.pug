@@ -101,3 +101,27 @@
         button.form__btn.btn.btn--color.btn--full(type="submit")!= "Задать вопрос"
 
 // MODAL FAQ :: END
+
+
+
+// MODAL ABOUT :: END
+
+#modalAbout.modal.modal--reviews.mfp-hide.mfp-with-anim
+  .modal__header
+  .modal__body
+    p.modal__title!= "Получите отчеты о деятельности фонда за последние 3 года"
+
+    form(action="" method="" autocomplete="off")
+
+      .form__field.form__field--p
+        input.form__input(type="text" name="request_name" class="" id="request_name" placeholder="")
+        label.form__label(for="request_name")!= "Ваше имя"
+
+      .form__field.form__field--p
+        input.form__input(type="text" name="request_email" class="" id="request_email" placeholder="")
+        label.form__label(for="request_email")!= "Почта"
+
+      .form__field-btn
+        button.form__btn.btn.btn--color.btn--full(type="submit")!= "Запросить"
+
+// MODAL ABOUT :: END
