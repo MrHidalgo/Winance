@@ -83,11 +83,11 @@
   .modal__body
     p.modal__title!= "Если вы пока не нашли ответа на свой вопрос — спрашивайте!"
 
-    form(action="" method="" autocomplete="off")
+    form(action="" method="" autocomplete="off" faq-form-js)
 
       .form__field.form__field--p
-        input.form__input(type="text" name="faq_name" class="" id="faq_name" placeholder="")
-        label.form__label(for="faq_name")!= "Тама"
+        input.form__input(type="text" name="faq_subject" class="" id="faq_subject" placeholder="")
+        label.form__label(for="faq_subject")!= "Тема"
 
       .form__field.form__field--p
         input.form__input(type="text" name="faq_email" class="" id="faq_email" placeholder="")

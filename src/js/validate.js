@@ -83,7 +83,6 @@ $(document).ready(function () {
   });
 
 
-
   $("[reviews-form-js]").validate({
     errorPlacement: validateErrorPlacement,
     highlight: validateHighlight,
@@ -106,6 +105,30 @@ $(document).ready(function () {
         email: "Email содержит неправильный формат"
       },
       reviews_message: "Заполните это поле"
+    }
+  });
+
+
+  $("[faq-form-js]").validate({
+    errorPlacement: validateErrorPlacement,
+    highlight: validateHighlight,
+    unhighlight: validateUnhighlight,
+    submitHandler: validateSubmitHandler,
+    rules: {
+      faq_subject: "required",
+      faq_email: {
+        required: true,
+        email: true
+      },
+      faq_message: "required"
+    },
+    messages: {
+      faq_subject: "Заполните это поле",
+      faq_email: {
+        required: "Заполните это поле",
+        email: "Email содержит неправильный формат"
+      },
+      faq_message: "Заполните это поле"
     }
   });
 
