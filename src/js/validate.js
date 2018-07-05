@@ -56,9 +56,6 @@ $(document).ready(function () {
   // FORMS
 
 
-  /////////////////////
-  // REGISTRATION FORM
-  ////////////////////
   $(".advice-form-js").validate({
     errorPlacement: validateErrorPlacement,
     highlight: validateHighlight,
@@ -82,6 +79,33 @@ $(document).ready(function () {
         required: "Заполните это поле",
         minlength: "Введите корректный телефон"
       }
+    }
+  });
+
+
+
+  $("[reviews-form-js]").validate({
+    errorPlacement: validateErrorPlacement,
+    highlight: validateHighlight,
+    unhighlight: validateUnhighlight,
+    submitHandler: validateSubmitHandler,
+    rules: {
+      reviews_name: "required",
+      reviews_surname: "required",
+      reviews_email: {
+        required: true,
+        email: true
+      },
+      reviews_message: "required"
+    },
+    messages: {
+      reviews_name: "Заполните это поле",
+      reviews_surname: "Заполните это поле",
+      reviews_email: {
+        required: "Заполните это поле",
+        email: "Email содержит неправильный формат"
+      },
+      reviews_message: "Заполните это поле"
     }
   });
 
