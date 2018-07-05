@@ -154,4 +154,32 @@ $(document).ready(function () {
     }
   });
 
+
+  $("[ticket-form-js]").validate({
+    errorPlacement: validateErrorPlacement,
+    highlight: validateHighlight,
+    unhighlight: validateUnhighlight,
+    submitHandler: validateSubmitHandler,
+    rules: {
+      ticket_subject: "required",
+      ticket_department: "required",
+      ticket_name: "required",
+      ticket_message: "required",
+      ticket_email: {
+        required: true,
+        email: true
+      },
+    },
+    messages: {
+      ticket_subject: "Заполните это поле",
+      ticket_department: "Заполните это поле",
+      ticket_name: "Заполните это поле",
+      ticket_message: "Заполните это поле",
+      ticket_email: {
+        required: "Заполните это поле",
+        email: "Email содержит неправильный формат"
+      },
+    }
+  });
+
 });

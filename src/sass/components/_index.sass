@@ -202,6 +202,16 @@
     &-textarea
       height: 155px
       background-color: $c-whiteSmoke
+      border-bottom: 2px solid rgba($c-royalBlue, 0.5)
+      +transition(border-color)
+
+      &:hover,
+      &:focus
+        border-color: $c-royalBlue
+        +transition(border-color)
+
+      &.has-error
+        border-color: $c-bittersweet
 
       .form__label
         top: auto
@@ -298,6 +308,9 @@
     &:focus
       border-color: $c-royalBlue
       +transition(border-color)
+
+    .has-error &
+      border-color: $c-bittersweet
 
     &::-webkit-input-placeholder
       color: rgba($c-blueZodiac, 0.5)

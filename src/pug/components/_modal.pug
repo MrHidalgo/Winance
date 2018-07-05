@@ -45,25 +45,25 @@
   .modal__body
     p.modal__title!= "Задайте свой вопрос"
 
-    form(action="" method="" autocomplete="off")
+    form(action="" method="" autocomplete="off" ticket-form-js)
 
       .form__field.form__field--p
         input.form__input(type="text" name="ticket_subject" class="" id="ticket_subject" placeholder="")
-        label.form__label(for="ticket_subject")!= "Тама"
+        label.form__label(for="ticket_subject")!= "Тема"
 
       .form__field.form__field--select.form__field--p
-        select(name="" id="ticket_department" selectric-js)
+        select(name="ticket_department" id="ticket_department" selectric-js)
           option(value="Технический")!= " Технический"
           option(value="Технический")!= " Технический"
           option(value="Технический")!= " Технический"
         label.form__label(for="ticket_department")!= "Отдел"
 
       .form__field.form__field--p
-        input.form__input(type="text" name="ticket_name" class="" id="ticket_name" placeholder="Евгений")
+        input.form__input(type="text" name="ticket_name" class="" id="ticket_name" placeholder="")
         label.form__label(for="ticket_name")!= "Имя"
 
       .form__field.form__field--p
-        input.form__input(type="text" name="ticket_email" class="" id="ticket_email" placeholder="mail@mail.ru")
+        input.form__input(type="text" name="ticket_email" class="" id="ticket_email" placeholder="")
         label.form__label(for="ticket_email")!= "E-mail"
 
       .form__field.form__field-textarea.form__field--p
@@ -126,7 +126,7 @@
 // MODAL ABOUT REQUEST :: END
 
 
-// MODAL ABOUT REQUEST :: END
+// MODAL SIGN/REGISTER :: END
 
 #modalSign.modal.modal--sign.mfp-hide.mfp-with-anim
   .modal__header
@@ -242,4 +242,4 @@
           input(type="checkbox" id="register_approve")
           label(for!="register_approve")!="Я прочитал(а) и полностью согласен(на) <a href='#'>с пользовательским соглашением.</a>"
 
-// MODAL ABOUT REQUEST :: END
+// MODAL SIGN/REGISTER :: END
