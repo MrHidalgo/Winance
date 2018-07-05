@@ -182,4 +182,87 @@ $(document).ready(function () {
     }
   });
 
+
+  $("[sign-form-js]").validate({
+    errorPlacement: validateErrorPlacement,
+    highlight: validateHighlight,
+    unhighlight: validateUnhighlight,
+    submitHandler: validateSubmitHandler,
+    rules: {
+      signin_password: {
+        required: true,
+        minlength: 8
+      },
+      signin_email: {
+        required: true,
+        email: true
+      },
+    },
+    messages: {
+      signin_password: {
+        required: "Заполните это поле",
+        minlength: "Введите минимум 8 символов"
+      },
+      signin_email: {
+        required: "Заполните это поле",
+        email: "Email содержит неправильный формат"
+      },
+    }
+  });
+
+
+  $("[register-form-js]").validate({
+    errorPlacement: validateErrorPlacement,
+    highlight: validateHighlight,
+    unhighlight: validateUnhighlight,
+    submitHandler: validateSubmitHandler,
+    rules: {
+      register_name: "required",
+      register_sname: "required",
+      register_surname: "required",
+      register_phone: validatePhone,
+      register_email: {
+        required: true,
+        email: true
+      },
+      register_pass: {
+        required: true,
+        minlength: 8
+      },
+      register_passRepeat: {
+        equalTo: "#register_pass"
+      },
+      register_day: "required",
+      register_month: "required",
+      register_year: "required",
+      register_robot: "required",
+      register_approve: "required",
+    },
+    messages: {
+      register_name: "Заполните это поле",
+      register_sname: "Заполните это поле",
+      register_surname: "Заполните это поле",
+      register_phone: {
+        required: "Заполните это поле",
+        minlength: "Введите корректный телефон"
+      },
+      register_email: {
+        required: "Заполните это поле",
+        email: "Email содержит неправильный формат"
+      },
+      register_pass: {
+        required: "Заполните это поле",
+        minlength: "Введите минимум 8 символов"
+      },
+      register_passRepeat: {
+        equalTo: "Пожалуйста, введите то же значение снова"
+      },
+      register_day: "Заполните это поле",
+      register_month: "Заполните это поле",
+      register_year: "Заполните это поле",
+      register_robot: "Заполните это поле",
+      register_approve: "",
+    }
+  });
+
 });

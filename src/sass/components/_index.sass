@@ -355,6 +355,9 @@
     font-size: 12px
     font-weight: 400
 
+    .has-error &
+      color: $c-bittersweet
+
 
   &__btn
     +r(767)
@@ -529,6 +532,9 @@ input[type=range]::-moz-range-thumb
   color: red
   font-size: 10px
   font-weight: 700
+  animation-fill-mode: both
+  animation-name: fadeIn
+  animation-duration: 0.5s
 
   .modal &
     bottom: -15px

@@ -142,14 +142,14 @@
     )!= "Регистрация"
 
   .modal__body.modal__body-0.is-active
-    form(action="" method="" autocomplete="off")
+    form(action="" method="" autocomplete="off" sign-form-js)
 
       .form__field.form__field--p
         input.form__input(type="text" name="signin_email" class="" id="signin_email" placeholder="")
         label.form__label(for="signin_email")!= "Адрес почты"
 
       .form__field.form__field--p
-        input.form__input(type="text" name="signin_password" class="" id="signin_password" placeholder="")
+        input.form__input(type="password" name="signin_password" class="" id="signin_password" placeholder="")
         label.form__label(for="signin_password")!= "Пароль"
 
       .form__field-btn
@@ -159,7 +159,7 @@
         a.form__link(href="#" title="" class="")!= "Забыли пароль?"
 
   .modal__body.modal__body-1
-    form(action="" method="" autocomplete="off")
+    form(action="" method="" autocomplete="off" register-form-js)
 
       p.modal__subtitle!= "Представьтесь"
 
@@ -199,7 +199,7 @@
 
       .form__field-group
         .form__field.form__field--select.form__field--p
-          select(name="" id="register_day" selectric-js)
+          select(name="register_day" id="register_day" selectric-js)
             option(value="")!= " 00"
             option(value="")!= " 01"
             option(value="")!= " 02"
@@ -209,7 +209,7 @@
           label.form__label(for="register_day")!= "День"
 
         .form__field.form__field--select.form__field--p
-          select(name="" id="register_month" selectric-js)
+          select(name="register_month" id="register_month" selectric-js)
             option(value="")!= " 00"
             option(value="")!= " 01"
             option(value="")!= " 02"
@@ -219,7 +219,7 @@
           label.form__label(for="register_month")!= "Месяц"
 
         .form__field.form__field--select.form__field--p
-          select(name="" id="register_year" selectric-js)
+          select(name="register_year" id="register_year" selectric-js)
             option(value="")!= "0000"
             option(value="")!= "0001"
             option(value="")!= "0002"
@@ -231,7 +231,7 @@
       p.modal__subtitle.modal__subtitle--m!= "Докажите что вы не робот. <br>Сколько у вас пальцев на руке?"
 
       .form__field.form__field--p.form__field--m
-        input.form__input(type="password" name="register_robot" class="" id="register_robot" placeholder="00")
+        input.form__input(type="password" name="register_robot" class="" id="register_robot" placeholder="")
         label.form__label(for="register_robot")!= "Укажите цифру"
 
       .form__field-btn
@@ -239,7 +239,7 @@
 
       .form__field-checkbox
         .ui-checkbox
-          input(type="checkbox" id="register_approve")
+          input(type="checkbox" name="register_approve" id="register_approve")
           label(for!="register_approve")!="Я прочитал(а) и полностью согласен(на) <a href='#'>с пользовательским соглашением.</a>"
 
 // MODAL SIGN/REGISTER :: END
