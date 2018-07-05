@@ -132,4 +132,26 @@ $(document).ready(function () {
     }
   });
 
+
+  $("[about-form-js]").validate({
+    errorPlacement: validateErrorPlacement,
+    highlight: validateHighlight,
+    unhighlight: validateUnhighlight,
+    submitHandler: validateSubmitHandler,
+    rules: {
+      request_name: "required",
+      request_email: {
+        required: true,
+        email: true
+      },
+    },
+    messages: {
+      request_name: "Заполните это поле",
+      request_email: {
+        required: "Заполните это поле",
+        email: "Email содержит неправильный формат"
+      },
+    }
+  });
+
 });
