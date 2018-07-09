@@ -503,6 +503,7 @@ $(document).ready(function () {
     monthRange.css({
       'backgroundSize': (monthRangeVal - monthRangeMin) * 100 / (monthRangeMax - monthRangeMin) + '% 100%'
     });
+
     resizeInputs(monthDataElem);
   }
 
@@ -531,12 +532,30 @@ $(document).ready(function () {
     });
   }
 
-  function limitValueInput(inputDataElem, minVal) {
+  function limitValueInput(inputDataElem, minVal, maxVal) {
     $(inputDataElem).on("blur", function(e) {
-      let elem = $(e.target);
+      console.log(`inputDataElem blur`);
 
-      if(elem.val() === "") {
+      let elem = $(e.target),
+        elemVal = parseInt(elem.val());
+
+      let rangeElem = elem.closest(".calc__tabs-col").find("input[type='range']"),
+        rangeMax = rangeElem[0].max,
+        rangeMin = rangeElem[0].min;
+
+      if(elemVal === "" || (elemVal < minVal)) {
         elem.val(minVal);
+
+        resizeInputs(elem);
+      } else if (elemVal > maxVal) {
+        elem.val(maxVal);
+
+        resizeInputs(elem);
+
+        rangeElem.css({
+          'backgroundSize': (elemVal - rangeMin) * 100 / (rangeMax - rangeMin) + '% 100%'
+        });
+        rangeElem.val(maxVal);
       }
     });
   }
@@ -563,6 +582,58 @@ $(document).ready(function () {
     });
   }
 
+  function changeValuePercent(rangeName) {
+    let percentElem = $("[percent-val-js] strong"),
+      percentElemVal = percentElem.html();
+
+    $(rangeName).on("input", function(e) {
+      let elem = $(e.target),
+        elemVal = parseInt(elem.val());
+
+      console.log(`elemVal: `, elemVal);
+      console.log(`percentElem: `, percentElem);
+
+      switch (elemVal) {
+        case 0:
+        case 1:
+        case 2:
+        case 3:
+          percentElem.text("7.5");
+          break;
+        case 4:
+          percentElem.text("8");
+          break;
+        case 5:
+          percentElem.text("8.5");
+          break;
+        case 6:
+          percentElem.text("9");
+          break;
+        case 7:
+          percentElem.text("9.5");
+          break;
+        case 8:
+          percentElem.text("10");
+          break;
+        case 9:
+          percentElem.text("10.5");
+          break;
+        case 10:
+          percentElem.text("11");
+          break;
+        case 11:
+          percentElem.text("11.5");
+          break;
+        case 12:
+          percentElem.text("12");
+          break;
+        default:
+          percentElem.text("7.5");
+          break;
+      }
+    });
+  }
+
   /**
    * INIT CALC DATA
    */
@@ -572,19 +643,19 @@ $(document).ready(function () {
     maskInput("[maskSumEn-js]", 'ZZZZZZ');
     maskInput("[maskSumEu-js]", 'ZZZZZZ');
 
-    changeInputDataVal("[monthDataRu-calc-js]", 1, 12, "1");
-    changeInputDataVal("[sumDataRu-calc-js]", 100, 5000000, "100");
-    changeInputDataVal("[monthDataEn-calc-js]", 1, 12, "1");
-    changeInputDataVal("[sumDataEn-calc-js]", 100, 100000, "100");
-    changeInputDataVal("[monthDataEu-calc-js]", 1, 12, "1");
-    changeInputDataVal("[sumDataEu-calc-js]", 100, 100000, "100");
+    changeInputDataVal("[monthDataRu-calc-js]", 3, 12, "3");
+    changeInputDataVal("[sumDataRu-calc-js]", 10000, 5000000, "10000");
+    changeInputDataVal("[monthDataEn-calc-js]", 3, 12, "3");
+    changeInputDataVal("[sumDataEn-calc-js]", 200, 100000, "200");
+    changeInputDataVal("[monthDataEu-calc-js]", 3, 12, "3");
+    changeInputDataVal("[sumDataEu-calc-js]", 200, 100000, "200");
 
-    limitValueInput("[monthDataRu-calc-js]", "1");
-    limitValueInput("[sumDataRu-calc-js]", "100");
-    limitValueInput("[monthDataEn-calc-js]", "1");
-    limitValueInput("[sumDataEn-calc-js]", "100");
-    limitValueInput("[monthDataEu-calc-js]", "1");
-    limitValueInput("[sumDataEu-calc-js]", "100");
+    limitValueInput("[monthDataRu-calc-js]", 3, 12);
+    limitValueInput("[sumDataRu-calc-js]", 10000, 5000000);
+    limitValueInput("[monthDataEn-calc-js]", 3, 12);
+    limitValueInput("[sumDataEn-calc-js]", 200, 100000);
+    limitValueInput("[monthDataEu-calc-js]", 3, 12);
+    limitValueInput("[sumDataEu-calc-js]", 200, 100000);
 
     rangeInput("[monthRangeRu-calc-js]", "[monthDataRu-calc-js]");
     rangeInput("[sumRangeRu-calc-js]", "[sumDataRu-calc-js]");
@@ -599,7 +670,12 @@ $(document).ready(function () {
     initCalcValue("[sumRangeEn-calc-js]", "[sumDataEn-calc-js]");
     initCalcValue("[monthRangeEu-calc-js]", "[monthDataEu-calc-js]");
     initCalcValue("[sumRangeEu-calc-js]", "[sumDataEu-calc-js]");
+
+    changeValuePercent("[monthRangeRu-calc-js]");
+    changeValuePercent("[monthRangeEn-calc-js]");
+    changeValuePercent("[monthRangeEu-calc-js]");
   }
+  // ====================
   // ====================
 
 

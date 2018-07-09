@@ -13,16 +13,16 @@ form(action="" method="")
         input.calc__input--sum(
           type="text"
           name=""
-          value="100"
+          value="10000"
           maskSumRu-js
           resizeInput-js
           sumDataRu-calc-js
         )
-        i(style="display: none;")!= "100"
+        i(style="display: none;")!= "10000"
         span!= "₽"
 
       .calc__tabs-range
-        input(type="range" min="100" max="5000000" step="100" value="1" sumRangeRu-calc-js)
+        input(type="range" min="10000" max="5000000" step="10000" value="1" sumRangeRu-calc-js)
 
     .calc__tabs-col.calc__tabs-col-1
       p!="Срок инвестирования"
@@ -30,21 +30,21 @@ form(action="" method="")
         input.calc__input--month(
           type="text"
           name=""
-          value="1"
+          value="3"
           maskMonth-js
           resizeInput-js
           monthDataRu-calc-js
         )
-        i(style="display: none;")!= "1"
+        i(style="display: none;")!= "3"
         span!= "мес."
 
       .calc__tabs-range
-        input(type="range" min="1" max="12" step="1" value="1" monthRangeRu-calc-js)
+        input(type="range" min="3" max="12" step="1" value="1" monthRangeRu-calc-js)
 
     .calc__tabs-col.calc__tabs-col-2
       p!="Итоговая сумма"
-      p!="<span resultSum-calc-js>0</span> <span>₽</span>"
-      p!="Cтавка: <strong>0%</strong> в месяц "
+      p!="<span resultSum-calc-js>2 250.00</span> <span>₽</span>"
+      p(percent-val-js)!="Cтавка: <strong>7.5</strong>% в месяц "
       button.btn.btn--color.btn--full(type="submit")!= "Открыть счет"
 
 
@@ -52,12 +52,12 @@ form(action="" method="")
       p!="Выплаты"
 
       .calc__tabs-checkbox.ui-checkbox
-        input(type="checkbox" id="check-0")
-        label(for!="check-0")!="Оставлять на счете"
+        input(type="radio" id="radio-0" name="calc-radio-ru")
+        label(for!="radio-0")!="Оставлять на счете"
 
       .calc__tabs-checkbox.ui-checkbox
-        input(type="checkbox" id="check-1" checked)
-        label(for!="check-1")!="Еженедельная выплата"
+        input(type="radio" id="radio-1" name="calc-radio-ru" checked)
+        label(for!="radio-1")!="Еженедельная выплата"
 
     .calc__tabs-col.calc__tabs-col-4
       p!= "* Сумма инвестиций возвращается в конце срока инвестирования"
@@ -80,16 +80,16 @@ form(action="" method="")
         input.calc__input--sum(
           type="text"
           name=""
-          value="100"
+          value="200"
           maskSumEn-js
           resizeInput-js
           sumDataEn-calc-js
         )
-        i(style="display: none;")!= "100"
-        span!= "USD"
+        i(style="display: none;")!= "200"
+        span!= "$"
 
       .calc__tabs-range
-        input(type="range" min="100" max="100000" step="100" value="1" sumRangeEn-calc-js)
+        input(type="range" min="200" max="100000" step="200" value="200" sumRangeEn-calc-js)
 
     .calc__tabs-col.calc__tabs-col-1
       p!="Срок инвестирования"
@@ -97,21 +97,21 @@ form(action="" method="")
         input.calc__input--month(
           type="text"
           name=""
-          value="1"
+          value="3"
           maskMonth-js
           resizeInput-js
           monthDataEn-calc-js
         )
-        i(style="display: none;")!= "1"
+        i(style="display: none;")!= "3"
         span!= "мес."
 
       .calc__tabs-range
-        input(type="range" min="1" max="12" step="1" value="1" monthRangeEn-calc-js)
+        input(type="range" min="3" max="12" step="1" value="3" monthRangeEn-calc-js)
 
     .calc__tabs-col.calc__tabs-col-2
       p!="Итоговая сумма"
-      p!="<span resultSum-calc-js>0</span> <span>USD</span>"
-      p!="Cтавка: <strong>0%</strong> в месяц "
+      p!="<span resultSum-calc-js>45.00</span> <span>$</span>"
+      p()!="Cтавка: <strong>7.5</strong>% в месяц "
       button.btn.btn--color.btn--full(type="submit")!= "Открыть счет"
 
 
@@ -119,12 +119,12 @@ form(action="" method="")
       p!="Выплаты"
 
       .calc__tabs-checkbox.ui-checkbox
-        input(type="checkbox" id="check-2")
-        label(for!="check-2")!="Оставлять на счете"
+        input(type="radio" id="radio-2" name="calc-radio-en")
+        label(for!="radio-2")!="Оставлять на счете"
 
       .calc__tabs-checkbox.ui-checkbox
-        input(type="checkbox" id="check-3" checked)
-        label(for!="check-3")!="Еженедельная выплата"
+        input(type="radio" id="radio-3" name="calc-radio-en" checked)
+        label(for!="radio-3")!="Еженедельная выплата"
 
     .calc__tabs-col.calc__tabs-col-4
       p!= "* Сумма инвестиций возвращается в конце срока инвестирования"
@@ -133,11 +133,11 @@ form(action="" method="")
       div
         p!="Сумма выплат <br>за 1 месяц"
         span!= "0"
-        span!= "USD"
+        span!= "$"
       div
         p!="Сумма выплат <br>за 3 месяца"
         span!= "0"
-        span!= "USD"
+        span!= "$"
   .calc__tabs-body.calc__tabs-body-0.animated(data-tabs-body="2")
     .calc__tabs-col.calc__tabs-col-0
       p!="Сумма инвестиций*"
@@ -151,7 +151,7 @@ form(action="" method="")
           sumDataEu-calc-js
         )
         i(style="display: none;")!= "100"
-        span!= "EUR"
+        span!= "€"
 
       .calc__tabs-range
         input(type="range" min="100" max="100000" step="100" value="1" sumRangeEu-calc-js)
@@ -175,7 +175,7 @@ form(action="" method="")
 
     .calc__tabs-col.calc__tabs-col-2
       p!="Итоговая сумма"
-      p!="<span resultSum-calc-js>0</span> <span>EUR</span>"
+      p!="<span resultSum-calc-js>0</span> <span>€</span>"
       p!="Cтавка: <strong>0%</strong> в месяц "
       button.btn.btn--color.btn--full(type="submit")!= "Открыть счет"
 
@@ -184,12 +184,12 @@ form(action="" method="")
       p!="Выплаты"
 
       .calc__tabs-checkbox.ui-checkbox
-        input(type="checkbox" id="check-4")
-        label(for!="check-4")!="Оставлять на счете"
+        input(type="radio" id="radio-4" name="calc-radio-eu")
+        label(for!="radio-4")!="Оставлять на счете"
 
       .calc__tabs-checkbox.ui-checkbox
-        input(type="checkbox" id="check-5" checked)
-        label(for!="check-5")!="Еженедельная выплата"
+        input(type="radio" id="radio-5" name="calc-radio-eu" checked)
+        label(for!="radio-5")!="Еженедельная выплата"
 
     .calc__tabs-col.calc__tabs-col-4
       p!= "* Сумма инвестиций возвращается в конце срока инвестирования"
@@ -198,11 +198,11 @@ form(action="" method="")
       div
         p!="Сумма выплат <br>за 1 месяц"
         span!= "0"
-        span!= "EUR"
+        span!= "€"
       div
         p!="Сумма выплат <br>за 3 месяца"
         span!= "0"
-        span!= "EUR"
+        span!= "€"
 
 
 // CALC :: END
