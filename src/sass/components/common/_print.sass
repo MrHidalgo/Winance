@@ -15,6 +15,13 @@
       padding-bottom: 65px
 
 
+  .swiper-wrappers
+    +r(767)
+      white-space: nowrap
+      overflow-x: auto
+      height: auto !important
+
+
   &__title
     padding-bottom: 50px
 
@@ -42,10 +49,11 @@
     background-color: $c-white
     +transition(box-shadow)
     +r(767)
-      flex: 0 0 300px
-      max-width: 300px
+      display: inline-block
+      vertical-align: top
+      position: static !important
       margin-right: 18px
-      margin-bottom: 50px
+      width: 300px
     +rmin(768)
       display: block
       position: absolute !important

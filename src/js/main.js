@@ -681,75 +681,7 @@ $(document).ready(function () {
 
   //
   // ====================
-  let swiperBlog = 0,
-    swiperTestimonials = 0,
-    swiperPrint = 0,
-    swiperFaq = 0,
-    swiperReasons = 0;
-
-  function initSwiperBlog() {
-    swiperBlog = new Swiper('.swiper-blog-js', {
-      wrapperClass: "swiper-wrapper",
-      slideClass: "blogs__block",
-      direction: 'horizontal',
-      loop: false,
-      watchOverflow: true,
-      setWrapperSize: false,
-      // spaceBetween: 18,
-      slidesPerView: 'auto',
-      normalizeSlideIndex: true,
-      grabCursor: true,
-      freeMode: true
-    })
-  }
-
-  function initSwiperTestimonials() {
-    swiperTestimonials = new Swiper('.swiper-testimonials-js', {
-      wrapperClass: "swiper-wrapper",
-      slideClass: "testimonials__block",
-      direction: 'horizontal',
-      loop: false,
-      watchOverflow: true,
-      setWrapperSize: false,
-      // spaceBetween: 18,
-      slidesPerView: 'auto',
-      normalizeSlideIndex: true,
-      grabCursor: true,
-      freeMode: true
-    })
-  }
-
-  function initSwiperPrint() {
-    swiperPrint = new Swiper('.swiper-print-js', {
-      wrapperClass: "swiper-wrapper",
-      slideClass: "print__block",
-      direction: 'horizontal',
-      loop: false,
-      watchOverflow: true,
-      setWrapperSize: false,
-      // spaceBetween: 18,
-      slidesPerView: 'auto',
-      normalizeSlideIndex: true,
-      grabCursor: true,
-      freeMode: true
-    })
-  }
-
-  function initSwiperFaq() {
-    swiperFaq = new Swiper('.swiper-faq-js', {
-      wrapperClass: "swiper-wrapper",
-      slideClass: "quesAns__block",
-      direction: 'horizontal',
-      loop: false,
-      watchOverflow: true,
-      setWrapperSize: false,
-      // spaceBetween: 18,
-      slidesPerView: 'auto',
-      normalizeSlideIndex: true,
-      grabCursor: true,
-      freeMode: true
-    })
-  }
+  let swiperReasons = 0;
 
   function initSwiperReasons() {
     swiperReasons = new Swiper('.swiper-reasons-js', {
@@ -774,66 +706,15 @@ $(document).ready(function () {
   function swiperMasonryInit() {
     $(_window).on("load resize", function () {
 
-      function masonryOpt(blockName) {
-        return {
-          itemSelector: blockName,
-          gutter: 18,
-          horizontalOrder: true
-        };
-      }
-
-      var msnrGridBlog = $("[masonry-blog-js]"),
-        msnrGridTestimonials = $("[masonry-testimonials-js]"),
-        msnrGridFaq = $("[masonry-faq-js]"),
-        msnrGridPrint = $("[masonry-print-js]");
-
       if ($(_window).width() < 768) {
-        initSwiperBlog();
-        initSwiperTestimonials();
-        initSwiperPrint();
         initSwiperReasons();
-        initSwiperFaq();
-
-        if (msnrGridBlog.length) {
-          msnrGridBlog.masonry('destroy');
-        }
-        if (msnrGridTestimonials.length) {
-          msnrGridTestimonials.masonry('destroy');
-        }
-        if (msnrGridPrint.length) {
-          msnrGridPrint.masonry('destroy');
-        }
-        if (msnrGridFaq.length) {
-          msnrGridFaq.masonry('destroy');
-        }
 
       } else {
 
-        if ($(".swiper-blog-js").length > 0 && swiperBlog !== 0) {
-          swiperBlog.destroy(true, true);
-          swiperBlog = 0;
-        }
-        if ($(".swiper-testimonials-js").length > 0 && swiperTestimonials !== 0) {
-          swiperTestimonials.destroy(true, true);
-          swiperTestimonials = 0;
-        }
-        if ($(".swiper-print-js").length > 0 && swiperPrint !== 0) {
-          swiperPrint.destroy(true, true);
-          swiperPrint = 0;
-        }
-        if ($(".swiper-faq-js").length > 0 && swiperFaq !== 0) {
-          swiperFaq.destroy(true, true);
-          swiperFaq = 0;
-        }
         if ($(".swiper-reasons-js").length > 0 && swiperReasons !== 0) {
           swiperReasons.destroy(true, true);
           swiperReasons = 0;
         }
-
-        msnrGridBlog.masonry(masonryOpt('.blogs__block'));
-        msnrGridTestimonials.masonry(masonryOpt('.testimonials__block'));
-        msnrGridPrint.masonry(masonryOpt('.print__block'));
-        msnrGridFaq.masonry(masonryOpt('.quesAns__block'));
       }
     });
   }

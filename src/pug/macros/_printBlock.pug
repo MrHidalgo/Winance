@@ -2,7 +2,7 @@
 
 
 .swiper-container.swiper-print-js
-  .swiper-wrapper(masonry-print-js)
+  .swiper-wrappers(masonry-print-js)
     each val, idx in printBlockData
       +printBlock(
         printBlockData[idx].href,
