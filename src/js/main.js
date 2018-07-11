@@ -74,6 +74,8 @@ $(document).ready(function () {
 
     bodyClick();
 
+    blogBadgeInit();
+
     if($(".calc").length > 0) {
       initCalc();
     }
@@ -1039,6 +1041,44 @@ $(document).ready(function () {
       }
     });
   }
+  // ====================
+
+
+
+  // ====================
+  function blogBadgeInit() {
+    _document.on("click", "[blog-badge-js]", function (e) {
+      const elem = $(e.currentTarget),
+        elemAttr = elem.attr("data-href");
+
+      // need to add badge logic
+    });
+  }
+  // ====================
+
+
+
+  // ====================
+  function isElementInViewport(el) {
+    let rect = el.getBoundingClientRect();
+
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  const footerElem = $("footer");
+
+  _window.on("resize scroll load", function() {
+    if(isElementInViewport(footerElem[0])) {
+      $("[hideStickyBtn-js]").fadeOut();
+    } else {
+      $("[hideStickyBtn-js]").fadeIn();
+    }
+  });
   // ====================
 
 

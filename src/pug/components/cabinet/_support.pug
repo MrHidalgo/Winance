@@ -54,12 +54,13 @@
 
     .support__container.support__container-0
       h1.support__title.cabinet__title!= "Тикеты"
-      a.btn.btn--color.btn--small(
-        href="#modalTicket"
-        title=""
-        class=""
-        ticket-new-js
-      )!= "Открыть новый тикет"
+      .support__container-wrap(hideStickyBtn-js)
+        a.btn.btn--color.btn--small(
+          href="#modalTicket"
+          title=""
+          class=""
+          ticket-new-js
+        )!= "Открыть новый тикет"
 
     .support__container.support__container-1
       .support__pagination

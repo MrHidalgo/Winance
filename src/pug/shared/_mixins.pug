@@ -71,7 +71,7 @@ mixin social(title, arr)
 
 
 //- BLOG BLOCK
-mixin blogsBlock(attr, href, classMod, count, imgName, title, text, badgeArr, date)
+mixin blogsBlock(attr, href, classMod, count, imgName, title, text, badgeArr, badgeAttrArr, date)
   a.blogs__block.is-show(
     href!= href
     class!= (classMod !== "") ? "blogs__block-" + count + " blogs__block--" + classMod: "blogs__block-" + count
@@ -91,8 +91,8 @@ mixin blogsBlock(attr, href, classMod, count, imgName, title, text, badgeArr, da
     .blogs__block-footer
       .blogs__block-footer--left
         .blogs__block-badge
-          each badge in badgeArr
-            p()!= badge
+          each val, idx in badgeArr
+            p(blog-badge-js data-href= badgeAttrArr[idx])!= badgeArr[idx]
 
       .blogs__block-footer--right
         .blogs__block-date

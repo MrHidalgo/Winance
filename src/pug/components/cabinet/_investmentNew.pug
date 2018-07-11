@@ -6,7 +6,8 @@
 
     .investment__row.investment__row--0
       h1.investment__title.cabinet__title!= "Ваши вклады"
-      a.btn.btn--color.btn--medium(href="#" title="" class="")!= "Открыть новый вклад"
+      .investment__row-wrap(hideStickyBtn-js)
+        a.btn.btn--color.btn--medium(href="#" title="" class="")!= "Открыть новый вклад"
 
     .investment__row.investment__row--1
       .investment__pagination
