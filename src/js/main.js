@@ -76,12 +76,14 @@ $(document).ready(function () {
 
     blogBadgeInit();
 
+    stickyHeader();
+
     if($(".calc").length > 0) {
       initCalc();
     }
 
-    viewportControl();
-    _window.on('resize', debounce(viewportControl, 200));
+    // viewportControl();
+    // _window.on('resize', debounce(viewportControl, 200));
 
     // development helper
     _window.on('resize', debounce(setBreakpoint, 200));
@@ -97,6 +99,9 @@ $(document).ready(function () {
 
   // this is a master function which should have all functionality
   pageReady();
+
+  $(window).on("load ready", viewportControl);
+  $(window).on("resize", debounce(viewportControl, 200));
 
 
   // some plugins work best with onload triggers
@@ -1132,7 +1137,6 @@ $(document).ready(function () {
       wScrollBefore = wScrollCurrent;
     });
   }
-  stickyHeader();
   // ====================
 
 
@@ -1299,13 +1303,16 @@ $(document).ready(function () {
   }
 
   function viewportControl(){
-    var viewportMeta = _document.find('meta[name="viewport"]');
-    if ( !viewportMeta.length > 0 ) return
+    let viewportMeta = _document.find('meta[name="viewport"]');
+
+    if ( !viewportMeta.length > 0 ) return;
 
     if (_window.width() < 360) {
-      viewportMeta.attr('content', 'width=360, initial-scale=1, minimum-scale=1, user-scalable=no');
+      viewportMeta.attr('content', 'width=360');
     } else {
-      viewportMeta.attr('content', 'width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no');
+      if($('head meta[name="viewport"]').length === 0) {
+        viewportMeta.attr('content', 'width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no');
+      }
     }
   }
 
