@@ -1325,6 +1325,7 @@ $(document).ready(function () {
       var elWatcher = scrollMonitor.create($(el));
 
       var delay;
+
       if ($(window).width() < 768) {
         delay = 0
       } else {
@@ -1335,16 +1336,14 @@ $(document).ready(function () {
 
       var animationName = $(el).data('animation-name') || "wowFade";
 
-      elWatcher.enterViewport(throttle(function () {
+      elWatcher.enterViewport(function() {
         $(el).addClass(animationClass);
         $(el).css({
           'animation-name': animationName,
           'animation-delay': delay,
           'visibility': 'visible'
         });
-      }, 100, {
-        'leading': true
-      }));
+      });
     });
 
   }
@@ -1451,6 +1450,7 @@ $(document).ready(function () {
   function triggerBody() {
     $(window).scroll();
     $(window).resize();
+    initScrollMonitor();
   }
 
   //////////
