@@ -183,6 +183,26 @@ $(document).ready(function () {
   });
 
 
+  $("[newMessageTicket-js]").validate({
+    errorPlacement: validateErrorPlacement,
+    highlight: validateHighlight,
+    unhighlight: validateUnhighlight,
+    submitHandler: validateSubmitHandler,
+    rules: {
+      support_mess: {
+        required: true,
+        minlength: 3
+      }
+    },
+    messages: {
+      support_mess: {
+        required: "Заполните это поле",
+        minlength: "Введите минимум 3 символов"
+      }
+    }
+  });
+
+
   $("[sign-form-js]").validate({
     errorPlacement: validateErrorPlacement,
     highlight: validateHighlight,
