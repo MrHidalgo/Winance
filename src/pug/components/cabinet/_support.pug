@@ -77,7 +77,8 @@
     .support__container.support__container-2
       .support__col(masonry-support-js)
         each val, idx in supportBox
-          .support__box.is-show(
+          a.support__box.is-show(
+            href="cabinetSupportTicket.html"
             class!= (classMod !== "") ? "support__box-" + idx + " support__box--" + supportBox[idx].classMod: "support__box-" + idx
             data-filter= supportBox[idx].attr
           )
