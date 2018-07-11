@@ -70,13 +70,13 @@ $(document).ready(function () {
       phone: validatePhone
     },
     messages: {
-      name: "Заполните это поле",
+      name: "Это поле обязательно к заполнению",
       email: {
-        required: "Заполните это поле",
+        required: "Это поле обязательно к заполнению",
         email: "Email содержит неправильный формат"
       },
       phone: {
-        required: "Заполните это поле",
+        required: "Это поле обязательно к заполнению",
         minlength: "Введите корректный телефон"
       }
     }
@@ -98,13 +98,13 @@ $(document).ready(function () {
       reviews_message: "required"
     },
     messages: {
-      reviews_name: "Заполните это поле",
-      reviews_surname: "Заполните это поле",
+      reviews_name: "Это поле обязательно к заполнению",
+      reviews_surname: "Это поле обязательно к заполнению",
       reviews_email: {
-        required: "Заполните это поле",
+        required: "Это поле обязательно к заполнению",
         email: "Email содержит неправильный формат"
       },
-      reviews_message: "Заполните это поле"
+      reviews_message: "Это поле обязательно к заполнению"
     }
   });
 
@@ -123,12 +123,12 @@ $(document).ready(function () {
       faq_message: "required"
     },
     messages: {
-      faq_subject: "Заполните это поле",
+      faq_subject: "Это поле обязательно к заполнению",
       faq_email: {
-        required: "Заполните это поле",
+        required: "Это поле обязательно к заполнению",
         email: "Email содержит неправильный формат"
       },
-      faq_message: "Заполните это поле"
+      faq_message: "Это поле обязательно к заполнению"
     }
   });
 
@@ -146,9 +146,9 @@ $(document).ready(function () {
       },
     },
     messages: {
-      request_name: "Заполните это поле",
+      request_name: "Это поле обязательно к заполнению",
       request_email: {
-        required: "Заполните это поле",
+        required: "Это поле обязательно к заполнению",
         email: "Email содержит неправильный формат"
       },
     }
@@ -171,12 +171,12 @@ $(document).ready(function () {
       },
     },
     messages: {
-      ticket_subject: "Заполните это поле",
-      ticket_department: "Заполните это поле",
-      ticket_name: "Заполните это поле",
-      ticket_message: "Заполните это поле",
+      ticket_subject: "Это поле обязательно к заполнению",
+      ticket_department: "Это поле обязательно к заполнению",
+      ticket_name: "Это поле обязательно к заполнению",
+      ticket_message: "Это поле обязательно к заполнению",
       ticket_email: {
-        required: "Заполните это поле",
+        required: "Это поле обязательно к заполнению",
         email: "Email содержит неправильный формат"
       },
     }
@@ -196,7 +196,7 @@ $(document).ready(function () {
     },
     messages: {
       support_mess: {
-        required: "Заполните это поле",
+        required: "Это поле обязательно к заполнению",
         minlength: "Введите минимум 3 символов"
       }
     }
@@ -220,11 +220,11 @@ $(document).ready(function () {
     },
     messages: {
       signin_password: {
-        required: "Заполните это поле",
+        required: "Это поле обязательно к заполнению",
         minlength: "Введите минимум 8 символов"
       },
       signin_email: {
-        required: "Заполните это поле",
+        required: "Это поле обязательно к заполнению",
         email: "Email содержит неправильный формат"
       },
     }
@@ -259,28 +259,28 @@ $(document).ready(function () {
       register_approve: "required",
     },
     messages: {
-      register_name: "Заполните это поле",
-      register_sname: "Заполните это поле",
-      register_surname: "Заполните это поле",
+      register_name: "Это поле обязательно к заполнению",
+      register_sname: "Это поле обязательно к заполнению",
+      register_surname: "Это поле обязательно к заполнению",
       register_phone: {
-        required: "Заполните это поле",
+        required: "Это поле обязательно к заполнению",
         minlength: "Введите корректный телефон"
       },
       register_email: {
-        required: "Заполните это поле",
+        required: "Это поле обязательно к заполнению",
         email: "Email содержит неправильный формат"
       },
       register_pass: {
-        required: "Заполните это поле",
+        required: "Это поле обязательно к заполнению",
         minlength: "Введите минимум 8 символов"
       },
       register_passRepeat: {
         equalTo: "Пожалуйста, введите то же значение снова"
       },
-      register_day: "Заполните это поле",
-      register_month: "Заполните это поле",
-      register_year: "Заполните это поле",
-      register_robot: "Заполните это поле",
+      register_day: "Это поле обязательно к заполнению",
+      register_month: "Это поле обязательно к заполнению",
+      register_year: "Это поле обязательно к заполнению",
+      register_robot: "Это поле обязательно к заполнению",
       register_approve: "",
     }
   });
