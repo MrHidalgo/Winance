@@ -1,10 +1,11 @@
 ---
 title: Winance - Как мы зарабатываем
+pageName: howWeEarn
 ---
 extends shared/_layout
 block content
 
-  .howWeEarn
+  div(class!= pageName)
     include components/howWeEarn/_main
     include components/howWeEarn/_tabs
     include components/howWeEarn/_video

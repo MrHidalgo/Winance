@@ -1,9 +1,10 @@
 ---
 title: Winance - Блог
+pageName: blog
 ---
 extends shared/_layout
 block content
 
-  .blog
+  div(class!= pageName)
     include components/blog/_main
     include components/blog/_blogs

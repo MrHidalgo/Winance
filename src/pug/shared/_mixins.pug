@@ -92,7 +92,7 @@ mixin blogsBlock(attr, href, classMod, count, imgName, title, text, badgeArr, da
       .blogs__block-footer--left
         .blogs__block-badge
           each badge in badgeArr
-            p!= badge
+            p()!= badge
 
       .blogs__block-footer--right
         .blogs__block-date

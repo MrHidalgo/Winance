@@ -1,10 +1,11 @@
 ---
 title: Winance
+pageName: homepage
 ---
 extends shared/_layout
 block content
 
-  .homepage
+  div(class!= pageName)
     include components/homepage/_main
     include components/homepage/_reasons
     include components/homepage/_calc

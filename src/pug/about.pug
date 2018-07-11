@@ -1,10 +1,11 @@
 ---
 title: Winance - О фонде
+pageName: about
 ---
 extends shared/_layout
 block content
 
-  .about
+  div(class!= pageName)
     include components/about/_main
     include components/about/_request
     include components/about/_reasons

@@ -55,7 +55,25 @@ header.header
           +lang(headerLang)
 
         .header__bar-middle
-          +headerNav("bar", headerBarNav)
+          //+headerNav("bar", headerBarNav)
+          .nav.nav--bar
+            ul.nav__list
+              each val, idx in headerBarNav
+                if(pageName === "blog" && idx === 0)
+                  li.nav__item.wow.wowFadeUp(data-animation-delay!= (0.35 + parseFloat(0.1 * idx)).toFixed(2) + "s")
+                    a.nav__link.is-active(href!= headerBarNav[idx].href title!="")!= headerBarNav[idx].name
+                else if(pageName === "press" && idx === 1)
+                  li.nav__item.wow.wowFadeUp(data-animation-delay!= (0.35 + parseFloat(0.1 * idx)).toFixed(2) + "s")
+                    a.nav__link.is-active(href!= headerBarNav[idx].href title!="")!= headerBarNav[idx].name
+                else if(pageName === "contacts" && idx === 2)
+                  li.nav__item.wow.wowFadeUp(data-animation-delay!= (0.35 + parseFloat(0.1 * idx)).toFixed(2) + "s")
+                    a.nav__link.is-active(href!= headerBarNav[idx].href title!="")!= headerBarNav[idx].name
+                else if(pageName === "reviews" && idx === 3)
+                  li.nav__item.wow.wowFadeUp(data-animation-delay!= (0.35 + parseFloat(0.1 * idx)).toFixed(2) + "s")
+                    a.nav__link.is-active (href!= headerBarNav[idx].href title!="")!= headerBarNav[idx].name
+                else
+                  li.nav__item.wow.wowFadeUp(data-animation-delay!= (0.35 + parseFloat(0.1 * idx)).toFixed(2) + "s")
+                    a.nav__link(href!= headerBarNav[idx].href title!="")!= headerBarNav[idx].name
 
         .header__bar-right.wow.wowFadeUp(data-animation-delay="0.7s")
           +phoneNum("header", "+7 495 777 40 05")
@@ -67,7 +85,24 @@ header.header
           +logotype()
 
         .header__wrapper-middle
-          +headerNav("wrapper", headerWrapperNav)
+          .nav.nav--wrapper
+            ul.nav__list
+              each val, idx in headerWrapperNav
+                if(pageName === "about" && idx === 0)
+                  li.nav__item.wow.wowFadeUp(data-animation-delay!= (0.35 + parseFloat(0.1 * idx)).toFixed(2) + "s")
+                    a.nav__link.is-active(href!= headerWrapperNav[idx].href title!="")!= headerWrapperNav[idx].name
+                else if(pageName === "howWeEarn" && idx === 1)
+                  li.nav__item.wow.wowFadeUp(data-animation-delay!= (0.35 + parseFloat(0.1 * idx)).toFixed(2) + "s")
+                    a.nav__link.is-active(href!= headerWrapperNav[idx].href title!="")!= headerWrapperNav[idx].name
+                else if(pageName === "investors" && idx === 2)
+                  li.nav__item.wow.wowFadeUp(data-animation-delay!= (0.35 + parseFloat(0.1 * idx)).toFixed(2) + "s")
+                    a.nav__link.is-active(href!= headerWrapperNav[idx].href title!="")!= headerWrapperNav[idx].name
+                else if(pageName === "faq" && idx === 3)
+                  li.nav__item.wow.wowFadeUp(data-animation-delay!= (0.35 + parseFloat(0.1 * idx)).toFixed(2) + "s")
+                    a.nav__link.is-active (href!= headerWrapperNav[idx].href title!="")!= headerWrapperNav[idx].name
+                else
+                  li.nav__item.wow.wowFadeUp(data-animation-delay!= (0.35 + parseFloat(0.1 * idx)).toFixed(2) + "s")
+                    a.nav__link(href!= headerWrapperNav[idx].href title!="")!= headerWrapperNav[idx].name
 
         .header__wrapper-right.wow.wowFadeUp(data-animation-delay="0.7s")
           a.parlor(href="cabinet.html" title!="" class!="")

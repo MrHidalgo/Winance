@@ -1,9 +1,10 @@
 ---
 title: Winance - Контакты
+pageName: contacts
 ---
 extends shared/_layout
 block content
 
-  .contacts
+  div(class!= pageName)
     include components/contacts/_link
     include components/contacts/_main

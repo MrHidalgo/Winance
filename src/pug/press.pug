@@ -1,9 +1,10 @@
 ---
 title: Winance - Пресса о нас
+pageName: press
 ---
 extends shared/_layout
 block content
 
-  .press
+  div(class!= pageName)
     include components/press/_main
     include components/press/_print

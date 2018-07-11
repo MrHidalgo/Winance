@@ -16,7 +16,8 @@
       min-height: 40px
       +transition(color)
 
-      &:hover
+      &:hover,
+      &.is-active
         color: darken($c-white, 25%) !important
         +transition(color)
 
@@ -88,7 +89,8 @@
         min-height: 107px
         +transition(color)
 
-        &:hover
+        &:hover,
+        &.is-active
           color: lighten($c-royalBlue, 15%)
           +transition(color)
 
@@ -96,6 +98,7 @@
             transform: translateY(0)
             background-color: $c-royalBlue
             +transition(transform, background-color)
+
 
         &:before
           content: ""

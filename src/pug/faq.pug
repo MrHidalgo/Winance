@@ -1,9 +1,10 @@
 ---
 title: Winance - FAQ
+pageName: faq
 ---
 extends shared/_layout
 block content
 
-  .faq
+  div(class!= pageName)
     include components/faq/_main
     include components/faq/_quesAns

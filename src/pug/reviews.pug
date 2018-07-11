@@ -1,9 +1,10 @@
 ---
 title: Winance - Отзывы
+pageName: reviews
 ---
 extends shared/_layout
 block content
 
-  .reviews
+  div(class!= pageName)
     include components/reviews/_main
     include components/reviews/_testimonials

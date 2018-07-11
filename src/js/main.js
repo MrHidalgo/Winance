@@ -70,6 +70,10 @@ $(document).ready(function () {
 
     modalSignTrigger();
 
+    navLinkActiveClass();
+
+    bodyClick();
+
     if($(".calc").length > 0) {
       initCalc();
     }
@@ -997,6 +1001,42 @@ $(document).ready(function () {
 
       elem.addClass("is-active");
       $(".modal__body-" + elemAttr).addClass("is-active");
+    });
+  }
+  // ====================
+
+
+
+  // ====================
+  function navLinkActiveClass() {
+    _document.on("click", ".nav--wrapper .nav__link", function (e) {
+      $(".nav__link").removeClass("is-active");
+      $(e.currentTarget).addClass("is-active");
+    });
+  }
+  // ====================
+
+
+
+  // ====================
+  function navBarLinkActiveClass() {
+    _document.on("click", ".nav--wrapper .nav__link", function (e) {
+      $(".nav__link").removeClass("is-active");
+      $(e.currentTarget).addClass("is-active");
+    });
+  }
+  // ====================
+
+
+
+  // ====================
+  function bodyClick() {
+    $('body').on('click', function (e) {
+      const className = ".nav--wrapper .nav__link";
+
+      if (!$(e.target).closest(className).length) {
+        $(".nav__link").removeClass("is-active");
+      }
     });
   }
   // ====================

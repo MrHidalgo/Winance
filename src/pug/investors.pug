@@ -1,10 +1,11 @@
 ---
 title: Winance - Инвесторам
+pageName: investors
 ---
 extends shared/_layout
 block content
 
-  .investors
+  div(class!= pageName)
     include components/investors/_main
     include components/investors/_calc
     include components/investors/_transparency
