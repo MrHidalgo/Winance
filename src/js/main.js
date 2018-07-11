@@ -798,11 +798,19 @@ $(document).ready(function () {
         inheritOriginalWidth: true,
         onInit: function(event) {
           let elem = $(event),
+            labelElem = $(elem).closest(".selectric-wrapper").siblings(".form__label"),
             elemWidth = parseInt($(elem).closest(".selectric-wrapper").css("width"));
 
-          elem.closest(".selectric-wrapper").css({
-            width: (elemWidth < 200) ? elemWidth + 30 : elemWidth + (30 / 2)
-          })
+
+          if(labelElem.length === 0) {
+            elem.closest(".selectric-wrapper").css({
+              width: "100%"
+            })
+          } else {
+            elem.closest(".selectric-wrapper").css({
+              width: "calc(100% - 135px)"
+            })
+          }
         }
       });
   }
