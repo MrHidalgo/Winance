@@ -20,12 +20,12 @@
       align-items: center
       justify-content: center
       min-height: 40px
-      +transition(color)
+      transition: color .15s $ease
 
       &:hover,
       &.is-active
         color: darken($c-white, 25%) !important
-        +transition(color)
+        transition-duration: 0s
 
 
     &-row
@@ -93,17 +93,17 @@
         align-items: center
         justify-content: center
         min-height: 107px
-        +transition(color)
+        transition: color .15s $ease
 
         &:hover,
         &.is-active
           color: lighten($c-royalBlue, 15%)
-          +transition(color)
+          transition-duration: 0s
 
           &:before
             transform: translateY(0)
             background-color: $c-royalBlue
-            +transition(transform, background-color)
+            transition-duration: 0s
 
 
         &:before
@@ -115,7 +115,7 @@
           height: 3px
           background-color: transparent
           transform: translateY(-3px)
-          +transition(transform, background-color)
+          transition: transform .15s $ease, background-color .15s $ease
 
 
     &-right
