@@ -623,13 +623,18 @@ $(document).ready(function () {
   function calcMainSum(elem) {
     let parentElem = $(elem).closest(".calc__tabs-body"),
       mainSumElem = parentElem.find("[resultSum-calc-js]"),
+      mainSumOneMonth = parentElem.find("[sumOneMonth-js]"),
+      mainSumThreeMonth = parentElem.find("[sumThreeMonth-js]"),
       valSumInvestment = parseInt(parentElem.find(".calc__input--sum").val()),
       valCountMonth = parseInt(parentElem.find(".calc__input--month").val()),
       percentVal = parseInt(parentElem.find("[percent-val-js] strong").text());
 
-    let result = parseFloat(((valSumInvestment * percentVal) / 100) * valCountMonth).toFixed(2);
+    let resultMain = parseFloat(((valSumInvestment * percentVal) / 100) * valCountMonth).toFixed(2),
+      resultOneMonth = parseFloat(((valSumInvestment * percentVal) / 100)).toFixed(2);
 
-    mainSumElem.text(result);
+    mainSumElem.text(resultMain);
+    // mainSumOneMonth.text("");
+    // mainSumThreeMonth.text("");
   }
 
   function returnRadioAttrStep(elem) {
