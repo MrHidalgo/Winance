@@ -593,56 +593,86 @@ $(document).ready(function () {
     });
   }
 
-  function changeValuePercent(rangeName) {
-    let percentElem = $("[percent-val-js] strong"),
-      percentElemVal = percentElem.html();
+  function radioInputChange(radioName) {
+    $(radioName).on("click", function(e) {
+      let numTmp = 0,
+        elem = $(e.currentTarget),
+        elemAttr = elem.attr("data-radio"),
+        closestBlock = elem.closest(".calc__tabs-body"),
+        rangeMonthElemVal = parseInt(closestBlock.find('.calc__input--month')[0].value);
 
-    $(rangeName).on("input", function(e) {
-      let elem = $(e.target),
-        elemVal = parseInt(elem.val());
 
-      console.log(`elemVal: `, elemVal);
-      console.log(`percentElem: `, percentElem);
-
-      switch (elemVal) {
-        case 0:
-        case 1:
-        case 2:
-        case 3:
-          percentElem.text("7.5");
-          break;
-        case 4:
-          percentElem.text("8");
-          break;
-        case 5:
-          percentElem.text("8.5");
-          break;
-        case 6:
-          percentElem.text("9");
-          break;
-        case 7:
-          percentElem.text("9.5");
-          break;
-        case 8:
-          percentElem.text("10");
-          break;
-        case 9:
-          percentElem.text("10.5");
-          break;
-        case 10:
-          percentElem.text("11");
-          break;
-        case 11:
-          percentElem.text("11.5");
-          break;
-        case 12:
-          percentElem.text("12");
-          break;
-        default:
-          percentElem.text("7.5");
-          break;
+      if(elemAttr === "leave") {
+        numTmp = 2.5;
       }
+
+      changePercent(rangeMonthElemVal, numTmp);
     });
+  }
+
+
+  function changeValuePercent(rangeName) {
+    $(rangeName).on("input", function(e) {
+      let numTmp = 0,
+        elem = $(e.target),
+        elemVal = parseInt(elem.val()),
+        radioElem = elem.closest(".calc__tabs-body").find("input[type='radio']:checked"),
+        radioElemAttr = radioElem.attr("data-radio");
+
+      if(radioElemAttr === "leave") {
+        numTmp = 2.5;
+      }
+
+      console.log(numTmp);
+
+      changePercent(elemVal, numTmp);
+    });
+  }
+
+  function changePercent(elemVal, numTmp) {
+    let percentElem = $("[percent-val-js] strong");
+
+    console.log(`elemVal: `, elemVal);
+    console.log(`numTmp: `, numTmp);
+
+    switch (elemVal) {
+      case 0:
+      case 1:
+      case 2:
+      case 3:
+        percentElem.text(7.5 + numTmp);
+        break;
+      case 4:
+        percentElem.text(8 + numTmp);
+        break;
+      case 5:
+        percentElem.text(8.5 + numTmp);
+        break;
+      case 6:
+        percentElem.text(9 + numTmp);
+        break;
+      case 7:
+        percentElem.text(9.5 + numTmp);
+        break;
+      case 8:
+        percentElem.text(10 + numTmp);
+        break;
+      case 9:
+        percentElem.text(10.5 + numTmp);
+        break;
+      case 10:
+        percentElem.text(11 + numTmp);
+        break;
+      case 11:
+        percentElem.text(11.5 + numTmp);
+        break;
+      case 12:
+        percentElem.text(12 + ((numTmp === 0) ? "" : numTmp + 0.5));
+        break;
+      default:
+        percentElem.text(7.5 + numTmp);
+        break;
+    }
   }
 
   /**
@@ -685,6 +715,8 @@ $(document).ready(function () {
     changeValuePercent("[monthRangeRu-calc-js]");
     changeValuePercent("[monthRangeEn-calc-js]");
     changeValuePercent("[monthRangeEu-calc-js]");
+
+    radioInputChange("input[type='radio']");
   }
   // ====================
   // ====================
@@ -1086,7 +1118,7 @@ $(document).ready(function () {
   const footerElem = $("footer");
 
   _window.on("resize scroll load", function() {
-    if(isElementInViewport(footerElem[0])) {
+    if(footerElem.length > 0 && isElementInViewport(footerElem[0])) {
       $("[hideStickyBtn-js]").fadeOut();
     } else {
       $("[hideStickyBtn-js]").fadeIn();
