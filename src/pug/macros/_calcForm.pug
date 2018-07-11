@@ -73,7 +73,7 @@ form(action="" method="")
         span!= "₽"
 
 
-  .calc__tabs-body.calc__tabs-body-0.animated(data-tabs-body="1")
+  .calc__tabs-body.calc__tabs-body-1.animated(data-tabs-body="1")
     .calc__tabs-col.calc__tabs-col-0
       p!="Сумма инвестиций*"
       p
@@ -111,7 +111,7 @@ form(action="" method="")
     .calc__tabs-col.calc__tabs-col-2
       p!="Итоговая сумма"
       p!="<span resultSum-calc-js>45.00</span> <span>$</span>"
-      p()!="Cтавка: <strong>7.5</strong>% в месяц "
+      p(percent-val-js)!="Cтавка: <strong>7.5</strong>% в месяц "
       button.btn.btn--color.btn--full(type="submit")!= "Открыть счет"
 
 
@@ -138,7 +138,7 @@ form(action="" method="")
         p!="Сумма выплат <br>за 3 месяца"
         span!= "0"
         span!= "$"
-  .calc__tabs-body.calc__tabs-body-0.animated(data-tabs-body="2")
+  .calc__tabs-body.calc__tabs-body-2.animated(data-tabs-body="2")
     .calc__tabs-col.calc__tabs-col-0
       p!="Сумма инвестиций*"
       p
@@ -162,12 +162,12 @@ form(action="" method="")
         input.calc__input--month(
           type="text"
           name=""
-          value="1"
+          value="3"
           maskMonth-js
           resizeInput-js
           monthDataEu-calc-js
         )
-        i(style="display: none;")!= "1"
+        i(style="display: none;")!= "3"
         span!= "мес."
 
       .calc__tabs-range
@@ -176,7 +176,7 @@ form(action="" method="")
     .calc__tabs-col.calc__tabs-col-2
       p!="Итоговая сумма"
       p!="<span resultSum-calc-js>0</span> <span>€</span>"
-      p!="Cтавка: <strong>0%</strong> в месяц "
+      p(percent-val-js)!="Cтавка: <strong>7.5</strong>% в месяц "
       button.btn.btn--color.btn--full(type="submit")!= "Открыть счет"
 
 

@@ -521,6 +521,7 @@ $(document).ready(function () {
   function changeInputDataVal(inputElem, minVal, maxVal, defaultVal) {
     $(inputElem).on("input", function(e) {
       console.log(`changeInputDataVal`);
+
       let elem = $(e.target),
         elemVal = elem.val(),
         rangeElem = elem.closest(".calc__tabs-col").find("input[type='range']"),
@@ -540,6 +541,8 @@ $(document).ready(function () {
       }
 
       resizeInputs(elem);
+      changePercent(elem, elemVal, returnRadioAttrStep(elem));
+      calcMainSum(elem);
     });
   }
 
@@ -558,6 +561,7 @@ $(document).ready(function () {
         elem.val(minVal);
 
         resizeInputs(elem);
+        changePercent(elem, minVal, returnRadioAttrStep(elem));
       } else if (elemVal > maxVal) {
         elem.val(maxVal);
 
@@ -567,7 +571,9 @@ $(document).ready(function () {
           'backgroundSize': (elemVal - rangeMin) * 100 / (rangeMax - rangeMin) + '% 100%'
         });
         rangeElem.val(maxVal);
+        changePercent(elem, maxVal, returnRadioAttrStep(elem));
       }
+      calcMainSum(elem);
     });
   }
 
@@ -590,52 +596,57 @@ $(document).ready(function () {
 
       monthData.val(elemVal);
       resizeInputs(monthData);
+      calcMainSum(elem);
     });
   }
 
   function radioInputChange(radioName) {
     $(radioName).on("click", function(e) {
-      let numTmp = 0,
-        elem = $(e.currentTarget),
-        elemAttr = elem.attr("data-radio"),
-        closestBlock = elem.closest(".calc__tabs-body"),
-        rangeMonthElemVal = parseInt(closestBlock.find('.calc__input--month')[0].value);
+      let elem = $(e.currentTarget),
+        rangeMonthElemVal = elem.closest(".calc__tabs-body").find('.calc__input--month')[0].value;
 
-
-      if(elemAttr === "leave") {
-        numTmp = 2.5;
-      }
-
-      changePercent(rangeMonthElemVal, numTmp);
+      changePercent(elem, parseInt(rangeMonthElemVal), returnRadioAttrStep(elem));
+      calcMainSum(elem);
     });
   }
-
 
   function changeValuePercent(rangeName) {
     $(rangeName).on("input", function(e) {
-      let numTmp = 0,
-        elem = $(e.target),
-        elemVal = parseInt(elem.val()),
-        radioElem = elem.closest(".calc__tabs-body").find("input[type='radio']:checked"),
-        radioElemAttr = radioElem.attr("data-radio");
+      let elem = $(e.target),
+        elemVal = parseInt(elem.val());
 
-      if(radioElemAttr === "leave") {
-        numTmp = 2.5;
-      }
-
-      console.log(numTmp);
-
-      changePercent(elemVal, numTmp);
+      changePercent(elem, elemVal, returnRadioAttrStep(elem));
+      calcMainSum(elem);
     });
   }
 
-  function changePercent(elemVal, numTmp) {
-    let percentElem = $("[percent-val-js] strong");
+  function calcMainSum(elem) {
+    let parentElem = $(elem).closest(".calc__tabs-body"),
+      mainSumElem = parentElem.find("[resultSum-calc-js]"),
+      valSumInvestment = parseInt(parentElem.find(".calc__input--sum").val()),
+      valCountMonth = parseInt(parentElem.find(".calc__input--month").val()),
+      percentVal = parseInt(parentElem.find("[percent-val-js] strong").text());
+
+    let result = parseFloat(((valSumInvestment * percentVal) / 100) * valCountMonth).toFixed(2);
+
+    mainSumElem.text(result);
+  }
+
+  function returnRadioAttrStep(elem) {
+    let numTmp = 0,
+      radioElem = $(elem).closest(".calc__tabs-body").find("input[type='radio']:checked"),
+      radioElemAttr = radioElem.attr("data-radio");
+
+    return (radioElemAttr === "leave") ? numTmp = 2.5 : numTmp;
+  }
+
+  function changePercent(elem, elemVal, numTmp) {
+    let percentElem = $(elem).closest(".calc__tabs-body").find("[percent-val-js] strong");
 
     console.log(`elemVal: `, elemVal);
     console.log(`numTmp: `, numTmp);
 
-    switch (elemVal) {
+    switch (parseInt(elemVal)) {
       case 0:
       case 1:
       case 2:
