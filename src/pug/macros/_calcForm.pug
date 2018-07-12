@@ -22,7 +22,7 @@ form(action="" method="")
         span!= "₽"
 
       .calc__tabs-range
-        input(type="range" min="10000" max="5000000" step="10000" value="1" sumRangeRu-calc-js)
+        input(type="range" min="10000" max="5000000" step="10000" value="10000" sumRangeRu-calc-js)
 
     .calc__tabs-col.calc__tabs-col-1
       p!="Срок инвестирования"
@@ -145,16 +145,16 @@ form(action="" method="")
         input.calc__input--sum(
           type="text"
           name=""
-          value="100"
+          value="200"
           maskSumEu-js
           resizeInput-js
           sumDataEu-calc-js
         )
-        i(style="display: none;")!= "100"
+        i(style="display: none;")!= "200"
         span!= "€"
 
       .calc__tabs-range
-        input(type="range" min="100" max="100000" step="100" value="1" sumRangeEu-calc-js)
+        input(type="range" min="200" max="100000" step="200" value="200" sumRangeEu-calc-js)
 
     .calc__tabs-col.calc__tabs-col-1
       p!="Срок инвестирования"
@@ -171,7 +171,7 @@ form(action="" method="")
         span!= "мес."
 
       .calc__tabs-range
-        input(type="range" min="1" max="12" step="1" value="1" monthRangeEu-calc-js)
+        input(type="range" min="3" max="12" step="1" value="3" monthRangeEu-calc-js)
 
     .calc__tabs-col.calc__tabs-col-2
       p!="Итоговая сумма"

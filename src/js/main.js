@@ -548,10 +548,13 @@ $(document).ready(function () {
 
   function limitValueInput(inputDataElem, minVal, maxVal) {
     $(inputDataElem).on("blur", function(e) {
-      console.log(`inputDataElem blur`);
+      // console.log(`inputDataElem blur`);
 
       let elem = $(e.target),
-        elemVal = parseInt(elem.val());
+        elemVal = elem.val();
+      //
+      // console.log(`limit elem: `, elem);
+      // console.log(`limit elemVal: `, elemVal);
 
       let rangeElem = elem.closest(".calc__tabs-col").find("input[type='range']"),
         rangeMax = rangeElem[0].max,
@@ -627,14 +630,24 @@ $(document).ready(function () {
       mainSumThreeMonth = parentElem.find("[sumThreeMonth-js]"),
       valSumInvestment = parseInt(parentElem.find(".calc__input--sum").val()),
       valCountMonth = parseInt(parentElem.find(".calc__input--month").val()),
-      percentVal = parseInt(parentElem.find("[percent-val-js] strong").text());
+      percentVal = parseFloat(parentElem.find("[percent-val-js] strong").text());
 
-    let resultMain = parseFloat(((valSumInvestment * percentVal) / 100) * valCountMonth).toFixed(2),
-      resultOneMonth = parseFloat(((valSumInvestment * percentVal) / 100)).toFixed(2);
+    // console.log(`valSumInvestment: `, valSumInvestment);
+    // console.log(`valCountMonth: `, valCountMonth);
+    // console.log(`percentVal: `, percentVal);
+    // console.log(`(${valSumInvestment} * ${percentVal}) / 100) * ${valCountMonth} = ${((valSumInvestment * percentVal) / 100) * valCountMonth}`);
+
+    let resultMain = parseFloat(((valSumInvestment * percentVal) / 100) * valCountMonth).toFixed(2);
+      // resultMainOneMonth = parseFloat(((valSumInvestment * percentVal) / 100)).toFixed(2),
+      // resultMainThreeMonth = parseFloat(((valSumInvestment * percentVal) / 100) * 3).toFixed(2);
+
+    // console.log(`resultMain: `, resultMain);
+
+    if(isNaN(resultMain)) resultMain = 0;
 
     mainSumElem.text(resultMain);
-    // mainSumOneMonth.text("");
-    // mainSumThreeMonth.text("");
+    // mainSumOneMonth.text(resultMainOneMonth);
+    // mainSumThreeMonth.text(resultMainThreeMonth);
   }
 
   function returnRadioAttrStep(elem) {
