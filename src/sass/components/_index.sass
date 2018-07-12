@@ -203,6 +203,18 @@
       +r(767)
         margin-bottom: 23px
 
+    &--date
+      .form__label
+        width: auto
+
+      &:nth-child(1),
+      &:nth-child(2)
+        .selectric-wrapper
+          width: 80px !important
+      &:nth-child(3)
+        .selectric-wrapper
+          width: 90px !important
+
     &-textarea
       height: 155px
       background-color: $c-whiteSmoke
@@ -237,6 +249,13 @@
     &--select
       border-bottom: 2px solid rgba($c-royalBlue, 0.5)
       +transition(border-color)
+
+      &.has-error
+        border-color: $c-bittersweet
+
+        &:hover,
+        &:focus
+          border-color: $c-bittersweet
 
       &:hover,
       &:focus

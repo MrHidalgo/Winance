@@ -15,10 +15,10 @@ $(document).ready(function () {
     error.appendTo(element.parent("div"));
   }
   var validateHighlight = function (element) {
-    $(element).parent('div').addClass("has-error");
+    $(element).closest('.form__field').addClass("has-error");
   }
   var validateUnhighlight = function (element) {
-    $(element).parent('div').removeClass("has-error");
+    $(element).closest('.form__field').removeClass("has-error");
   }
   var validateSubmitHandler = function (form) {
     $(form).addClass('loading');
@@ -294,4 +294,7 @@ $(document).ready(function () {
     }
   });
 
+  $('#register_year, #register_day, #register_month').on('selectric-change', function(event, element, selectric) {
+    $(this).valid();
+  });
 });
