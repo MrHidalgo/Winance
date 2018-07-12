@@ -42,10 +42,10 @@ mixin mainBtn(classMod, href, name, count)
         span!= count
 
 
-.main.wow.wowFadeUp(data-animation-delay="0.4s")
+.main
   .container
 
-    .main__row.main__row-0
+    .main__row.main__row-0.wow.wowFadeUp(data-animation-delay="0.4s")
       .main__row-left
         h1.main__title.title!= "Личный кабинет"
 
@@ -53,7 +53,7 @@ mixin mainBtn(classMod, href, name, count)
         p.main__balance!= "<span>6 750.00</span> <span>$</span>"
         p.main__balance-details!= "<span>200.00</span> <span>$</span> + <span>1 500.00</span> <span>€</span> + <span>0.00</span> <span>₽</span>"
 
-    .main__row.main__row-1
+    .main__row.main__row-1.wow.wowFadeUp(data-animation-delay="0.4s")
       .main__row-left
         .main__nav
           ul.main__nav-list
@@ -82,7 +82,7 @@ mixin mainBtn(classMod, href, name, count)
           span!= "Мой счет"
           i.icon-score
 
-    .main__row.main__row-2
+    .main__row.main__row-2.wow.wowFadeUp(data-animation-delay="0.4s")
       .form__field.form__field--select.form__field--p
         select(name="" id="menu" selectric-js)
           option(value!="cabinetInvestment.html")!= "Инвестиции"

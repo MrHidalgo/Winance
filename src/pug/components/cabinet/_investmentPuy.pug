@@ -4,16 +4,16 @@
 .investment.investment--puy
   .container
 
-    h1.investment__title.cabinet__title!= "Оплата контракта № <span>1301</span>"
+    h1.investment__title.cabinet__title.wow.wowFadeUp(data-animation-delay="0.3s")!= "Оплата контракта № <span>1301</span>"
 
     .investment__form
-      .investment__form-wrap
+      .investment__form-wrap.wow.wowFadeUp(data-animation-delay="0.4s")
         p.investment__form-title!= "W 12 месяцев"
         p.investment__form-subtitle!= "20.02.2018 → 15.02.2019"
 
       form(action="" method="" autocomplete="off")
         .investment__form-row
-          .investment__form-left
+          .investment__form-left.wow.wowFadeUp(data-animation-delay="0.5s")
 
             .form__field.form__field--p
               input.form__input(type="text" name="" class="" id="investment_contract" placeholder="1301" js-mask-number)
@@ -27,7 +27,7 @@
               input.form__input(type="text" name="" class="" id="investment_sum_contract" placeholder="30000" js-mask-number)
               label.form__label(for="investment_sum_contract")!= "Сумма по контракту"
 
-          .investment__form-right
+          .investment__form-right.wow.wowFadeUp(data-animation-delay="0.5s")
 
             .form__field.form__field--p.form__field--custom
               input.form__input(type="text" name="" class="" id="investment_sum_currency" placeholder="30000" js-mask-number)

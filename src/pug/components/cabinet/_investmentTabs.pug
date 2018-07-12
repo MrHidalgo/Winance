@@ -4,12 +4,12 @@
 .investment.investment--tabs
   .container
 
-    .investment__row.investment__row--0
+    .investment__row.investment__row--0.wow.wowFadeUp(data-animation-delay="0.3s")
       h1.investment__title.cabinet__title!= "Ваши вклады"
       a.btn.btn--color.btn--medium(href="#" title="" class="")!= "Открыть новый вклад"
 
     .investment__row.investment__row--1
-      .investment__pagination
+      .investment__pagination.wow.wowFadeUp(data-animation-delay="0.4s")
         ul.investment__pagination-list
           li.investment__pagination-item
             a.investment__pagination-link.is-active(investment-filter-js data-pagination="all" href="#" title="")!= "Все"
@@ -20,7 +20,7 @@
 
 
     .investment__container
-      .investment__block.animated.investment__block--active(investment-block-js data-filter="active")
+      .investment__block.animated.investment__block--active.wow.wowFadeUp(data-animation-delay="0.5s" investment-block-js data-filter="active")
         .investment__block-header
           p.investment__block-badge!= "АКТИВНЫЙ"
           p.investment__block-title!= "Вклад W 12"
@@ -69,7 +69,7 @@
 
 
     .investment__container
-      .investment__block.animated.investment__block--active(investment-block-js data-filter="active")
+      .investment__block.animated.investment__block--active.wow.wowFadeUp(data-animation-delay="0.5s" investment-block-js data-filter="active")
         .investment__block-header
           p.investment__block-badge!= "активный"
           p.investment__block-title!= "Вклад W 3"
@@ -118,7 +118,7 @@
 
 
     .investment__container
-      .investment__block.animated.investment__block--close(investment-block-js data-filter="close")
+      .investment__block.animated.investment__block--close.wow.wowFadeUp(data-animation-delay="0.5s" investment-block-js data-filter="close")
         .investment__block-header
           p.investment__block-badge!= "закрытый"
           p.investment__block-title!= "Вклад W 12"

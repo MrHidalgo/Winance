@@ -52,7 +52,7 @@
 .support
   .container
 
-    .support__container.support__container-0
+    .support__container.support__container-0.wow.wowFadeUp(data-animation-delay="0.3s")
       h1.support__title.cabinet__title!= "Тикеты"
       .support__container-wrap(hideStickyBtn-js)
         a.btn.btn--color.btn--small(
@@ -62,7 +62,7 @@
           ticket-new-js
         )!= "Открыть новый тикет"
 
-    .support__container.support__container-1
+    .support__container.support__container-1.wow.wowFadeUp(data-animation-delay="0.4s")
       .support__pagination
         ul.support__pagination-list
           each val, idx in supportPagination
@@ -75,7 +75,7 @@
                 data-pagination!= supportPagination[idx].attr
               )!= supportPagination[idx].name
 
-    .support__container.support__container-2
+    .support__container.support__container-2.wow.wowFadeUp(data-animation-delay="0.5s")
       .support__col(masonry-support-js)
         each val, idx in supportBox
           a.support__box.is-show(

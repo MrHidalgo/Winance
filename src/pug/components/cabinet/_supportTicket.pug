@@ -12,11 +12,11 @@ mixin messageBlock(classMod, whoName, date, text)
   .container
 
 
-    .support__container.support__container-0
+    .support__container.support__container-0.wow.wowFadeUp(data-animation-delay="0.3s")
       h1.support__title.cabinet__title!= "Тема тикета указаная при создании"
 
 
-    .support__container.support__container-1
+    .support__container.support__container-1.wow.wowFadeUp(data-animation-delay="0.4s")
       .support__info-wrap
         p.support__info.support__info-0
           != "Статус:"
@@ -28,7 +28,7 @@ mixin messageBlock(classMod, whoName, date, text)
           != "Технический"
 
 
-    .support__container.support__container-2
+    .support__container.support__container-2.wow.wowFadeUp(data-animation-delay="0.5s")
       .support__chat
         p.support__chat-title!= "Ваше новое сообщение"
 
@@ -38,7 +38,7 @@ mixin messageBlock(classMod, whoName, date, text)
             button.btn.btn--small(type="submit")!= "Отправить сообщение"
 
 
-    .support__container.support__container-3
+    .support__container.support__container-3.wow.wowFadeUp(data-animation-delay="0.55s")
       .support__message-wrap
         +messageBlock("", "Вы:", "23 июня 2018 г., 9:49:52", "Спасибо!")
         +messageBlock("winance", "Winance:", "23 июня 2018 г., 9:49:52", "Первый клуб сети открылся в декабре 2005 года и уже больше 10 лет удерживает позиции самого востребованного и посещаемого фитнес-клуба в Приморском районе Санкт-Петербурга.Первый клуб сети открылся в декабре 2005 года и уже больше 10 лет удерживает позиции самого востребованного и посещаемого фитнес-клуба в Приморском районе Санкт-Петербурга.")

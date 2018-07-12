@@ -115,14 +115,40 @@
     &__block
       display: flex
       flex-direction: column
-      justify-content: flex-end
+      justify-content: center
       width: calc(100% / 3)
       height: auto
+      min-height: 300px
       padding: 30px
       color: $c-white
+      animation-name: slideInUp
       +r(767)
         width: 100%
         padding: 15px
+
+      &-eur,
+      &-rub,
+      &-usd
+        &[data-power="10"]
+          min-height: calc(300px + (10 * 20px))
+        &[data-power="9"]
+          min-height: calc(300px + (9 * 20px))
+        &[data-power="8"]
+          min-height: calc(300px + (8 * 20px))
+        &[data-power="7"]
+          min-height: calc(300px + (7 * 20px))
+        &[data-power="6"]
+          min-height: calc(300px + (6 * 20px))
+        &[data-power="5"]
+          min-height: calc(300px + (5 * 20px))
+        &[data-power="4"]
+          min-height: calc(300px + (4 * 20px))
+        &[data-power="3"]
+          min-height: calc(300px + (3 * 20px))
+        &[data-power="2"]
+          min-height: calc(300px + (2 * 20px))
+        &[data-power="1"]
+          min-height: calc(300px + (1 * 20px))
 
       &-wrap
         overflow: hidden
@@ -132,13 +158,10 @@
           flex-wrap: wrap
 
       &-0
-        min-height: 390px
         background-color: $c-LightSeaGreen
       &-1
-        min-height: 345px
         background-color: rgba($c-LightSeaGreen, 0.9)
       &-2
-        min-height: 305px
         background-color: $c-royalBlue
 
         > a

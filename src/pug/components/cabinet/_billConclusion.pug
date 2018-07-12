@@ -4,7 +4,7 @@
   .container
 
     .bill__box
-      .bill__box-nav
+      .bill__box-nav.wow.wowFadeUp(data-animation-delay="0.3s")
         ul
           li
             a(href="" title="" class="is-active")!= "Заявка"
@@ -15,7 +15,7 @@
 
       form.bill__box-form(action="" method="" autocomplete="off")
         .bill__box-wrap
-          .bill__box-left
+          .bill__box-left.wow.wowFadeUp(data-animation-delay="0.4s")
 
             .form__field.form__field--select.form__field--p
               select(name="" id="bill" selectric-js)
@@ -35,7 +35,7 @@
                 option(value="")!= "QIWI"
               label.form__label(for="bill_output_method")!= "Способ вывода"
 
-          .bill__box-right
+          .bill__box-right.wow.wowFadeUp(data-animation-delay="0.4s")
 
             .form__field.form__field--select.form__field--p
               select(name="" id="bill_currency_withdrawal" selectric-js)
@@ -59,7 +59,7 @@
               input.form__input(type="text" name="code" class="" id="bill_phone_requisites" placeholder="30000" js-mask-number)
               label.form__label(for="bill_phone_requisites")!= "+7 (904) 391-03-70"
 
-            .form__field-btn
+            .form__field-btn.wow.wowFadeUp(data-animation-delay="0.5s")
               button.btn.btn--full.btn--color(type="button")!= "Оформить заявку"
 
 

@@ -15,10 +15,10 @@ mixin tableRow(attr, valDate, valOpr, valCode, valDone)
   .container
 
     .bill__container.bill__container-0
-      h1.bill__title.cabinet__title!= "Мой счет"
+      h1.bill__title.cabinet__title.wow.wowFadeUp(data-animation-delay="0.4s")!= "Мой счет"
 
       .bill__block-wrap
-        .bill__block.bill__block-0
+        .bill__block.bill__block-0.bill__block-usd.animated(data-power="10")
           p.bill__block-badge!= "Доллары"
           p.bill__block-title!= "<span>350.00</span> $"
           .bill__block-list
@@ -31,7 +31,7 @@ mixin tableRow(attr, valDate, valOpr, valCode, valDone)
 
           a.btn.btn--esmall.btn--colorWT(href="#" class="" title="")!= "Вывести средства"
 
-        .bill__block.bill__block-1
+        .bill__block.bill__block-1.bill__block-eur.animated(data-power="7")
           p.bill__block-badge!= "Евро"
           p.bill__block-title!= "<span>100.00</span> €"
           .bill__block-list
@@ -44,7 +44,7 @@ mixin tableRow(attr, valDate, valOpr, valCode, valDone)
 
           a.btn.btn--esmall.btn--colorWT(href="#" class="" title="")!= "Вывести средства"
 
-        .bill__block.bill__block-2
+        .bill__block.bill__block-2.bill__block-rub.animated(data-power="1")
           p.bill__block-badge!= "Рубли"
           p.bill__block-title!= "<span>0.00</span> ₽"
           .bill__block-list
@@ -60,9 +60,9 @@ mixin tableRow(attr, valDate, valOpr, valCode, valDone)
 
 
     .bill__container.bill__container-1
-      h1.bill__title.cabinet__title!= "История"
+      h1.bill__title.cabinet__title.wow.wowFadeUp(data-animation-delay="0.3s")!= "История"
 
-      .bill__filter
+      .bill__filter.wow.wowFadeUp(data-animation-delay="0.4s")
         .bill__filter-row.bill__filter-row--0
           .form__field.form__field--select
             select(name="" id="bill_filter_0" selectric-js)
@@ -82,7 +82,7 @@ mixin tableRow(attr, valDate, valOpr, valCode, valDone)
 
         .bill__filter-row.bill__filter-row--1
 
-          .bill__pagination
+          .bill__pagination.wow.wowFadeUp(data-animation-delay="0.5s")
             ul.bill__pagination-list
               li.bill__pagination-item
                 p.bill__pagination-title!= "Операции:"
@@ -93,7 +93,7 @@ mixin tableRow(attr, valDate, valOpr, valCode, valDone)
               li.bill__pagination-item
                 a.bill__pagination-link.bill__pagination-link--remove(bill-filter-js data-pagination="minus" href="#" title="")!= "Снятие"
 
-        .bill__table(bill-table-js)
+        .bill__table.wow.wowFadeUp(data-animation-delay="0.55s" bill-table-js)
           .bill__table-row
             .bill__table-col.bill__table-col--0
               p!= "Дата"

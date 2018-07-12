@@ -3,10 +3,10 @@
 .bill.bill--confirmation
   .container
 
-    h1.bill__title.cabinet__title!= "Вывод стредств"
+    h1.bill__title.cabinet__title.wow.wowFadeUp(data-animation-delay="0.3s")!= "Вывод стредств"
 
     .bill__box
-      .bill__box-nav
+      .bill__box-nav.wow.wowFadeUp(data-animation-delay="0.35s")
         ul
           li
             a(href="" title="" class="")!= "Заявка"
@@ -17,7 +17,7 @@
 
       .bill__box-wrap
 
-        .bill__box-left
+        .bill__box-left.wow.wowFadeUp(data-animation-delay="0.4s")
           p.bill__box-text!= "Похоже, Вы подали заявку на вывод средств."
           br
           p.bill__box-text!= "Мы стремимся обеспечить максимальную безопасность, по этому отправили Вам код подтверждения на e-mail."
@@ -25,7 +25,7 @@
           p.bill__box-text!= "Если Вы не получили код, можете запросить его повторно!!"
 
 
-        .bill__box-right
+        .bill__box-right.wow.wowFadeUp(data-animation-delay="0.4s")
           form.bill__box-form(action="" method="" autocomplete="off")
             .form__field.form__field--p
               input.form__input(type="text" name="code" class="" id="billConfirm_code" placeholder="000000" js-mask-number)

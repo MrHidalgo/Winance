@@ -874,7 +874,7 @@ $(document).ready(function () {
             })
           } else {
             elem.closest(".selectric-wrapper").css({
-              width: "calc(100% - 135px)"
+              width: (elemWidth < 200) ? elemWidth + 30 : elemWidth + (30 / 2)
             })
           }
         }

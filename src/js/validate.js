@@ -250,13 +250,22 @@ $(document).ready(function () {
         minlength: 8
       },
       register_passRepeat: {
+        required: true,
         equalTo: "#register_pass"
       },
-      register_day: "required",
-      register_month: "required",
-      register_year: "required",
+      register_day: {
+        required: true
+      },
+      register_month: {
+        required: true
+      },
+      register_year: {
+        required: true
+      },
       register_robot: "required",
-      register_approve: "required",
+      register_approve: {
+        required: true
+      },
     },
     messages: {
       register_name: "Это поле обязательно к заполнению",

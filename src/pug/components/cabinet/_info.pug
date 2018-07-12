@@ -6,16 +6,16 @@
 
     .info__row
       .info__row-left
-        h2.info__title.cabinet__title!= "Личные данные"
+        h2.info__title.cabinet__title.wow.wowFadeUp(data-animation-delay="0.3s")!= "Личные данные"
 
-        .info__box
+        .info__box.wow.wowFadeUp(data-animation-delay="0.4s")
           .info__box-wrap.info__box-wrap--img
             .info__box-left
               img(src="./img/docs.svg" title="" alt="")
             .info__box-right
               a(href="#" title="" class="")!= "Ваш договор"
 
-        .info__box
+        .info__box.wow.wowFadeUp(data-animation-delay="0.5s")
           form(action="" method="" autocomplete="off" form-info-js)
             .form__field.form__field--p.form__field--readonly
               input.form__input(readonly type="text" name="name" class="" id="info_fullname" placeholder="Шусман Евгений Моисеевич")
@@ -42,9 +42,9 @@
               a.btn(href="#" title="" class="")!= "Сменить пароль"
 
       .info__row-right
-        h2.info__title.cabinet__title!= "Платежные реквезиты"
+        h2.info__title.cabinet__title.wow.wowFadeUp(data-animation-delay="0.3s")!= "Платежные реквезиты"
 
-        .info__box
+        .info__box.wow.wowFadeUp(data-animation-delay="0.4s")
           .info__box-wrap
             .info__box-left
               p!= "Платежная система"
@@ -63,7 +63,7 @@
             .info__box-right
               p!= "+79043910370"
 
-        .info__box
+        .info__box.wow.wowFadeUp(data-animation-delay="0.5s")
           .info__box-wrap
             .info__box-left
               p!= "Платежная система"
@@ -82,7 +82,7 @@
             .info__box-right
               p!= "40817810700003423655, 044525974"
 
-        .info__box
+        .info__box.wow.wowFadeUp(data-animation-delay="0.6s")
           a.btn.btn--small(href="#")!= "Добавить реквезиты"
 
 
