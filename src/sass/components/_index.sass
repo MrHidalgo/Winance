@@ -72,6 +72,7 @@
   &:focus
     border-color: $c-royalBlue
     +transition(border-color)
+    transition-duration: 0s
 
   &--big
     max-width: 385px
@@ -98,6 +99,7 @@
       border-color: $c-ceruleanBlue
       background-color: $c-ceruleanBlue
       +transition(border-color, background-color)
+      transition-duration: 0s
 
   &--colorW
     border-color: $c-white
@@ -110,6 +112,7 @@
       background-color: $c-white
       color: $c-blueZodiac
       +transition(color)
+      transition-duration: 0s
 
   &--colorWT
     border-color: rgba($c-white, 0.5)
@@ -121,6 +124,7 @@
     &:focus
       border-color: $c-white
       +transition(border-color)
+      transition-duration: 0s
 // \ BTN
 
 
@@ -146,7 +150,7 @@
       .is-active &
         background-color: $c-LightSeaGreen
         +transition(width, background-color)
-        transition-duration: 0.25s
+        transition-duration: 0s
 
     &:before
       top: 0
@@ -161,7 +165,7 @@
       .is-active &
         width: 100%
         +transition(width, background-color)
-        transition-duration: 0.25s
+        transition-duration: 0s
 
     &-line
       position: absolute
@@ -178,7 +182,7 @@
         width: 100%
         background-color: $c-LightSeaGreen
         +transition(width, background-color)
-        transition-duration: 0.25s
+        transition-duration: 0s
 
 //- \ HAMBURGER
 
@@ -209,6 +213,7 @@
       &:focus
         border-color: $c-royalBlue
         +transition(border-color)
+        transition-duration: 0s
 
       &.has-error
         border-color: $c-bittersweet
@@ -227,6 +232,7 @@
         &:focus
           border-color: $c-nobel
           +transition(border-color)
+          transition-duration: 0s
 
     &--select
       border-bottom: 2px solid rgba($c-royalBlue, 0.5)
@@ -236,6 +242,7 @@
       &:focus
         border-color: $c-royalBlue
         +transition(border-color)
+        transition-duration: 0s
 
       .selectric
         height: 100%
@@ -267,6 +274,7 @@
               border-color: $c-royalBlue
               background-color: $c-white
               +transition(border-color, background-color)
+              transition-duration: 0s
 
         .label,
         .button
@@ -308,6 +316,7 @@
     &:focus
       border-color: $c-royalBlue
       +transition(border-color)
+      transition-duration: 0s
 
     .has-error &
       border-color: $c-bittersweet
@@ -420,6 +429,7 @@
       transform: translateY(0)
       background-color: $c-royalBlue
       +transition(transform, background-color)
+      transition-duration: 0s
 
     i
       opacity: 0.65
@@ -459,6 +469,7 @@
     &:hover
       color: $c-royalBlue
       +transition(color)
+      transition-duration: 0s
 // \ PHONE
 
 
@@ -470,6 +481,7 @@
     a
       color: $c-blueZodiac
       +transition(color)
+      transition-duration: 0s
 
 
   &__text

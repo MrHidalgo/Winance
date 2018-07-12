@@ -45,11 +45,13 @@
       &:hover
         border-color: $c-royalBlue
         +transition(border-color)
+        transition-duration: 0s
       &.is-active
         border-color: transparent
         background-color: rgba($c-blueZodiac, 0.24)
         color: $c-blueZodiac
         +transition(border-color, background-color, color)
+        transition-duration: 0s
 
 
   &__block
@@ -77,6 +79,7 @@
     &:hover
       box-shadow: 0 0 15px 0 rgba($c-blueZodiac, 0.1)
       +transition(box-shadow)
+      transition-duration: 0s
 
     &.is-hide
       display: none

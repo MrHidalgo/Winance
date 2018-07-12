@@ -104,6 +104,7 @@
     &.is-opacity
       opacity: 0.5
       +transition(opacity)
+      transition-duration: 0s
 
     &--40
       .technology__block-top
@@ -219,6 +220,7 @@
           span
             background-color: $c-blueZodiac
             +transition(background-color)
+            transition-duration: 0s
 
       div
         display: flex
@@ -251,20 +253,24 @@
       &:hover
         opacity: 1
         +transition(opacity)
+        transition-duration: 0s
 
         + .technology__row-line
           span
             background-color: $c-blueZodiac
             +transition(background-color)
+            transition-duration: 0s
 
       &.is-hover
         opacity: 1
         +transition(opacity)
+        transition-duration: 0s
 
         + .technology__row-line
           span
             background-color: $c-blueZodiac
             +transition(background-color)
+            transition-duration: 0s
 
 
     &-wrap
@@ -304,10 +310,12 @@
           &:hover
             color: $c-blueZodiac
             +transition(color)
+            transition-duration: 0s
 
           &.is-hover
             color: $c-blueZodiac
             +transition(color)
+            transition-duration: 0s
 
 
   &__col
@@ -321,9 +329,11 @@
       &:hover
         color: $c-blueZodiac
         +transition(color)
+        transition-duration: 0s
       &.is-hover
         color: $c-blueZodiac
         +transition(color)
+        transition-duration: 0s
 
 
     &-0

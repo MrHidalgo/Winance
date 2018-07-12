@@ -125,11 +125,13 @@
         &:hover
           border-color: $c-royalBlue
           +transition(border-color)
+          transition-duration: 0s
         &.is-active
           border-color: transparent
           background-color: rgba($c-blueZodiac, 0.24)
           color: $c-blueZodiac
           +transition(border-color, background-color, color)
+          transition-duration: 0s
 
 
     &__col
