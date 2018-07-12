@@ -1355,7 +1355,7 @@ $(document).ready(function () {
 
     if ( !viewportMeta.length > 0 ) return;
 
-    if (_window.width() < 360) {
+    if (screen.width <= 360) {
       viewportMeta.attr('content', 'width=360');
     } else {
       if($('head meta[name="viewport"]').length === 0) {
