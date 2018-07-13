@@ -75,15 +75,15 @@
 
 
 #navigation.navigation.animated(nav-mobile-js)
-  .navigation__row.navigation__row-0
-    +headerNav("mobile", mobileNav)
-
   .navigation__row.navigation__row-1.wow.wowFadeUp(data-animation-delay="0.3s")
     a.parlor(href="cabinet.html" title!="" class!="")
       i.parlor__icon.icon-parlor
       != "Шусман"
 
     a.logout(href="cabinet.html" title!="" class!="")!= "Выйти"
+
+  .navigation__row.navigation__row-0
+    +headerNav("mobile", mobileNav)
 
   .navigation__row.navigation__row-2.wow.wowFadeUp(data-animation-delay="0.3s")
     +lang(mobileLang)

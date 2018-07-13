@@ -78,7 +78,7 @@ $(document).ready(function () {
 
     stickyHeader();
 
-    if($(".calc").length > 0) {
+    if ($(".calc").length > 0) {
       initCalc();
     }
 
@@ -242,7 +242,7 @@ $(document).ready(function () {
         masonryGrid.masonry(masonryGridOption);
       }
 
-      if($(".support__box").length > 0) {
+      if ($(".support__box").length > 0) {
         masonryGrid.masonry(masonryGridOption);
       }
 
@@ -267,7 +267,7 @@ $(document).ready(function () {
             }
           });
 
-        if($(".support__box").length > 0) {
+        if ($(".support__box").length > 0) {
           masonryGrid
             .masonry('reloadItems')
             .masonry('layout');
@@ -492,7 +492,7 @@ $(document).ready(function () {
 
     let width = i.width();
 
-    if(text !== '') {
+    if (text !== '') {
       i.text(text);
     } else {
       i.text("");
@@ -519,7 +519,7 @@ $(document).ready(function () {
   }
 
   function changeInputDataVal(inputElem, minVal, maxVal, defaultVal) {
-    $(inputElem).on("input", function(e) {
+    $(inputElem).on("input", function (e) {
       console.log(`changeInputDataVal`);
 
       let elem = $(e.target),
@@ -528,7 +528,7 @@ $(document).ready(function () {
         rangeMax = rangeElem[0].max,
         rangeMin = rangeElem[0].min;
 
-      if(elemVal >= minVal && elemVal <= maxVal) {
+      if (elemVal >= minVal && elemVal <= maxVal) {
         rangeElem.val(elemVal);
         rangeElem.css({
           'backgroundSize': (elemVal - rangeMin) * 100 / (rangeMax - rangeMin) + '% 100%'
@@ -540,6 +540,7 @@ $(document).ready(function () {
         });
       }
 
+
       resizeInputs(elem);
       changePercent(elem, elemVal, returnRadioAttrStep(elem));
       calcMainSum(elem);
@@ -547,26 +548,22 @@ $(document).ready(function () {
   }
 
   function limitValueInput(inputDataElem, minVal, maxVal) {
-    $(inputDataElem).on("blur", function(e) {
-      // console.log(`inputDataElem blur`);
-
+    $(inputDataElem).on("blur", function (e) {
       let elem = $(e.target),
         elemVal = elem.val();
-      //
-      // console.log(`limit elem: `, elem);
-      // console.log(`limit elemVal: `, elemVal);
 
       let rangeElem = elem.closest(".calc__tabs-col").find("input[type='range']"),
         rangeMax = rangeElem[0].max,
         rangeMin = rangeElem[0].min;
 
-      if(elemVal === "" || (elemVal < minVal)) {
-        elem.val(minVal);
+
+      if (elemVal === "" || (elemVal < minVal)) {
+        elem.val(reductionToFormat(minVal.toString()));
 
         resizeInputs(elem);
         changePercent(elem, minVal, returnRadioAttrStep(elem));
       } else if (elemVal > maxVal) {
-        elem.val(maxVal);
+        elem.val(reductionToFormat(maxVal.toString()));
 
         resizeInputs(elem);
 
@@ -576,6 +573,11 @@ $(document).ready(function () {
         rangeElem.val(maxVal);
         changePercent(elem, maxVal, returnRadioAttrStep(elem));
       }
+
+      let unFormatVal = elem.val();
+      elem.val(reductionToFormat(unFormatVal));
+
+      resizeInputs(elem);
       calcMainSum(elem);
     });
   }
@@ -592,7 +594,7 @@ $(document).ready(function () {
   }
 
   function rangeInput(rangeName, inputDataElem) {
-    $(rangeName).on("input", function(e) {
+    $(rangeName).on("input", function (e) {
       let elem = $(e.target),
         elemVal = (elem.val()),
         monthData = $(inputDataElem);
@@ -604,7 +606,7 @@ $(document).ready(function () {
   }
 
   function radioInputChange(radioName) {
-    $(radioName).on("click", function(e) {
+    $(radioName).on("click", function (e) {
       let elem = $(e.currentTarget),
         rangeMonthElemVal = elem.closest(".calc__tabs-body").find('.calc__input--month')[0].value;
 
@@ -614,13 +616,25 @@ $(document).ready(function () {
   }
 
   function changeValuePercent(rangeName) {
-    $(rangeName).on("input", function(e) {
+    $(rangeName).on("input", function (e) {
       let elem = $(e.target),
         elemVal = parseInt(elem.val());
 
       changePercent(elem, elemVal, returnRadioAttrStep(elem));
       calcMainSum(elem);
     });
+  }
+
+  function initCalcVal(inputName) {
+    let inputElem = $(inputName),
+      inputElemVal = inputElem.val();
+
+    inputElem.val(reductionToFormat(inputElemVal));
+    resizeInputs(inputElem);
+  }
+
+  function reductionToFormat(num) {
+    return num.replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
   }
 
   function calcMainSum(elem) {
@@ -632,22 +646,17 @@ $(document).ready(function () {
       valCountMonth = parseInt(parentElem.find(".calc__input--month").val()),
       percentVal = parseFloat(parentElem.find("[percent-val-js] strong").text());
 
-    // console.log(`valSumInvestment: `, valSumInvestment);
-    // console.log(`valCountMonth: `, valCountMonth);
-    // console.log(`percentVal: `, percentVal);
-    // console.log(`(${valSumInvestment} * ${percentVal}) / 100) * ${valCountMonth} = ${((valSumInvestment * percentVal) / 100) * valCountMonth}`);
+    let resultMain = parseFloat(((valSumInvestment * percentVal) / 100) * valCountMonth).toFixed(2),
+      resultMainOneMonth = parseFloat(((valSumInvestment * percentVal) / 100)).toFixed(2),
+      resultMainThreeMonth = parseFloat(((valSumInvestment * percentVal) / 100) * 3).toFixed(2);
 
-    let resultMain = parseFloat(((valSumInvestment * percentVal) / 100) * valCountMonth).toFixed(2);
-      // resultMainOneMonth = parseFloat(((valSumInvestment * percentVal) / 100)).toFixed(2),
-      // resultMainThreeMonth = parseFloat(((valSumInvestment * percentVal) / 100) * 3).toFixed(2);
+    if (isNaN(resultMain)) resultMain = (0).toFixed(2);
+    if (isNaN(resultMainOneMonth)) resultMainOneMonth = (0).toFixed(2);
+    if (isNaN(resultMainThreeMonth)) resultMainThreeMonth = (0).toFixed(2);
 
-    // console.log(`resultMain: `, resultMain);
-
-    if(isNaN(resultMain)) resultMain = 0;
-
-    mainSumElem.text(resultMain);
-    // mainSumOneMonth.text(resultMainOneMonth);
-    // mainSumThreeMonth.text(resultMainThreeMonth);
+    mainSumElem.text(reductionToFormat(resultMain));
+    mainSumOneMonth.text(reductionToFormat(resultMainOneMonth));
+    mainSumThreeMonth.text(reductionToFormat(resultMainThreeMonth));
   }
 
   function returnRadioAttrStep(elem) {
@@ -660,9 +669,6 @@ $(document).ready(function () {
 
   function changePercent(elem, elemVal, numTmp) {
     let percentElem = $(elem).closest(".calc__tabs-body").find("[percent-val-js] strong");
-
-    console.log(`elemVal: `, elemVal);
-    console.log(`numTmp: `, numTmp);
 
     switch (parseInt(elemVal)) {
       case 0:
@@ -746,7 +752,12 @@ $(document).ready(function () {
     changeValuePercent("[monthRangeEu-calc-js]");
 
     radioInputChange("input[type='radio']");
+
+    initCalcVal("[sumDataRu-calc-js]");
+    initCalcVal("[sumDataEn-calc-js]");
+    initCalcVal("[sumDataEu-calc-js]");
   }
+
   // ====================
   // ====================
 
@@ -778,18 +789,19 @@ $(document).ready(function () {
   function swiperMasonryInit() {
     $(_window).on("load resize", function () {
 
-      if ($(_window).width() < 768) {
-        initSwiperReasons();
-
-      } else {
-
-        if ($(".swiper-reasons-js").length > 0 && swiperReasons !== 0) {
-          swiperReasons.destroy(true, true);
-          swiperReasons = 0;
+      if($(".reasons").length > 0) {
+        if ($(_window).width() < 768) {
+          initSwiperReasons();
+        } else {
+          if ($(".swiper-reasons-js").length > 0 && swiperReasons !== 0) {
+            swiperReasons.destroy(true, true);
+            swiperReasons = 0;
+          }
         }
       }
     });
   }
+
   // ====================
 
 
@@ -804,6 +816,8 @@ $(document).ready(function () {
 
     $(".tabs__container").removeClass("is-active");
     $(".tabs__container-" + elemAttrVal).addClass("is-active");
+
+    initScrollMonitor();
   });
   // ====================
 
@@ -812,7 +826,7 @@ $(document).ready(function () {
   // ====================
   function technologyHoverBlock() {
     $("[hover-tech-js] [hover-elem-js]").hover(
-      function(e) {
+      function (e) {
         let elem = $(e.currentTarget),
           elemAttrId = elem.attr("data-hover-id"),
           elemAttrBlock = elem.attr("data-hover-block");
@@ -828,15 +842,16 @@ $(document).ready(function () {
         $("[find-hover-js]").removeClass("is-hover");
         hoverElem.addClass("is-hover");
       },
-      function(e) {
+      function (e) {
         $("[find-hover-js]").removeClass("is-hover");
         $("[timeline-hover-js]").removeClass("is-opacity");
       }
     );
   }
+
   function technologyHoverTimeLine() {
     $("[timeline-hover-js]").not("[timeline-hover-js][data-block='']").hover(
-      function(e) {
+      function (e) {
         let elem = $(e.currentTarget),
           elemAttrId = elem.attr("data-block");
 
@@ -847,51 +862,93 @@ $(document).ready(function () {
         timeLineBlocks.addClass("is-opacity");
         $("[timeline-hover-js][data-block='" + elemAttrId + "']").removeClass("is-opacity");
       },
-      function(e) {
+      function (e) {
         $("[find-hover-js]").removeClass("is-hover");
         $("[timeline-hover-js]").removeClass("is-opacity");
       }
     );
   }
+
   // ====================
 
 
   //
   // ====================
+  function getBrowser() {
+    let ua = navigator.userAgent,
+      tem,
+      M = ua.match(/(opera|edge|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+
+    if (/trident/i.test(M[1])) {
+      tem = /\brv[ :]+(\d+)/g.exec(ua) || [];
+      return {name: 'IE', version: (tem[1] || '')};
+    }
+
+    if (M[1] === 'Chrome') {
+      tem = ua.match(/\bOPR\/(\d+)/);
+
+      if (tem != null) {
+        return {name: 'Opera', version: tem[1]};
+      }
+
+      tem = ua.match(/\edge\/(\d+)/i);
+
+      if (tem != null) {
+        return {name: 'Edge', version: tem[1]};
+      }
+    }
+
+    M = M[2] ? [M[1], M[2]] : [navigator.appName, navigator.appVersion, '-?'];
+
+    if ((tem = ua.match(/version\/(\d+)/i)) != null) {
+      M.splice(1, 1, tem[1]);
+    }
+    return {
+      name: M[0],
+      version: M[1]
+    };
+  }
   function initSelect() {
     $("[selectric-js]")
       .selectric({
         inheritOriginalWidth: true,
-        onInit: function(event) {
+        nativeOnMobile: false,
+        onInit: function (event) {
           let elem = $(event),
             labelElem = $(elem).closest(".selectric-wrapper").siblings(".form__label"),
             elemWidth = parseInt($(elem).closest(".selectric-wrapper").css("width"));
 
+          const browser = getBrowser(),
+            browserName = browser.name.toLowerCase();
 
-          if(labelElem.length === 0) {
+          const cornerWidth = (browserName === "chrome") ? 30 : 50;
+
+          if (labelElem.length === 0) {
             elem.closest(".selectric-wrapper").css({
               width: "100%"
             })
           } else {
             elem.closest(".selectric-wrapper").css({
-              width: (elemWidth < 200) ? elemWidth + 30 : elemWidth + (30 / 2)
+              width: (elemWidth < 200) ? elemWidth + cornerWidth : elemWidth + (cornerWidth)
             })
           }
         }
       });
   }
+
   // ====================
 
 
   // ====================
   function cabinetPagination(btnName) {
-    _document.on("click", btnName, function(e) {
+    _document.on("click", btnName, function (e) {
       let elem = $(e.target);
 
       $(btnName).removeClass("is-active");
       elem.addClass("is-active");
     })
   }
+
   // ====================
 
 
@@ -906,13 +963,14 @@ $(document).ready(function () {
         tableRowFilter = $("[bill-table-js] .bill__table-row[data-filter='" + elemAttr + "']");
 
       tableRow.css({
-        display : "flex"
+        display: "flex"
       });
       tableRowFilter.css({
-        display : "none"
+        display: "none"
       });
     });
   }
+
   // ====================
 
 
@@ -924,7 +982,7 @@ $(document).ready(function () {
 
       let investmentBlock = $("[investment-block-js]");
 
-      if(elemAttr === "all") {
+      if (elemAttr === "all") {
         investmentBlock.show();
       } else {
         investmentBlock.hide();
@@ -932,6 +990,7 @@ $(document).ready(function () {
       }
     });
   }
+
   // ====================
 
 
@@ -945,11 +1004,12 @@ $(document).ready(function () {
 
     elem.innerHTML = tp.execute(elem.innerHTML);
   }
+
   // ====================
 
 
   // ====================
-  function testimonialsTemplate(classMod){
+  function testimonialsTemplate(classMod) {
     return `
       <a class="testimonials__block testimonials__block-${classMod}" title="" href="#">
         <div class="testimonials__block-header">
@@ -1023,7 +1083,7 @@ $(document).ready(function () {
         count = blockMainName.find(countBlockName).length,
         content = templateName(count);
 
-      if(count < 12) {
+      if (count < 12) {
         blockMainName
           .append(content)
           .masonry("reloadItems")
@@ -1040,6 +1100,7 @@ $(document).ready(function () {
     showMore("[press-more-js]", "[masonry-print-js]", ".print__block", pressTemplate);
     showMore("[faq-more-js]", "[masonry-faq-js]", ".quesAns__block", faqTemplate);
   }
+
   // ====================
 
 
@@ -1050,13 +1111,14 @@ $(document).ready(function () {
         _formInput = _form.find("input"),
         _formInputParent = _formInput.closest(".form__field");
 
-      _formInput.each(function(idx, val) {
+      _formInput.each(function (idx, val) {
         $(val).removeAttr("readonly");
       });
 
       _formInputParent.removeClass("form__field--readonly");
     });
   }
+
   // ====================
 
 
@@ -1064,6 +1126,7 @@ $(document).ready(function () {
   function initCopyText(copyBtnName) {
     new ClipboardJS(copyBtnName);
   }
+
   // ====================
 
 
@@ -1079,8 +1142,8 @@ $(document).ready(function () {
       $(".modal__body-" + elemAttr).addClass("is-active");
     });
   }
-  // ====================
 
+  // ====================
 
 
   // ====================
@@ -1090,8 +1153,8 @@ $(document).ready(function () {
       $(e.currentTarget).addClass("is-active");
     });
   }
-  // ====================
 
+  // ====================
 
 
   // ====================
@@ -1101,8 +1164,8 @@ $(document).ready(function () {
       $(e.currentTarget).addClass("is-active");
     });
   }
-  // ====================
 
+  // ====================
 
 
   // ====================
@@ -1115,8 +1178,8 @@ $(document).ready(function () {
       }
     });
   }
-  // ====================
 
+  // ====================
 
 
   // ====================
@@ -1128,8 +1191,8 @@ $(document).ready(function () {
       // need to add badge logic
     });
   }
-  // ====================
 
+  // ====================
 
 
   // ====================
@@ -1146,15 +1209,14 @@ $(document).ready(function () {
 
   const footerElem = $("footer");
 
-  _window.on("resize scroll load", function() {
-    if(footerElem.length > 0 && isElementInViewport(footerElem[0])) {
+  _window.on("resize scroll load", function () {
+    if (footerElem.length > 0 && isElementInViewport(footerElem[0])) {
       $("[hideStickyBtn-js]").fadeOut();
     } else {
       $("[hideStickyBtn-js]").fadeIn();
     }
   });
   // ====================
-
 
 
   // ====================
@@ -1174,7 +1236,7 @@ $(document).ready(function () {
       wScrollBefore = 0,
       wScrollDiff = 0;
 
-    $window.on('scroll', function() {
+    $window.on('scroll', function () {
 
       elHeight = $element.outerHeight();
       dHeight = $document.height();
@@ -1187,8 +1249,7 @@ $(document).ready(function () {
         $element.css('top', 0);
       else if (wScrollDiff > 0)
         $element.css('top', elTop > 0 ? 0 : elTop);
-      else if (wScrollDiff < 0)
-      {
+      else if (wScrollDiff < 0) {
         if (wScrollCurrent + wHeight >= dHeight - elHeight)
           $element.css('top', (elTop = wScrollCurrent + wHeight - dHeight) < 0 ? elTop : 0);
         else
@@ -1198,8 +1259,8 @@ $(document).ready(function () {
       wScrollBefore = wScrollCurrent;
     });
   }
-  // ====================
 
+  // ====================
 
 
   // ====================
@@ -1292,11 +1353,11 @@ $(document).ready(function () {
       removalDelay: 300,
       mainClass: 'popup-buble',
       callbacks: {
-        beforeOpen: function() {
+        beforeOpen: function () {
           startWindowScroll = _window.scrollTop();
           // $('html').addClass('mfp-helper');
         },
-        close: function() {
+        close: function () {
           // $('html').removeClass('mfp-helper');
           _window.scrollTop(startWindowScroll);
         }
@@ -1335,7 +1396,7 @@ $(document).ready(function () {
     $("[js-mask-number]").mask("#");
 
     _document
-      .on('keydown', '[js-mask-price]', function(e){
+      .on('keydown', '[js-mask-price]', function (e) {
         // https://stackoverflow.com/questions/22342186/textbox-mask-allow-number-only
         // Allow: backspace, delete, tab, escape, enter and .
         // dissallow . (190) for now
@@ -1350,28 +1411,28 @@ $(document).ready(function () {
         if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
           e.preventDefault();
         }
-        if ( $(this).val().length > 10 ){
+        if ($(this).val().length > 10) {
           e.preventDefault();
         }
       })
-      .on('keyup', '[js-mask-price]', function(e){
+      .on('keyup', '[js-mask-price]', function (e) {
         // if number is typed format with space
-        if ($(this).val().length > 0){
-          $(this).val( $(this).val().replace(/ /g,"") );
-          $(this).val( $(this).val().replace(/\B(?=(\d{3})+(?!\d))/g, " ") );
+        if ($(this).val().length > 0) {
+          $(this).val($(this).val().replace(/ /g, ""));
+          $(this).val($(this).val().replace(/\B(?=(\d{3})+(?!\d))/g, " "));
         }
       })
   }
 
-  function viewportControl(){
+  function viewportControl() {
     let viewportMeta = _document.find('meta[name="viewport"]');
 
-    if ( !viewportMeta.length > 0 ) return;
+    if (!viewportMeta.length > 0) return;
 
     if (screen.width <= 360) {
       viewportMeta.attr('content', 'width=360');
     } else {
-      if($('head meta[name="viewport"]').length === 0) {
+      if ($('head meta[name="viewport"]').length === 0) {
         viewportMeta.attr('content', 'width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no');
       }
     }
@@ -1397,7 +1458,7 @@ $(document).ready(function () {
 
       var animationName = $(el).data('animation-name') || "wowFade";
 
-      elWatcher.enterViewport(function() {
+      elWatcher.enterViewport(function () {
         $(el).addClass(animationClass);
         $(el).css({
           'animation-name': animationName,
@@ -1501,7 +1562,6 @@ $(document).ready(function () {
   Barba.Pjax.start();
 
   Barba.Dispatcher.on('newPageReady', function (currentStatus, oldStatus, container, newPageRawHTML) {
-
     pageReady();
     closeMobileMenu();
 

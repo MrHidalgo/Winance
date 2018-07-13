@@ -277,8 +277,10 @@
           background-color: $c-white
 
           li
+            white-space: nowrap
             cursor: pointer
             border-bottom: 2px solid rgba($c-royalBlue, 0.5)
+            background-color: $c-white
             color: $c-blueZodiac
             font-size: 18px
             +transition(border-color, background-color)
@@ -323,6 +325,8 @@
     padding-left: 0
     padding-right: 135px
     border: none
+    border-radius: 0
+    box-shadow: none
     border-bottom: 2px solid rgba($c-royalBlue, 0.5)
     background-color: transparent
     font-size: 18px
@@ -575,12 +579,13 @@ input[type=range]::-moz-range-thumb
 
 // SWIPER
 +r(767)
-  .swiper
-    &-container
-      padding-right: 20px
-      padding-left: 20px
-      margin-right: -20px
-      margin-left: -20px
-    &-pagination
-      padding-right: 20px
+  .reasons
+    .swiper
+      &-container
+        padding-right: 20px
+        padding-left: 20px
+        margin-right: -20px
+        margin-left: -20px
+      &-pagination
+        padding-right: 20px
 // \ SWIPER

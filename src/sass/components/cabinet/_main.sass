@@ -2,7 +2,8 @@
 
 .cabinet
   .main
-    overflow: hidden
+    z-index: 1
+    position: relative
     padding-top: 45px
     background-color: $c-whiteSmoke
 
@@ -50,11 +51,11 @@
 
       &-2
         opacity: 0
-        visibility: hidden
+        visibility: hidden !important
         height: 0
         +r(991)
           opacity: 1
-          visibility: visible
+          visibility: visible !important
           height: auto
         .form__field
           width: 100%
