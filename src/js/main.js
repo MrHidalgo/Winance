@@ -479,7 +479,7 @@ $(document).ready(function () {
   // ====================
   function inputRangeInit() {
     $('input[type=range]').on('input', function (e) {
-      var min = e.target.min,
+      let min = e.target.min,
         max = e.target.max,
         val = e.target.value;
 
@@ -719,9 +719,9 @@ $(document).ready(function () {
    */
   function initCalc() {
     maskInput("[maskMonth-js]", "ZZ");
-    maskInput("[maskSumRu-js]", 'ZZZZZZZ');
-    maskInput("[maskSumEn-js]", 'ZZZZZZ');
-    maskInput("[maskSumEu-js]", 'ZZZZZZ');
+    // maskInput("[maskSumRu-js]", 'ZZZZZZZ');
+    // maskInput("[maskSumEn-js]", 'ZZZZZZ');
+    // maskInput("[maskSumEu-js]", 'ZZZZZZ');
 
     changeInputDataVal("[monthDataRu-calc-js]", 3, 12, "3");
     changeInputDataVal("[sumDataRu-calc-js]", 10000, 5000000, "10000");
