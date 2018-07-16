@@ -77,7 +77,7 @@ $(document).ready(function () {
 
     navLinkActiveClass();
 
-    bodyClick();
+    // bodyClick();
 
     blogBadgeInit();
 
@@ -525,8 +525,6 @@ $(document).ready(function () {
 
   function changeInputDataVal(inputElem, minVal, maxVal, defaultVal) {
     $(inputElem).on("input", function (e) {
-      console.log(`changeInputDataVal`);
-
       let elem = $(e.target),
         elemVal = elem.val(),
         rangeElem = elem.closest(".calc__tabs-col").find("input[type='range']"),
@@ -604,7 +602,8 @@ $(document).ready(function () {
         elemVal = (elem.val()),
         monthData = $(inputDataElem);
 
-      monthData.val(elemVal);
+      monthData.val(reductionToFormat(elemVal));
+
       resizeInputs(monthData);
       calcMainSum(elem);
     });
@@ -645,23 +644,23 @@ $(document).ready(function () {
   function calcMainSum(elem) {
     let parentElem = $(elem).closest(".calc__tabs-body"),
       mainSumElem = parentElem.find("[resultSum-calc-js]"),
-      mainSumOneMonth = parentElem.find("[sumOneMonth-js]"),
-      mainSumThreeMonth = parentElem.find("[sumThreeMonth-js]"),
-      valSumInvestment = parseInt(parentElem.find(".calc__input--sum").val()),
-      valCountMonth = parseInt(parentElem.find(".calc__input--month").val()),
+      mainSumOneMonthElem = parentElem.find("[sumOneMonth-js]"),
+      mainSumThreeMonthElem = parentElem.find("[sumThreeMonth-js]"),
+      valSumInvestment = parseFloat(parentElem.find(".calc__input--sum").val().replace(/\s/g, '')),
+      valCountMonth = parseFloat(parentElem.find(".calc__input--month").val()),
       percentVal = parseFloat(parentElem.find("[percent-val-js] strong").text());
 
-    let resultMain = parseFloat(((valSumInvestment * percentVal) / 100) * valCountMonth).toFixed(2),
-      resultMainOneMonth = parseFloat(((valSumInvestment * percentVal) / 100)).toFixed(2),
-      resultMainThreeMonth = parseFloat(((valSumInvestment * percentVal) / 100) * 3).toFixed(2);
+    let resultMain = parseFloat((((valSumInvestment * percentVal) / 100) * valCountMonth) + valSumInvestment).toFixed(2),
+      resultMainOneMonth = parseFloat((((valSumInvestment * percentVal) / 100)) + valSumInvestment).toFixed(2),
+      resultMainThreeMonth = parseFloat((((valSumInvestment * percentVal) / 100) * 3) + valSumInvestment).toFixed(2);
 
     if (isNaN(resultMain)) resultMain = (0).toFixed(2);
     if (isNaN(resultMainOneMonth)) resultMainOneMonth = (0).toFixed(2);
     if (isNaN(resultMainThreeMonth)) resultMainThreeMonth = (0).toFixed(2);
 
     mainSumElem.text(reductionToFormat(resultMain));
-    mainSumOneMonth.text(reductionToFormat(resultMainOneMonth));
-    mainSumThreeMonth.text(reductionToFormat(resultMainThreeMonth));
+    mainSumOneMonthElem.text(reductionToFormat(resultMainOneMonth));
+    mainSumThreeMonthElem.text(reductionToFormat(resultMainThreeMonth));
   }
 
   function returnRadioAttrStep(elem) {
