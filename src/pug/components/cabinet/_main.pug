@@ -84,13 +84,13 @@ mixin mainBtn(classMod, href, name, count)
 
     .main__row.main__row-2.wow.wowFadeUp(data-animation-delay="0.4s")
       .form__field.form__field--select.form__field--p
-        select(name="" id="menu" selectric-js)
+        select.selectric-mobileMenu-js(name="" id="menu" selectric-js)
+          option(value!="cabinet.html")!= "Мой счет"
           option(value!="cabinetInvestment.html")!= "Инвестиции"
           option(value!="cabinetPartners.html")!= "Партнерская программа"
           option(value!="cabinetInformation.html")!= "Информация"
           option(value!="cabinetSupportEmpty.html")!= "Поддержка"
           option(value!="cabinetReports.html")!= "Отчеты"
-          option(value!="cabinet.html")!= "Мой счет"
 
 
 // MAIN :: END

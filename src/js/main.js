@@ -936,6 +936,15 @@ $(document).ready(function () {
               width: (elemWidth < 200) ? elemWidth + cornerWidth : elemWidth + (cornerWidth)
             })
           }
+        },
+        onChange: function(e) {
+          let elem = $(e);
+
+          if(elem.hasClass("selectric-mobileMenu-js")) {
+            let optionValue = elem.find("option:selected").val();
+
+            window.location.href = optionValue;
+          }
         }
       });
   }
