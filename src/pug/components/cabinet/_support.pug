@@ -68,7 +68,7 @@
           each val, idx in supportPagination
             li.support__pagination-item
               a.support__pagination-link(
-                href="#"
+                href="#" + supportPagination[idx].attr
                 title!= ""
                 class!= (idx === 0) ? "is-active support__pagination-link--" + supportPagination[idx].classMod: "support__pagination-link--" + supportPagination[idx].classMod
                 support-pagination-js

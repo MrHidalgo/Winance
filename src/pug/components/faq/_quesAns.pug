@@ -102,7 +102,7 @@ section.quesAns
         each val, idx in quesAnsPagination
           li.quesAns__pagination-item.wow.wowFadeUp(data-animation-delay!= (0.55 + parseFloat(0.1 * idx)).toFixed(2) + "s")
             a.quesAns__pagination-link(
-              href="#"
+              href="#" + quesAnsPagination[idx].attr
               title!=""
               class!=(idx === 0) ? "is-active": ""
               quesAns-pagination-js

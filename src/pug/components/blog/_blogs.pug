@@ -169,7 +169,7 @@ section.blogs
         each val, idx in blogsPagination
           li.blogs__pagination-item.wow.wowFadeUp(data-animation-delay!= (0.45 + parseFloat(0.1 * idx)).toFixed(2) + "s")
             a.blogs__pagination-link(
-              href="#"
+              href="#" + blogsPagination[idx].attr
               title!=""
               class!=(idx === 0) ? "is-active": ""
               blogs-pagination-js

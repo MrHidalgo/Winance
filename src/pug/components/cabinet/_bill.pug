@@ -87,11 +87,11 @@ mixin tableRow(attr, valDate, valOpr, valCode, valDone)
               li.bill__pagination-item
                 p.bill__pagination-title!= "Операции:"
               li.bill__pagination-item
-                a.bill__pagination-link.is-active(bill-filter-js data-pagination="all" href="#" title="")!= "Все"
+                a.bill__pagination-link.is-active(bill-filter-js data-pagination="all" href="#all" title="")!= "Все"
               li.bill__pagination-item
-                a.bill__pagination-link.bill__pagination-link--add(bill-filter-js data-pagination="plus" href="#" title="")!= "Пополнение"
+                a.bill__pagination-link.bill__pagination-link--add(bill-filter-js data-pagination="plus" href="#plus" title="")!= "Пополнение"
               li.bill__pagination-item
-                a.bill__pagination-link.bill__pagination-link--remove(bill-filter-js data-pagination="minus" href="#" title="")!= "Снятие"
+                a.bill__pagination-link.bill__pagination-link--remove(bill-filter-js data-pagination="minus" href="#minus" title="")!= "Снятие"
 
         .bill__table.wow.wowFadeUp(data-animation-delay="0.55s" bill-table-js)
           .bill__table-row
