@@ -23,6 +23,7 @@ $(document).ready(function () {
   // READY - triggered when PJAX DONE
   ////////////
   function pageReady() {
+    initTypograf();
     legacySupport();
     updateHeaderActiveClass();
     initHeaderScroll();
@@ -64,7 +65,7 @@ $(document).ready(function () {
     billFilterTable();
     investmentFilterBlock();
 
-    // initTypograf();
+
 
     initShowMore();
 
