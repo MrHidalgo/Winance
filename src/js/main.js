@@ -43,6 +43,10 @@ $(document).ready(function () {
     filterMasonry("[quesAns-pagination-js]", "[masonry-faq-js]", ".quesAns__block");
     filterMasonry("[support-pagination-js]", "[masonry-support-js]", ".support__box");
 
+    initHrefFilter("[blogs-pagination-js]");
+    initHrefFilter("[quesans-pagination-js]");
+    initHrefFilter("[support-pagination-js]");
+
     inputRangeInit();
     closeMobileMenu();
 
@@ -1264,14 +1268,18 @@ $(document).ready(function () {
 
 
   // ====================
-  function funcName() {
+  function initHrefFilter(btnName) {
+    _window.on("load", (e) => {
+
+      const winHref = window.location.href,
+        hrefPosition = winHref.indexOf("#"),
+        hrefAnchor = winHref.substring(hrefPosition + 1);
+
+      if(hrefPosition !== -1) {
+        $("" + btnName + "[data-pagination='" + hrefAnchor + "']").trigger('click');
+      }
+    });
   }
-
-  _document.on("click", "", function (e) {
-  });
-  // ====================
-
-
   // ====================
   // ====================
 
@@ -1281,7 +1289,7 @@ $(document).ready(function () {
 
   function initSliders() {
     var slickNextArrow = '<div class="slick-prev"><svg class="ico ico-back-arrow"><use xlink:href="img/sprite.svg#ico-back-arrow"></use></svg></div>';
-    var slickPrevArrow = '<div class="slick-next"><svg class="ico ico-next-arrow"><use xlink:href="img/sprite.svg#ico-next-arrow"></use></svg></div>'
+    var slickPrevArrow = '<div class="slick-next"><svg class="ico ico-next-arrow"><use xlink:href="img/sprite.svg#ico-next-arrow"></use></svg></div>';
 
     // General purpose sliders
     $('[js-slider]').each(function (i, slider) {
