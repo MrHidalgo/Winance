@@ -1153,18 +1153,7 @@ $(document).ready(function () {
 
   // ====================
   function navLinkActiveClass() {
-    _document.on("click", ".nav--wrapper .nav__link", function (e) {
-      $(".nav__link").removeClass("is-active");
-      $(e.currentTarget).addClass("is-active");
-    });
-  }
-
-  // ====================
-
-
-  // ====================
-  function navBarLinkActiveClass() {
-    _document.on("click", ".nav--wrapper .nav__link", function (e) {
+    _document.on("click", ".nav--wrapper .nav__link, .nav--mobile .nav__link, .nav--bar .nav__link", function (e) {
       $(".nav__link").removeClass("is-active");
       $(e.currentTarget).addClass("is-active");
     });
@@ -1176,10 +1165,13 @@ $(document).ready(function () {
   // ====================
   function bodyClick() {
     $('body').on('click', function (e) {
-      const className = ".nav--wrapper .nav__link";
+      const className = ".nav--wrapper, .nav--mobile";
+
+      console.log($(e.target).closest(className));
+      console.log(!$(e.target).closest(className).length);
 
       if (!$(e.target).closest(className).length) {
-        $(".nav__link").removeClass("is-active");
+        // $(".nav__link").removeClass("is-active");
       }
     });
   }
@@ -1439,7 +1431,7 @@ $(document).ready(function () {
     if (!viewportMeta.length > 0) return;
 
     if (screen.width <= 360) {
-      viewportMeta.attr('content', 'width=360');
+      viewportMeta.attr('content', 'width=360, minimum-scale=1, user-scalable=no');
     } else {
       if ($('head meta[name="viewport"]').length === 0) {
         viewportMeta.attr('content', 'width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no');

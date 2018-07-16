@@ -83,7 +83,36 @@
     a.logout(href="cabinet.html" title!="" class!="")!= "Выйти"
 
   .navigation__row.navigation__row-0
-    +headerNav("mobile", mobileNav)
+    .nav.nav--mobile
+      ul.nav__list
+        each val, idx in mobileNav
+          if(pageName === "about" && idx === 0)
+            li.nav__item.wow.wowFadeUp(data-animation-delay!= (0.35 + parseFloat(0.1 * idx)).toFixed(2) + "s")
+              a.nav__link.is-active(href!= mobileNav[idx].href title!="")!= mobileNav[idx].name
+          else if(pageName === "howWeEarn" && idx === 1)
+            li.nav__item.wow.wowFadeUp(data-animation-delay!= (0.35 + parseFloat(0.1 * idx)).toFixed(2) + "s")
+              a.nav__link.is-active(href!= mobileNav[idx].href title!="")!= mobileNav[idx].name
+          else if(pageName === "investors" && idx === 3)
+            li.nav__item.wow.wowFadeUp(data-animation-delay!= (0.35 + parseFloat(0.1 * idx)).toFixed(2) + "s")
+              a.nav__link.is-active(href!= mobileNav[idx].href title!="")!= mobileNav[idx].name
+          else if(pageName === "reviews" && idx === 4)
+            li.nav__item.wow.wowFadeUp(data-animation-delay!= (0.35 + parseFloat(0.1 * idx)).toFixed(2) + "s")
+              a.nav__link.is-active(href!= mobileNav[idx].href title!="")!= mobileNav[idx].name
+          else if(pageName === "faq" && idx === 5)
+            li.nav__item.wow.wowFadeUp(data-animation-delay!= (0.35 + parseFloat(0.1 * idx)).toFixed(2) + "s")
+              a.nav__link.is-active(href!= mobileNav[idx].href title!="")!= mobileNav[idx].name
+          else if(pageName === "blog" && idx === 6)
+            li.nav__item.wow.wowFadeUp(data-animation-delay!= (0.35 + parseFloat(0.1 * idx)).toFixed(2) + "s")
+              a.nav__link.is-active(href!= mobileNav[idx].href title!="")!= mobileNav[idx].name
+          else if(pageName === "press" && idx === 7)
+            li.nav__item.wow.wowFadeUp(data-animation-delay!= (0.35 + parseFloat(0.1 * idx)).toFixed(2) + "s")
+              a.nav__link.is-active(href!= mobileNav[idx].href title!="")!= mobileNav[idx].name
+          else if(pageName === "contacts" && idx === 8)
+            li.nav__item.wow.wowFadeUp(data-animation-delay!= (0.35 + parseFloat(0.1 * idx)).toFixed(2) + "s")
+              a.nav__link.is-active(href!= mobileNav[idx].href title!="")!= mobileNav[idx].name
+          else
+            li.nav__item.wow.wowFadeUp(data-animation-delay!= (0.35 + parseFloat(0.1 * idx)).toFixed(2) + "s")
+              a.nav__link(href!= mobileNav[idx].href title!="")!= mobileNav[idx].name
 
   .navigation__row.navigation__row-2.wow.wowFadeUp(data-animation-delay="0.3s")
     +lang(mobileLang)
