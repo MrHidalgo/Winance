@@ -495,16 +495,10 @@ $(document).ready(function () {
     let text = elem.val().replace(/\s+/g, ' '),
       i = elem.next('i');
 
-    let width = i.width();
+    i.text( text !== '' ? text : "" )
 
-    if (text !== '') {
-      i.text(text);
-    } else {
-      i.text("");
-    }
-
-    width = i.width();
-    elem.css('width', width + 8);
+    let width = Math.floor(i.outerWidth());
+    elem.css('width', width); // ? +8
   }
 
   function initCalcValue(rangeNameElem, inputDataElem) {
@@ -523,20 +517,27 @@ $(document).ready(function () {
     resizeInputs(monthDataElem);
   }
 
+  function convertStrToNumber(str){
+    return parseInt(str.replace(/ /g, ''), 10)
+  }
+
   function changeInputDataVal(inputElem, minVal, maxVal, defaultVal) {
     $(inputElem).on("input", function (e) {
       let elem = $(e.target),
-        elemVal = elem.val(),
+        elemVal = convertStrToNumber(elem.val()),
         rangeElem = elem.closest(".calc__tabs-col").find("input[type='range']"),
         rangeMax = rangeElem[0].max,
         rangeMin = rangeElem[0].min;
 
+      // TODO - why minVal, maxVAl if rangeMax and rangeMin are present?
       if (elemVal >= minVal && elemVal <= maxVal) {
+        // in range
         rangeElem.val(elemVal);
         rangeElem.css({
           'backgroundSize': (elemVal - rangeMin) * 100 / (rangeMax - rangeMin) + '% 100%'
         });
       } else {
+        // outside range
         rangeElem.val(defaultVal);
         rangeElem.css({
           'backgroundSize': '0% 100%'
@@ -553,12 +554,11 @@ $(document).ready(function () {
   function limitValueInput(inputDataElem, minVal, maxVal) {
     $(inputDataElem).on("blur", function (e) {
       let elem = $(e.target),
-        elemVal = elem.val();
+        elemVal = convertStrToNumber(elem.val());
 
       let rangeElem = elem.closest(".calc__tabs-col").find("input[type='range']"),
-        rangeMax = rangeElem[0].max,
-        rangeMin = rangeElem[0].min;
-
+        rangeMax = parseInt(rangeElem[0].max, 10),
+        rangeMin = parseInt(rangeElem[0].min, 10);
 
       if (elemVal === "" || (elemVal < minVal)) {
         elem.val(reductionToFormat(minVal.toString()));
@@ -585,8 +585,8 @@ $(document).ready(function () {
     });
   }
 
-  function maskInput(inputElem, maxVal) {
-    $(inputElem).mask(maxVal, {
+  function maskInput(inputElem, mask) {
+    $(inputElem).mask(mask, {
       translation: {
         'Z': {
           pattern: /[0-9]/,
@@ -594,6 +594,72 @@ $(document).ready(function () {
         }
       }
     });
+
+    $(inputElem).on('keydown', function(e){
+      // Allow: backspace, delete, tab, escape, enter
+      // ?? . (190)
+      if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110]) !== -1 ||
+         // Allow: Ctrl+A
+        (e.keyCode == 65 && e.ctrlKey === true) ||
+         // Allow: home, end, left, right
+        (e.keyCode >= 35 && e.keyCode <= 39)) {
+           return;
+      }
+      // Ensure that it is a number and stop the keypress
+      if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+        e.preventDefault();
+      }
+
+      var clearVal = $(this).val().replace(/ /g, '');
+
+      if ( clearVal.length >= 2 ){
+        e.preventDefault();
+      }
+    })
+
+    $(inputElem).on('keyup', function(e){
+      // if empty - put 1
+      if ($(this).val().length == 0){
+        $(this).val( "3" )
+      }
+    })
+
+  }
+
+  function maskInputPrice(inputElem, maxLength) {
+    // $(inputElem).mask(mask);
+
+    $(inputElem).on('keydown', function(e){
+      // Allow: backspace, delete, tab, escape, enter
+      // ?? . (190)
+      if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110]) !== -1 ||
+         // Allow: Ctrl+A
+        (e.keyCode == 65 && e.ctrlKey === true) ||
+         // Allow: home, end, left, right
+        (e.keyCode >= 35 && e.keyCode <= 39)) {
+           return;
+      }
+      // Ensure that it is a number and stop the keypress
+      if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+        e.preventDefault();
+      }
+
+      if ( $(this).val().replace(/ /g, '').length >= maxLength ){
+        e.preventDefault();
+      }
+    })
+    $(inputElem).on('keyup', function(e){
+      // if number is typed format with space
+      if ($(this).val().length > 0){
+        var cursorPosition = this.selectionStart;
+
+        $(this).val( $(this).val().replace(/ /g,"") )
+        $(this).val( $(this).val().replace(/\B(?=(\d{3})+(?!\d))/g, " ") );
+
+        this.selectionEnd = cursorPosition
+      }
+    })
+
   }
 
   function rangeInput(rangeName, inputDataElem) {
@@ -719,9 +785,9 @@ $(document).ready(function () {
    */
   function initCalc() {
     maskInput("[maskMonth-js]", "ZZ");
-    // maskInput("[maskSumRu-js]", 'ZZZZZZZ');
-    // maskInput("[maskSumEn-js]", 'ZZZZZZ');
-    // maskInput("[maskSumEu-js]", 'ZZZZZZ');
+    maskInputPrice("[maskSumRu-js]", 7);
+    maskInputPrice("[maskSumEn-js]", 6);
+    maskInputPrice("[maskSumEu-js]", 6);
 
     changeInputDataVal("[monthDataRu-calc-js]", 3, 12, "3");
     changeInputDataVal("[sumDataRu-calc-js]", 10000, 5000000, "10000");
