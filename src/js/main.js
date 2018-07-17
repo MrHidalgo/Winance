@@ -768,7 +768,58 @@ $(document).ready(function () {
 
   //
   // ====================
-  let swiperReasons = 0;
+  let swiperBlog = 0,
+    swiperTestimonials = 0,
+    swiperPrint = 0,
+    swiperReasons = 0;
+
+  function initSwiperBlog() {
+    swiperBlog = new Swiper('.homepage .swiper-blog-js', {
+      wrapperClass: "swiper-wrapper",
+      slideClass: "blogs__block",
+      direction: 'horizontal',
+      loop: false,
+      watchOverflow: true,
+      setWrapperSize: false,
+      // spaceBetween: 18,
+      slidesPerView: 'auto',
+      normalizeSlideIndex: true,
+      grabCursor: true,
+      freeMode: true
+    })
+  }
+
+  function initSwiperTestimonials() {
+    swiperTestimonials = new Swiper('.homepage .swiper-testimonials-js', {
+      wrapperClass: "swiper-wrapper",
+      slideClass: "testimonials__block",
+      direction: 'horizontal',
+      loop: false,
+      watchOverflow: true,
+      setWrapperSize: false,
+      // spaceBetween: 18,
+      slidesPerView: 'auto',
+      normalizeSlideIndex: true,
+      grabCursor: true,
+      freeMode: true
+    })
+  }
+
+  function initSwiperPrint() {
+    swiperPrint = new Swiper('.homepage .swiper-print-js', {
+      wrapperClass: "swiper-wrapper",
+      slideClass: "print__block",
+      direction: 'horizontal',
+      loop: false,
+      watchOverflow: true,
+      setWrapperSize: false,
+      // spaceBetween: 18,
+      slidesPerView: 'auto',
+      normalizeSlideIndex: true,
+      grabCursor: true,
+      freeMode: true
+    })
+  }
 
   function initSwiperReasons() {
     swiperReasons = new Swiper('.swiper-reasons-js', {
@@ -793,19 +844,58 @@ $(document).ready(function () {
   function swiperMasonryInit() {
     $(_window).on("load resize", function () {
 
-      if($(".reasons").length > 0) {
-        if ($(_window).width() < 768) {
-          initSwiperReasons();
-        } else {
-          if ($(".swiper-reasons-js").length > 0 && swiperReasons !== 0) {
-            swiperReasons.destroy(true, true);
-            swiperReasons = 0;
-          }
+      function masonryOpt(blockName) {
+        return {
+          itemSelector: blockName,
+          gutter: 18,
+          horizontalOrder: true
+        };
+      }
+
+      let msnrGridBlog = $(".homepage [masonry-blog-js]"),
+        msnrGridTestimonials = $(".homepage [masonry-testimonials-js]"),
+        msnrGridPrint = $(".homepage [masonry-print-js]");
+
+      if ($(_window).width() < 768) {
+        initSwiperBlog();
+        initSwiperTestimonials();
+        initSwiperPrint();
+        initSwiperReasons();
+
+        if (msnrGridBlog.length) {
+          msnrGridBlog.masonry('destroy');
         }
+        if (msnrGridTestimonials.length) {
+          msnrGridTestimonials.masonry('destroy');
+        }
+        if (msnrGridPrint.length) {
+          msnrGridPrint.masonry('destroy');
+        }
+      } else {
+
+        if ($(".homepage .swiper-blog-js").length > 0 && swiperBlog !== 0) {
+          swiperBlog.destroy(true, true);
+          swiperBlog = 0;
+        }
+        if ($(".homepage .swiper-testimonials-js").length > 0 && swiperTestimonials !== 0) {
+          swiperTestimonials.destroy(true, true);
+          swiperTestimonials = 0;
+        }
+        if ($(".homepage .swiper-print-js").length > 0 && swiperPrint !== 0) {
+          swiperPrint.destroy(true, true);
+          swiperPrint = 0;
+        }
+        if ($(".swiper-reasons-js").length > 0 && swiperReasons !== 0) {
+          swiperReasons.destroy(true, true);
+          swiperReasons = 0;
+        }
+
+        msnrGridBlog.masonry(masonryOpt('.homepage .blogs__block'));
+        msnrGridTestimonials.masonry(masonryOpt('.homepage .testimonials__block'));
+        msnrGridPrint.masonry(masonryOpt('.homepage .print__block'));
       }
     });
   }
-
   // ====================
 
 
