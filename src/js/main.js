@@ -498,7 +498,7 @@ $(document).ready(function () {
     i.text( text !== '' ? text : "" )
 
     let width = Math.floor(i.outerWidth());
-    elem.css('width', width); // ? +8
+    elem.css('width', width + 8); // ? +8
   }
 
   function initCalcValue(rangeNameElem, inputDataElem) {
@@ -923,10 +923,12 @@ $(document).ready(function () {
         msnrGridPrint = $(".homepage [masonry-print-js]");
 
       if ($(_window).width() < 768) {
-        initSwiperBlog();
-        initSwiperTestimonials();
-        initSwiperPrint();
-        initSwiperReasons();
+        if($(".homepage").length > 0) {
+          initSwiperBlog();
+          initSwiperTestimonials();
+          initSwiperPrint();
+          initSwiperReasons();
+        }
 
         if (msnrGridBlog.length) {
           msnrGridBlog.masonry('destroy');
@@ -1088,8 +1090,10 @@ $(document).ready(function () {
               width: "100%"
             })
           } else {
+            // 135px - it's label width
             elem.closest(".selectric-wrapper").css({
-              width: (elemWidth < 200) ? elemWidth + cornerWidth : elemWidth + (cornerWidth)
+              // width: (elemWidth < 200) ? elemWidth + cornerWidth : elemWidth + (cornerWidth)
+              width: "calc(100% - 135px)"
             })
           }
         },

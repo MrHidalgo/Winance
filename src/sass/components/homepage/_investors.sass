@@ -38,6 +38,9 @@
   .container
     z-index: 1
     position: relative
+    +r(575)
+      padding-left: 0
+      padding-right: 0
 
 
   &__title
@@ -64,8 +67,8 @@
     &-left
       padding-bottom: 103px
       +r(575)
-        //padding-left: 20px
-        //padding-right: 20px
+        padding-left: 20px
+        padding-right: 20px
       +rmin(768)
         padding-top: 112px
       +rmin(1200)
@@ -115,22 +118,22 @@
     height: auto
     margin-left: auto
     margin-right: auto
-    +r(767)
-      max-width: 70%
     +r(575)
       max-width: 100%
 
     &--des
       display: none
-      +rmin(768)
+      +r(767)
+        max-width: 70%
+      +rmin(576)
         display: block
     &--mob
       display: none
-      +r(767)
+      +r(575)
         display: block
         margin-top: 30px
-        max-width: 100%
-        //object-fit: contain
+        width: 100%
+        object-fit: contain
 
 
 // \ INVESTORS
