@@ -52,6 +52,7 @@ $(document).ready(function () {
     closeMobileMenu();
 
     swiperMasonryInit();
+    _window.on('resize', debounce(swiperMasonryInit, 200))
 
     cabinetPagination("[partners-size-js]");
     cabinetPagination("[partner-format-js]");
@@ -243,7 +244,7 @@ $(document).ready(function () {
         horizontalOrder: true
       };
 
-      if ($(_window).width() > 767) {
+      if (_window.width() > 767) {
         masonryGrid.masonry(masonryGridOption);
       }
 
@@ -279,7 +280,7 @@ $(document).ready(function () {
         }
       }
 
-      if ($(_window).width() > 767) {
+      if (_window.width() > 767) {
         masonryGrid
           .masonry('reloadItems')
           .masonry('layout');
@@ -464,8 +465,8 @@ $(document).ready(function () {
     });
   }
 
-  $(_window).on("load resize", function () {
-    if ($(_window).width() >= 768) {
+  _window.on("load resize", function () {
+    if (_window.width() >= 768) {
       if ($(".homepage .main").length > 0) {
         clearMainBLock();
         createMainBlock();
@@ -908,61 +909,62 @@ $(document).ready(function () {
   }
 
   function swiperMasonryInit() {
-    $(_window).on("load resize", function () {
 
-      function masonryOpt(blockName) {
-        return {
-          itemSelector: blockName,
-          gutter: 18,
-          horizontalOrder: true
-        };
+    function masonryOpt(blockName) {
+      return {
+        itemSelector: blockName,
+        gutter: 18,
+        horizontalOrder: true
+      };
+    }
+
+    let msnrGridBlog = $(".homepage [masonry-blog-js]"),
+      msnrGridTestimonials = $(".homepage [masonry-testimonials-js]"),
+      msnrGridPrint = $(".homepage [masonry-print-js]");
+
+    if (_window.width() < 768) {
+      if($(".homepage").length > 0) {
+        initSwiperBlog();
+        initSwiperTestimonials();
+        initSwiperPrint();
+        initSwiperReasons();
       }
 
-      let msnrGridBlog = $(".homepage [masonry-blog-js]"),
-        msnrGridTestimonials = $(".homepage [masonry-testimonials-js]"),
-        msnrGridPrint = $(".homepage [masonry-print-js]");
-
-      if ($(_window).width() < 768) {
-        if($(".homepage").length > 0) {
-          initSwiperBlog();
-          initSwiperTestimonials();
-          initSwiperPrint();
-          initSwiperReasons();
-        }
-
-        if (msnrGridBlog.length) {
-          msnrGridBlog.masonry('destroy');
-        }
-        if (msnrGridTestimonials.length) {
-          msnrGridTestimonials.masonry('destroy');
-        }
-        if (msnrGridPrint.length) {
-          msnrGridPrint.masonry('destroy');
-        }
-      } else {
-
-        if ($(".homepage .swiper-blog-js").length > 0 && swiperBlog !== 0) {
-          swiperBlog.destroy(true, true);
-          swiperBlog = 0;
-        }
-        if ($(".homepage .swiper-testimonials-js").length > 0 && swiperTestimonials !== 0) {
-          swiperTestimonials.destroy(true, true);
-          swiperTestimonials = 0;
-        }
-        if ($(".homepage .swiper-print-js").length > 0 && swiperPrint !== 0) {
-          swiperPrint.destroy(true, true);
-          swiperPrint = 0;
-        }
-        if ($(".swiper-reasons-js").length > 0 && swiperReasons !== 0) {
-          swiperReasons.destroy(true, true);
-          swiperReasons = 0;
-        }
-
-        msnrGridBlog.masonry(masonryOpt('.homepage .blogs__block'));
-        msnrGridTestimonials.masonry(masonryOpt('.homepage .testimonials__block'));
-        msnrGridPrint.masonry(masonryOpt('.homepage .print__block'));
+      if (msnrGridBlog.data('masonry')) {
+        msnrGridBlog.masonry('destroy');
+        msnrGridBlog.removeData('masonry');
       }
-    });
+      if (msnrGridTestimonials.data('masonry')) {
+        msnrGridTestimonials.masonry('destroy');
+        msnrGridTestimonials.removeData('masonry');
+      }
+      if (msnrGridPrint.data('masonry')) {
+        msnrGridPrint.masonry('destroy');
+        msnrGridPrint.removeData('masonry');
+      }
+    } else {
+
+      if ($(".homepage .swiper-blog-js").length > 0 && swiperBlog !== 0) {
+        swiperBlog.destroy(true, true);
+        swiperBlog = 0;
+      }
+      if ($(".homepage .swiper-testimonials-js").length > 0 && swiperTestimonials !== 0) {
+        swiperTestimonials.destroy(true, true);
+        swiperTestimonials = 0;
+      }
+      if ($(".homepage .swiper-print-js").length > 0 && swiperPrint !== 0) {
+        swiperPrint.destroy(true, true);
+        swiperPrint = 0;
+      }
+      if ($(".swiper-reasons-js").length > 0 && swiperReasons !== 0) {
+        swiperReasons.destroy(true, true);
+        swiperReasons = 0;
+      }
+
+      msnrGridBlog.masonry(masonryOpt('.homepage .blogs__block'));
+      msnrGridTestimonials.masonry(masonryOpt('.homepage .testimonials__block'));
+      msnrGridPrint.masonry(masonryOpt('.homepage .print__block'));
+    }
   }
   // ====================
 
