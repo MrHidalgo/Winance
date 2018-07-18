@@ -718,12 +718,12 @@ $(document).ready(function () {
       percentVal = parseFloat(parentElem.find("[percent-val-js] strong").text());
 
     let resultMain = parseFloat((((valSumInvestment * percentVal) / 100) * valCountMonth) + valSumInvestment).toFixed(2),
-      resultMainOneMonth = parseFloat((((valSumInvestment * percentVal) / 100)) + valSumInvestment).toFixed(2),
-      resultMainThreeMonth = parseFloat((((valSumInvestment * percentVal) / 100) * 3) + valSumInvestment).toFixed(2);
+      resultMainOneMonth = parseFloat((((valSumInvestment * percentVal) / 100)) + valSumInvestment).toFixed(0),
+      resultMainThreeMonth = parseFloat((((valSumInvestment * percentVal) / 100) * 3) + valSumInvestment).toFixed(0);
 
     if (isNaN(resultMain)) resultMain = (0).toFixed(2);
-    if (isNaN(resultMainOneMonth)) resultMainOneMonth = (0).toFixed(2);
-    if (isNaN(resultMainThreeMonth)) resultMainThreeMonth = (0).toFixed(2);
+    if (isNaN(resultMainOneMonth)) resultMainOneMonth = (0).toFixed(0);
+    if (isNaN(resultMainThreeMonth)) resultMainThreeMonth = (0).toFixed(0);
 
     mainSumElem.text(reductionToFormat(resultMain));
     mainSumOneMonthElem.text(reductionToFormat(resultMainOneMonth));
