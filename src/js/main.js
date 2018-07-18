@@ -1075,29 +1075,29 @@ $(document).ready(function () {
   function initSelect() {
     $("[selectric-js]")
       .selectric({
-        inheritOriginalWidth: true,
-        nativeOnMobile: false,
+        inheritOriginalWidth: false,
+        nativeOnMobile: true,
         onInit: function (event) {
-          let elem = $(event),
-            labelElem = $(elem).closest(".selectric-wrapper").siblings(".form__label"),
-            elemWidth = parseInt($(elem).closest(".selectric-wrapper").css("width"));
-
-          const browser = getBrowser(),
-            browserName = browser.name.toLowerCase();
-
-          const cornerWidth = (browserName === "chrome") ? 30 : 50;
-
-          if (labelElem.length === 0) {
-            elem.closest(".selectric-wrapper").css({
-              width: "100%"
-            })
-          } else {
-            // 135px - it's label width
-            elem.closest(".selectric-wrapper").css({
-              // width: (elemWidth < 200) ? elemWidth + cornerWidth : elemWidth + (cornerWidth)
-              width: "calc(100% - 135px)"
-            })
-          }
+          // let elem = $(event),
+          //   labelElem = $(elem).closest(".selectric-wrapper").siblings(".form__label"),
+          //   elemWidth = parseInt($(elem).closest(".selectric-wrapper").css("width"));
+          //
+          // const browser = getBrowser(),
+          //   browserName = browser.name.toLowerCase();
+          //
+          // const cornerWidth = (browserName === "chrome") ? 30 : 50;
+          //
+          // if (labelElem.length === 0) {
+          //   elem.closest(".selectric-wrapper").css({
+          //     width: "100%"
+          //   })
+          // } else {
+          //   // 135px - it's label width
+          //   elem.closest(".selectric-wrapper").css({
+          //     // width: (elemWidth < 200) ? elemWidth + cornerWidth : elemWidth + (cornerWidth)
+          //     width: "calc(100% - 135px)"
+          //   })
+          // }
         },
         onChange: function(e) {
           let elem = $(e);
