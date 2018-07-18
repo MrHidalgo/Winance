@@ -230,6 +230,7 @@ $(document).ready(function () {
    */
   function filterMasonry(bntName, masonryName, blockName) {
     _document.on("click", bntName, function (e) {
+
       var elem = $(e.currentTarget),
         attrElem = elem.attr("data-pagination"),
         blogBlock = $(blockName),
@@ -280,11 +281,9 @@ $(document).ready(function () {
         }
       }
 
-      if (_window.width() > 767) {
-        masonryGrid
-          .masonry('reloadItems')
-          .masonry('layout');
-      }
+      masonryGrid
+        .masonry('reloadItems')
+        .masonry('layout');
     });
   }
 
