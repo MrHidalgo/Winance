@@ -1601,11 +1601,12 @@ $(document).ready(function () {
     if (!viewportMeta.length > 0) return;
 
     if (screen.width <= 360) {
-      viewportMeta.attr('content', 'width=360, minimum-scale=1, user-scalable=no');
+      viewportMeta.attr('content', 'width=360, user-scalable=no');
     } else {
-      if ($('head meta[name="viewport"]').length === 0) {
-        viewportMeta.attr('content', 'width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no');
-      }
+      // if ($('head meta[name="viewport"]').length === 0) {
+      //   viewportMeta.attr('content', 'width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no');
+      // }
+      viewportMeta.attr('content', 'width=device-width, initial-scale=1, minimum-scale=1, user-scalable=no');
     }
   }
 
