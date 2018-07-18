@@ -7,11 +7,10 @@
     padding-top: 45px
     padding-bottom: 70px
 
-
-  .container
+  .swiper-wrapper
     +r(767)
-      &:first-child
-        padding-right: 0
+      flex-wrap: wrap
+      height: auto !important
 
 
   &__pagination
@@ -64,10 +63,14 @@
     background-color: $c-white
     +transition(box-shadow)
     +r(767)
-      flex: 0 0 300px
-      max-width: 300px
+      position: static !important
+      width: calc((100% - 36px) / 2)
       margin-right: 18px
-      margin-bottom: 50px
+      margin-bottom: 18px
+    +r(575)
+      width: 100%
+      margin-left: auto
+      margin-right: auto
     +rmin(768)
       display: block
       position: absolute !important
