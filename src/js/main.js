@@ -1363,21 +1363,20 @@ $(document).ready(function () {
 
 
   // ====================
-  function isElementInViewport(el) {
-    let rect = el.getBoundingClientRect();
+  function isAnyPartOfElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    const windowHeight = (window.innerHeight || document.documentElement.clientHeight);
+    const windowWidth = (window.innerWidth || document.documentElement.clientWidth);
+    const vertInView = (rect.top <= windowHeight) && ((rect.top + rect.height) >= 0);
+    const horInView = (rect.left <= windowWidth) && ((rect.left + rect.width) >= 0);
 
-    return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
+    return (vertInView && horInView);
   }
 
   const footerElem = $("footer");
 
   _window.on("resize scroll load", function () {
-    if (footerElem.length > 0 && isElementInViewport(footerElem[0])) {
+    if (footerElem.length > 0 && isAnyPartOfElementInViewport(footerElem[0])) {
       $("[hideStickyBtn-js]").fadeOut();
     } else {
       $("[hideStickyBtn-js]").fadeIn();
