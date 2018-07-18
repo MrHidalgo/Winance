@@ -52,7 +52,7 @@ $(document).ready(function () {
     closeMobileMenu();
 
     swiperMasonryInit();
-    _window.on('resize', debounce(swiperMasonryInit, 200))
+    _window.on('resize', debounce(swiperMasonryInit, 200));
 
     cabinetPagination("[partners-size-js]");
     cabinetPagination("[partner-format-js]");
@@ -855,7 +855,6 @@ $(document).ready(function () {
       freeMode: true
     })
   }
-
   function initSwiperTestimonials() {
     swiperTestimonials = new Swiper('.homepage .swiper-testimonials-js', {
       wrapperClass: "swiper-wrapper",
@@ -871,7 +870,6 @@ $(document).ready(function () {
       freeMode: true
     })
   }
-
   function initSwiperPrint() {
     swiperPrint = new Swiper('.homepage .swiper-print-js', {
       wrapperClass: "swiper-wrapper",
@@ -887,7 +885,6 @@ $(document).ready(function () {
       freeMode: true
     })
   }
-
   function initSwiperReasons() {
     swiperReasons = new Swiper('.swiper-reasons-js', {
       wrapperClass: "swiper-wrapper",
@@ -942,21 +939,22 @@ $(document).ready(function () {
         msnrGridPrint.masonry('destroy');
         msnrGridPrint.removeData('masonry');
       }
-    } else {
+    }
+    else {
 
-      if ($(".homepage .swiper-blog-js").length > 0 && swiperBlog !== 0) {
+      if ($(".homepage .swiper-blog-js").length > 0 && swiperBlog !== undefined) {
         swiperBlog.destroy(true, true);
         swiperBlog = 0;
       }
-      if ($(".homepage .swiper-testimonials-js").length > 0 && swiperTestimonials !== 0) {
+      if ($(".homepage .swiper-testimonials-js").length > 0 && swiperTestimonials !== undefined) {
         swiperTestimonials.destroy(true, true);
         swiperTestimonials = 0;
       }
-      if ($(".homepage .swiper-print-js").length > 0 && swiperPrint !== 0) {
+      if ($(".homepage .swiper-print-js").length > 0 && swiperPrint !== undefined) {
         swiperPrint.destroy(true, true);
         swiperPrint = 0;
       }
-      if ($(".swiper-reasons-js").length > 0 && swiperReasons !== 0) {
+      if ($(".swiper-reasons-js").length > 0 && swiperReasons !== undefined) {
         swiperReasons.destroy(true, true);
         swiperReasons = 0;
       }
