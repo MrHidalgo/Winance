@@ -32,6 +32,9 @@
     &-bottom
       bottom: 0
       height: 20%
+      +r(991)
+        //height: 15%
+        background-color: $c-whiteSmoke
 
 
 
@@ -39,8 +42,9 @@
     z-index: 1
     position: relative
     +r(575)
-      padding-left: 0
-      padding-right: 0
+      .homepage &
+        padding-left: 0
+        padding-right: 0
 
 
   &__title
