@@ -1,0 +1,14 @@
+---
+title: Winance - Modal View
+---
+extends shared/_layout
+block content
+
+  div
+
+    a.btn.btn--color(style="margin: 15px auto;" href="#modalSign" sign-js)!= "Вход|Регистрация"
+    a.btn.btn--color(style="margin: 15px auto;" href="#modalAbout" about-request-js)!= "Попап с запросом"
+    a.btn.btn--color(style="margin: 15px auto;" href="#modalFaq" faq-new-js)!= "Попап с отзывом"
+    a.btn.btn--color(style="margin: 15px auto;" href="#modalTicket" ticket-new-js)!= "Попап с тикетом"
+    a.btn.btn--color(style="margin: 15px auto;" href="#modalSign" review-btn-js)!= "Попап с запросом"
+    a.btn.btn--color(style="margin: 15px auto;" href="#modalMessage" modalMessage-btn-js)!= "Попап с сообщением"

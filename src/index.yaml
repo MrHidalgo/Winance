@@ -49,3 +49,5 @@ PageList:
   ready: 90
 - file: cabinetInvestmentTabs.html
   ready: 90
+- file: modalView.html
+  ready: 90

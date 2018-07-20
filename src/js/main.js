@@ -23,7 +23,7 @@ $(document).ready(function () {
   // READY - triggered when PJAX DONE
   ////////////
   function pageReady() {
-    initTypograf();
+    // initTypograf();
     legacySupport();
     updateHeaderActiveClass();
     initHeaderScroll();
@@ -923,6 +923,8 @@ $(document).ready(function () {
         initSwiperBlog();
         initSwiperTestimonials();
         initSwiperPrint();
+      }
+      if($(".swiper-reasons-js").length > 0) {
         initSwiperReasons();
       }
 
@@ -941,19 +943,20 @@ $(document).ready(function () {
     }
     else {
 
-      if ($(".homepage .swiper-blog-js").length > 0 && swiperBlog !== undefined) {
+      if ($(".homepage .swiper-blog-js").length > 0 && swiperBlog) {
         swiperBlog.destroy(true, true);
         swiperBlog = 0;
       }
-      if ($(".homepage .swiper-testimonials-js").length > 0 && swiperTestimonials !== undefined) {
+      if ($(".homepage .swiper-testimonials-js").length > 0 && swiperTestimonials) {
         swiperTestimonials.destroy(true, true);
         swiperTestimonials = 0;
       }
-      if ($(".homepage .swiper-print-js").length > 0 && swiperPrint !== undefined) {
+      if ($(".homepage .swiper-print-js").length > 0 && swiperPrint) {
         swiperPrint.destroy(true, true);
         swiperPrint = 0;
       }
-      if ($(".swiper-reasons-js").length > 0 && swiperReasons !== undefined) {
+
+      if ($(".swiper-reasons-js").length > 0 && swiperReasons) {
         swiperReasons.destroy(true, true);
         swiperReasons = 0;
       }
@@ -1507,7 +1510,7 @@ $(document).ready(function () {
       }
     });
 
-    const modalBtn = "[review-btn-js], [ticket-new-js], [faq-new-js], [about-request-js], [sign-js]";
+    const modalBtn = "[modalMessage-btn-js], [review-btn-js], [ticket-new-js], [faq-new-js], [about-request-js], [sign-js]";
 
     $(modalBtn).magnificPopup({
       type: 'inline',
