@@ -1,0 +1,119 @@
+#modalSign.modal.modal--sign.mfp-with-anim
+  // MODAL SIGN/REGISTER
+  .modal__header
+    a.is-active(
+      href="#" title="" class=""
+      data-id="0"
+      change-sign-js
+    )!= "Вход"
+    a(
+      href="#" title="" class=""
+      data-id="1"
+      change-sign-js
+    )!= "Регистрация"
+
+  .modal__body.modal__body-0.is-active
+    form(action="" method="" autocomplete="off" sign-form-js)
+
+      .form__field.form__field--p
+        input.form__input(type="text" name="signin_email" class="" id="signin_email" placeholder="")
+        label.form__label(for="signin_email")!= "Адрес почты"
+
+      .form__field.form__field--p
+        input.form__input(type="password" name="signin_password" class="" id="signin_password" placeholder="")
+        label.form__label(for="signin_password")!= "Пароль"
+
+      .form__field-btn
+        button.form__btn.btn.btn--color.btn--full(type="submit")!= "Войти"
+
+      .form__field-link
+        a.form__link(href="#" title="" class="")!= "Забыли пароль?"
+
+  .modal__body.modal__body-1
+    form(action="" method="" autocomplete="off" register-form-js)
+
+      p.modal__subtitle!= "Представьтесь"
+
+      .form__field.form__field--p
+        input.form__input(type="text" name="register_name" class="" id="register_name" placeholder="")
+        label.form__label(for="register_name")!= "Имя"
+
+      .form__field.form__field--p
+        input.form__input(type="text" name="register_sname" class="" id="register_sname" placeholder="")
+        label.form__label(for="register_sname")!= "Отчество"
+
+      .form__field.form__field--p
+        input.form__input(type="text" name="register_surname" class="" id="register_surname" placeholder="")
+        label.form__label(for="register_surname")!= "Фамилия"
+
+
+      p.modal__subtitle.modal__subtitle--m!= "Контакты и пароль"
+
+      .form__field.form__field--p
+        input.form__input(type="tel" name="register_phone" class="" id="register_phone" placeholder="")
+        label.form__label(for="register_phone")!= "Телефон"
+
+      .form__field.form__field--p
+        input.form__input(type="text" name="register_email" class="" id="register_email" placeholder="")
+        label.form__label(for="register_email")!= "Укажите почту"
+
+      .form__field.form__field--p
+        input.form__input(type="password" name="register_pass" class="" id="register_pass" placeholder="")
+        label.form__label(for="register_pass")!= "Пароль"
+
+      .form__field.form__field--p
+        input.form__input(type="password" name="register_passRepeat" class="" id="register_passRepeat" placeholder="")
+        label.form__label(for="register_passRepeat")!= "Подтвердите пароль"
+
+
+      p.modal__subtitle.modal__subtitle--m!= "День рождения"
+
+      .form__field-group
+        .form__field.form__field--date.form__field--select.form__field--p
+          select(name="register_day" id="register_day" selectric-js)
+            option(value="" disabled selected)!= "00"
+            option(value="00")!= "00"
+            option(value="01")!= "01"
+            option(value="02")!= "02"
+            option(value="03")!= "03"
+            option(value="04")!= "04"
+            option(value="05")!= "05"
+          label.form__label(for="register_day")!= "День"
+
+        .form__field.form__field--date.form__field--select.form__field--p
+          select(name="register_month" id="register_month" selectric-js)
+            option(value="" disabled selected)!= "00"
+            option(value="00")!= "00"
+            option(value="00")!= "00"
+            option(value="01")!= "01"
+            option(value="02")!= "02"
+            option(value="03")!= "03"
+            option(value="04")!= "04"
+            option(value="05")!= "05"
+          label.form__label(for="register_month")!= "Месяц"
+
+        .form__field.form__field--date.form__field--select.form__field--p
+          select(name="register_year" id="register_year" selectric-js)
+            option(value="" disabled selected)!= "0000"
+            option(value="0000")!= "0000"
+            option(value="0000")!= "0000"
+            option(value="0001")!= "0001"
+            option(value="0002")!= "0002"
+            option(value="0003")!= "0003"
+            option(value="0004")!= "0004"
+            option(value="0005")!= "0005"
+          label.form__label(for="register_year")!= "Год"
+
+      p.modal__subtitle.modal__subtitle--m!= "Докажите что вы не робот. <br>Сколько у вас пальцев на руке?"
+
+      .form__field.form__field--p.form__field--m
+        input.form__input(type="password" name="register_robot" class="" id="register_robot" placeholder="")
+        label.form__label(for="register_robot")!= "Укажите цифру"
+
+      .form__field-btn
+        button.form__btn.btn.btn--color.btn--full(type="submit")!= "Зарегистрироваться"
+
+      .form__field.form__field-checkbox
+        .ui-checkbox
+          input(type="checkbox" name="register_approve" id="register_approve" checked)
+          label(for!="register_approve")!="Я прочитал(а) и полностью согласен(на) <a href='#'>с пользовательским соглашением.</a>"
