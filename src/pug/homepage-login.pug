@@ -1,0 +1,13 @@
+---
+title: Winance
+pageName: homepage
+---
+extends shared/_layout
+
+block header
+  include components/_header-login
+  
+block content
+
+  div(class!= pageName)
+    include components/homepage/_main

@@ -9,7 +9,7 @@ $sprite: (
 		image: '../img/sprite.png'
 	),
 	clock: (
-		offset-x: -97px,
+		offset-x: -124px,
 		offset-y: -159px,
 		width: 14px,
 		height: 14px,
@@ -54,7 +54,7 @@ $sprite: (
 		image: '../img/sprite.png'
 	),
 	fr: (
-		offset-x: -149px,
+		offset-x: -148px,
 		offset-y: -159px,
 		width: 18px,
 		height: 10px,
@@ -63,10 +63,19 @@ $sprite: (
 		image: '../img/sprite.png'
 	),
 	gr: (
-		offset-x: -121px,
+		offset-x: -176px,
 		offset-y: -159px,
 		width: 18px,
 		height: 10px,
+		total-width: 208px,
+		total-height: 202px,
+		image: '../img/sprite.png'
+	),
+	logout: (
+		offset-x: -97px,
+		offset-y: -159px,
+		width: 17px,
+		height: 16px,
 		total-width: 208px,
 		total-height: 202px,
 		image: '../img/sprite.png'
@@ -258,6 +267,9 @@ $sprite: (
 	}
 	.icon-gr {
 		@include sprite(gr)
+	}
+	.icon-logout {
+		@include sprite(logout)
 	}
 	.icon-parlor {
 		@include sprite(parlor)

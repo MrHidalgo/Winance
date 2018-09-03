@@ -131,14 +131,51 @@
 #modalMessage.modal.modal--message.mfp-hide.mfp-with-anim
   .modal__header
   .modal__body
-    p.modal__title!= "Сообщение о чем-то важном"
+    p.modal__title Сообщение <br> о чем-то важном
 
     form(action="" method="" autocomplete="off")
       .form__field-btn
-        button.form__btn.btn.btn--color.btn--full(type="button")!= "Действие"
+        button.form__btn.btn.btn--color(type="button")!= "Действие"
 
 // MODAL ABOUT REQUEST :: END
 
+// MODAL ABOUT REQUEST :: END
+
+#modalMessage2.modal.modal--message.mfp-hide.mfp-with-anim
+  .modal__header
+  .modal__body
+    p.modal__title Сообщение <br> о чем-то важном
+
+    form(action="" method="" autocomplete="off")
+      .form__field-btn
+        button.form__btn.btn.btn--color(type="button")!= "Да"
+      .form__field-btn
+        button.form__btn.btn.btn--red(type="button")!= "Нет"
+
+// MODAL ABOUT REQUEST :: END
+
+// MODAL RECOVER :: START
+
+#modalRecover.modal.modal--sign.mfp-hide.mfp-with-anim
+  .modal__header
+    a.is-active(
+      href="#" title="" class=""
+    )!= "Восстановить пароль"
+
+  .modal__body.modal__body-0.is-active
+    form(action="" method="" autocomplete="off" recovery-form-js)
+
+      .form__field.form__field--p
+        input.form__input(type="text" name="recover_email" class="" id="recover_email" placeholder="")
+        label.form__label(for="recover_email")!= "Адрес почты"
+
+      .form__field-btn
+        button.form__btn.btn.btn--color.btn--full(type="submit")!= "Отправить"
+      
+      .form__field-link
+        a.form__link(href="#" title="" class="" js-close-modal)!= "Я передумал"
+
+// MODAL RECOVER :: END
 
 // MODAL SIGN/REGISTER :: END
 

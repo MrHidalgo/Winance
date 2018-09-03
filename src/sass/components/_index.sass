@@ -125,6 +125,20 @@
       border-color: $c-white
       +transition(border-color)
       transition-duration: 0s
+
+  &--red
+    border-color: #FF635C
+    background-color: transparent
+    color: #FF635C
+    +transition(border-color)
+
+    &:hover,
+    &:focus
+      border-color: #FF635C
+      color: white
+      background-color: #FF635C
+      +transition(border-color)
+      transition-duration: 0s
 // \ BTN
 
 
@@ -482,6 +496,10 @@
   &__icon
     margin-right: 5px
     +transition(opacity)
+
+  .icon-logout
+    margin-left: 10px
+
 // \ PARLOR
 
 

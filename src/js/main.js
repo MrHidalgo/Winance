@@ -145,6 +145,12 @@ $(document).ready(function () {
       }, 1000);
       return false;
     })
+    .on('click', '[js-link]', function(e){
+      e.preventDefault()
+      e.stopPropagation()
+      var target = $(this).data('target');
+      window.location.href = target
+    })
 
 
   // HEADER SCROLL
@@ -1561,6 +1567,10 @@ $(document).ready(function () {
       }
     });
   }
+
+  _document.on('click', '[js-close-modal]', function(){
+    closeMfp()
+  })
 
   function closeMfp() {
     $.magnificPopup.close();

@@ -294,6 +294,26 @@ $(document).ready(function () {
     }
   });
 
+
+  $("[recovery-form-js]").validate({
+    errorPlacement: validateErrorPlacement,
+    highlight: validateHighlight,
+    unhighlight: validateUnhighlight,
+    submitHandler: validateSubmitHandler,
+    rules: {
+      recover_email: {
+        required: true,
+        email: true
+      },
+    },
+    messages: {
+      recover_email: {
+        required: "Это поле обязательно к заполнению",
+        email: "Email содержит неправильный формат"
+      },
+    }
+  });
+
   $('#register_year, #register_day, #register_month').on('selectric-change', function(event, element, selectric) {
     $(this).valid();
   });
