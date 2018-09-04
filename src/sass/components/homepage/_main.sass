@@ -61,6 +61,12 @@
         bottom: 0
         width: 100%
         min-height: 450px
+        // should be hidden by default
+        // wait till js is rendered
+        opacity: 0
+        transition: opacity .25s $ease
+        &.is-ready
+          opacity: 1
         +r(767)
           position: static
           height: auto

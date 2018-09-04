@@ -7,6 +7,35 @@ $(document).ready(function () {
   var _window = $(window);
   var _document = $(document);
 
+  // SPECIFIC VARIABLES
+  var objOptionBLock = [
+    {
+      color: 'rgba(58, 103, 217, 0.65)',
+      left: '0',
+      height: '131px'
+    },
+    {
+      color: 'rgba(58, 103, 217, 0.84)',
+      left: '240px',
+      height: '171px'
+    },
+    {
+      color: 'rgba(58, 103, 217, 1)',
+      left: '480px',
+      height: '229px'
+    },
+    {
+      color: 'rgba(16, 173, 180, 1)',
+      left: '720px',
+      height: '329px'
+    },
+    {
+      color: 'rgba(58, 103, 217, 0.91)',
+      left: '960px',
+      height: '208px'
+    },
+  ];
+  
   // BREAKPOINT SETTINGS
   var bp = {
     mobileS: 375,
@@ -51,6 +80,9 @@ $(document).ready(function () {
     inputRangeInit();
     closeMobileMenu();
 
+    renderMainBlock();
+    _window.on("resize", debounce(renderMainBlock, 100));
+
     swiperMasonryInit();
     _window.on('resize', debounce(swiperMasonryInit, 200));
 
@@ -91,16 +123,6 @@ $(document).ready(function () {
     // viewportControl();
     // _window.on('resize', debounce(viewportControl, 200));
 
-    // development helper
-    _window.on('resize', debounce(setBreakpoint, 200));
-
-    // AVAILABLE in _components folder
-    // copy paste in main.js and initialize here
-
-    // initTeleport();
-    // parseSvg();
-    // revealFooter();
-    // _window.on('resize', throttle(revealFooter, 100));
   }
 
   // this is a master function which should have all functionality
@@ -330,33 +352,6 @@ $(document).ready(function () {
 
   //
   // ====================
-  var objOptionBLock = [
-    {
-      color: 'rgba(58, 103, 217, 0.65)',
-      left: '0',
-      height: '131px'
-    },
-    {
-      color: 'rgba(58, 103, 217, 0.84)',
-      left: '240px',
-      height: '171px'
-    },
-    {
-      color: 'rgba(58, 103, 217, 1)',
-      left: '480px',
-      height: '229px'
-    },
-    {
-      color: 'rgba(16, 173, 180, 1)',
-      left: '720px',
-      height: '329px'
-    },
-    {
-      color: 'rgba(58, 103, 217, 0.91)',
-      left: '960px',
-      height: '208px'
-    },
-  ];
 
   function lineBlockTmpl(idx, width, left, right) {
     return `
@@ -451,6 +446,8 @@ $(document).ready(function () {
       ));
     }
 
+    mainBlockContainer.addClass('is-ready')
+
     stickyMainText(".main__line-1", ".main__line-col--0");
     stickyMainText(".main__line-2", ".main__line-col--1");
     stickyMainText(".main__line-3", ".main__line-col--2");
@@ -470,14 +467,13 @@ $(document).ready(function () {
     });
   }
 
-  _window.on("load resize", function () {
-    if (_window.width() >= 768) {
-      if ($(".homepage .main").length > 0) {
-        clearMainBLock();
-        createMainBlock();
-      }
+  function renderMainBlock(){
+    if ($(".homepage .main").length > 0
+       && _window.width() >= 768) {
+      clearMainBLock();
+      createMainBlock();
     }
-  });
+  }
   // ====================
 
 
@@ -1780,28 +1776,6 @@ $(document).ready(function () {
     $(window).scroll();
     $(window).resize();
     initScrollMonitor();
-  }
-
-  //////////
-  // DEVELOPMENT HELPER
-  //////////
-  function setBreakpoint() {
-    var wHost = window.location.host.toLowerCase()
-    var displayCondition = wHost.indexOf("localhost") >= 0 || wHost.indexOf("surge") >= 0
-    if (displayCondition) {
-      // console.log(displayCondition)
-      var wWidth = _window.width();
-
-      var content = "<div class='dev-bp-debug'>" + wWidth + "</div>";
-
-      $('.page').append(content);
-      setTimeout(function () {
-        $('.dev-bp-debug').fadeOut();
-      }, 1000);
-      setTimeout(function () {
-        $('.dev-bp-debug').remove();
-      }, 1500)
-    }
   }
 
 });
